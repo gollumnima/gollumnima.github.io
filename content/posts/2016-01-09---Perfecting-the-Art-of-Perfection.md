@@ -8,7 +8,7 @@ category: "Javascript"
 tags:
  - "wecode"
  - "codingbootcamp"
- - "css"
+ - "javascript"
  - "위코드"
 description: "위코드 5일차 js 정리 2탄. ES6 문법 중 나에게 아직도 너무 익숙지 않은 화살표함수에 대해 정리해보았다!"
 ---

@@ -8,7 +8,7 @@ category: "Javascript"
 tags:
  - "wecode"
  - "codingbootcamp"
- - "css"
+ - "javascript"
  - "위코드"
 description: "위코드 4일차 js 정리 1탄. js 공부의 가장 기초이면서도 중요한 변수와 스코프에 대해서 정리해보았다!"
 ---
