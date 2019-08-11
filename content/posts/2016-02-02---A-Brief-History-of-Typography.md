@@ -1,5 +1,5 @@
 ---
-title: "wecode 1주차_3일 TIL_CSS(2)"
+title: "wecode 1주차_3일 TIL_CSS"
 date: "2019-07-31T22:40:32.169Z"
 template: "post"
 draft: false

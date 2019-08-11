@@ -1,5 +1,5 @@
 ---
-title: "wecode 1주차_5일 TIL_js(2)화살표함수"
+title: "wecode 1주차_5일 TIL_화살표함수"
 date: "2019-08-02T23:46:37.121Z"
 template: "post"
 draft: false

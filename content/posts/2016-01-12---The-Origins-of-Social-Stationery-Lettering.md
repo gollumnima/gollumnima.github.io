@@ -1,5 +1,5 @@
 ---
-title: "wecode 1주차_4일 TIL_js(1)변수와 스코프"
+title: "wecode 1주차_4일 TIL_변수와 스코프"
 date: "2019-08-01T22:40:32.169Z"
 template: "post"
 draft: false
