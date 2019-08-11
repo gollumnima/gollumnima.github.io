@@ -1,20 +1,204 @@
 ---
-title: Perfecting the Art of Perfection
-date: "2016-09-01T23:46:37.121Z"
+title: "wecode 1주차_5일 TIL_js(2)화살표함수"
+date: "2019-08-02T23:46:37.121Z"
 template: "post"
 draft: false
-slug: "/posts/perfecting-the-art-of-perfection/"
-category: "Design Inspiration"
+slug: "/posts/wecode1_5_TIL_js/"
+category: "Javascript"
 tags:
-  - "Handwriting"
-  - "Learning to write"
-description: "Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum."
+ - "wecode"
+ - "codingbootcamp"
+ - "css"
+ - "위코드"
+description: "위코드 5일차 js 정리 2탄. ES6 문법 중 나에게 아직도 너무 익숙지 않은 화살표함수에 대해 정리해보았다!"
 ---
 
-Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum.
 
-![Nulla faucibus vestibulum eros in tempus. Vestibulum tempor imperdiet velit nec dapibus](/media/image-2.jpg)
+![image.png](https://images.velog.io/post-images/dooreplay/21b05e00-b656-11e9-98df-8b92d767b097/image.png)
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. 
+화살표 함수만은 피하고 싶었는데.. 위코드 2일차에 마주쳤다...☆
+어차피 나중엔 계속 쓰게 될텐데 지금 정리해야 마음이 편해질것 같아서 정리해봅니다~~
 
-Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+>고통을 즐기는 개발자가 되자!
+
+
+---
+
+## 화살표함수
+
+*그냥 함수 있는거 쓰면 되는데.. 화살표 함수. 대체 왜 쓸까?*
+
+* ES6 문법이라서
+ -js를 표준화하는 ECMA Script의 버전이 벌써 10까지 나왔다네요... 세상에마상에
+ -대세를 따르는 개발자가 됩시다! 지금은 화살표가 어색할지 몰라도 나중엔 디폴트값이 될지도...
+* 코드가 엄청나게 짧아진다
+ -중괄호, 엔터 없이도 => 이 화살표만 있으면 되니까 식이 좀 더 깔끔쓰!
+* 멋있어 보인다
+ -멋에 죽고 멋에 사는 개발자라면 화살표함수를 쓰시오~ㅋㅋ
+ 
+ 
+ 
+ 화살표 함수를 이번기회에 제대로 정리해야지!! 하고 마음 먹었으나...
+ 예시 위주로만 갈게요ㅠ
+ 화살표 함수에 대해서는 Baby Tiger님이 정리를 잘 해놨으니 링크 드릴게요 :)
+ https://babytiger.netlify.com/posts/arrow-function/
+ 
+ ### 화살표 함수 적용 : 인자가 없을때
+들어가기 앞서.. 한 가지 덧붙이자면!!! 화살표 함수는 무조건 익명함수에요.
+`let`이나 `const`같은 선언자로 선언하는 함수 표현식으로 작성해주세용
+자 그럼 1번 예시!!
+```
+ function macaron(){
+  return '달콤해~'
+}
+```
+이랬던 함수가...
+
+```
+const macaron = () => '달콤해~'
+```
+일반 함수식과 비교해보면 중괄호와 return 대신 => 이 화살표를 쓴 걸 알수있져!
+예시의 식처럼 한줄짜리 식들은 중괄호를 생략할 수 있어요~
+또한 함수이름과 소괄호 사이에 = 을 써서 함수를 정의한다는 점도 알아두세요!
+
+ 
+ ### 화살표 함수 적용 : 인자가 하나
+이번엔 인자가 하나일 경우를 살펴볼게요.
+```
+const a = function square(y) {
+  return y * y
+}
+```
+이랬던 함수가...
+```
+const square = y => y*y
+
+ ```
+ 이렇게 한 줄로 줄어들었어요! 개이득!!
+ 위에서 예시로 든 제곱 함수보다 식이 더 복잡해질때 화살표함수를 쓰는게 유용하겠죠?
+ 인자가 하나일땐 괄호 생략이 가능한데, 두 개 이상일때부턴 괄호를 꼭꼭 써주세요!
+ 
+ 
+ ### 화살표 함수 적용 : 인자가 둘
+
+```
+function plus(a,b) {
+  return `${a} 더하기 ${b}는 ${a+b}입니다`
+}
+```
+이랬던 식을 화살표 함수에 적용하면...
+```
+const plus = (a,b) =>`${a} 더하기 ${b}는 ${a+b}입니다`
+```
+이렇게 뙇! 인자가 두개라서 괄호를 붙여줬어요~~
+
+여기서 잠깐, `${}`<= 이 달러표시는 뭘까요~얘도 화살표 함수처럼 ES6문법이에요.
+* template literal : 따옴표 대신 빽틱(1 옆의 것)을 이용해 문자열을 표기하는 방법. 빽틱 안에 ${}를 이용해 값을 표기할 수 있음.
+(처음엔 빽틱이 빽티기인줄 알고 뻥튀기가 생각났는데... back tick.. 영어였슴다....☆)
+
+이렇게 얘기하면 뭔 말인지 모르겠죠? 예시를 들어볼게요~
+```
+const plus = (a,b) =>a+ ' 더하기 ' + b+'는 '+a+b+'입니다'
+
+```
+아까 위에서 만든 함수의 리턴값을 일반적인 string을 나타내는 형식으로 써봤어요.
+template literal을 이용하면 전체를 빽틱으로 감싸고 대입이 필요한 값에만 ${}를 씌워주면 되는데, 이렇게 쓰니 참 복잡하죠? 편하게 갑시다~~ 
+
+
+### 화살표 함수 적용 : Array Method
+가장 작은 숫자를 찾는 함수를 만들어 보았어요. 최대한 직관적이게 풀어볼게요.
+```
+const arr = [42,1,'a','z',100,28,'맛있다']
+function findSmall(arr){
+  let temp = []
+  let answer = ''
+  for(let i=0; i < arr.length; i++) {
+    if(typeof arr[i] === 'number') {
+      temp.push(arr[i])
+    }
+  }
+  let min = temp[0]
+  for(let j=0; j < temp.length; j++) {
+    if(min > temp[j]) {
+      min = temp[j];
+    }
+  }
+  return min;
+}
+console.log(findSmall(arr)) // 100
+
+```
+첫번째 for문에서 숫자인지를 걸러주고, 두번째 for문에선 숫자들의 대소비교를 통해 답을 냈어요.
+
+자... 그럼 method로 아주 간단하게 풀어봅시다. 놀라지 마세요!
+```
+const findSmall = () => arr.filter(x=>typeof x === 'number').sort((a,b)=>a-b)[0]
+
+console.log(findSmall(arr)) // 100
+```
+저 긴 식이 이렇게나 짧게 줄어들었어요!
+저는 여기서 array method 중에 하나인 `filter`를 사용했는데요.
+여기서 filter는 주어진 조건에 맞는 애들만 딱 걸러주는 역할을 하고, sort 함수는 작은 숫자에서 큰 숫자 순으로 정렬을 해주는 역할을 했어요.
+
+예시를 하나 더 들어볼게용
+문제의 출처는 위코드 입니다 ㅎ 실은 제가 이걸 노가다방식으로 풀었기 때문에 블로그에 정리하면서 다시 한번 풀어보고 싶었어요!
+```
+//dates=['2019-03-21', '2019-04-21', '2019-05-21']
+
+//리턴값을 이렇게 바꾸시오.
+['2019년 03월 21일', '2019년 04월 21일', '2019년 05월 21일']
+```
+
+처음에 푼 식을 먼저 공개할게요.. 완전 노가다에요.....
+```
+let formatDate = dates => Array(`${dates[0].split('-')[0]}년 ${dates[0].split('-')[1]}월 ${dates[0].split('-')[2]}일`,`${dates[1].split('-')[0]}년 ${dates[1].split('-')[1]}월 ${dates[1].split('-')[2]}일`,`${dates[2].split('-')[0]}년 ${dates[2].split('-')[1]}월 ${dates[2].split('-')[2]}일`)
+```
+이걸 다시 제대로.. `map`을 이용해 묶어보겠슴다
+사실 계속 어떻게 할지 헤매다가 같은 기수 순규님의 도움으로 해결쓰...☆
+
+```
+let formatDate = arr => {  //1번
+  return arr.map(x => { //2번
+    let temp = x.split('-') //3번
+    return `${temp[0]}년 ${temp[1]}월 ${temp[2]}일` //4번
+  })
+}
+```
+
+* 1번 : arr에 적용되는 식이 한 줄이 아닐거니까 화살표 뒤에 중괄호와 리턴 쓰기(사실 화살표 함수라 해서 무조건 중괄호 안쓰려고 생각하다 보니 더 안풀렸다 ㅠ)
+* 2번 : arr에 `map`을 적용해서 각각의 arr의 element들에 적용되는 식 만듬. 여기서 임의의 변수 x란 arr[i]와 동일한 역할
+* 3번 : x를 split해준 값을 temp에 담는다.(사실 이 과정이 머릿속으로 그려지지 않아서 하드코딩으로 지저분하게 문제를 풀었다ㅜㅜ 담으면 되는거였구나 ㅠㅠ)
+* 4번 : temp 배열의 0번째, 1번째, 2번째의 데이터를 통해 값을 리턴
+
+
+화살표 함수는 여전히 헷갈리는 어려운 녀석이다 ㅜㅜ
+그치만 계속 계속 쓰다보면 늘겠지!! 화살표 함수를 습관화하자!!!
+
+### 별책부록 : 커링과 화살표함수
+예전에 커링 정리 하다가 엄청 놀란 식이 있어서 공유해봅니다..☆
+```
+let sum = function(x) {
+  return function(y) {
+    return x+y
+  }
+}
+
+console.log(sum(5)(7)) // 12
+```
+물론 커링 자체도 굉장히 놀랍고 신기한 기술인데.. 여기에 화살표함수가 더해지면
+
+```
+let sum = x => y => x+y
+
+console.log(sum(5)(7)) // 12
+
+```
+와우....!!! 놀라움의 연속쓰~~
+커링은 더 나중에 정리해보겠슴다!
+화살표함수가 익숙해지는 그날까지~~~ 모두모두 화이팅
+
+
+### Reference
+- https://poiemaweb.com/es6-arrow-function
+- wecode
+- MDN

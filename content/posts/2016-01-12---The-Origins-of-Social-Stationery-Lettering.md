@@ -1,50 +1,166 @@
 ---
-title: The Origins of Social Stationery Lettering
-date: "2016-12-01T22:40:32.169Z"
+title: "wecode 1주차_4일 TIL_js(1)변수와 스코프"
+date: "2019-08-01T22:40:32.169Z"
 template: "post"
 draft: false
-slug: "/posts/the-origins-of-social-stationery-lettering"
-category: "Design Culture"
-description: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante."
+slug: "/posts/wecode1_4_TIL_js/"
+category: "Javascript"
+tags:
+ - "wecode"
+ - "codingbootcamp"
+ - "css"
+ - "위코드"
+description: "위코드 4일차 js 정리 1탄. js 공부의 가장 기초이면서도 중요한 변수와 스코프에 대해서 정리해보았다!"
 ---
+오늘로 벌써 5일찬데 아직 2일차 때 했던것 정리하는 중~.~아이고... 빨리 다 써야지!!! 밀리지 않게!!
 
-**Pellentesque habitant morbi tristique** senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. *Aenean ultricies mi vitae est.* Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. 
+>그럼 js 공부 스타트~~
 
-Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.  [Donec non enim](#) in turpis pulvinar facilisis.
 
-![Nulla faucibus vestibulum eros in tempus. Vestibulum tempor imperdiet velit nec dapibus](/media/image-3.jpg)
+---
+## 변수선언
 
-## Header Level 2
+* 변수 : 값을 담기 위해 이름을 붙인 상자. 변수는 컴퓨터의 메모리에 일정한 크기의 영역으로 생성됩니다.
 
-+ Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-+ Aliquam tincidunt mauris eu risus.
+영어공부 할때 ABC 다음으로 배우는게 I am 뭐시기~ 잖아여
+그런것처럼 자바스크립트 세상에서 변수선언은 가장 기본적이면서도 필수적인 것!
 
-Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. 
-
-<figure>
-	<blockquote>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
-		<footer>
-			<cite>— Aliquam tincidunt mauris eu risus.</cite>
-		</footer>
-	</blockquote>
-</figure>
-
-### Header Level 3
-
-+ Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-+ Aliquam tincidunt mauris eu risus.
-
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-
-```css
-#header h1 a {
-  display: block;
-  width: 300px;
-  height: 80px;
-}
 ```
+var doori = 'hungry'
+```
+위의 식에서 var가 am(~이다)같은 역할을 해주는 선언자입니다!
+I(주어)같은 역할을 해주는게 여기선 doori인데, 자기 맘대로 이름 붙일수 있어요. 이게 바로 변수! 
+doori라는 변수에 = 뒤에 값('hungry')을 넣어주는걸 우리는 변수 선언이라고 해요.
 
-Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+자.. 쫌 더 이론적으로 설명해볼게요!
 
-![Test SVG](/media/cpu.svg)
+### 변수선언 3단계
+이건 시스템 상에서 일어나는 일이기 때문에 우리눈으로 확인할 순 없어요 ㅠㅠ 그래서 집 짓는 과정으로 예를 들어봤어요~ (혹시나 잘못된 정보가 있으면 댓글 달아주세요!!! 언제든지 수정하겠슴다~)
+![image.png](https://images.velog.io/post-images/dooreplay/a32424d0-b4c6-11e9-b862-790b02766d4c/image.png)
+
+#### 1. 선언단계 : 변수를 변수객체에 등록
+집을 지으려면 먼저 나라에서 부지를 사야겠죠? 내 땅이오~ 하고 선언하는거에요 
+자바스크립트 세상에서도 변수를 변수객체에 먼저 등록을 해야해요.
+
+#### 2. 초기화단계 : 변수객체에 등록된 변수를 위한 메모리 확보
+사람이 맨 땅에 살 수 없잖아요.. 집이 필요하죠!!! 변수가 들어갈 집을 짓는거에요.
+근데 사람이 입주를 안해서 집이 비어있어요. 집주인이 정해지지 않아서 undefined 상태인거에요.
+
+#### 3. 할당단계 : undefined로 초기화된 변수에 실제 값을 할당
+집주인이 부동산이랑 계약해서 집을 샀어요. 이제 변수에 실질적인 집주인이 생긴거죠 하하~
+
+
+영어에서도 am, are,is 있듯이 변수 선언에서도 `var`,`let`,`const` 세 가지를 선언자로 이용하는데요.`let`이나 `const`는 3단계 순서를 잘 따르는데, `var`는 쫌 달라요. 예를 들어볼게요!
+
+```
+console.log('첫번째 ' + waffle) // Reference Error. waffle is not defined
+let waffle = '맛있다'
+console.log('두번째 ' + waffle)// Reference Error. waffle is not defined
+```
+첫번째 줄에서 waffle을 선언하기 전에 콘솔을 찍었기 때문에 `ReferenceError: waffle is not defined` 라는 에러가 발생합니다.
+두번째 줄에서 waffle이라는 변수에 '맛있다'라는 값을 줬지만, 여전히 콘솔을 찍어보면 오류가 발생합니다. let이나 const로 변수를 초기화(2단계)하기 이전에 콘솔로 변수를 호출하면 TDZ(일시적 사각지대)에 빠져서 에러가 발생해욧..
+에러가 생기니까 이게 안 좋은것 같아 보이지만, 오히려 이 에러가 덕분에 어디가 틀렸는지 아니깐 코드를 보수하기 더 쉬워진다는 거!
+
+이번엔 `var`를 살펴봅시다.
+
+```
+console.log('첫번째 ' + waffle) // Reference Error. waffle is not defined
+```
+waffle을 `var`로 선언하기 이전에 콘솔에 waffle을 찍으면 당연 오류가 나겠죠?
+이번에는 콘솔을 지우지 않은 채로 바로 밑에다가 `var waffle='맛있다'`라고 선언을 해볼게요.
+```
+var waffle = '맛있다' // '첫번째 undefined'
+```
+그러면 '첫번째 undefined'라는 값이 찍힙니다. 원래대로라면 집주인이 나타나기도 전에 집주인 누구냐고 물은거니깐, 에러가 생겨야 하지만, `var`선언자는 1,2단계가 동시에 발생하고, 집주인이 정해지기 전에 undefined라는 값이 기본으로 들어가서 집주인 행세를 합니다.
+```
+console.log('두번째 ' + waffle) // '두번째 맛있다'
+```
+세번째 줄에 다시 콘솔을 찍어보면 waffle에 맛있다 라는 값이 입주하게 되는거죠!
+여기서 잠깐, 변수 선언도 전에 console을 찍은 두번째는 어찌하여 undefined라는 값이 나왔냐? 이건 `var`의 성질인 호이스팅 때문에 발생한 일인데요!
+
+* 호이스팅 : 변수선언을 제일 위로 끌어올리는 현상.
+
+이건 밑에서 잠깐 짚고 넘어갈거에요.
+여튼..`let`과 `const`가 최신 문법이니 최대한 이걸 씁시다. 얘네를 쓰면 var로 인한 오류가 줄어서 더 편해요~
+`var`는 최대한 사용을 지양합시다!
+![image.png](https://images.velog.io/post-images/dooreplay/163ebce0-b4c8-11e9-b862-790b02766d4c/image.png)
+늙은이는 안된다?? ㅎ 그 이유는 아래서 계속... 궁금하죠?ㅋㅋㅋㅋ
+
+
+## 변수의 유효범위
+
+### Scope(유효범위)
+변수에 접근할 수 있는 범위를 스코프라고 합니다~
+떡볶이로 예를 들어볼게요! 
+
+![image.png](https://images.velog.io/post-images/dooreplay/623fbb30-b4cd-11e9-b862-790b02766d4c/image.png)(또보겠지 떡볶이&버갈... 죠온맛탱)
+우리나라 사람들은 떡볶이 하면 다 알죠?? 근데 음... 저기 안드로메다쯤에 사는 외계인은 지구가 너무 멀기도 하고, 지구에 나라도 많으니깐 한국을 모를수도 있잖아요.
+걔한테 백날 떡볶이 맛있어! 너도 먹어봐! 라고 말해봤자 못 알아들어요. 떡볶이가 먹는건지, 입는건지도 모를거 아니에요
+외계인의 scope는 안드로메다라서 대한민국에서 선언한 떡볶이를 못알아듣는거죠~
+
+이러한 스코프에는 `어휘적범위`,`동적범위` 두 종류가 있는데 js는 어휘적 범위(Lexical Scope)를 선택했어요! 이건 코드가 작성될 때 유효범위가 정해지는 거고, 다이나믹은 다이나믹해서 프로그램 실행하면서 정해져요.. 사실 다이나믹 스코프를 겪어보지 못해서 저는 설명못해줘요 고수님들 블로그 참고하세요ㅠㅋㅋ
+
+여튼... 우리의 동적범위, Lexical은 `전역변수`와`지역변수`로 나뉩니다요.
+얘네들을 알아보기 전에 먼저 살펴볼 것. 바로바로 블럭!
+
+### block
+함수 예시를 쉽게 만들려다가... 창작의 고통에 빠져서 예전에 정리해놨던 함수를 긁어왔슴다... 하늘색 테두리만 봐주세요!!!!!!
+![image.png](https://images.velog.io/post-images/dooreplay/a5f7c4f0-b4cb-11e9-8e76-97bd002d6b4f/image.png)
+위의 그림에서 보면 함수 전체, for문 안쪽, if문 안쪽에 테두리가 쳐져있죠?
+{}요걸로 감싸진 영역! 이 공간들을 자바스크립트 세상에서는 block이라고 불러요. 
+(저는 사실 for문도 block에 해당하는걸 이번에 처음 알았어요! 와우!!)
+
+### 전역변수와 지역변수
+
+* 전역변수 : block 바깥에서 선언된 변수
+* 지역변수 : block 안쪽에서 선언된 변수
+전역변수의 경우 scope가 전체 코드가 될 것이고, 지역변수는 block 안쪽이에요
+예시를 통해 확인해볼까요~~
+
+```
+let outer = 123;
+
+{
+let outer = 456;
+let inner = 456;
+}
+
+console.log(outer) // 123
+console.log(inner) // Reference Error: inner is not defined
+```
+여기서 젤 첫번째 줄의 outer가 바로 전역변수에요. block 바깥에서 선언됐죠~
+콘솔에 outer를 찍어보면 123이 나옵니다. 왜냐?
+두번째 outer는 중괄호 안에서만 활동 가능한 지역변수기 때문이죠!!
+inner를 찍어보면 456이라는 숫자 대신, 에러가 뜨는 이유가 바로 그거에요~
+inner의 값을 콘솔에 나타내고 싶다면 저 중괄호 안에서 console.log를 찍어주세용
+
+## 하.지.만 var를 써보면 어떻게 될까요?
+```
+var outer = 123;
+
+{
+var outer = 456;
+var inner = 456;
+
+}
+
+console.log(outer) // 456
+console.log(inner) // 456
+```
+우리가 알고있는 이론과는 달리 둘 다 456이라는 값이 나오게 됩니다.
+이것은 호이스팅(hoisting : 끌어올림) 때문에 생기는 일인데요..
+
+
+
+이 부분은 나중에 클로저 정리할 때 다시 자세하게 쓰도록 하겠습니다!!
+(지금 할 게 넘넘 많아유 ㅠㅠ)
+
+>오늘의 교훈 : let이나 const 쓰는걸 생활화 하자.
+
+## To.고수님들...
+## 틀린 정보가 있다면 댓글로 의견 주세요!! 언제든지 적극 반영하겠습니다!
+
+### Reference
+- 도서 모던자바스크립트 입문
+- wecode
+- MDN

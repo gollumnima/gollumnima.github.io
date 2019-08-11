@@ -1,109 +1,270 @@
 ---
-title: "Johannes Gutenberg: The Birth of Movable Type"
-date: "2017-08-18T22:12:03.284Z"
+title: "wecode 1주차_2일 TIL_CSS(1)"
+date: "2019-07-30T22:12:03.284Z"
 template: "post"
 draft: false
-slug: "/posts/the-birth-of-movable-type/"
-category: "Typography"
+slug: "/posts/wecode1_2_TIL_css/"
+category: "HTML/CSS"
 tags:
-  - "Open source"
-  - "Gatsby"
-  - "Typography"
-description: "German inventor Johannes Gutenberg developed a method of movable type and used it to create one of the western world’s first major printed books, the “Forty–Two–Line” Bible."
+  - "wecode"
+  - "codingbootcamp"
+  - "css"
+  - "위코드"
+description: "위코드 2일차 CSS 정리 1탄. CSS란 Cascading Stytle Sheet의 줄임말로, 다이어리 꾸미기 하듯이 밋밋한 우리의 html을 아름답게 꾸며주는 친구칭구"
 ---
 
-German inventor Johannes Gutenberg developed a method of movable type and used it to create one of the western world’s first major printed books, the “Forty–Two–Line” Bible.
+# CSS(Cascading Stytle Sheet)
+Cascade를 찾아보니 폭포, 쏟아지는 것 뭐 이런 뜻이였는데 뜻에 너무 큰 의미를 두지 맙시다...
+우리가 html로 설계도를 짰으면 css로 색칠하고 예쁘게 꾸며주는 작업이 필요해용
 
-**Johannes Gensfleisch zur Laden zum Gutenberg** (c. 1398 – 1468) was a German blacksmith, goldsmith, printer, and publisher who introduced printing to Europe. His invention of mechanical movable type printing started the Printing Revolution and is widely regarded as the most important event of the modern period. It played a key role in the development of the Renaissance, Reformation, the Age of Enlightenment, and the Scientific revolution and laid the material basis for the modern knowledge-based economy and the spread of learning to the masses.
 
-<figure class="float-right" style="width: 240px">
-	<img src="/media/gutenberg.jpg" alt="Gutenberg">
-	<figcaption>Johannes Gutenberg</figcaption>
-</figure>
+### 1. CSS 적용방법
+* 인라인 스타일 :html 태그 안에 직접적으로 적용하는 방법쓰
 
-With his invention of the printing press, Gutenberg was the first European to use movable type printing, in around 1439. Among his many contributions to printing are: the invention of a process for mass-producing movable type; the use of oil-based ink; and the use of a wooden printing press similar to the agricultural screw presses of the period. His truly epochal invention was the combination of these elements into a practical system that allowed the mass production of printed books and was economically viable for printers and readers alike. Gutenberg's method for making type is traditionally considered to have included a type metal alloy and a hand mould for casting type. The alloy was a mixture of lead, tin, and antimony that melted at a relatively low temperature for faster and more economical casting, cast well, and created a durable type.
+예를 들어, span과 p에 색깔을 입혀볼게요(둘의 차이점을 보여주기 위해 하는 작업쓰)
+`    <span style="background-color : skyblue">곧있으면 점심시간 아싸리</span>`
+   ` <p style="background-color : skyblue">곧있으면 점심시간 아싸리</p>`
+   이렇게 치면 어떤 결과가 나올까요
+   
+![aslkjfd.PNG](https://images.velog.io/post-images/dooreplay/b87c11c0-b274-11e9-944d-395be74d9f35/aslkjfd.PNG)
 
-In Renaissance Europe, the arrival of mechanical movable type printing introduced the era of mass communication which permanently altered the structure of society. The relatively unrestricted circulation of information — including revolutionary ideas — transcended borders, captured the masses in the Reformation and threatened the power of political and religious authorities; the sharp increase in literacy broke the monopoly of the literate elite on education and learning and bolstered the emerging middle class. Across Europe, the increasing cultural self-awareness of its people led to the rise of proto-nationalism, accelerated by the flowering of the European vernacular languages to the detriment of Latin's status as lingua franca. In the 19th century, the replacement of the hand-operated Gutenberg-style press by steam-powered rotary presses allowed printing on an industrial scale, while Western-style printing was adopted all over the world, becoming practically the sole medium for modern bulk printing.
+인라인 스타일로 글자에 배경색을 입혀봤는데 `span`은 스판끼가 없어서 딱 글자만큼만, `p`는 그 문장 전체에 색을 다 입혀줬슴다
+저는 주로 CSS파일을 만들어 쓰는데, 인라인 스타일로 쓰면 적용이 제일 확실하게 된다네요!?
+점수제가 있더라고요 몰랐는데 와우...!!!! 고건 밑에서 다시 설명쓰..☆
 
-The use of movable type was a marked improvement on the handwritten manuscript, which was the existing method of book production in Europe, and upon woodblock printing, and revolutionized European book-making. Gutenberg's printing technology spread rapidly throughout Europe and later the world.
+* Style 태그 :말 그대로 html 내부에 `<style>` 태그 적용하는 것. 이렇게.
 
-His major work, the Gutenberg Bible (also known as the 42-line Bible), has been acclaimed for its high aesthetic and technical quality.
+```
+    <span>곧있으면 점심시간 아싸리</span>
 
-## Printing Press
+    <style>
+      span {
+        color: #408090;
+      }
+    </style>
+```
+(아까는 background-color를 입혀서 배경색을 채워줬는데.. 걍 컬러를 쓰면 글자색이 바뀝니당
+적용은 이렇게 뙇!)
+![캡처123454.PNG](https://images.velog.io/post-images/dooreplay/b4c9c4e0-b284-11e9-9878-3be49a983fcd/캡처123454.PNG)
 
-Around 1439, Gutenberg was involved in a financial misadventure making polished metal mirrors (which were believed to capture holy light from religious relics) for sale to pilgrims to Aachen: in 1439 the city was planning to exhibit its collection of relics from Emperor Charlemagne but the event was delayed by one year due to a severe flood and the capital already spent could not be repaid. When the question of satisfying the investors came up, Gutenberg is said to have promised to share a “secret”. It has been widely speculated that this secret may have been the idea of printing with movable type. Also around 1439–1440, the Dutch Laurens Janszoon Coster came up with the idea of printing. Legend has it that the idea came to him “like a ray of light”.
+* CSS 파일 만들기 ☞★강추방법! 젤 깔끔쓰~
+우리가 html 파일 만들어줬던것처럼 아무파일명.css 해서 css 파일을 하나 만들어줍시다
+CSS 파일을 html에 적용시키려면 ↖너와↘나의↗연결↘고리↗가 필요하겠죠?
 
-<figure class="float-left" style="width: 240px">
-	<img src="/media/printing-press.jpg" alt="Early Printing Press">
-	<figcaption>Early wooden printing press as depicted in 1568.</figcaption>
-</figure>
+html `<title>` 밑에다가 `<link href="index.css" rel="stylesheet" type="text/css" />` 이거 붙여줘용. 링크 흐르엪 옆에다가 만든 css 파일 이름를 써줍니다. 저 태그들은 다 무슨뜻이냐.. 봅시다
 
-Until at least 1444 he lived in Strasbourg, most likely in the St. Arbogast parish. It was in Strasbourg in 1440 that Gutenberg is said to have perfected and unveiled the secret of printing based on his research, mysteriously entitled Kunst und Aventur (art and enterprise). It is not clear what work he was engaged in, or whether some early trials with printing from movable type may have been conducted there. After this, there is a gap of four years in the record. In 1448, he was back in Mainz, where he took out a loan from his brother-in-law Arnold Gelthus, quite possibly for a printing press or related paraphernalia. By this date, Gutenberg may have been familiar with intaglio printing; it is claimed that he had worked on copper engravings with an artist known as the Master of Playing Cards.
+-link : css파일의 링크를 나타내는 태그.
+-href : css파일 경로를 나타내는 속성값
+-type : link 태그로 연결되는 파일이 뭐신지 알려줌. 항상 type 값은 'text/css'래용
+-rel : html과 css파일의 관계를 설명한다는데.. 얘도 항상 'stylesheet'에용
 
-By 1450, the press was in operation, and a German poem had been printed, possibly the first item to be printed there. Gutenberg was able to convince the wealthy moneylender Johann Fust for a loan of 800 guilders. Peter Schöffer, who became Fust’s son-in-law, also joined the enterprise. Schöffer had worked as a scribe in Paris and is believed to have designed some of the first typefaces.
+그럼 어케 쓰냐.. 작성법은 아래 2번에서 다시~~
 
-<figure>
-	<blockquote>
-		<p>All that has been written to me about that marvelous man seen at Frankfurt is true. I have not seen complete Bibles but only a number of quires of various books of the Bible. The script was very neat and legible, not at all difficult to follow—your grace would be able to read it without effort, and indeed without glasses.</p>
-		<footer>
-			<cite>—Future pope Pius II in a letter to Cardinal Carvajal, March 1455</cite>
-		</footer>
-	</blockquote>
-</figure>
+### 2. CSS 작성법
+* selector자리에 태그이름 쓰기 
+![lalala.PNG](https://images.velog.io/post-images/dooreplay/08fd24e0-b2c5-11e9-9a46-ed26791597e3/lalala.PNG)(사진출처 : WECODE Repl.it)
+그림을 새로 만들까 하다가... 시간 아끼려고 퍼온 사진쓰...☆ 이해해주시겠져..? 열심히 할게요ㅠㅠ
+```
+p {
+  color : yellow;
+  background-color : black; 
+```
+저기 selector 자리에 div나 span,p와 같은 태그 이름을 쓸 수 있어요.
+중괄호 열어서 왼쪽에는 주고 싶은 효과 쓰고, 오른쪽에는 그 효과에서 색을 뭘로 줄건지 등등 디테일한 값들을 넣어줍시다~ 
+객체랑 비슷하게 생겼지만 객체처럼 컴마 찍지 말고 땀방울을 찍어주세요. 열심히 CSS로 꾸미면 고생한만큼 땀이 날거 아니에요? ㅎ 기억하세요 땀방울;;;;^^;;;;;
 
-Gutenberg's workshop was set up at Hof Humbrecht, a property belonging to a distant relative. It is not clear when Gutenberg conceived the Bible project, but for this he borrowed another 800 guilders from Fust, and work commenced in 1452. At the same time, the press was also printing other, more lucrative texts (possibly Latin grammars). There is also some speculation that there may have been two presses, one for the pedestrian texts, and one for the Bible. One of the profit-making enterprises of the new press was the printing of thousands of indulgences for the church, documented from 1454–55.
+* selector자리에 id/class이름 쓰기
+id는 #, class는 . 쓰세요~ 
+```
+//chicken이라는 id값을 가진 애한테 글씨색 갈색으로 입혀주기
+#chicken{
+	color: brown;
+}
+```
+```
+//macaron이라는 class값을 가진 애들한테 글씨색 하늘색으로 입혀주기
+.macaron{
+	color: skyblue;
+}
+```
+class는 동명이인이 많으니깐, CSS파일에서 `macaron` 색깔을 하늘색으로 지정해주면, html 나라의 김마카롱, 박마카롱, 최마카롱 등등 오둥이잡둥이 class이름이 마카롱인 친구들은 다 하늘하늘해지겠져~ XD 한방에 작업할수 있으니까 개이득!
 
-In 1455 Gutenberg completed his 42-line Bible, known as the Gutenberg Bible. About 180 copies were printed, most on paper and some on vellum.
 
-## Court Case
 
-Some time in 1456, there was a dispute between Gutenberg and Fust, and Fust demanded his money back, accusing Gutenberg of misusing the funds. Meanwhile the expenses of the Bible project had proliferated, and Gutenberg's debt now exceeded 20,000 guilders. Fust sued at the archbishop's court. A November 1455 legal document records that there was a partnership for a "project of the books," the funds for which Gutenberg had used for other purposes, according to Fust. The court decided in favor of Fust, giving him control over the Bible printing workshop and half of all printed Bibles.
+---
+요 밑에서부턴 CSS를 전부 다 정리하려는 욕심을 접고... 제가 자주 헷갈리는 부분들과 중요해 보이는 애들만 정리하겠슴다
 
-Thus Gutenberg was effectively bankrupt, but it appears he retained (or re-started) a small printing shop, and participated in the printing of a Bible in the town of Bamberg around 1459, for which he seems at least to have supplied the type. But since his printed books never carry his name or a date, it is difficult to be certain, and there is consequently a considerable scholarly debate on this subject. It is also possible that the large Catholicon dictionary, 300 copies of 754 pages, printed in Mainz in 1460, may have been executed in his workshop.
+### ● margin과 padding : 여백의 미
+둘의 차이를 비교하기 전에 그림을 먼저 보고 가실게요.
+![image.png](https://images.velog.io/post-images/dooreplay/b518de60-b2c8-11e9-84d6-5f50704416a6/image.png)
 
-Meanwhile, the Fust–Schöffer shop was the first in Europe to bring out a book with the printer's name and date, the Mainz Psalter of August 1457, and while proudly proclaiming the mechanical process by which it had been produced, it made no mention of Gutenberg.
+>margin : 외부 여백 
+border : 테두리
+padding : 내부 여백
 
-## Later Life
+이렇게만 보면 쪼꼼 헷갈릴수도 있으니 코드와 그림을 같이 봅시다
 
-In 1462, during a conflict between two archbishops, Mainz was sacked by archbishop Adolph von Nassau, and Gutenberg was exiled. An old man by now, he moved to Eltville where he may have initiated and supervised a new printing press belonging to the brothers Bechtermünze.
+```
+.one {
+  background-color: yellow; //배경 색깔
+  text-align: center; // 가운데정렬
+  width: 200px; //가로너비
+}
 
-In January 1465, Gutenberg's achievements were recognized and he was given the title Hofmann (gentleman of the court) by von Nassau. This honor included a stipend, an annual court outfit, as well as 2,180 litres of grain and 2,000 litres of wine tax-free. It is believed he may have moved back to Mainz around this time, but this is not certain.
+.two {
+  background-color: paleturquoise;
+  text-align: center;
+  width: 200px;
+}
 
-***
+.three {
+  background-color: blue;
+  text-align: center;
+  width: 200px;
+}
+```
+![image.png](https://images.velog.io/post-images/dooreplay/42f857f0-b32e-11e9-94fc-df00913fc39f/image.png)
 
-Gutenberg died in 1468 and was buried in the Franciscan church at Mainz, his contributions largely unknown. This church and the cemetery were later destroyed, and Gutenberg's grave is now lost.
+요런 박스 3개가 있습니다. 이제 효과를 줘볼거에요
+```
+.one {
+  background-color: yellow;
+  text-align: center;
+  width: 200px;
+  margin: 50px 50px;
+}
 
-In 1504, he was mentioned as the inventor of typography in a book by Professor Ivo Wittig. It was not until 1567 that the first portrait of Gutenberg, almost certainly an imaginary reconstruction, appeared in Heinrich Pantaleon's biography of famous Germans.
+.two {
+  background-color: paleturquoise;
+  text-align: center;
+  width: 200px;
+}
 
-## Printing Method With Movable Type
+.three {
+  background-color: blue;
+  text-align: center;
+  width: 200px;
+  padding: 50px 50px;
+}
+```
+one에는 margin을 50px을, two는 가만히 냅뒀고, three에는 padding을 50px 줬어요
+과연 결과는????? 두구두구두구두구두구두~
+![image.png](https://images.velog.io/post-images/dooreplay/e919a3f0-b32e-11e9-a24a-5b58c5102a80/image.png)
+1번과 2번은 가로길이는 동일하지만, 1번이 멀찍이 떨어지게 됐어요.
+3번은 padding 값을 줘서 크기는 커졌지만, margin값이 없기 때문에 2번과 붙어있져~
 
-Gutenberg's early printing process, and what tests he may have made with movable type, are not known in great detail. His later Bibles were printed in such a way as to have required large quantities of type, some estimates suggesting as many as 100,000 individual sorts. Setting each page would take, perhaps, half a day, and considering all the work in loading the press, inking the type, pulling the impressions, hanging up the sheets, distributing the type, etc., it is thought that the Gutenberg–Fust shop might have employed as many as 25 craftsmen.
+★꿀팁 하나 더!
+`.two {
+  padding: 10px 20px;
+}
+`이거랑 `.two {
+  padding: 10px 20px 10px 20px;
+}`이거랑 같다는 사실!
+저는 이번에 처음 알았어요 ㅋㅋㅋㅋ 유레카~~
+젤 왼쪽부터 순서대로 위↑오른쪽→아래↓왼쪽← 시계방향으로 돌아간다고 생각하심 됩니다!!
 
-![Movable metal type, and composing stick, descended from Gutenberg's press. Photo by Willi Heidelbach. Licensed under CC BY 2.5](/media/movable-type.jpg)
+### box-sizing
+아까 세 개의 box를 보면 width는 동일하게 200px로 줬지만 padding값을 준 애는 혼자 너무 커진걸 확인할 수 있었죠! 아직 코딩 병아리라.. 예시가 적절한지는 사실 잘 모르겠어요 ㅠㅠ
+여튼.... 눈으로 보이는 width와 실제 width가 다를 경우, 우리는 이 사이즈를 맞춰줘야해욧
 
-*Movable metal type, and composing stick, descended from Gutenberg's press. Photo by Willi Heidelbach. Licensed under CC BY 2.5*
+각각의 selector에 `box-sizing: border-box;` 이 속성을 추가해줘도 좋지만...
+우리가 거대한 웹 페이지를 만들땐 일일히 추가하기 힘들겠져!!!!
+그래서 꼼수가 있슴다... 
+바로 이것이죠 `* {
+  box-sizing: border-box;
+}`
+이렇게 *하고 중괄호 열면 모든 태그에 적용할 수 있다네요! 꼭 알아두셔용 ~.~
+![image.png](https://images.velog.io/post-images/dooreplay/d6a8ee10-b333-11e9-b6c6-c5c426422d48/image.png)
+추가하면 이렇게 모든 박스의 크기가 같아집니다. 우와~~~!
 
-Gutenberg's technique of making movable type remains unclear. In the following decades, punches and copper matrices became standardized in the rapidly disseminating printing presses across Europe. Whether Gutenberg used this sophisticated technique or a somewhat primitive version has been the subject of considerable debate.
 
-In the standard process of making type, a hard metal punch (made by punchcutting, with the letter carved back to front) is hammered into a softer copper bar, creating a matrix. This is then placed into a hand-held mould and a piece of type, or "sort", is cast by filling the mould with molten type-metal; this cools almost at once, and the resulting piece of type can be removed from the mould. The matrix can be reused to create hundreds, or thousands, of identical sorts so that the same character appearing anywhere within the book will appear very uniform, giving rise, over time, to the development of distinct styles of typefaces or fonts. After casting, the sorts are arranged into type-cases, and used to make up pages which are inked and printed, a procedure which can be repeated hundreds, or thousands, of times. The sorts can be reused in any combination, earning the process the name of “movable type”.
+### 상속과 Grouping
+* 상속
+js에서 prototype에 상속이라는 성질이 있듯이, CSS에도 있습니다!
+부모가 가진 스타일을 자식이 물려받는거죠...예시로 확인해볼게요~~
 
-The invention of the making of types with punch, matrix and mold has been widely attributed to Gutenberg. However, recent evidence suggests that Gutenberg's process was somewhat different. If he used the punch and matrix approach, all his letters should have been nearly identical, with some variations due to miscasting and inking. However, the type used in Gutenberg's earliest work shows other variations.
+```
+    <div class="parent">
+      <div class="one">난 자식</div>
+      <div class="two">나도 자식</div>
+    </div>
+    <p class="alone">난 혼자 ㅠㅠ</p>
+```
+body 태그 안에 이런 애들이 있어요. CSS 값들은 아래와 같이 줘볼게용
+```
+.parent {
+  background-color: blueviolet;
+  width: 200px;
+}
 
-<figure>
-	<blockquote>
-		<p>It is a press, certainly, but a press from which shall flow in inexhaustible streams… Through it, god will spread his word.</p>
-		<footer>
-			<cite>—Johannes Gutenberg</cite>
-		</footer>
-	</blockquote>
-</figure>
+.one {
+}
 
-In 2001, the physicist Blaise Agüera y Arcas and Princeton librarian Paul Needham, used digital scans of a Papal bull in the Scheide Library, Princeton, to carefully compare the same letters (types) appearing in different parts of the printed text. The irregularities in Gutenberg's type, particularly in simple characters such as the hyphen, suggested that the variations could not have come from either ink smear or from wear and damage on the pieces of metal on the types themselves. While some identical types are clearly used on other pages, other variations, subjected to detailed image analysis, suggested that they could not have been produced from the same matrix. Transmitted light pictures of the page also appeared to reveal substructures in the type that could not arise from traditional punchcutting techniques. They hypothesized that the method may have involved impressing simple shapes to create alphabets in “cuneiform” style in a matrix made of some soft material, perhaps sand. Casting the type would destroy the mould, and the matrix would need to be recreated to make each additional sort. This could explain the variations in the type, as well as the substructures observed in the printed images.
+.two {
+}
 
-Thus, they feel that “the decisive factor for the birth of typography”, the use of reusable moulds for casting type, might have been a more progressive process than was previously thought. They suggest that the additional step of using the punch to create a mould that could be reused many times was not taken until twenty years later, in the 1470s. Others have not accepted some or all of their suggestions, and have interpreted the evidence in other ways, and the truth of the matter remains very uncertain.
+.alone {
+  background-color: gainsboro;
+  width: 400px;
+}
+```
+자식들한텐 어떠한 값도 주지 않았고, one과 two를 감싸는 parent라는 class를 가진 div에만 값을 줘봤어요! class가 alone인 div에도 다른 값을 설정해줬구요
+![image.png](https://images.velog.io/post-images/dooreplay/03ee5e30-b336-11e9-a5b8-a90d45f2a15e/image.png)
+결과는 이렇게 뙇! 칫솔 모양이네요. 다들 양치 열심히 하세요! 치과 무섭잖아요
+근데 매번 태그마다 값을 일일히 주기 귀찮잖아여.. 값을 다 통일하고 싶다! 그렇땐
 
-A 1568 history by Hadrianus Junius of Holland claims that the basic idea of the movable type came to Gutenberg from Laurens Janszoon Coster via Fust, who was apprenticed to Coster in the 1430s and may have brought some of his equipment from Haarlem to Mainz. While Coster appears to have experimented with moulds and castable metal type, there is no evidence that he had actually printed anything with this technology. He was an inventor and a goldsmith. However, there is one indirect supporter of the claim that Coster might be the inventor. The author of the Cologne Chronicle of 1499 quotes Ulrich Zell, the first printer of Cologne, that printing was performed in Mainz in 1450, but that some type of printing of lower quality had previously occurred in the Netherlands. However, the chronicle does not mention the name of Coster, while it actually credits Gutenberg as the "first inventor of printing" in the very same passage (fol. 312). The first securely dated book by Dutch printers is from 1471, and the Coster connection is today regarded as a mere legend.
+* Grouping
+그룹으로 묶어버리는 방법이 있어요. 이렇게
+`.parent, p {
+  background-color: blueviolet;
+  width: 200px;
+}` 이렇게 parent div와 p 태그를 ,로 묶어주면
+![image.png](https://images.velog.io/post-images/dooreplay/7872dbf0-b336-11e9-a63f-3d4fbc7abc6c/image.png)
+CSS값이 이렇게 동일하게 먹힙니다! 오오~~
 
-The 19th century printer and typefounder Fournier Le Jeune suggested that Gutenberg might not have been using type cast with a reusable matrix, but possibly wooden types that were carved individually. A similar suggestion was made by Nash in 2004. This remains possible, albeit entirely unproven.
+### CSS selector의 우선순위
+CSS를 작성하는 법 세 가지에 대해서 위에서 다뤄봤는데요, 각 방법마다 일정한 점수가 부여되서 그 점수가 높은 애들이 좀 더 권력자가 될 수 있어요!
 
-It has also been questioned whether Gutenberg used movable types at all. In 2004, Italian professor Bruno Fabbiani claimed that examination of the 42-line Bible revealed an overlapping of letters, suggesting that Gutenberg did not in fact use movable type (individual cast characters) but rather used whole plates made from a system somewhat like a modern typewriter, whereby the letters were stamped successively into the plate and then printed. However, most specialists regard the occasional overlapping of type as caused by paper movement over pieces of type of slightly unequal height.
+>인라인 : 1000점
+id : 100점
+class:  10점
+tag : 1점
+
+와우..... 저는 인라인 방법이 태그를 더럽힌다고(?) 생각해서 젤 점수가 낮을줄 알았는데 반전쓰..!
+근데 우리가 수학자도 아니고.. 점수를 일일히 계산하기보단 그냥 대충 이렇다! 하고 알고있음 좋을 것 같습니다~
+지난번에 말했던 것처럼 id를 너무 남발하지만 않는다면 점수는 대충 비슷해질것 같아요!
+
+예시를 안 보고 넘어가면 섭하겠죠? 먼저 CSS파일엔 이렇게
+```
+.parent {
+  background-color: blueviolet;
+  width: 200px;
+  font-size: 30px;
+}
+
+.alone {
+  background-color: gainsboro;
+  width: 400px;
+  font-size: 30px;
+}
+
+```
+parent 클래스와 alone 클래스에 모두 font-size 30px이라는 값을 준 상태.
+인라인의 권력을 시험해보기 위해 html 태그도 함 볼게요
+```
+    <div class="parent">
+      <div class="one">난 자식</div>
+      <div class="two">나도 자식</div>
+    </div>
+    <p class="alone" style="font-size: 100px;">난 혼자 ㅠㅠ</p>
+```
+html바디를 살펴보시면 alone 클래스를 가진 p에 인라인으로 font-size 100px를 줬어요
+결과는 과연!!! 두구두구두구두굳구ㅜ둑두구두구~~
+![image.png](https://images.velog.io/post-images/dooreplay/168e5d40-b338-11e9-a63f-3d4fbc7abc6c/image.png)
+분명 CSS에서 같은 글씨 크기로 설정했지만, 100px의 효과를 준 인라인방식이 더 우세한걸 알수 있습니다! 라인을 잘 타라는 말이 괜히 있는게 아니였네요... 무서운 세상!
+
+
+---
+
+포스팅이 너무 길어지는 것 같아 이번판은 여기서 끝! 안그래도 말많은 블로그라 여기서 줄여용
+아직도 위코드 1일차 후기가 안 끝났다니.... 큰일쓰...☆

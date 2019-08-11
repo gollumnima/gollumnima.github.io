@@ -1,17 +1,17 @@
 ---
-title: wecode 1주차-1 TIL_HTML
+title: "wecode 1주차_1일 TIL_HTML 구성과 tag"
 date: "2019-07-29T22:40:32.169Z"
-template: "post"
+template: "post"  
 draft: false
-slug: "/posts/wecode_1-1_til_html/"
+slug: "/posts/wecode1_1_TIL_html/"
 category: "HTML/CSS"
 tags:
   - "wecode"
   - "codingbootcamp"
   - "html"
+  - "위코드"
 description: "위코드 1일차 HTML. Hyper Text Markup Language의 줄임말로, 내가 쓰고 있는 방식인 Markdown과는 반대. 나중에 이 부분에 대해서도 한 차례 정리해볼 생각이다!"
 ---
-
 <!-- - [html 구조 알아보기](#the-first-transition)
 - [html 태그의 종류](#the-digital-age)
 - [id와 class](#loss-of-humanity-through-transitions) -->
