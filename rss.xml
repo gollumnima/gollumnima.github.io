@@ -1,4 +1,61 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 18 Aug 2019 12:25:32 GMT</lastBuildDate><item><title><![CDATA[wecode 3주차_4일 TIL_리액트를 이용해 미니트위터 만들기]]></title><description><![CDATA[위코드 18일차. 지난번 개념 정리에 이어.. 리액트로 미니트위터를 만들면서 맞딱뜨린 에러와 오해에 대해 정리해보았다!]]></description><link>https://gollumnima.github.io//posts/wecode3_4TIL_react</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode3_4TIL_react</guid><pubDate>Thu, 15 Aug 2019 09:40:32 GMT</pubDate><content:encoded>&lt;p&gt;눈으로 보고 치는 눈코딩과 직접 치는 코드가 정말 정말 다르다는 것을 또 다시 느낀 한 주였습니다… 리액트 때문에 계속 멘붕이였죠!
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 18 Aug 2019 13:18:34 GMT</lastBuildDate><item><title><![CDATA[wecode 3주차_5일 TIL_React의 친구 ESLint]]></title><description><![CDATA[위코드 19일차. 리액트로 보다 깔끔한 코드를 작성하기 위해 Eslint가 무엇인지, 어떻게 설치하는지 알아보았다!]]></description><link>https://gollumnima.github.io//posts/wecode3_5TIL_eslint</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode3_5TIL_eslint</guid><pubDate>Fri, 16 Aug 2019 23:45:32 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/1e892810-c1b4-11e9-a7d0-358f0b555fd4/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;React와 뗄레와 뗄 수 없는 Eslint에 대해 알아봅시다.&lt;/p&gt;
+&lt;h2 id=&quot;eslint란&quot;&gt;&lt;a href=&quot;#eslint%EB%9E%80&quot; aria-label=&quot;eslint란 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;ESLint란?&lt;/h2&gt;
+&lt;p&gt;위키백과에 따르면 lint 혹은 linter는 프로그래밍 내부의 에러나 버그를 잡아내는 툴을 말한다고 하네요. 영어사전에 찾아보니 lint가 보푸라기라는 뜻이 있던데! 보풀 하나 없이 깨끗한 코드를 만들어내겠다!! 저는 이런 의미로 받아들였습니다.ㅋㅋ&lt;/p&gt;
+&lt;p&gt;사실 조사하기 전까지 ESLint가 Prettier의 React 버전이라고 생각했는데.. 완전 잘못 짚었네요 ㅠㅠ (조사해보라고 숙제 내주신 위코드 2기 권진세님 감사합니다~!)&lt;/p&gt;
+&lt;p&gt;여튼 기본적으로 EsLint는 코드를 검사해서 잘못된 부분들을 짚어주기도 하고, Prettier와 함께 사용하면 EsLint 규칙에 맞게 코드를 쫙~ 정리해줍니다!&lt;/p&gt;
+&lt;p&gt;ESLint의 규칙은 기본적으로 React에 내장되어 있다는데.. 우리가 정해진 규칙에 맞게 코드를 쓰고 있는건지, 추가적인 에러가 또 있는지는 확인을 못한다..
+그래서 CRA에 직접 ESLint를 설치해줘야 합니다~
+(설치 방법은 yeri-kim님의 블로그를 참고했습니다. 세상에서 젤 정확한 설치방법이니까 출처의 첫 줄 블로그로 이동 고고!)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/08865220-c1b6-11e9-89bf-bf019f725a6c/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;ctrl+shift+x&lt;/code&gt; 를 눌러서 VScode 내부에서 ESLint 확장팩을 설치해주세요~&lt;/li&gt;
+&lt;li&gt;현재 내 프로젝트의 root파일 안에 &lt;code class=&quot;language-text&quot;&gt;.eslintrc.json&lt;/code&gt; 파일 추가 후,&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;{
+  &amp;quot;extends&amp;quot;: &amp;quot;react-app&amp;quot;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위의 내용을 써줍니다!&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;Prettier 깔기. 저는 이미 설치해서 패쓰~&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;npm i prettier eslint-config-prettier eslint-plugin-prettier -D&lt;/code&gt; 이 작업을 통해 prettier와 eslint를 연결해줍니다.&lt;/li&gt;
+&lt;li&gt;2번의 코드를 업데이트 해주세요~&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;{
+  &amp;quot;extends&amp;quot;: [&amp;quot;react-app&amp;quot;, &amp;quot;plugin:prettier/recommended&amp;quot;]
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;—&gt; 저는 일단 여기까지 해보고 있습니다.. 지난번에 ESLint 깔다가 localhost가 안 켜지는 불상사가 있었기 때문에.. 별로 안 중요한 CRA에 ESLint를 다시 깔아보고 있습니다!&lt;/p&gt;
+&lt;p&gt;—&gt; 휴… 다행히 아무 문제 없어서 다시 6번부터 이어가겠습니다!&lt;/p&gt;
+&lt;ol start=&quot;6&quot;&gt;
+&lt;li&gt;VScode의 setting에 들어가서 우측 상단 {}를 눌러주세요. 아래 캡쳐에서 종이에 화살표 있는 아이콘을 눌러주세요~
+&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/587b2740-c1b8-11e9-a7d0-358f0b555fd4/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/li&gt;
+&lt;li&gt;원래 있던 객체 파일안에 아래의 프로퍼티를 추가해주세요! 객체니까 쉼표에 유의해주세요~ 저는 이날 너무 멘붕이라 그런게 1도 안 보였어요 ㅠㅠ&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;quot;editor.formatOnSave&amp;quot;: true,
+&amp;quot;[javascript]&amp;quot;: {
+  &amp;quot;editor.formatOnSave&amp;quot;: false
+},
+&amp;quot;eslint.autoFixOnSave&amp;quot;: true,
+&amp;quot;eslint.alwaysShowStatus&amp;quot;: true,
+&amp;quot;prettier.disableLanguages&amp;quot;: [&amp;quot;js&amp;quot;],
+&amp;quot;files.autoSave&amp;quot;: &amp;quot;onFocusChange&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;8&quot;&gt;
+&lt;li&gt;끝~ 여태 썼던 코드를 확인해보면 희한한 모양으로 바뀌어 있을거에요.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/c581eb80-c1b8-11e9-a7d0-358f0b555fd4/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;이런식으로 뭔가 코드가 얇아진 느낌적인 느낌…? 아직 이 스타일이 넘 어색하고 이상하지만.. 대세를 따라서 Airbnb 스타일로 쓰면 모두에게 읽기 편한 코드가 되겠죠?&lt;/p&gt;
+&lt;h2 id=&quot;에러에-대처하는-자세&quot;&gt;&lt;a href=&quot;#%EC%97%90%EB%9F%AC%EC%97%90-%EB%8C%80%EC%B2%98%ED%95%98%EB%8A%94-%EC%9E%90%EC%84%B8&quot; aria-label=&quot;에러에 대처하는 자세 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;에러에 대처하는 자세..&lt;/h2&gt;
+&lt;p&gt;stackoverflow 누가 만든 사이튼지 참.. 솔루션 맛집이네요!
+어제 참 이런저런 에러가 떠서 멘붕이였는데.. stackoverflow에서 다 알아냈어요.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/082788f0-c1b9-11e9-a7d0-358f0b555fd4/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;진짜 이런 저런 방법을 다 시도해봤어요..
+package.json을 삭제 해보고, node module도 삭제해보고, npm과 yarn도 삭제하고 재설치하고… 삽질 오브 삽질을 했습니다!&lt;/p&gt;
+&lt;h3 id=&quot;eslint를-설치하는-다양한-방법이-있는데-제발-꼭-하나만-보고-쓰세요&quot;&gt;&lt;a href=&quot;#eslint%EB%A5%BC-%EC%84%A4%EC%B9%98%ED%95%98%EB%8A%94-%EB%8B%A4%EC%96%91%ED%95%9C-%EB%B0%A9%EB%B2%95%EC%9D%B4-%EC%9E%88%EB%8A%94%EB%8D%B0-%EC%A0%9C%EB%B0%9C-%EA%BC%AD-%ED%95%98%EB%82%98%EB%A7%8C-%EB%B3%B4%EA%B3%A0-%EC%93%B0%EC%84%B8%EC%9A%94&quot; aria-label=&quot;eslint를 설치하는 다양한 방법이 있는데 제발 꼭 하나만 보고 쓰세요 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;ESLint를 설치하는 다양한 방법이 있는데.. 제발! 꼭! 하나만 보고 쓰세요!!!!&lt;/h3&gt;
+&lt;p&gt;제가 하나의 포스팅 대충 보고 안되니까 다른 포스팅도 보다가 망한 케이스입니다.
+하나의 포스팅을 정독 또 정독 하세요!
+그리고 -g는 갖다 버리세요!! global로 깔면 오류가 진짜 진짜 잘 나는것 같아요.
+제가 우분투 유저라서 그런줄 알았는데 다 그냥 제 탓입니다 ㅋㅋㅋㅋㅋㅋㅋ&lt;/p&gt;
+&lt;p&gt;여튼.. 다음번에 기회가 된다면 sass에 대해서도 쓰고 싶네요~!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[wecode 3주차_4일 TIL_리액트를 이용해 미니트위터 만들기]]></title><description><![CDATA[위코드 18일차. 지난번 개념 정리에 이어.. 리액트로 미니트위터를 만들면서 맞딱뜨린 에러와 오해에 대해 정리해보았다!]]></description><link>https://gollumnima.github.io//posts/wecode3_4TIL_react</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode3_4TIL_react</guid><pubDate>Thu, 15 Aug 2019 09:40:32 GMT</pubDate><content:encoded>&lt;p&gt;눈으로 보고 치는 눈코딩과 직접 치는 코드가 정말 정말 다르다는 것을 또 다시 느낀 한 주였습니다… 리액트 때문에 계속 멘붕이였죠!
 하지만 곧 익숙해질거라 믿으며.. 저의 삽질 과정을 올려봅니다!&lt;/p&gt;
 &lt;h2 id=&quot;오류가-왜-이리-많이-생기니&quot;&gt;&lt;a href=&quot;#%EC%98%A4%EB%A5%98%EA%B0%80-%EC%99%9C-%EC%9D%B4%EB%A6%AC-%EB%A7%8E%EC%9D%B4-%EC%83%9D%EA%B8%B0%EB%8B%88&quot; aria-label=&quot;오류가 왜 이리 많이 생기니 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;오류가 왜 이리 많이 생기니?&lt;/h2&gt;
 &lt;ul&gt;

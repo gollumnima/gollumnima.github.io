@@ -5,11 +5,13 @@
 <url> <loc>https://gollumnima.github.io/pages/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/posts/wecode1_5_TIL_js/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/posts/wecode1_4_TIL_js/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gollumnima.github.io/posts/wecode1_3_TIL_css/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/posts/wecode1_2_TIL_css/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/posts/wecode1_1_TIL_html/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gollumnima.github.io/posts/wecode1_7_TIL_js/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gollumnima.github.io/posts/wecode2_1_TIL_js/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/posts/wecode1_6_TIL_html/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/posts/wecode2_2_TIL_css/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://gollumnima.github.io/posts/wecode1_7_TIL_js/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/posts/wecode2_3_TIL_js/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/posts/wecode2_4_TIL_js/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/posts/wecode2_5_TIL_js/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -19,8 +21,7 @@
 <url> <loc>https://gollumnima.github.io/posts/wecode3_2_TIL_react/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/posts/wecode3_3_TIL_recursion/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/posts/wecode3_4TIL_react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://gollumnima.github.io/posts/wecode2_1_TIL_js/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://gollumnima.github.io/posts/wecode1_3_TIL_css/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gollumnima.github.io/posts/wecode3_5TIL_eslint</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/tag/codingbootcamp</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/tag/codingbootcamp/page/1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/tag/codingbootcamp/page/2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
