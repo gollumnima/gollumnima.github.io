@@ -1,4 +1,111 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sat, 17 Aug 2019 12:15:30 GMT</lastBuildDate><item><title><![CDATA[wecode 3주차_1일 TIL_Linux의 기초를 알아보자]]></title><description><![CDATA[위코드 15일차. 송은우님의 강연을 바탕으로 개발자에게 있어서 뗄래야 뗄 수 없는 리눅스의 기초개념에 대해 정리해보았다.]]></description><link>https://gollumnima.github.io//posts/wecode3_1_TIL_linux/</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode3_1_TIL_linux/</guid><pubDate>Mon, 12 Aug 2019 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/4a5a69a0-be93-11e9-9e21-fd5890a496e3/image.png&quot; alt=&quot;image.png&quot;&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 18 Aug 2019 01:09:29 GMT</lastBuildDate><item><title><![CDATA[wecode 3주차_2일 TIL_React의 기초개념을 알아보자]]></title><description><![CDATA[위코드 16일차. 프론트엔드 개발자로 성장하는 첫 걸음마로 리액트의 기초개념에 대해 정리해보았다!]]></description><link>https://gollumnima.github.io//posts/wecode3_2_TIL_react/</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode3_2_TIL_react/</guid><pubDate>Tue, 13 Aug 2019 10:40:32 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/51e4aa80-bdc8-11e9-a959-a5309cf0f824/books-16557831920.jpg&quot; alt=&quot;books-1655783_1920.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;리액트는 자바스크립트 라이브러리 중의 하나이다. 그렇다면 라이브러리란 뭘까?&lt;/p&gt;
+&lt;h2 id=&quot;library&quot;&gt;&lt;a href=&quot;#library&quot; aria-label=&quot;library permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Library&lt;/h2&gt;
+&lt;p&gt;라이브러리란 유용한 함수 메소드의 꾸러미라고 생각하면 될 것 같다. 라이브러리를 통해 코드 쓰는 시간의 약 20% 정도를 줄일수 있다고 한다 와우! 예전에 개발자들이 자주 쓰던 jQuery또한 라이브러리 중의 하나이다!&lt;/p&gt;
+&lt;h2 id=&quot;react의-폴더-구성&quot;&gt;&lt;a href=&quot;#react%EC%9D%98-%ED%8F%B4%EB%8D%94-%EA%B5%AC%EC%84%B1&quot; aria-label=&quot;react의 폴더 구성 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;React의 폴더 구성&lt;/h2&gt;
+&lt;p&gt;글만 쓰는게 싫어서 캡쳐한 후 설명을 달았습니다..ㅎㅎ;;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/aa9d4e60-bf22-11e9-93f4-9b2a14d0ffa2/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;create-react-app 디렉토리이름&lt;/code&gt; 명령어를 입력하고 VS코드를 열어보면 이러한 파일들이 있을건데요, 우리는 여기서 src폴더에 Component와 js,css 파일들을 만들고 그것을 통해 웹페이지를 구현할 거에요!&lt;/p&gt;
+&lt;p&gt;그렇다면 리액트에는 어떠한 요소들이 있을지 하나하나 살펴봅시다~&lt;/p&gt;
+&lt;h2 id=&quot;jsxjavascript-xml&quot;&gt;&lt;a href=&quot;#jsxjavascript-xml&quot; aria-label=&quot;jsxjavascript xml permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;JSX(Javascript XML)&lt;/h2&gt;
+&lt;p&gt;html문법을 javascript파일 안에다가 쓴 것. 이것은 js도 html도 아니기 때문에 React 내에서 이걸 페이지내에서 읽히도록 Compile 해주는 과정이 들어갑니다~&lt;/p&gt;
+&lt;p&gt;기억해야 할 것들…&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;중첩된 요소는 소괄호 닫아주기.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const good = (
+&amp;lt;div&amp;gt;
+    &amp;lt;p&amp;gt;hi&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;
+);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;하나의 태그로 시작쓰.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const wrong = (
+&amp;lt;p&amp;gt;list1&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;list2&amp;lt;/p&amp;gt;
+);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 쓰면 안됩니다! 제대로 쓰려면 저 두 p태그들을 하나로 묶어주는 div가 필요합니다~&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;class나 id 말고 className 쓰기
+&lt;code class=&quot;language-text&quot;&gt;&amp;lt;p className=&amp;quot;sleepy&amp;quot;&amp;gt;넘나 졸려요&amp;lt;/p&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;주석처리 할 때 태그 사이는 &lt;code class=&quot;language-text&quot;&gt;//&lt;/code&gt;, 바깥은 &lt;code class=&quot;language-text&quot;&gt;{/**/}&lt;/code&gt; 이렇게! 이건 어차피 &lt;code class=&quot;language-text&quot;&gt;ctrl+shift&lt;/code&gt; 하면 자동으로 입력 되니까 일단 알아만 두세요~&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;component&quot;&gt;&lt;a href=&quot;#component&quot; aria-label=&quot;component permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Component&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/c41eeda0-c14b-11e9-8c06-7968c705c2e5/hands-6004971920.jpg&quot; alt=&quot;hands-600497_1920.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;컴포넌트는 요소라는 뜻인데, 나라라고 생각하면 됩니다! 여러 나라들의 협력을 통해서 지구(Web page)에 메시지를 띄워서 외계인(user)한테 보내는거라고 생각해봅시다 ㅎ&lt;/p&gt;
+&lt;p&gt;근데 중요한 점은 단순히 여러개가 합쳐져서 하나를 만드는 것이 아닌, 동일한 것이 있다면 비효율적인 작업을 줄여주는 재사용 가능한 함수에요. 마치 js에서의 class처럼~&lt;/p&gt;
+&lt;p&gt;컴포넌트는 함수형과 클래스형 둘로 나뉘는데, 그 전에 컴포넌트를 한번 파헤쳐봅시다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/5bb55830-c14b-11e9-bbdb-150d07ce600c/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;컴포넌트파일이 같은 폴더에 있다고 해도 각각의 파일은 아예 다른 나라라고 생각하면 됩니다. 국경을 넘으려면 수출과 수입을 해야 해요! 자세한 설명은 그림을 참고하시면 됩니다. 이렇게 여러 나라의 협력을 통해서…&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/018d1810-c14c-11e9-bbdb-150d07ce600c/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;이렇게 외계인에게 보낼 메시지를 띄울 수 있는거죠! 자 그럼 함수형과 클래스형 컴포넌트에 대해 간단히 짚고 넘어갑시다.&lt;/p&gt;
+&lt;h4 id=&quot;함수형&quot;&gt;&lt;a href=&quot;#%ED%95%A8%EC%88%98%ED%98%95&quot; aria-label=&quot;함수형 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;함수형&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const Hungry = (props) =&amp;gt; {
+  return &amp;lt;h1&amp;gt;I am hungry. Please give me your {props.name} &amp;lt;/h1&amp;gt;;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 id=&quot;클래스형&quot;&gt;&lt;a href=&quot;#%ED%81%B4%EB%9E%98%EC%8A%A4%ED%98%95&quot; aria-label=&quot;클래스형 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;클래스형&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;class Hungry extends React.Component {
+	render() {
+  		return &amp;lt;h1&amp;gt;I am hungry. Please give me your {props.name} &amp;lt;/h1&amp;gt;;
+    }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;여기서 공통점이 보이시나요? 네 맞습니다! component는 늘 대문자로 써야해요.
+차이점을 볼까요? 함수형과 달리 클래스형은 &lt;code class=&quot;language-text&quot;&gt;return&lt;/code&gt; 전에 &lt;code class=&quot;language-text&quot;&gt;render()&lt;/code&gt;를 꼭 써야합니다. 그렇다면 props라는건 뭘까요?!&lt;/p&gt;
+&lt;h2 id=&quot;props&quot;&gt;&lt;a href=&quot;#props&quot; aria-label=&quot;props permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;props&lt;/h2&gt;
+&lt;p&gt;props는 properties의 줄임말로 js에서의 객체와 똑같은 의미인데요, 부모 컴포넌트에서 자식 컴포넌트로 넘겨주는 값입니다. 함수형 컴포넌트에선 props가 인자로 들어갑니다. 위에서 봤던 hungry함수를 받아서 쓰는 컴포넌트가 있으면 결과값이 나오겠죠? 봅시다!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import React, { Component } from &amp;#39;react&amp;#39;;
+import Hungry from &amp;#39;./Hungry&amp;#39;;
+
+class Food extends Component {
+  render() {
+    return (
+      &amp;lt;Hungry name=&amp;quot;chicken&amp;quot; /&amp;gt;
+    );
+  }
+}
+
+export default Food;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Hungry컴포넌트와 Food컴포넌트가 합쳐져서 &lt;code class=&quot;language-text&quot;&gt;I am hungry. Please give me your chicken&lt;/code&gt; 라는 메시지가 완성됩니다. 물론 외계인에게 보여주려면 ReactDOM.render 함수도 따로 써줘야하겠죠~?
+props말고 state라는 값도 있는데 그건 class 내부에서만 쓸 수 있는 성질이에요.&lt;/p&gt;
+&lt;h2 id=&quot;state&quot;&gt;&lt;a href=&quot;#state&quot; aria-label=&quot;state permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;state&lt;/h2&gt;
+&lt;p&gt;말 그대로 컴포넌트의 상태를 말합니다. props와 마찬가지로 객체에요! 이걸 사용하려면 constructor 내부에 꼭 &lt;code class=&quot;language-text&quot;&gt;this.state = {}&lt;/code&gt;이런 식으로 초기화를 해줘야합니다~ 그러고 나서 함수안에 &lt;code class=&quot;language-text&quot;&gt;this.setState()&lt;/code&gt;라는 식을 통해 state의 상태값을 바꿔줄 수 있어요. 예리킴님의 블로그에서 퍼온 아래의 코드를 함께 살펴봅시다~&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;class Button extends React.Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      click: false
+    }
+  }
+
+  render() {
+    return (
+      &amp;lt;div
+        className=&amp;quot;btn&amp;quot;
+        onClick={()=&amp;gt;{this.setState({ click: !this.state.click })}}
+      &amp;gt;
+        {this.state.click ? &amp;#39;좋아요&amp;#39; : &amp;#39;싫어요&amp;#39;}
+      &amp;lt;/div&amp;gt;
+    );
+  }
+}
+
+ReactDOM.render(
+  &amp;lt;Button /&amp;gt;,
+  document.getElementById(&amp;#39;root&amp;#39;)
+);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;클릭을 할 때마다 좋아요 혹은 싫어요가 번갈아 가면서 나오는 코드입니다.&lt;br&gt;
+먼저 생성자 함수 내부에서 state의 click값이 false로 초기화 된 상태인데요! onClick함수 내의 setState함수에서 click이라는 state값이 &lt;code class=&quot;language-text&quot;&gt;!&lt;/code&gt; 부정되었기 때문에 클릭을 한번 하면 true가 되겠죠? 그 다음엔 삼항연산자에서 true면 좋아요, false면 싫어요가 나오게 됩니다. onClick 함수 내부의 &lt;code class=&quot;language-text&quot;&gt;!&lt;/code&gt; 때문에 클릭을 할 때마다 true, false값이 계속해서 바뀌게 되는거죠~&lt;/p&gt;
+&lt;p&gt;분명 이렇게 이해하면 잘 알겠는데, 왜 항상 활용은 어려울까요.. ㅠㅠ
+지난번에 만든 미니트위터를 Component 형식으로 쪼개는 것부터 props와 state를 이용해 데이터 값을 바꿔주는데 애를 먹고있네요 큽… 하다 보면 늘겠죠????????&lt;/p&gt;
+&lt;h2 id=&quot;reference&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://yeri-kim.github.io/posts/react-jsx/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://yeri-kim.github.io/posts/react-jsx/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.sitepoint.com/top-javascript-frameworks-libraries-tools-use/#libraries&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.sitepoint.com/top-javascript-frameworks-libraries-tools-use/#libraries&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://velopert.com/3626&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://velopert.com/3626&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[wecode 3주차_1일 TIL_Linux의 기초를 알아보자]]></title><description><![CDATA[위코드 15일차. 송은우님의 강연을 바탕으로 개발자에게 있어서 뗄래야 뗄 수 없는 리눅스의 기초개념에 대해 정리해보았다.]]></description><link>https://gollumnima.github.io//posts/wecode3_1_TIL_linux/</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode3_1_TIL_linux/</guid><pubDate>Mon, 12 Aug 2019 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/4a5a69a0-be93-11e9-9e21-fd5890a496e3/image.png&quot; alt=&quot;image.png&quot;&gt;
 까만 터미널이 무서워서 색깔을 입혀본 나의 터미널쓰.. 터미널 너무 무서워서 싫어하는데… 개발 하려면 이제는 친해져야겠지! 하는 의미에서 써보는 포스팅 ㅠㅠ&lt;/p&gt;
 &lt;h2 id=&quot;linux&quot;&gt;&lt;a href=&quot;#linux&quot; aria-label=&quot;linux permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Linux&lt;/h2&gt;
 &lt;p&gt;대부분의 서버가 linux로 되어 있어서 개발하는 사람들이라면 짱짱 중요한 운영체제.( window는 서버로 잘 안쓴다고 한다.. 열일해라 윈도우). 일단 리눅스를 피할수없는 운명이므로…&lt;/p&gt;
