@@ -1,4 +1,82 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Mon, 19 Aug 2019 10:46:20 GMT</lastBuildDate><item><title><![CDATA[wecode 4주차_1일 TIL_Sudo란 뭘까?]]></title><description><![CDATA[위코드 20일차. 매일 쓰는 sudo 명령어가 무슨 뜻인지 알고 쓰고 싶어서 정리해본 글이다!]]></description><link>https://gollumnima.github.io//posts/wecode4_1TIL_sudo</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode4_1TIL_sudo</guid><pubDate>Mon, 19 Aug 2019 19:38:32 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/444a9fb0-c20f-11e9-b606-158c631d0945/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sat, 24 Aug 2019 13:04:35 GMT</lastBuildDate><item><title><![CDATA[wecode 4주차_2일 TIL_Emmet 단축키로 html 핵 간단하게 짜보자]]></title><description><![CDATA[위코드 21일차. 쓰면 있어 보이기도 하고, 진짜로 핵 유용한 Emmet 단축키를 알아보았다!]]></description><link>https://gollumnima.github.io//posts/wecode4_2TIL_emmet</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode4_2TIL_emmet</guid><pubDate>Tue, 20 Aug 2019 21:51:32 GMT</pubDate><content:encoded>&lt;p&gt;1번 타자는 Emmet 단축키는 아니지만 구조부터 찬찬히 만들어 보자는 의미에서 추가..!&lt;/p&gt;
+&lt;h2 id=&quot;html-구조-만들기&quot;&gt;&lt;a href=&quot;#html-%EA%B5%AC%EC%A1%B0-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;html 구조 만들기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;html 구조 만들기&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;!&lt;/code&gt; 누르고 &lt;code class=&quot;language-text&quot;&gt;tab&lt;/code&gt;키 누르면 뙇!! 뜬다는 사실은 이미 널리 알려져 있어서 패쓰&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
+    &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt;
+    &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;ie=edge&amp;quot;&amp;gt;
+    &amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;요렇게 간편하게 뙇!!!
+그치만 Emmet은 진짜 진짜 진짜로 신박한데 많이 알려져 있는거 같진 않다!
+그래서 써보는 오늘의 포스팅.&lt;/p&gt;
+&lt;h2 id=&quot;자식요소는-를-이용하기&quot;&gt;&lt;a href=&quot;#%EC%9E%90%EC%8B%9D%EC%9A%94%EC%86%8C%EB%8A%94-%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%98%EA%B8%B0&quot; aria-label=&quot;자식요소는 를 이용하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;자식요소는 &gt;를 이용하기&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;nav&amp;gt;ul&amp;gt;li&lt;/code&gt; 입력하고 엔터 치면&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;nav&amp;gt;
+    &amp;lt;ul&amp;gt;
+        &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt;
+    &amp;lt;/ul&amp;gt;
+&amp;lt;/nav&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이런 구조가 뙇!&lt;/p&gt;
+&lt;h2 id=&quot;자매-형제요소는-를-이용하기&quot;&gt;&lt;a href=&quot;#%EC%9E%90%EB%A7%A4-%ED%98%95%EC%A0%9C%EC%9A%94%EC%86%8C%EB%8A%94-%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%98%EA%B8%B0&quot; aria-label=&quot;자매 형제요소는 를 이용하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;자매? 형제?요소는 +를 이용하기&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;div+p+bq&lt;/code&gt; 입력하고 엔터 치면&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;blockquote&amp;gt;&amp;lt;/blockquote&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;gt;&lt;/code&gt;를 입력하면 부모-자식 관계가 되지만, &lt;code class=&quot;language-text&quot;&gt;+&lt;/code&gt;를 입력하면 동등한 관계로 태그가 생성됩니다!&lt;/p&gt;
+&lt;h2 id=&quot;여러개의-동일한-속성은--를-이용하기&quot;&gt;&lt;a href=&quot;#%EC%97%AC%EB%9F%AC%EA%B0%9C%EC%9D%98-%EB%8F%99%EC%9D%BC%ED%95%9C-%EC%86%8D%EC%84%B1%EC%9D%80--%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%98%EA%B8%B0&quot; aria-label=&quot;여러개의 동일한 속성은  를 이용하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;여러개의 동일한 속성은 * 를 이용하기&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;ul&amp;gt;li*5&lt;/code&gt; 입력하고 엔터 치면&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;ul&amp;gt;
+    &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt;
+    &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt;
+    &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt;
+    &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt;
+    &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;list 일일히 다 쓰는게 얼마나 귀찮게요! 원하는 개수만큼 곱해주면 끝!&lt;/p&gt;
+&lt;h2 id=&quot;id는--class는-&quot;&gt;&lt;a href=&quot;#id%EB%8A%94--class%EB%8A%94-&quot; aria-label=&quot;id는  class는  permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;id는 # class는 .&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;#header&lt;/code&gt; 입력시 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;div id=&amp;quot;header&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;.header&lt;/code&gt;입력시 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;div class=&amp;quot;title&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt;
+여기서 알 수 있는 사실! div는 딱히 div라고 안 써줘도 id나 class 이름만 줘도 자동으로 적용됩니다요&lt;/p&gt;
+&lt;h2 id=&quot;text는-안에&quot;&gt;&lt;a href=&quot;#text%EB%8A%94-%EC%95%88%EC%97%90&quot; aria-label=&quot;text는 안에 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;text는 {}안에&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;a{Click me}&lt;/code&gt; 입력하고 엔터 치면
+&lt;code class=&quot;language-text&quot;&gt;&amp;lt;a href=&amp;quot;&amp;quot;&amp;gt;Click me&amp;lt;/a&amp;gt;&lt;/code&gt; Click me라는 text를 클릭시 링크이동하는 anchor 태그가 뙇!&lt;/p&gt;
+&lt;h2 id=&quot;-사인으로-숫자-매기기&quot;&gt;&lt;a href=&quot;#-%EC%82%AC%EC%9D%B8%EC%9C%BC%EB%A1%9C-%EC%88%AB%EC%9E%90-%EB%A7%A4%EA%B8%B0%EA%B8%B0&quot; aria-label=&quot; 사인으로 숫자 매기기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;$ 사인으로 숫자 매기기&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;ul&amp;gt;li.item$*5&lt;/code&gt; 입력하고 엔터 치면&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;ul&amp;gt;
+    &amp;lt;li class=&amp;quot;item1&amp;quot;&amp;gt;&amp;lt;/li&amp;gt;
+    &amp;lt;li class=&amp;quot;item2&amp;quot;&amp;gt;&amp;lt;/li&amp;gt;
+    &amp;lt;li class=&amp;quot;item3&amp;quot;&amp;gt;&amp;lt;/li&amp;gt;
+    &amp;lt;li class=&amp;quot;item4&amp;quot;&amp;gt;&amp;lt;/li&amp;gt;
+    &amp;lt;li class=&amp;quot;item5&amp;quot;&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;짠~ $사인이 있는 곳에 번호가 자동으로 생겼슴돠
+그렇다면 응용문제…&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;h$[title=item$]{Header $}*3&lt;/code&gt; 이걸 치면 뭐가 나올까요?&lt;/p&gt;
+&lt;p&gt;정답은…&lt;/p&gt;
+&lt;p&gt;두&lt;/p&gt;
+&lt;p&gt;구&lt;/p&gt;
+&lt;p&gt;두&lt;/p&gt;
+&lt;p&gt;구&lt;/p&gt;
+&lt;p&gt;두&lt;/p&gt;
+&lt;p&gt;구&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;h1 title=&amp;quot;item1&amp;quot;&amp;gt;Header 1&amp;lt;/h1&amp;gt;
+&amp;lt;h2 title=&amp;quot;item2&amp;quot;&amp;gt;Header 2&amp;lt;/h2&amp;gt;
+&amp;lt;h3 title=&amp;quot;item3&amp;quot;&amp;gt;Header 3&amp;lt;/h3&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Emmet 치트키가 편해진다면 코드 칠때 진짜 편할거 같지 않나요?ㅋㅋ
+더 자세한 문법은 &lt;a href=&quot;https://docs.emmet.io/cheat-sheet/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://docs.emmet.io/cheat-sheet/&lt;/a&gt; 요기 들어가시면 예시와 함께 다 나와있습니다!!&lt;/p&gt;
+&lt;p&gt;안그래도 코드치는데 손가락을 많이 혹사시키는데…
+단축키 쓰면 건강지수도 2% 정도 올라가고.. 일단 멋있어보입니다 ㅎ&lt;/p&gt;
+&lt;p&gt;연습만이 살길!!!!&lt;/p&gt;
+&lt;h2 id=&quot;reference&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.emmet.io/cheat-sheet/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://docs.emmet.io/cheat-sheet/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[wecode 4주차_1일 TIL_Sudo란 뭘까?]]></title><description><![CDATA[위코드 20일차. 매일 쓰는 sudo 명령어가 무슨 뜻인지 알고 쓰고 싶어서 정리해본 글이다!]]></description><link>https://gollumnima.github.io//posts/wecode4_1TIL_sudo</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode4_1TIL_sudo</guid><pubDate>Mon, 19 Aug 2019 19:38:32 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/444a9fb0-c20f-11e9-b606-158c631d0945/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;맨날 &lt;code class=&quot;language-text&quot;&gt;sudo&lt;/code&gt; 명령어 써서 수도세 너무 많이 나올것 같은 저의 터미널…
 뭐만 안되면 일단 수도를 쓰곤 하는데.. 이걸 남용해도 되나 싶어서 써보는 포스팅입니다 ㅋㅋ&lt;/p&gt;
 &lt;p&gt;블로그에 글을 쓸 때만 봐도 sudo 명령어를 쓰지 않으면 항상 저런 에러가 나는데요!
