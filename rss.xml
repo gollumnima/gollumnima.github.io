@@ -1,4 +1,88 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 25 Aug 2019 11:01:07 GMT</lastBuildDate><item><title><![CDATA[wecode 4주차_4일 TIL_CSS Grid로 레이아웃을 짜보자 2탄]]></title><description><![CDATA[위코드 23일차. 프로젝트에 앞서 css 속성 중 grid에 대해서 공부해보았다, 그 2탄!]]></description><link>https://gollumnima.github.io//posts/wecode4_4TIL_grid_2</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode4_4TIL_grid_2</guid><pubDate>Thu, 22 Aug 2019 19:45:04 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/096f8190-c704-11e9-8663-3d2ab0de90f3/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 25 Aug 2019 11:30:28 GMT</lastBuildDate><item><title><![CDATA[wecode 4주차_5일 TIL_Semantic-ui로 간단하게 CSS 효과주자]]></title><description><![CDATA[위코드 24일차. Semantic-ui 라이브러리를 활용해서 간단하게 CSS 효과 주는 법을 알아보았다!]]></description><link>https://gollumnima.github.io//posts/wecode4_5TIL_semantic_ui</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode4_5TIL_semantic_ui</guid><pubDate>Fri, 23 Aug 2019 15:37:04 GMT</pubDate><content:encoded>&lt;p&gt;semantic-ui를 통해 icon을 추가하는 방법을 알아볼게여&lt;/p&gt;
+&lt;h2 id=&quot;semantic&quot;&gt;&lt;a href=&quot;#semantic&quot; aria-label=&quot;semantic permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Semantic&lt;/h2&gt;
+&lt;p&gt;영어로는 의미론적인 이라는 뜻을 가지고 있는데요!
+오늘 제가 소개해 드릴 Semantic-ui라는 사이트에선 fontawesome과 같이 다양한 icon과 버튼 기타 등등을 만나볼수 있습니다.&lt;/p&gt;
+&lt;p&gt;우분투 유저 분들은 저를 follow me~
+아니라면 &lt;a href=&quot;https://semantic-ui.com/introduction/getting-started.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://semantic-ui.com/introduction/getting-started.html&lt;/a&gt; 여기 접속해서 하라는 대로 하면 됩니다&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;semantic ui 설치하기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;npm install semantic-ui --save&lt;/code&gt;&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;중간중간 설정 잘해주기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Espress 웅앵웅 엔터&lt;/code&gt;
+&lt;code class=&quot;language-text&quot;&gt;Is this your project folder ? 확인해서 맞다면 Yes&lt;/code&gt;
+&lt;code class=&quot;language-text&quot;&gt;Where should we put Semantic Ui inside your project?? semantic/&lt;/code&gt;
+&lt;code class=&quot;language-text&quot;&gt;header, icon, image, reveal 스페이스로 체크&lt;/code&gt;
+&lt;code class=&quot;language-text&quot;&gt;Shold we set permissions on outputted files? No&lt;/code&gt;
+&lt;code class=&quot;language-text&quot;&gt;Do you use a RTL language? No&lt;/code&gt;
+&lt;code class=&quot;language-text&quot;&gt;Where should we ouput Semantic UI? out/&lt;/code&gt;
+&lt;code class=&quot;language-text&quot;&gt;cd semantic&lt;/code&gt;
+&lt;code class=&quot;language-text&quot;&gt;gulp build&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;이 과정까지 마쳤다면 프로젝트 폴더 내에 semantic폴더가 생겼을 거에요.&lt;/p&gt;
+&lt;p&gt;그렇다면 인제 &lt;code class=&quot;language-text&quot;&gt;index.html&lt;/code&gt; 파일로 이동 ㄱㄱ&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;semantic/dist/semantic.min.css&amp;quot;&amp;gt;
+&amp;lt;script
+  src=&amp;quot;https://code.jquery.com/jquery-3.1.1.min.js&amp;quot;
+  integrity=&amp;quot;sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=&amp;quot;
+  crossorigin=&amp;quot;anonymous&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;semantic/dist/semantic.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위의 링크태그를 추가해주세요&lt;/p&gt;
+&lt;h2 id=&quot;적용&quot;&gt;&lt;a href=&quot;#%EC%A0%81%EC%9A%A9&quot; aria-label=&quot;적용 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;적용&lt;/h2&gt;
+&lt;p&gt;semantic ui 홈페이지에 들어가서 맘에 드는 아이콘의 이름을 className에다가 넣어주세요&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;class Sidemenu extends React.Component {
+  render() {
+    return (
+      &amp;lt;div&amp;gt;
+        &amp;lt;i className=&amp;quot;home mini icon&amp;quot; /&amp;gt;
+        &amp;lt;i className=&amp;quot;home tiny icon&amp;quot; /&amp;gt;
+        &amp;lt;i className=&amp;quot;home small icon&amp;quot; /&amp;gt;
+        &amp;lt;i className=&amp;quot;home icon&amp;quot; /&amp;gt;
+        &amp;lt;i className=&amp;quot;home large icon&amp;quot; /&amp;gt;
+        &amp;lt;i className=&amp;quot;home big icon&amp;quot; /&amp;gt;
+        &amp;lt;i className=&amp;quot;home huge icon&amp;quot; /&amp;gt;
+        &amp;lt;i className=&amp;quot;yellow home massive icon&amp;quot; /&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위의 코드를 웹 페이지에 띄워보면…&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/963b2140-c323-11e9-84a7-e5486936a3ff/image.png&quot; alt=&quot;image.png&quot;&gt;
+className에 색상과 사이즈 말고도 다양한 효과들을 줄 수 있는데요
+자세한 사항은 홈페이지에서 확인해보세요~~&lt;/p&gt;
+&lt;p&gt;제가 오늘 포스팅에서 다룬 내용은 아이콘밖에 없지만!
+절대로, icon만 기능적으로 쓸 수 있는건 아닙니다요&lt;/p&gt;
+&lt;p&gt;인터넷 강의 보면서 만든걸 보여드릴게요&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import React from &amp;#39;react&amp;#39;;
+
+const ApprovalCard = (props) =&amp;gt; {
+    console.log(props.children);
+    return (
+        &amp;lt;div className=&amp;quot;ui card&amp;quot;&amp;gt;
+            &amp;lt;div className=&amp;quot;content&amp;quot;&amp;gt;{props.children}&amp;lt;/div&amp;gt;
+            &amp;lt;div className=&amp;quot;extra content&amp;quot;&amp;gt;
+                &amp;lt;div className=&amp;quot;ui two buttons&amp;quot;&amp;gt;
+                    &amp;lt;div className=&amp;quot;ui basic green button&amp;quot;&amp;gt;Approve&amp;lt;/div&amp;gt;
+                    &amp;lt;div className=&amp;quot;ui basic red button&amp;quot;&amp;gt;Reject&amp;lt;/div&amp;gt;
+                &amp;lt;/div&amp;gt;
+            &amp;lt;/div&amp;gt;
+        &amp;lt;/div&amp;gt;
+    );
+};
+
+export default ApprovalCard;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;저기에 className으로 들어간 값들이 다 semantic-ui에서 가져온 것들이에요
+결과물을 한번 보실까요!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/d2c56850-c729-11e9-aaf9-b1760c7fd387/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;div를 css에서 바로 효과를 주는 방법도 있지만
+이렇게 라이브러리의 className만을 가져와서 div공간을 꾸미는 방법도 있다는거~
+CSS파일 없이 저 코드가 그냥 끝이에요 진짜 신기하죠 ㅋㅋㅋㅋ
+이래서 라이브러리를 잘 쓸줄 알아야 하나봐요 큽 ㅠㅠ&lt;/p&gt;
+&lt;p&gt;일단 저는 Grid를 마스터해야 프로젝트를 잘 할수 있기 때문에
+아이콘 외의 Semantic-ui 활용법은 다음 기회에 좀 더 상세하게 다루도록 하겠습니다!!&lt;/p&gt;
+&lt;h2 id=&quot;reference&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://react.semantic-ui.com/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://react.semantic-ui.com/&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[wecode 4주차_4일 TIL_CSS Grid로 레이아웃을 짜보자 2탄]]></title><description><![CDATA[위코드 23일차. 프로젝트에 앞서 css 속성 중 grid에 대해서 공부해보았다, 그 2탄!]]></description><link>https://gollumnima.github.io//posts/wecode4_4TIL_grid_2</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode4_4TIL_grid_2</guid><pubDate>Thu, 22 Aug 2019 19:45:04 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/096f8190-c704-11e9-8663-3d2ab0de90f3/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;지난번 포스팅에 이어 썸네일은 Grid와 직접적인 관련이 있는 Wafers로..ㅎ
 웨하스는 일본식 발음이라고 하니 이제부턴 Wafer라는 말을 씁시다!
 여튼 시작!&lt;/p&gt;
