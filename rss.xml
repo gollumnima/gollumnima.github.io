@@ -1,4 +1,236 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 25 Aug 2019 11:30:28 GMT</lastBuildDate><item><title><![CDATA[wecode 4주차_5일 TIL_Semantic-ui로 간단하게 CSS 효과주자]]></title><description><![CDATA[위코드 24일차. Semantic-ui 라이브러리를 활용해서 간단하게 CSS 효과 주는 법을 알아보았다!]]></description><link>https://gollumnima.github.io//posts/wecode4_5TIL_semantic_ui</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode4_5TIL_semantic_ui</guid><pubDate>Fri, 23 Aug 2019 15:37:04 GMT</pubDate><content:encoded>&lt;p&gt;semantic-ui를 통해 icon을 추가하는 방법을 알아볼게여&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Fri, 30 Aug 2019 03:52:15 GMT</lastBuildDate><item><title><![CDATA[wecode 5주차_1일 TIL_프로젝트 시작 전 초기세팅 할 것들]]></title><description><![CDATA[위코드 25일차. 5주차에 들어서면서 2주 프로젝트가 시작 되었다. 프로젝트에 앞서 초기에 세팅해야 할 것들에 대해 정리해보았다!]]></description><link>https://gollumnima.github.io//posts/wecode5_1TIL_project_initialSettings</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode5_1TIL_project_initialSettings</guid><pubDate>Mon, 26 Aug 2019 08:21:04 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/697fc700-c927-11e9-841b-23b4349b6731/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;이번주 월요일부터 본격 2주 프로젝트가 시작됐는데.. &lt;br /&gt;
+초기 세팅 해야할 것들에 대해 적어보았다!&lt;/p&gt;
+&lt;p&gt;Git에 repository 뚫는 과정도 적어보려고 했는데, reset.css 코드 때문에 길어져서 다음 포스팅으로 넘어가야겠다 룰루~ ♬ 그럼 스타트!!&lt;/p&gt;
+&lt;h2 id=&quot;router-깔기&quot;&gt;&lt;a href=&quot;#router-%EA%B9%94%EA%B8%B0&quot; aria-label=&quot;router 깔기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Router 깔기&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/0ab676f0-c487-11e9-aac9-df0beb3e284d/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Route는 말 그대로 경로를 말한다! 이걸 통해 원하는 페이지로 자유롭게 이동 가능쓰~&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add router-dom&lt;/code&gt; 명령어 입력&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;index.js&lt;/code&gt;와 같은 디렉토리에 &lt;code class=&quot;language-text&quot;&gt;Routes.js&lt;/code&gt;파일 만들기&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Routes.js&lt;/code&gt;파일 세팅하기&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;index.js&lt;/code&gt;파일 내에 render함수 대상을 &lt;Routes /&gt;로 바꿔주기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// 이거는 Routes.js
+import React from &amp;quot;react&amp;quot;;
+import { BrowserRouter as Router, Route, Switch } from &amp;quot;react-router-dom&amp;quot;;
+import Home from &amp;quot;./Pages/Home/Home&amp;quot;;
+
+class Routes extends React.Component {
+  render() {
+    return (
+      &amp;lt;Router&amp;gt;
+        &amp;lt;Switch&amp;gt;
+          &amp;lt;Route exact path=&amp;quot;/home&amp;quot; component={Home} /&amp;gt;
+        &amp;lt;/Switch&amp;gt;
+      &amp;lt;/Router&amp;gt;
+    );
+  }
+}
+
+export default Routes;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;일단 예시로 &lt;code class=&quot;language-text&quot;&gt;Home Component&lt;/code&gt;만 넣어봤습니다.
+우리는 라우터를 통해 자유롭게 이동 가능쓰~~&lt;/p&gt;
+&lt;p&gt;url 뒤에 &lt;code class=&quot;language-text&quot;&gt;/&lt;/code&gt; 붙여서 이동할 수 있는 기능도 있지만! 페이지에서 페이지끼리의 이동도 가능쓰&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;import { Link } from &amp;quot;react-router-dom&amp;quot;;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;먼저 링크라는 Component를 라우터 돔을 통해 받아오고..&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;Link to=Home&amp;quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;아이콘 태그 위에 Link to 태그와 이동할 컴포넌트를 입혀주면 완성~&lt;/p&gt;
+&lt;p&gt;인줄 알았죠?????
+이 모든건 index.js에 Routes 태그를 추가해야 가능한 일…&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// 이건 index.js 파일
+import React from &amp;quot;react&amp;quot;;
+import ReactDOM from &amp;quot;react-dom&amp;quot;;
+import &amp;quot;../src/styles/index.scss&amp;quot;;
+import &amp;quot;../src/styles/reset.scss&amp;quot;;
+import Routes from &amp;quot;./Routes&amp;quot;;
+
+ReactDOM.render(&amp;lt;Routes /&amp;gt;, document.getElementById(&amp;quot;root&amp;quot;));&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;css-tool-고르기&quot;&gt;&lt;a href=&quot;#css-tool-%EA%B3%A0%EB%A5%B4%EA%B8%B0&quot; aria-label=&quot;css tool 고르기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;CSS tool 고르기~&lt;/h1&gt;
+&lt;h3 id=&quot;styled-component&quot;&gt;&lt;a href=&quot;#styled-component&quot; aria-label=&quot;styled component permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Styled Component&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add styled-components&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;sass-설치하기&quot;&gt;&lt;a href=&quot;#sass-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0&quot; aria-label=&quot;sass 설치하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;SASS 설치하기&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add node-sass&lt;/code&gt; 명령어로 설치 후, css파일형식을 .scss로 바꾸기&lt;/p&gt;
+&lt;p&gt;SASS는 CSS module과 함께 쓸수도 있다는데.. 아직 css module은 써 본적이 없어서 다음 기회에 다뤄볼게유~&lt;/p&gt;
+&lt;h2 id=&quot;eslint와-prettier-연동하기&quot;&gt;&lt;a href=&quot;#eslint%EC%99%80-prettier-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0&quot; aria-label=&quot;eslint와 prettier 연동하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;ESLint와 Prettier 연동하기&lt;/h2&gt;
+&lt;p&gt;이건 지난번에 한번 포스팅해서 링크만 남길게용
+&lt;a href=&quot;https://gollumnima.github.io/posts/wecode3_5TIL_eslint&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://gollumnima.github.io/posts/wecode3_5TIL_eslint&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;styles-디렉토리-만들기&quot;&gt;&lt;a href=&quot;#styles-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;styles 디렉토리 만들기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;styles 디렉토리 만들기&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;styles 디렉토리 안에 index.css 옮기고, reset.css와 media.css 추가해주세용
+-media.css는 화면을 줄였을 때의 breakpoint를 두 개정도 설정해서 넣어놓고 팀원들과 공유하기!&lt;/li&gt;
+&lt;li&gt;reset css 파일을 추가해주면 기본 css 설정값들을 다 취소시켜서 좀 더 깔끔쓰~ 아래의 코드를 긁어서 복붙하세유~~~&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+​ * {
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+}
+​ *:focus {
+  outline: none;
+  border: none;
+}
+​ body {
+  line-height: 1;
+}
+​ article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+​ nav ul {
+  list-style: none;
+}
+​ blockquote,
+q {
+  quotes: none;
+}
+​ blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: &amp;quot;&amp;quot;;
+  content: none;
+}
+​ a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+​
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+​
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+​ del {
+  text-decoration: line-through;
+}
+​ abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+​ table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+​
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+​ input,
+select {
+  vertical-align: middle;
+}
+​ textarea {
+  resize: none;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[wecode 4주차_5일 TIL_Semantic-ui로 간단하게 CSS 효과주자]]></title><description><![CDATA[위코드 24일차. Semantic-ui 라이브러리를 활용해서 간단하게 CSS 효과 주는 법을 알아보았다!]]></description><link>https://gollumnima.github.io//posts/wecode4_5TIL_semantic_ui</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode4_5TIL_semantic_ui</guid><pubDate>Fri, 23 Aug 2019 15:37:04 GMT</pubDate><content:encoded>&lt;p&gt;semantic-ui를 통해 icon을 추가하는 방법을 알아볼게여&lt;/p&gt;
 &lt;h2 id=&quot;semantic&quot;&gt;&lt;a href=&quot;#semantic&quot; aria-label=&quot;semantic permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Semantic&lt;/h2&gt;
 &lt;p&gt;영어로는 의미론적인 이라는 뜻을 가지고 있는데요!
 오늘 제가 소개해 드릴 Semantic-ui라는 사이트에선 fontawesome과 같이 다양한 icon과 버튼 기타 등등을 만나볼수 있습니다.&lt;/p&gt;
