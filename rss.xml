@@ -1,4 +1,74 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Fri, 30 Aug 2019 03:52:15 GMT</lastBuildDate><item><title><![CDATA[wecode 5주차_1일 TIL_프로젝트 시작 전 초기세팅 할 것들]]></title><description><![CDATA[위코드 25일차. 5주차에 들어서면서 2주 프로젝트가 시작 되었다. 프로젝트에 앞서 초기에 세팅해야 할 것들에 대해 정리해보았다!]]></description><link>https://gollumnima.github.io//posts/wecode5_1TIL_project_initialSettings</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode5_1TIL_project_initialSettings</guid><pubDate>Mon, 26 Aug 2019 08:21:04 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/697fc700-c927-11e9-841b-23b4349b6731/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 01 Sep 2019 00:16:04 GMT</lastBuildDate><item><title><![CDATA[wecode 5주차_2일 TIL_프로젝트 시작]]></title><description><![CDATA[위코드 26일차. 2주 프로젝트 첫째날은 초기 세팅과 팀 컨셉을 잡느라 시간을 다 써버려서 본격적인 작업은 이틀차인 화요일부터 시작하게 되었다.]]></description><link>https://gollumnima.github.io//posts/wecode5_2TIL_project_daily1</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode5_2TIL_project_daily1</guid><pubDate>Tue, 27 Aug 2019 08:55:04 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/815d9c40-cc4b-11e9-bb8d-972accb59aa8/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;롤링이미지&quot;&gt;&lt;a href=&quot;#%EB%A1%A4%EB%A7%81%EC%9D%B4%EB%AF%B8%EC%A7%80&quot; aria-label=&quot;롤링이미지 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;롤링이미지&lt;/h2&gt;
+&lt;p&gt;돌아가는 화면을 Carousel Slider라고 하더라…
+Carousel이라는 단어를 찾아보니 회전목마, 관람차, 회전그네 같은 돌아가는 놀이기구를 가리키는 모든 말이였다 ㅋㅋㅋ 여튼…&lt;/p&gt;
+&lt;p&gt;찾아보면 자료가 참 많은데 나는 nuka씨가 만든 라이브러리를 활용했다&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add nuka-carousel&lt;/code&gt; 추가하면
+&lt;code class=&quot;language-text&quot;&gt;&amp;lt;Carousel&amp;gt;&lt;/code&gt; 컴포넌트를 사용할 수 있다.
+(내가 라이브러리 받으면 끝인줄 알았는데 팀원 모두가 설치해야 하므로 꼭꼭 공유해야 한다!)&lt;/p&gt;
+&lt;p&gt;라이브러리 처음 써보는거라 두근두근 했는데 그냥 갖다 붙이니까 되네???? 넘나 신기한것
+드래그 하거나 next 혹은 prev 버튼을 클릭하면 사진이 바뀐다! 오예&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/8c830ae0-c883-11e9-8801-2f2d07541998/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;일단 잘 나오긴 하는데… 영역을 너무 차지한다는게 문제다
+그래서 Home의 div들에 margin-auto를 줬더니 폭이 조절되네???&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/1db08800-cc4c-11e9-a60f-17e4210d0ccf/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;사이즈 줄어드니까 훨씬 깔끔해졌다 여튼&lt;/p&gt;
+&lt;h2 id=&quot;div를-잘-나누시오&quot;&gt;&lt;a href=&quot;#div%EB%A5%BC-%EC%9E%98-%EB%82%98%EB%88%84%EC%8B%9C%EC%98%A4&quot; aria-label=&quot;div를 잘 나누시오 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;div를 잘 나누시오&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;  &amp;lt;&amp;gt;
+      &amp;lt;div className=&amp;quot;home_recipe_wrapper&amp;quot;&amp;gt;
+        &amp;lt;div className=&amp;quot;home_recipe_container&amp;quot;&amp;gt;
+          &amp;lt;div className=&amp;quot;home_recipe_img_container&amp;quot;&amp;gt;
+            &amp;lt;img src={require(&amp;quot;../../img/toppokki.jpg&amp;quot;)} alt=&amp;quot;grill&amp;quot;&amp;gt;&amp;lt;/img&amp;gt;
+          &amp;lt;/div&amp;gt;
+          &amp;lt;div className=&amp;quot;home_recipe_words_container&amp;quot;&amp;gt;
+            &amp;lt;h4 className=&amp;quot;home_recipe_category&amp;quot;&amp;gt;한식&amp;lt;/h4&amp;gt;
+            &amp;lt;h2 className=&amp;quot;home_recipe_name&amp;quot;&amp;gt;떡볶이&amp;lt;/h2&amp;gt;
+          &amp;lt;/div&amp;gt;
+        &amp;lt;/div&amp;gt;
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;겉으로 보기에 문제 없어보이는 코드였다..
+나름 div는 누구보다 빠르게 남들과는 다르게 색다르게 비트위에 리듬을 타면서 나눌수 있다고 자부했는데…
+화면에 뜨는걸 보면&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/81a32b10-c8b9-11e9-8dcc-1dd4966cd2dc/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;띠 to the 용 ~
+div 잘 묶은줄 알았는데 아니였다. 다시 도전.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;   &amp;lt;&amp;gt;
+      &amp;lt;div className=&amp;quot;home_recipe_wrapper&amp;quot;&amp;gt;
+        &amp;lt;div className=&amp;quot;home_recipe_container&amp;quot;&amp;gt;
+          &amp;lt;div className=&amp;quot;home_recipe_img_container&amp;quot;&amp;gt;
+            &amp;lt;img src={require(&amp;quot;../../img/toppokki.jpg&amp;quot;)} alt=&amp;quot;grill&amp;quot;&amp;gt;&amp;lt;/img&amp;gt;
+            &amp;lt;div className=&amp;quot;home_recipe_words_container&amp;quot;&amp;gt;
+              &amp;lt;h4 className=&amp;quot;home_recipe_category&amp;quot;&amp;gt;한식&amp;lt;/h4&amp;gt;
+              &amp;lt;h2 className=&amp;quot;home_recipe_name&amp;quot;&amp;gt;떡볶이&amp;lt;/h2&amp;gt;
+            &amp;lt;/div&amp;gt;
+          &amp;lt;/div&amp;gt;
+        &amp;lt;/div&amp;gt;
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/0f5df980-c8ba-11e9-8dcc-1dd4966cd2dc/image.png&quot; alt=&quot;image.png&quot;&gt;
+다시 이렇게 성공쓰&lt;/p&gt;
+&lt;p&gt;근데 문제가 생겼다&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/6c320450-ca5c-11e9-8443-19a03cc3be4f/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;스크린을 줄였더니 이미지가 겹쳐..
+천재 오브 천재 예리님의 조언을 들어보니 부모에서 Grid로 값을 주었지만 이미지에 절대값을 줘서 안 먹히는 것…
+이럴 땐 이미지 크기를 100%로 하면 먹힌다!!!!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/9a3afd70-ca5c-11e9-a81a-b3d65dab3431/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;핵핵핵 핵 신기방기!!!!!!! 예리님을 찬양하라&lt;del&gt;&lt;/del&gt;~~
+지금은 디자인을 약간 바꿔서 촌스러움은 벗어났는데 문제가 또 생겼다&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/7ee37f10-cc4c-11e9-a60f-17e4210d0ccf/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;분명히 Grid로 똑같이 값을 매겨줬는데 왜 아랫줄 첫째, 둘째 애들은 줄이 안 맞는가..?
+이건 삽질 좀 하다가 프론트신 예리님께 문의드릴 예정…&lt;/p&gt;
+&lt;h2 id=&quot;백과-프론트-콜라보&quot;&gt;&lt;a href=&quot;#%EB%B0%B1%EA%B3%BC-%ED%94%84%EB%A1%A0%ED%8A%B8-%EC%BD%9C%EB%9D%BC%EB%B3%B4&quot; aria-label=&quot;백과 프론트 콜라보 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;백과 프론트 콜라보&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;img src={require(&amp;quot;../../img/toppokki.jpg&amp;quot;)} alt=&amp;quot;toppokki&amp;quot;&amp;gt;&amp;lt;/img&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;원래의 이미지 경로는 하드코딩 했을 때 이러했는데, 백의 서버 주소를 써보았다
+&lt;code class=&quot;language-text&quot;&gt;http://10.58.6.255:8000/uploads/photo.jpg&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;여기서 작은 팁! 외부 링크를 쓰려면 require을 지워야 한다.
+여튼 Back쪽의 서버가 켜져 있다면
+그리하여 성공한 화면!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/b596e8c0-c955-11e9-b6af-0332aa63bb4d/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;위코드의 대빵 은우님이시다. 그림 바이 름바님
+그럼 바이 바이~ 다음 포스팅에서 만나용&lt;/p&gt;</content:encoded></item><item><title><![CDATA[wecode 5주차_1일 TIL_프로젝트 시작 전 초기세팅 할 것들]]></title><description><![CDATA[위코드 25일차. 5주차에 들어서면서 2주 프로젝트가 시작 되었다. 프로젝트에 앞서 초기에 세팅해야 할 것들에 대해 정리해보았다!]]></description><link>https://gollumnima.github.io//posts/wecode5_1TIL_project_initialSettings</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode5_1TIL_project_initialSettings</guid><pubDate>Mon, 26 Aug 2019 08:21:04 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/697fc700-c927-11e9-841b-23b4349b6731/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;이번주 월요일부터 본격 2주 프로젝트가 시작됐는데.. &lt;br /&gt;
 초기 세팅 해야할 것들에 대해 적어보았다!&lt;/p&gt;
 &lt;p&gt;Git에 repository 뚫는 과정도 적어보려고 했는데, reset.css 코드 때문에 길어져서 다음 포스팅으로 넘어가야겠다 룰루~ ♬ 그럼 스타트!!&lt;/p&gt;
