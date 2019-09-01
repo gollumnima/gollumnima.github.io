@@ -1,4 +1,158 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 01 Sep 2019 00:16:04 GMT</lastBuildDate><item><title><![CDATA[wecode 5주차_2일 TIL_프로젝트 시작]]></title><description><![CDATA[위코드 26일차. 2주 프로젝트 첫째날은 초기 세팅과 팀 컨셉을 잡느라 시간을 다 써버려서 본격적인 작업은 이틀차인 화요일부터 시작하게 되었다.]]></description><link>https://gollumnima.github.io//posts/wecode5_2TIL_project_daily1</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode5_2TIL_project_daily1</guid><pubDate>Tue, 27 Aug 2019 08:55:04 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/815d9c40-cc4b-11e9-bb8d-972accb59aa8/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 01 Sep 2019 00:53:47 GMT</lastBuildDate><item><title><![CDATA[wecode 5주차_3일 TIL_Postman으로 데이터 주고받기]]></title><description><![CDATA[위코드 27일차. 페이지를 꾸밀줄만 알면 진정한 프론트가 아니다! 백에서 받아온 데이터를 활용할 줄 알아야 진정한 프론트인인것. 그런 의미에서 오늘은 postman 간단 활용법을 정리해보았다!]]></description><link>https://gollumnima.github.io//posts/wecode5_3TIL_postman</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode5_3TIL_postman</guid><pubDate>Wed, 28 Aug 2019 09:18:04 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/cddb24f0-cc4d-11e9-910d-0db327a0d842/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;색감이 예뻐서 갖다 붙인 post box image ㅋㅋㅋ
+근데 우리가 쓸 프로그램인 postman은 이렇게 예쁘게 생기진 않았다 투박쓰~&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/4e4ec010-cc4e-11e9-9732-c9f4af8a8c62/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;postman 검색하고 다운로드 고고!
+분명 지난번에 깔았는데 우분투의 문제인지 뭔지 파일이 보이지 않아서 다시 깔았다 ㅡㅡ 우분투 너이자식…
+여튼 postman은 백에서 개발한 api를 테스트하고 프론트 영역으로 넘길 때 활용도가 높은 프로그램이다.&lt;/p&gt;
+&lt;h2 id=&quot;로그인&quot;&gt;&lt;a href=&quot;#%EB%A1%9C%EA%B7%B8%EC%9D%B8&quot; aria-label=&quot;로그인 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;로그인&lt;/h2&gt;
+&lt;p&gt;젤 앞의 탭은 ‘POST’로 설정해주고 백에서 만든 url을 입력
+저 url의 end point를 항상 정확하게 입력해야 한다! 기본중의 기본!
+여튼 바디에 객체 형식으로 아이디와 비밀번호를 써준다. key값은 백에서 설정한 그 값을 쓰면 된다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/b3578650-cae5-11e9-a91b-33bacba38e75/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;send를 누르면 SUCCESS라는 메시지가 뜨게 된다!
+만약에 같은 아이디로 한번 더 시도하게 되면…&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/ce6f1a20-cae5-11e9-817f-3d68a942f65f/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;오 신기방기 이미 있는 아이디라고 뜬다.
+만약에 이 message가 “same ID exists”라면 “존재하는 아이디 입니다. 다른 아이디를 입력해주세요.” 라는 문구가 뜨는 이런 식의 함수를 프론트에서 만들수 있는 거다 ㅋㅋㅋㅋ 넘나 신기!!!&lt;/p&gt;
+&lt;p&gt;그 밖에도…&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;비번 틀릴때&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/3f7b12f0-cae6-11e9-a91b-33bacba38e75/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;아이디 틀릴때&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/4ed12910-cae6-11e9-a91b-33bacba38e75/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;로그인-성공시-토큰-발행&quot;&gt;&lt;a href=&quot;#%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%84%B1%EA%B3%B5%EC%8B%9C-%ED%86%A0%ED%81%B0-%EB%B0%9C%ED%96%89&quot; aria-label=&quot;로그인 성공시 토큰 발행 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;로그인 성공시 토큰 발행&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/31199600-cae6-11e9-817f-3d68a942f65f/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;위의 과정을 거쳐 로그인을 성공하게 되면 토큰이 발급되는데…&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/9d5011f0-cae6-11e9-817f-3d68a942f65f/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;다시 로그인 시 토큰의 뒷자리가 바뀜! 토큰을 잘 보면 앞자리는 동일한데 뒤의 어느 구간부터 값이 바뀐다. 뒷부분이 중요하다는 말씀..!&lt;/p&gt;
+&lt;p&gt;여튼 우리는 이렇게 발급받은 액세스 토큰을 가지고 토큰 해석해주는 사이트에 들어갈 것이다
+주소창에 jwt.io 를 치시오. 존맛탱 아님… JWT입니다&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/fb2b2b70-cae6-11e9-817f-3d68a942f65f/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;좌측에 입력한 토큰 값을 우측에서 해석해주는데 넘나 신기하다 ㅋㅋㅋ
+여튼 우리가 만든 토큰인지 남이 만든 토큰인지 확인과정을 거치고 이 정보를 또 저장해야하는데…&lt;/p&gt;
+&lt;p&gt;만약에 리액트앱에서 토큰을 가지고 있으면, 새로고침시 토큰 정보들도 모두모두 안녕~~~
+일반적으론 브라우저에 저장하는데 세 가지 방법이 있다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;로컬스토리지에 저장&lt;/li&gt;
+&lt;li&gt;세션에 저장(창 끄면 사라짐)&lt;/li&gt;
+&lt;li&gt;쿠키(해당 날짜가 지나면 사라짐)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;쿠키가 뭣인지도 모르고 주기적으로 쿠키 지우기를 해줬는데..날짜에 따라서 정보를 저장해주는 녀석이였군!!! 세션땐 이런 쏠쏠한 정보들을 알게 될 때마다 넘 뿌듯하다~&lt;/p&gt;
+&lt;p&gt;로컬스토리지는 다음번에 다시 정리 해보도록 하고..!
+이번엔 코멘트도 함 날려보자!&lt;/p&gt;
+&lt;h2 id=&quot;코멘트-보내기&quot;&gt;&lt;a href=&quot;#%EC%BD%94%EB%A9%98%ED%8A%B8-%EB%B3%B4%EB%82%B4%EA%B8%B0&quot; aria-label=&quot;코멘트 보내기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;코멘트 보내기&lt;/h2&gt;
+&lt;p&gt;로그인이 성공했다는 전제 하에 진행하는 거라서
+Headers에 들어가서 Key에는 Authorization이라고 쓰고, value에는 로그인시 발급받은 액세스 토큰을 입력해준다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/14724f90-cae8-11e9-817f-3d68a942f65f/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;이렇게!
+그 담에는 body에 또 객체 형태로 message 남겨본다! 그럼 내가 보낸 이 메시지들이 백으로 넘어가는거다. 넘나 씐기씐기!!!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/21be3dd0-cae8-11e9-817f-3d68a942f65f/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;signup-하기&quot;&gt;&lt;a href=&quot;#signup-%ED%95%98%EA%B8%B0&quot; aria-label=&quot;signup 하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;signup 하기&lt;/h2&gt;
+&lt;p&gt;일단 signup button에 뭔가를 해줘야겠지요?
+&lt;code class=&quot;language-text&quot;&gt;value = &amp;quot;Register&amp;quot; onClick={}&lt;/code&gt;
+이런식으로 설정을 해준 다음…
+render 전에 signup 함수를 작성해줍니다!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;signup = () =&amp;gt; {
+ fetch()
+ };&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;보통 fetch로 받아오긴 하는데 최신 문법인 비동기로 받아오면 좀 더 편리쓰~
+(async, await : 데이터를 받아오는데 언제 올지 모르는 것에 적용 가능한 함수)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;signup = async() =&amp;gt; {
+const response = await fetch(&amp;#39;http://10.58.4.72:8000/signup&amp;#39;, {
+ 	method:&amp;#39;POST&amp;#39;,
+    body:JSON.stringify({
+    user_id: &amp;#39;test123&amp;#39;,
+    password: &amp;#39;good&amp;#39;
+    })
+  })
+  const result = await response.json()
+
+  console.log(result)
+
+
+  if (result.message === &amp;#39;same ID exists&amp;#39;) {
+     alert(&amp;#39;이미 존재하는 아이디입니다. 다시 가입해주세요.&amp;#39;)
+  } else if (result.message === &amp;quot;SUCCESS&amp;quot;) {
+     alert(&amp;#39;환영합니다. 가입되었습니다!&amp;#39;)
+     this.props.history.push(&amp;#39;/login&amp;#39;)
+  	}
+  };&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;세션 들으면서 썼던 코드라 indent가 맘에 안 들긴 하지만 여튼… 이렇게!
+위의 코드 마지막줄에 props.history.push가 있는데 props를 선언 안해줘도 되는지가 궁금했는데, class에 기본 변수로 들어오기 때문에 props를 따로 선언 안해줘도 된다고 한다! 넘나 씐기 씐기&lt;/p&gt;
+&lt;p&gt;Router에서 인자를 어떻게 넘기는지에 대해선 아래의 링크에 잘 나와있다
+나의 사랑 우리모두의 사랑 stack overflow ~♬ 내 스택에서만 일어나지 말아라.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/44121069/how-to-pass-params-with-history-push-link-redirect-in-react-router-v4&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://stackoverflow.com/questions/44121069/how-to-pass-params-with-history-push-link-redirect-in-react-router-v4&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;여튼 전체 코드를 보자면…&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import React, { Component } from &amp;#39;react&amp;#39;;
+import { withRouter } from &amp;#39;react-router-dom&amp;#39;;
+import &amp;#39;./Signup.scss&amp;#39;;
+import Logo from &amp;#39;./logo.png&amp;#39;;
+import {Link} from &amp;#39;react-router-dom&amp;#39;;
+​
+class Signup extends Component {
+​
+  singup = async () =&amp;gt; {
+    const response = await fetch(&amp;#39;http://10.58.4.74:8000/signup&amp;#39;, {
+      method: &amp;#39;POST&amp;#39;,
+      body: JSON.stringify({
+        user_id: &amp;#39;12341234sdfsdfsfsdfsd&amp;#39;,
+        password: &amp;#39;good&amp;#39;
+      })
+    });
+​
+    const result = await response.json();
+​
+    console.log(result)
+    console.log(&amp;#39;sdfsdf&amp;#39;)
+​
+    if (result.message === &amp;#39;same ID exists&amp;#39;) {
+      alert(&amp;#39;이미 있는 아이디 입니다!! 다시 가입 해주세요.&amp;#39;)
+    } else if (result.message === &amp;#39;SUCCESS&amp;#39;) {
+      alert(&amp;#39;환영합니다!! 가입 되었습니다!!!&amp;#39;)
+      this.props.history.push(&amp;#39;/login&amp;#39;);
+    }
+​
+​
+  };
+​
+  render() {
+    return (
+      &amp;lt;div className=&amp;quot;signup-page&amp;quot;&amp;gt;
+        &amp;lt;article className=&amp;quot;signup-content&amp;quot;&amp;gt;
+          &amp;lt;div className=&amp;quot;input-wrap&amp;quot;&amp;gt;
+            &amp;lt;div className=&amp;quot;signup-header&amp;quot;&amp;gt;
+              &amp;lt;Link to=&amp;quot;/&amp;quot;&amp;gt;&amp;lt;img className=&amp;quot;signup-logo&amp;quot; src={Logo} alt=&amp;quot;logo_img&amp;quot;&amp;gt;&amp;lt;/img&amp;gt;&amp;lt;/Link&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;div className=&amp;quot;signup-info&amp;quot;&amp;gt;
+              &amp;lt;div className=&amp;quot;signup-title&amp;quot;&amp;gt;Register.&amp;lt;/div&amp;gt;
+              &amp;lt;div className=&amp;quot;signup-subtitle&amp;quot;&amp;gt;Enter your email to create an account.&amp;lt;/div&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;div className=&amp;quot;signup-form&amp;quot;&amp;gt;
+              &amp;lt;input type=&amp;quot;email&amp;quot; placeholder=&amp;quot;Please enter your Email&amp;quot; maxLength=&amp;quot;30&amp;quot;/&amp;gt;
+              &amp;lt;input type=&amp;quot;password&amp;quot; placeholder=&amp;quot;Your Password&amp;quot; maxLength=&amp;quot;8&amp;quot;/&amp;gt;
+              &amp;lt;input type=&amp;quot;password&amp;quot; placeholder=&amp;quot;Your Password&amp;quot; maxLength=&amp;quot;8&amp;quot;/&amp;gt;
+              &amp;lt;input
+                type=&amp;quot;button&amp;quot;
+                className=&amp;quot;signup-btn&amp;quot;
+                value=&amp;quot;Register&amp;quot;
+                onClick={this.singup}
+              /&amp;gt;
+            &amp;lt;/div&amp;gt;
+          &amp;lt;/div&amp;gt;
+        &amp;lt;/article&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+}
+​
+export default withRouter(Signup);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 signup 함수 간단하게 완성쓰!
+코드가 길어서 복잡해 보일수도 있지만 원리만 생각하면 간단하다!&lt;/p&gt;
+&lt;p&gt;다음 프로젝트 때는 내가 signup page를 맡게 될텐데 그 때가서 헷갈리지 말고 잘 했음 좋겠다!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[wecode 5주차_2일 TIL_프로젝트 시작]]></title><description><![CDATA[위코드 26일차. 2주 프로젝트 첫째날은 초기 세팅과 팀 컨셉을 잡느라 시간을 다 써버려서 본격적인 작업은 이틀차인 화요일부터 시작하게 되었다.]]></description><link>https://gollumnima.github.io//posts/wecode5_2TIL_project_daily1</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode5_2TIL_project_daily1</guid><pubDate>Tue, 27 Aug 2019 08:55:04 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/815d9c40-cc4b-11e9-bb8d-972accb59aa8/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;롤링이미지&quot;&gt;&lt;a href=&quot;#%EB%A1%A4%EB%A7%81%EC%9D%B4%EB%AF%B8%EC%A7%80&quot; aria-label=&quot;롤링이미지 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;롤링이미지&lt;/h2&gt;
 &lt;p&gt;돌아가는 화면을 Carousel Slider라고 하더라…
 Carousel이라는 단어를 찾아보니 회전목마, 관람차, 회전그네 같은 돌아가는 놀이기구를 가리키는 모든 말이였다 ㅋㅋㅋ 여튼…&lt;/p&gt;
