@@ -1,4 +1,407 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Tue, 10 Sep 2019 06:11:11 GMT</lastBuildDate><item><title><![CDATA[wecode 6주차_5일 TIL_구글캠퍼스 프론트앤드 밋업 후기 & 기승전 구글이야기]]></title><description><![CDATA[위코드 34일차. 나의 첫 개발자 밋업 참가. 하지만 나는 네트워킹은 참여 안하고 세션만 듣고 프로젝트 막바지 준비를 위해 다시 위워크로 돌아왔다.]]></description><link>https://gollumnima.github.io//posts/wecode6_5TIL_meetup</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode6_5TIL_meetup</guid><pubDate>Fri, 06 Sep 2019 20:54:04 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/5639bb70-d20e-11e9-b025-070267756e7c/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Tue, 10 Sep 2019 08:55:37 GMT</lastBuildDate><item><title><![CDATA[wecode 7주차_2일 TIL_리액트 상태값 변경+프로젝트 예시]]></title><description><![CDATA[위코드 36일차. 1차 프로젝트를 마치며 다시금 state와 props로 데이터를 변경하는 법을 정리해보았다. (with 1차 프로젝트 코드)]]></description><link>https://gollumnima.github.io//posts/wecode7_2TIL_react</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode7_2TIL_react</guid><pubDate>Tue, 10 Sep 2019 17:11:04 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/cd2a53e0-d392-11e9-a0b2-e3484432dcc9/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;눈 깜짝할 새에 더위가 한 풀 꺾이고, 1차 프로젝트도 끝이 나고, 추석연휴도 찾아왔다.
+벌써 위코드에서 동기들과 함께 생활을 한 지 한 달이 훨씬 지났다는 소리다 와우! &lt;br /&gt;
+남은 일주일의 쉬는시간(?)동안 공부 방향을 세 갈래로 나누어 생각해봤는데, 그 중 첫째가 리액트 라이프사이클과 리덕스!&lt;/p&gt;
+&lt;p&gt;라이프사이클을 정리하기 전에, 프로젝트 때 코드도 다시 돌아볼 겸 state와 props에 대해 다시 간략히 정리해보려고 한다.&lt;/p&gt;
+&lt;h2 id=&quot;react-ui데이터를-관리하는-라이브러리&quot;&gt;&lt;a href=&quot;#react-ui%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A5%BC-%EA%B4%80%EB%A6%AC%ED%95%98%EB%8A%94-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC&quot; aria-label=&quot;react ui데이터를 관리하는 라이브러리 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;React, UI데이터를 관리하는 라이브러리&lt;/h2&gt;
+&lt;p&gt;아래 링크에는 3주차 이틀차 되던 날 내가 리액트에 대해 정리했던 내용에 담겨있다.
+&lt;a href=&quot;https://gollumnima.github.io/posts/wecode3_2_TIL_react/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://gollumnima.github.io/posts/wecode3_2_TIL_react/&lt;/a&gt;
+저 당시엔 state와 props에 대한 이해도가 없는 채로 그냥 알아야 적용하니깐.. 주입식으로 정리했던 것 같다.
+물론 지금도 완전히 다 이해한 건 아니지만 프로젝트를 하면서 어떤 느낌인지 감이 왔다!&lt;/p&gt;
+&lt;p&gt;여튼… 지난번 포스팅에선 &lt;code class=&quot;language-text&quot;&gt;&amp;quot;리액트는 라이브러리다&amp;quot;&lt;/code&gt; 라고 했는데
+정확히 말하자면, &lt;code class=&quot;language-text&quot;&gt;&amp;quot;UI 데이터를 관리하는 라이브러리&amp;quot;&lt;/code&gt;다.
+이 데이터는 또 두 갈래로 나눠지는데,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;컴포넌트 내부의 상태값 (state)&lt;/li&gt;
+&lt;li&gt;부모 컴포넌트에서 물려받는 속성값 (props)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;리액트는 이러한 UI데이터가 변경이 될때마다 화면을 다시 그리는 속성을 가지고 있다.
+html의 DOM 구조를 생각해보자면, 우리는 데이터가 변경될 때마다 dom요소를 직접 설정해야만 했다.&lt;/p&gt;
+&lt;p&gt;예시를 보자!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;html+js에서의 이름 클릭시 트윗 삭제기능&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function filter() {
+  let be_empty = document.getElementsByClassName(&amp;#39;contents_wrap&amp;#39;)[0]
+  if (event.target.innerText === &amp;#39;Doori Kim&amp;#39;) {
+    be_empty.remove();
+    const sum_doorits = document.getElementsByClassName(&amp;#39;sum_doorits&amp;#39;)[0]
+    const total_doorits = doorits_box.children.length
+    sum_doorits.innerHTML = total_doorits; // 헐 대박..
+  }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;저 당시엔 주석으로 헐 대박을 썼지만..
+리액트 코드 보다가 이거 보니 넘나 복잡한 것!&lt;/p&gt;
+&lt;p&gt;이제 리액트 코드를 보자&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;  removeTweet = () =&amp;gt; {
+    this.setState({
+      tweetBox: this.state.tweetBox
+    });
+  };
+
+&amp;lt;div className=&amp;quot;doorits_box&amp;quot;&amp;gt;
+  &amp;lt;ul&amp;gt;
+    {tweetBox.map((el, idx) =&amp;gt; (
+      &amp;lt;li key={idx}&amp;gt;
+        &amp;lt;button className=&amp;quot;name_btn&amp;quot; onClick={this.removeTweet}&amp;gt;
+        {el.name}
+        &amp;lt;/button&amp;gt;
+          &amp;lt;span className=&amp;quot;post_time&amp;quot;&amp;gt;{el.time.toString()}&amp;lt;/span&amp;gt;
+          &amp;lt;p className=&amp;quot;post_txt&amp;quot;&amp;gt;{el.message}&amp;lt;/p&amp;gt;
+       &amp;lt;/li&amp;gt;
+     ))}
+  &amp;lt;/ul&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;훨씬 더 직관적이다!
+removeTweet이라는 함수를 만들어서 tweetBox의 state에 변화를 주고, onClick이벤트에 만든 함수를 적용시키면 끝!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/8d5e0670-d398-11e9-a0b2-e3484432dcc9/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;어때요? 참 쉽죠?&lt;/p&gt;
+&lt;h4 id=&quot;기억할-것은-리액트는-랜더함수를-통해-화면을-자동으로-갱신시킨다는-점&quot;&gt;&lt;a href=&quot;#%EA%B8%B0%EC%96%B5%ED%95%A0-%EA%B2%83%EC%9D%80-%EB%A6%AC%EC%95%A1%ED%8A%B8%EB%8A%94-%EB%9E%9C%EB%8D%94%ED%95%A8%EC%88%98%EB%A5%BC-%ED%86%B5%ED%95%B4-%ED%99%94%EB%A9%B4%EC%9D%84-%EC%9E%90%EB%8F%99%EC%9C%BC%EB%A1%9C-%EA%B0%B1%EC%8B%A0%EC%8B%9C%ED%82%A8%EB%8B%A4%EB%8A%94-%EC%A0%90&quot; aria-label=&quot;기억할 것은 리액트는 랜더함수를 통해 화면을 자동으로 갱신시킨다는 점 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;기억할 것은 리액트는 랜더함수를 통해 화면을 자동으로 갱신시킨다는 점!&lt;/h4&gt;
+&lt;h2 id=&quot;state&quot;&gt;&lt;a href=&quot;#state&quot; aria-label=&quot;state permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;State&lt;/h2&gt;
+&lt;p&gt;클래스형 컴포넌트 내부에서 상태를 관리해줄 때 state를 쓴다.
+(요즘은 함수형 컴포넌트에서도 state를 쓸 수 있게 훅이라는 게 새로 나오긴 했다 ㅎ)
+constructor 안에서 초기 상태를 this.state 객체 안에 변화할 값들을 넣어주고 초기값을 세팅해준다.&lt;/p&gt;
+&lt;p&gt;우리가 state를 이용하지 않고, 임의로 데이터값을 바꾼다고 해도 가능은 하다!
+하지만 리액트는 바보라서 데이터가 변경되었다는 사실을 모르기 때문에 화면은 그대로 일것이다 ㅠㅠ
+그래서 우리는 setState를 써줘야 하는 것!&lt;/p&gt;
+&lt;p&gt;우리팀 프로젝트의 어려웠던 부분 중 하나인 뉴스 카테고리 선택하는 뉴스홈 화면 코드를 보자.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import React from &amp;quot;react&amp;quot;;
+import NewsHomeCategory from &amp;quot;./NewsHomeCategory&amp;quot;;
+import { Link } from &amp;quot;react-router-dom&amp;quot;;
+import Navbar from &amp;quot;../../Components/Home/Navbar&amp;quot;;
+import HomeNewsItem from &amp;quot;../../Components/Home/HomeNewsItem&amp;quot;;
+import &amp;quot;./NewsHome.scss&amp;quot;;
+
+class NewsHome extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      category: [],
+      newsList: [],
+      active_category: 1,
+      selectedIndex: 0,
+      indexCount: 0
+    };
+  }
+
+  componentDidMount() {
+    fetch(&amp;quot;http://13.209.12.87:8000/news/tags&amp;quot;, {
+      method: &amp;quot;GET&amp;quot;,
+      headers: {
+        &amp;quot;Content-Type&amp;quot;: &amp;quot;application/json&amp;quot;
+      }
+    })
+      .then(response =&amp;gt; {
+        return response.json();
+      })
+      .then(response =&amp;gt; {
+        let categoryList = response.map(el =&amp;gt; {
+          return el.tag;
+        });
+		//fetch로 데이터를 받은 후 카테고리 정보를 받아오게끔 setState 함수 설정
+        this.setState({
+          category: categoryList
+        });
+      });
+    this.requestNewsList(this.state.active_category);
+  }
+
+  requestNewsList(categoryItem_number) {
+    fetch(
+      `http://13.209.12.87:8000/news?offset=1&amp;amp;tag_num=${categoryItem_number}`,
+      {
+        method: &amp;quot;GET&amp;quot;,
+        headers: {
+          &amp;quot;Content-Type&amp;quot;: &amp;quot;application/json&amp;quot;
+        }
+      }
+    )
+      .then(response =&amp;gt; {
+        return response.json();
+      })
+      // 해당하는 카테고리의 배열만 뜨게 설정하기
+      .then(response =&amp;gt; {
+        this.setState({
+          newsList: response[0].news_data.map(el =&amp;gt; {
+            if (el.tag_id === categoryItem_number) {
+              return el;
+            } else {
+              return &amp;quot;&amp;quot;;
+            }
+          }),
+          active_category: categoryItem_number
+        });
+      });
+  }
+  onChangeCategory = e =&amp;gt; {
+    let categoryItem_number = Number(e.currentTarget.id);
+    // 백에서 보내준 데이터가 1부터 시작해서 -1을 해줘야 제대로 작동한다
+    this.setState({
+      selectedIndex: categoryItem_number - 1
+    });
+    this.requestNewsList(categoryItem_number);
+  };
+
+  render() {
+    return (
+      &amp;lt;&amp;gt;
+        &amp;lt;div className=&amp;quot;NewsWrap&amp;quot;&amp;gt;
+          &amp;lt;div className=&amp;quot;NewsHome-tag&amp;quot;&amp;gt;
+            &amp;lt;div className=&amp;quot;NewsHome page_wrapper&amp;quot;&amp;gt;
+              &amp;lt;div className=&amp;quot;tag_round&amp;quot;&amp;gt;
+                {this.state.category.map((el, key) =&amp;gt; {
+                  let selectedStatus =
+                    key === this.state.selectedIndex ? true : false;
+                  return (
+                    &amp;lt;NewsHomeCategory
+                      key={key}
+                      name={el}
+                      value={key + 1}
+                      onChangeCategory={this.onChangeCategory}
+                      selected={selectedStatus}
+                    /&amp;gt;
+                  );
+                })}
+              &amp;lt;/div&amp;gt;
+              &amp;lt;div className=&amp;quot;design&amp;quot;&amp;gt;
+                {this.state.newsList.map((item, index) =&amp;gt; {
+                  if (item !== &amp;quot;&amp;quot;) {
+                    return (
+                      &amp;lt;Link to={`/news/${item.id}`}&amp;gt;
+                        &amp;lt;HomeNewsItem
+                          key={index}
+                          category={item.tag}
+                          title={item.title}
+                          summary={item.content}
+                          thumbnail={item.image_url}
+                        /&amp;gt;
+                      &amp;lt;/Link&amp;gt;
+                    );
+                  }
+                })}
+              &amp;lt;/div&amp;gt;
+            &amp;lt;/div&amp;gt;
+          &amp;lt;/div&amp;gt;
+        &amp;lt;/div&amp;gt;
+      &amp;lt;/&amp;gt;
+    );
+  }
+}
+
+export default NewsHome;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;엄청 복잡한 로직이었다!
+일단 클릭한 카테고리에 따라 보이는 화면이 다르게 구현 하는것도 힘들었고,
+뉴스와 레시피쪽 데이터 형식이 같진 않아서 fetch함수를 써서 데이터를 가져오고 가공하는데 더 어려움을 겪었던 것 같다.&lt;/p&gt;
+&lt;p&gt;NewsHome이라는 컴포넌트는 또 NewsHomeCategory라는 컴포넌트와 이어지는데..
+여기서 우리는 props에 대해서 살펴볼 것이다.&lt;/p&gt;
+&lt;h2 id=&quot;props&quot;&gt;&lt;a href=&quot;#props&quot; aria-label=&quot;props permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;props&lt;/h2&gt;
+&lt;p&gt;부모컴포넌트로 부터 물려 받는 속성값을 props라고 한다.
+이는 불변객체(immutable)기 때문에 값을 변경하려고 하면 에러가 난다!&lt;/p&gt;
+&lt;p&gt;그렇다면 NewsHome과 이어지는 NewsHomeCategory의 코드를 살펴보자&lt;/p&gt;
+&lt;p&gt;살펴보기 전! 내가 처음에 시도했던 방법을 먼저 살펴보자
+&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/ced57f00-d075-11e9-a83f-2d728137bd80/image.png&quot; alt=&quot;image.png&quot;&gt;
+(원래 일식 카테고리 누르면 노재팬 뜨게 하려고 했는데 팀원들의 만류로 패쓰~)
+여튼 카테고리를 눌렀을 때 해당하는 리스트는 뜨지만, 색깔이 바뀌는 효과를 주고 싶었던 나는…&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt; onClinkHandler = e =&amp;gt; {
+    this.props.onChangeCategory(e);
+    this.setState({
+      color: &amp;quot;orange&amp;quot;,
+      backgroundColor: &amp;quot;3px soild orange&amp;quot;
+    })
+  };
+
+render() {
+    return (
+      &amp;lt;div className=&amp;quot;check_box&amp;quot;&amp;gt;
+        &amp;lt;div
+          className=&amp;quot;RecipeButton&amp;quot;
+          style={{ borderBottom: this.state.borderBottom }}
+        &amp;gt;
+          &amp;lt;p
+            id={this.props.value}
+            onClick={this.onClinkHandler}
+            style={{ color: this.state.color }}
+          &amp;gt;
+            {this.props.name}
+          &amp;lt;/p&amp;gt;
+        &amp;lt;/div&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;state에 color와 backgroundColor를 넣어놓고 Click 이벤트가 일어날 때 style이 바뀌도록 인라인으로 css효과를 작성했다.
+그치만… 결과는!!!
+누르는 것마다 색깔이 바뀌게 되어서 대실패~&lt;/p&gt;
+&lt;p&gt;우리팀 에이스 광훈님의 도움을 받아 다시 작성해본 코드…&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import React from &amp;quot;react&amp;quot;;
+import &amp;quot;./NewsHome.scss&amp;quot;;
+
+class NewsHomeCategory extends React.Component {
+  onClickHandler = e =&amp;gt; {
+    this.props.onChangeCategory(e);
+  };
+
+  render() {
+    let borderColor = this.props.selected
+      ? &amp;quot;3px solid orange&amp;quot;
+      : &amp;quot;2px solid #bdbdbd&amp;quot;;
+
+    let charColor = this.props.selected ? &amp;quot;orange&amp;quot; : &amp;quot;black&amp;quot;;
+
+    return (
+      &amp;lt;div className=&amp;quot;check_box&amp;quot;&amp;gt;
+        &amp;lt;div
+          className=&amp;quot;NewsButton&amp;quot;
+          style={{
+            borderBottom: `${borderColor}`
+          }}
+        &amp;gt;
+          &amp;lt;p
+            id={this.props.value}
+            onClick={this.onClickHandler}
+            style={{
+              color: `${charColor}`
+            }}
+          &amp;gt;
+            {this.props.name}
+          &amp;lt;/p&amp;gt;
+        &amp;lt;/div&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+}
+
+export default NewsHomeCategory;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;props가 선택 되었는지 안 되었는지를 알기 위해선 NewsHome 컴포넌트 내부에 selected가 true인지 false인지 판별하는 함수를 넣어줬다. 요렇게!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;div className=&amp;quot;tag_round&amp;quot;&amp;gt;
+  {this.state.category.map((el, key) =&amp;gt; {
+    let selectedStatus = key === this.state.selectedIndex ? true : false;
+    return (
+      &amp;lt;NewsHomeCategory
+        key={key}
+        name={el}
+        value={key + 1}
+        onChangeCategory={this.onChangeCategory}
+        selected={selectedStatus}
+      /&amp;gt;
+    );
+  })}
+&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;selectedStatus가 true인 애들만 orange 색으로 바뀌게 하는 코드가 뙇!
+이제 증말로 선택한 카테고리만 색깔이 바뀐다 오예!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/c70834f0-d3a1-11e9-8f86-5df8e04645de/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;넘나 잘 먹히는 것…☆
+나 혼자만의 힘으로 한건 아니지만 원하는 결과가 화면에 나오니 이렇게 기쁠수가 없었다 ㅋㅋ&lt;/p&gt;
+&lt;p&gt;3주 전의 나는 이론으로만 대충 이런거다! 하고 state와 props에 대해 포스팅 했었는데
+프로젝트에 적용을 해보니까 쪼꼼 알 것 같다.&lt;/p&gt;
+&lt;h3 id=&quot;결론-무조건-콘솔-찍어봐라&quot;&gt;&lt;a href=&quot;#%EA%B2%B0%EB%A1%A0-%EB%AC%B4%EC%A1%B0%EA%B1%B4-%EC%BD%98%EC%86%94-%EC%B0%8D%EC%96%B4%EB%B4%90%EB%9D%BC&quot; aria-label=&quot;결론 무조건 콘솔 찍어봐라 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;결론, 무조건 콘솔 찍어봐라!&lt;/h3&gt;
+&lt;p&gt;this.props가 무엇인지, this.state.newsList에 어떤 데이터가 들어오는지, 진짜로 데이터가 들어오긴 하는건지!
+일단 다 찍어봐야 알 수 있다!&lt;/p&gt;
+&lt;h2 id=&quot;reference&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;실전 리액트 프로그래밍(이재승 저)&lt;/li&gt;
+&lt;li&gt;1차 프로젝트 wooridoori.com 코드&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[wecode 7주차_1일 TIL_css 반응형 간단정리+프로젝트 예시]]></title><description><![CDATA[위코드 35일차. 1차 프로젝트의 모든 기능구현 완료! 하지만 반응형 디자인은 적용하지 않았기 때문에 연습해볼겸 간단히 정리해보았다!]]></description><link>https://gollumnima.github.io//posts/wecode7_1TIL_rwd</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode7_1TIL_rwd</guid><pubDate>Mon, 09 Sep 2019 17:11:04 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/02342c10-d2e8-11e9-935a-83273dbb585d/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;기술이 발전함에 따라 다양한 크기의 스크린을 가진 기기들이 등장하게 되고…
+사용자는 그냥 쓰기만 하면 되지만 개발자는 다르쥐..
+이번에 나온 갤럭시 폴더블… 부들부들… 그건 또 반응형으로 어떻게 만들지?ㅋㅋㅋㅋ&lt;/p&gt;
+&lt;p&gt;여튼.. 스크린 크기에 상관없이 시각적으로 가독성 좋은 페이지를 만들기 위해 도입된 것이 바로
+반응형 웹디자인이다!
+개발자는 웹 사이트의 콘텐츠 크기와 웹 사이트가 보여지는 스크린의 크기에 따라 반응형 구조를 짜야 한다.&lt;/p&gt;
+&lt;p&gt;먼저 콘텐츠의 크기에 따라서 정리해보았다!&lt;/p&gt;
+&lt;h1 id=&quot;컨텐츠의-크기&quot;&gt;&lt;a href=&quot;#%EC%BB%A8%ED%85%90%EC%B8%A0%EC%9D%98-%ED%81%AC%EA%B8%B0&quot; aria-label=&quot;컨텐츠의 크기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;컨텐츠의 크기&lt;/h1&gt;
+&lt;h2 id=&quot;콘텐츠의-절대-수치&quot;&gt;&lt;a href=&quot;#%EC%BD%98%ED%85%90%EC%B8%A0%EC%9D%98-%EC%A0%88%EB%8C%80-%EC%88%98%EC%B9%98&quot; aria-label=&quot;콘텐츠의 절대 수치 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;콘텐츠의 절대 수치&lt;/h2&gt;
+&lt;p&gt;px을 생각해보자면.. 딱 그 만큼의 크기를 차지하는 hard한 개념이다. 스크린의 크기가 달라져도 원래 정해진 px만큼의 자리를 차지하게 된다.
+이걸 보완하려고 나온게 CSS에서의 상대적인 측정값이다.
+px과는 다르게 상대적인 측정값을 쓰게 되면 콘텐츠의 크기가 스크린의 크기나 레이아웃에 얽매이지 않게 된다.&lt;/p&gt;
+&lt;h2 id=&quot;콘텐츠의-상대-수치&quot;&gt;&lt;a href=&quot;#%EC%BD%98%ED%85%90%EC%B8%A0%EC%9D%98-%EC%83%81%EB%8C%80-%EC%88%98%EC%B9%98&quot; aria-label=&quot;콘텐츠의 상대 수치 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;콘텐츠의 상대 수치&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;em : 사용한 font의 크기를 토대로 변화하는 값. 브라우저에서 기본 폰트가 16px이라면 1em은 16px이다.&lt;/li&gt;
+&lt;li&gt;rem : em과 비슷하지만, root element(html)의 font size를 참조한다는 점에서 다르다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;퍼센트&quot;&gt;&lt;a href=&quot;#%ED%8D%BC%EC%84%BC%ED%8A%B8&quot; aria-label=&quot;퍼센트 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;퍼센트&lt;/h2&gt;
+&lt;p&gt;width나 height, padding, border, margins와 같은 box model 값에 자주 적용 된다.
+퍼센트가 padding과 margin에 적용될 땐 부모 div의 width값을 토대로 계산이 된다! padding과 margin의 세로값 또한 부모div의 width값을 토대로 계산이 됨..height이 아니라~ 오 씐기씐기!&lt;/p&gt;
+&lt;h2 id=&quot;최대값과-최소값&quot;&gt;&lt;a href=&quot;#%EC%B5%9C%EB%8C%80%EA%B0%92%EA%B3%BC-%EC%B5%9C%EC%86%8C%EA%B0%92&quot; aria-label=&quot;최대값과 최소값 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;최대값과 최소값&lt;/h2&gt;
+&lt;p&gt;상대적인 값을 쓸 때, 우리는 최대값과 최소값을 이용해 콘텐츠의 크기를 제한할 수 있다. 예를 들어…&lt;/p&gt;
+&lt;h1 id=&quot;미디어쿼리&quot;&gt;&lt;a href=&quot;#%EB%AF%B8%EB%94%94%EC%96%B4%EC%BF%BC%EB%A6%AC&quot; aria-label=&quot;미디어쿼리 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;미디어쿼리&lt;/h1&gt;
+&lt;p&gt;웹사이트의 콘텐츠를 다양한 스크린 사이즈에 맞게 적용시키는 것이 바로 CSS의 미디어쿼리다.
+CSS가 스크린의 크기를 감지해서 그 스크린의 가로사이즈에 맞게 스타일을 적용시키는 것이 바로 핵심!
+용어들을 한번 알아볼까?&lt;/p&gt;
+&lt;p&gt;그 전에 예시 코드 하나 투척쓰!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;@media only screen and (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;media&quot;&gt;&lt;a href=&quot;#media&quot; aria-label=&quot;media permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;@media&lt;/h2&gt;
+&lt;p&gt;미디어쿼리 시작할때의 약속! 저렇게 시작해야 한다~~&lt;/p&gt;
+&lt;h2 id=&quot;only-screen&quot;&gt;&lt;a href=&quot;#only-screen&quot; aria-label=&quot;only screen permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;only screen&lt;/h2&gt;
+&lt;p&gt;어떠한 장치를 써도 이 법칙을 따라야 한다는걸 명시한다.
+only가 왜 쓰였냐.. 초창기 미디어 타입에는 screen 말고도 handheld, print가 있었는데
+지금의 CSS 법칙은 다른거 다 제끼고 only 스크린에 적용된다는 것!&lt;/p&gt;
+&lt;h2 id=&quot;and-max-width-480px&quot;&gt;&lt;a href=&quot;#and-max-width-480px&quot; aria-label=&quot;and max width 480px permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;and (max-width: 480px)&lt;/h2&gt;
+&lt;p&gt;CSS법칙이 가로길이 480px이거나 그것보다 더 작은 것들에 적용이 된다는 것. 저 가로길이 이후 중괄호를 열어서 값에 변화를 주면 사용자의 스크린 크기가 480px보다 작아졌을때 원래의 css값이 아닌 미디어쿼리에 적용한 새로운 값이 적용된다.&lt;/p&gt;
+&lt;h2 id=&quot;range범위&quot;&gt;&lt;a href=&quot;#range%EB%B2%94%EC%9C%84&quot; aria-label=&quot;range범위 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Range(범위)&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;@media only screen and (min-width: 320px) and (max-width: 480px) {
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;max 뿐만 아니라 min 값까지 동시에 줄 수 있다!
+저건 무슨 뜻이냐면.. 스크린 크기가 320px과 480px 사이일때 저걸 적용해라 라는 뜻..!&lt;/p&gt;
+&lt;h2 id=&quot;dpidots-per-inch&quot;&gt;&lt;a href=&quot;#dpidots-per-inch&quot; aria-label=&quot;dpidots per inch permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;DPI(Dots Per Inch)&lt;/h2&gt;
+&lt;p&gt;고해상도 스크린의 반응형 디자인을 하기 위해 고안된 모델. min 혹은 max-resolution을 쓴다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;@media only screen and (min-resolution: 300dpi) {
+    /* CSS for high resolution screens */
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;사실 코드아카데미 사이트를 보며 여기까지 정리해봤는데…
+DPI 2번문제에서 안 넘어가서.. 그 다음껄 정리를 못하고 있다.
+일주일 무료기간 끝나면 20만원 과금이 되서 미리 손절해야 하는데!&lt;/p&gt;
+&lt;p&gt;여튼.. 정리는 이쯤에서 마치고 실제 프로젝트에 적용한 결과물을 보자&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/6f3e6c50-d3a4-11e9-a484-39249fc66e45/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;현재 우리두리닷컴 페이지의 메인이다.&lt;/p&gt;
+&lt;h4 id=&quot;다시-한번-말하지만-절대-이-이름은-내가-지은게-아니다&quot;&gt;&lt;a href=&quot;#%EB%8B%A4%EC%8B%9C-%ED%95%9C%EB%B2%88-%EB%A7%90%ED%95%98%EC%A7%80%EB%A7%8C-%EC%A0%88%EB%8C%80-%EC%9D%B4-%EC%9D%B4%EB%A6%84%EC%9D%80-%EB%82%B4%EA%B0%80-%EC%A7%80%EC%9D%80%EA%B2%8C-%EC%95%84%EB%8B%88%EB%8B%A4&quot; aria-label=&quot;다시 한번 말하지만 절대 이 이름은 내가 지은게 아니다 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;다시 한번 말하지만 절대 이 이름은 내가 지은게 아니다!&lt;/h4&gt;
+&lt;p&gt;여튼 화면 크기가 줄어들 때 Navbar의 글씨가 로고로 바뀌는걸 구현하고 싶었다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;.logo_wrap {
+        img {
+          width: 100px;
+          display: none;
+          @media only screen and (max-width: 690px) {
+            display: block;
+          }
+        }
+        h1 {
+          font-size: 35px;
+          font-weight: 500;
+        }
+      }
+
+@media only screen and (max-width: 690px) {
+  .logo_wrap {
+    h1 {
+      display: none;
+    }
+
+    // #image_logo {
+    //   display: block;
+    // }
+  }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;원래는 &lt;code class=&quot;language-text&quot;&gt;logo_wrap&lt;/code&gt; 클래스 내부에 h1만 있었으나, img태그를 추가했음
+그리고 img에는 &lt;code class=&quot;language-text&quot;&gt;display: none&lt;/code&gt;이라는 효과를 줘서 가렸음
+&lt;code class=&quot;language-text&quot;&gt;visibility: hidden&lt;/code&gt;이라는 속성도 있지만, 그걸 쓰면 화면엔 안 보이지만 자리차지는 한다.
+완전 눈속임ㅋㅋㅋㅋ&lt;/p&gt;
+&lt;p&gt;그래도 언제 한번 쓸 일이 있었으면 좋겠다~ 까먹지 않게!&lt;/p&gt;
+&lt;p&gt;여튼.. 스크린의 가로길이가 690px이 되는 순간, &lt;code class=&quot;language-text&quot;&gt;wooridoori.com&lt;/code&gt;이라는 글자가 사라지고 로고가 뜨게 하고 싶었다!
+처음엔 h1과 같이 아래에 미디어쿼리 효과를 따로 줬지만 이미지는 뜨지 않았다.
+아무래도 우선순위에서 밀려서 그런것 같았다(순규님 왈)
+그래서 img태그에 직접 미디어쿼리를 주니까 먹혔다!&lt;/p&gt;
+&lt;p&gt;화면을 줄이면…&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/b403f1a0-d3a6-11e9-9be1-d7af2d4620a0/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;뙇! 이렇게 WD 로고가 뜬다!!!
+반응형을 한번도 써보지 않아서 어렵게만 생각했었는데.. 생각보다 괜찮네?
+이번에 간단하게 함 해봤으니까 다음번에는 좀 더 자연스럽게 콘텐츠 크기가 변화할 수 있도록 적용해보는게 목표!&lt;/p&gt;
+&lt;h2 id=&quot;reference&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;codeAcademy&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[wecode 6주차_5일 TIL_구글캠퍼스 프론트앤드 밋업 후기 & 기승전 구글이야기]]></title><description><![CDATA[위코드 34일차. 나의 첫 개발자 밋업 참가. 하지만 나는 네트워킹은 참여 안하고 세션만 듣고 프로젝트 막바지 준비를 위해 다시 위워크로 돌아왔다.]]></description><link>https://gollumnima.github.io//posts/wecode6_5TIL_meetup</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode6_5TIL_meetup</guid><pubDate>Fri, 06 Sep 2019 20:54:04 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/5639bb70-d20e-11e9-b025-070267756e7c/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;네이버 블로그 쓰던 시절에 Jandi라는 기업의 초대를 받고 구글 캠퍼스 EXIT Party에 참석한 적이 있는데… 후기는 아래의 링크에서 ㅋㅋ
 &lt;a href=&quot;https://blog.naver.com/gollumnima/220613852819&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://blog.naver.com/gollumnima/220613852819&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;여튼 그 당시엔 마케터로 구캠 이벤트를 참석했는데 오늘은 프론트앤드 개발자로 다시금 발걸음을 해보니 감회가 새로웠다!&lt;/p&gt;
