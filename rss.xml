@@ -1,4 +1,121 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Fri, 13 Sep 2019 10:40:47 GMT</lastBuildDate><item><title><![CDATA[wecode 7주차_5일 TIL_styled-component에 대해 알아보자!]]></title><description><![CDATA[위코드 39일차. 2차 프로젝트는 css tool 중에 styled-component를 이용할거라서 미리 공부해보았다. 사실 연습용 포트폴리오 사이트 만들때 약간 써봤지만 이번에 블로그로 정리를 하며 다양한 기능에 대해 알게되었다!]]></description><link>https://gollumnima.github.io//posts/wecode7_5TIL_styled-component</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode7_5TIL_styled-component</guid><pubDate>Fri, 13 Sep 2019 12:51:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/6ccdc6d0-d5db-11e9-b69d-eb338bc0d92e/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sat, 14 Sep 2019 03:16:34 GMT</lastBuildDate><item><title><![CDATA[wecode 7주차_6일 TIL_보험금 처리과정으로 Redux 이해하기]]></title><description><![CDATA[위코드 40일차. 원래는 주말 빼고 숫자를 세곤 했는데 에라모르겠다. 인제부터 블로그 쓸 때마다 플러스 할테다. 여튼.. Udemy에 있는 Redux 강좌를 보며 Redux가 어떤 원리로 돌아가는지 한번 알아보았다.]]></description><link>https://gollumnima.github.io//posts/wecode7_6TIL_redux_1</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode7_6TIL_redux_1</guid><pubDate>Sat, 14 Sep 2019 12:10:23 GMT</pubDate><content:encoded>&lt;h2 id=&quot;redux&quot;&gt;&lt;a href=&quot;#redux&quot; aria-label=&quot;redux permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Redux&lt;/h2&gt;
+&lt;p&gt;Redux는 state를 관리해주는 라이브러리다.
+일단 로직은 이러하다&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Action Creator → Action → Dispatch → Reducers → State&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;각각의 요소들이 무엇인지 파악하기 이전에
+보험회사에 보험금을 청구하는 과정으로 Redux를 이해해보자!
+해당 내용은 Udemy Modern React with Redux 라는 강의를 듣고 적어보았다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/817089c0-d698-11e9-8270-13e33fe5a10a/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;보험회사에 보험금을 청구하는 과정을 살펴보자면…&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;고객이 보험회사에 영수증 제출 → 영수증전달 → 접수직원이 받음 → 해당부서로 넘김 → 고객정보 확인 후 보험금 지급&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;인데… 위의 Redux의 과정과 동일하다고 보면 된다!
+이걸 코드로 써보자.&lt;/p&gt;
+&lt;p&gt;codepen의 js탭을 눌른다음 Redux 선택하고 코드를 적으면 된다.
+코드를 다 치고나서 결과는 개발자도구의 콘솔창에서 확인할 수 있다!&lt;/p&gt;
+&lt;h2 id=&quot;action-creator--action&quot;&gt;&lt;a href=&quot;#action-creator--action&quot; aria-label=&quot;action creator  action permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Action Creator &amp;#x26; Action&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// 고객이 영수증 제출
+const createPolicy = (name, amount) =&amp;gt; {
+  return {
+    // Action
+    type: &amp;#39;CREATE_POLICY&amp;#39;, // Action에는 꼭 type이 있어야함.
+    payload: { // 영수증 세부내역
+      name: name,
+      amount: amount
+    }
+  };
+};
+
+// 보험회사에서 고객정보 삭제
+const deletePolicy = (name) =&amp;gt; {
+  return {
+    type: &amp;#39;DELETE_POLICY&amp;#39;,
+    payload : {
+      name: name
+    }
+  };
+};
+
+// 보험회사에서 고객에게 보험금 지급
+const createClaim = (name, amountOfMoneyToCollect) =&amp;gt; {
+  return {
+    type: &amp;#39;CREATE_CLAIM&amp;#39;,
+    payload: {
+      name: name,
+      amountOfMoneyToCollect : amountOfMoneyToCollect
+    }
+  };
+};&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;reducers&quot;&gt;&lt;a href=&quot;#reducers&quot; aria-label=&quot;reducers permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reducers&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// 보험급 지금내역
+// parameter 내부에서 default값은 빈 배열로 선언해준다.
+const claimHistory = (oldListOfClaims = [], action) =&amp;gt; {
+  if (action.type === &amp;#39;CREATE_CLAIM&amp;#39;) {
+    return [...oldListOfClaims, action.payload];
+    //old에 새로 들어온 action.payload를 push하는 과정
+    //reducer 안에 push를 쓰면 안된다!
+  }
+  return oldListOfClaims;
+};
+
+// 보험회사가 가지고 있는 총 자산
+// bagOfMoney의 default 값은 100으로 주었다.
+const accounting = (bagOfMoney = 100, action) =&amp;gt; {
+  if (action.type === &amp;#39;CREATE_CLAIM&amp;#39;) {
+  // 고객이 보험금 청구시 보험회사 자산에서 요청한 금액만큼 차감
+    return bagOfMoney - action.payload.amountOfMoneyToCollect;
+  }
+  else if (action.type  === &amp;#39;CREATE_POLICY&amp;#39;) {
+  // 신규고객 가입시 보험회사의 자산에 금액이 추가됨
+    return bagOfMoney + action.payload.amount;
+  }
+return bagOfMoney;
+}
+
+// 가입회원 목록
+const policies = (listOfPolicies = [], action) =&amp;gt; {
+  if (action.type === &amp;#39;CREATE_POLICY&amp;#39;) {
+    return [...listOfPolicies, action.payload.name];
+  }
+  else if (action.type === &amp;#39;DELETE_POLICY&amp;#39;) {
+    return listOfPolicies.filter(name =&amp;gt; name !== action.payload.name);
+  }
+  return listOfPolicies;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;const { createStore, combineReducers } = Redux;&lt;/code&gt;
+이러한 선언을 통해 Redux에서 저 메소드들을 쓸 수 있는 것일듯.. 아마?&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const ourDepartments = combineReducers({
+  accounting: accounting,
+  claimHistory : claimHistory,
+  policies: policies
+});
+
+const store = createStore(ourDepartments);
+
+store.dispatch(createPolicy(&amp;#39;Alex&amp;#39;, 20));
+store.dispatch(createPolicy(&amp;#39;Jim&amp;#39;, 30));
+store.dispatch(createPolicy(&amp;#39;Bob&amp;#39;, 40));&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이 과정까지 마친 다음 콘솔을 찍어보자.
+&lt;code class=&quot;language-text&quot;&gt;console.log(store.getState());&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/9f6b0750-d69a-11e9-b97c-a500ac23aaac/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;현재까지 보험회사 총 자산은 190이고, 고객은 Alex, Jim, Bob 3명이다.&lt;/p&gt;
+&lt;p&gt;근데 약간의 변화를 줘보자!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;store.dispatch(createClaim(&amp;#39;Alex&amp;#39;, 120));
+store.dispatch(createClaim(&amp;#39;Jim&amp;#39;, 50));
+store.dispatch(deletePolicy(&amp;#39;Bob&amp;#39;));&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Alex와 Jim이 보험금을 청구했고, Bob은 보험을 해지했다.
+다시 한번 콘솔을 찍어보면&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/0de3d220-d69b-11e9-b0dc-55946ccbff49/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;190에서 Alex와 Jim이 청구한 보험금이 빠져나서 보험회사의 자산은 20
+claimHistory를 보면 보험금을 청구한 사람과 금액이 나오고,
+policies 배열을 보면 Bob이 보험을 해지했기 때문에 2명만 나온다.&lt;/p&gt;
+&lt;p&gt;우리가 보통 리액트에서 상태관리 하려면 this.state 어쩌구를 썼는데
+Redux 세상에서는 state 관리를 직접적으로 하는것 대신 dispatch를 이용해서 한다!&lt;/p&gt;
+&lt;p&gt;일단 대충 Redux의 원리는 이러하고…
+그 다읍번 포스팅에서 Redux에 대해 좀 더 자세히 써볼 예정쓰!!!&lt;/p&gt;
+&lt;h2 id=&quot;reference&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Udemy, Modern React with Redux&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[wecode 7주차_5일 TIL_styled-component에 대해 알아보자!]]></title><description><![CDATA[위코드 39일차. 2차 프로젝트는 css tool 중에 styled-component를 이용할거라서 미리 공부해보았다. 사실 연습용 포트폴리오 사이트 만들때 약간 써봤지만 이번에 블로그로 정리를 하며 다양한 기능에 대해 알게되었다!]]></description><link>https://gollumnima.github.io//posts/wecode7_5TIL_styled-component</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode7_5TIL_styled-component</guid><pubDate>Fri, 13 Sep 2019 12:51:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/6ccdc6d0-d5db-11e9-b69d-eb338bc0d92e/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;CSS tool에는 다양한 것들이 있는데, 그 중에서 가장 최신의 것인 Styled Component에 대해서 알아볼 것이다!&lt;/p&gt;
 &lt;h2 id=&quot;설치&quot;&gt;&lt;a href=&quot;#%EC%84%A4%EC%B9%98&quot; aria-label=&quot;설치 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;설치&lt;/h2&gt;
 &lt;p&gt;터미널에 &lt;code class=&quot;language-text&quot;&gt;yarn add styled-components&lt;/code&gt; 입력 고고!

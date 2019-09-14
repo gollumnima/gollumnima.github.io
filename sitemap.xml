@@ -2,11 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 <url> <loc>https://gollumnima.github.io/tags</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/categories</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://gollumnima.github.io/pages/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://gollumnima.github.io/posts/wecode1_4_TIL_js/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/posts/wecode1_5_TIL_js/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://gollumnima.github.io/posts/wecode1_2_TIL_css/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gollumnima.github.io/posts/wecode1_4_TIL_js/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/posts/wecode1_3_TIL_css/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gollumnima.github.io/posts/wecode1_2_TIL_css/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/posts/wecode1_1_TIL_html/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/posts/wecode1_6_TIL_html/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/posts/wecode1_7_TIL_js/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -42,6 +41,8 @@
 <url> <loc>https://gollumnima.github.io/posts/wecode7_3TIL_LoremIpsum</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/posts/wecode7_4TIL_Lifecyle</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/posts/wecode7_5TIL_styled-component</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gollumnima.github.io/posts/wecode7_6TIL_redux_1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gollumnima.github.io/pages/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/tag/aws</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/tag/backend</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/tag/codingbootcamp</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -74,6 +75,7 @@
 <url> <loc>https://gollumnima.github.io/tag/react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/tag/react/page/1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/tag/recursion</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gollumnima.github.io/tag/redux</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/tag/signup</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/tag/wecode</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/tag/wecode/page/1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -103,6 +105,7 @@
 <url> <loc>https://gollumnima.github.io/category/react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/category/react/page/1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/category/react/page/2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gollumnima.github.io/category/redux</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/page/1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://gollumnima.github.io/page/2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
