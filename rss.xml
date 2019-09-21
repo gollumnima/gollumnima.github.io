@@ -1,4 +1,92 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Thu, 19 Sep 2019 11:35:33 GMT</lastBuildDate><item><title><![CDATA[wecode 8주차_1일 TIL_리액트에서 탭 이동 및 선택한 탭 색깔 칠하기]]></title><description><![CDATA[위코드 49일차. 어차피 주말에도 매일 나오니까 인제 주말까지 포함해서 세기로 마음먹었다ㅋㅋ 리액트에서 탭 이동하면 각 탭별 화면이 구현되고, 또 선택한 탭의 색깔이 바뀌는 로직을 짜보았다!]]></description><link>https://gollumnima.github.io//posts/wecode8_1TIL_react_switchingTab</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode8_1TIL_react_switchingTab</guid><pubDate>Mon, 16 Sep 2019 20:29:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/0f8a3690-dab6-11e9-b89c-ad3a038b9fd8/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sat, 21 Sep 2019 10:20:21 GMT</lastBuildDate><item><title><![CDATA[wecode 8주차_2일 TIL_Git에서 rebase써서 commit 횟수를 줄여보자!]]></title><description><![CDATA[위코드 50일차. 개발자에겐 뭐라도 한 줄 줄이는게 일상. 오늘은 GitHub에 올라가는 commit 개수를 줄이기 위한 방법으로 rebase에 대해 알아보았다!]]></description><link>https://gollumnima.github.io//posts/wecode8_2TIL_git_rebase</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode8_2TIL_git_rebase</guid><pubDate>Tue, 17 Sep 2019 19:13:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/85c91cf0-dc13-11e9-920f-9faaccb2a511/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;git이랑 이제 조금 친해졌나 싶었는데 아직 갈 길이 한참 남은 걸 깨달았다.
+이번주 위코드 세션에서는 rebase가 무엇인지에 대해 배우게 되었다 ㅋㅋ&lt;/p&gt;
+&lt;p&gt;이번 주제의 썸네일이 왜 할로윈 호박이나면.. 호박과 관련되기도 하고.. rebase는 할로윈의 밤처럼 으스스하기 때문이다.&lt;/p&gt;
+&lt;h2 id=&quot;rebase란&quot;&gt;&lt;a href=&quot;#rebase%EB%9E%80&quot; aria-label=&quot;rebase란 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;rebase란&lt;/h2&gt;
+&lt;p&gt;단어 그대로 기준을 설정한다는 뜻이다.
+쪼꼼 바꿔말하면.. 우리가 Git에 commit한 history를 바꿔버릴 수 있는 무시무시한 녀석이다.
+그럼 우리는 이 rebase를 이용해 무엇을 하냐…&lt;/p&gt;
+&lt;p&gt;나의 첫 2주짜리 프로젝트 커밋목록을 한번 살펴보자!
+&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/2f57dd00-da35-11e9-ac20-6f4a737fa10d/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;무려 169개의 커밋내역이 있다… 와우!
+이제부터는 커밋의 개수가 너무 많지 않게 양을 조절할 것이다!&lt;/p&gt;
+&lt;p&gt;본격적으로 rebase를 하기 앞서 우리가 해야할 일…&lt;/p&gt;
+&lt;h2 id=&quot;백업&quot;&gt;&lt;a href=&quot;#%EB%B0%B1%EC%97%85&quot; aria-label=&quot;백업 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;백업&lt;/h2&gt;
+&lt;p&gt;바로 백업이다! 혹시 날릴수도 있으니 미리 백업을 해둔다. 실제로 동기님중에 rebase땜에 파일도 멘탈도 탈탈 털린분이 있다 ㅠㅠ
+그냥 복붙해서 다른폴더에 저장해도 좋지만! 우린 개발을 배우는 사람이니까 명령어를 써보자.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;cp -rpv adwards-frontend adwards-frontend2&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;cp -rpv옆에 왼쪽꺼가 현재의 폴더명, 오른쪽이 새로 생성할 폴더명&lt;/p&gt;
+&lt;p&gt;이 때 경로를 조심해야 한다! 내 폴더가 속하기 바로 전 단계의 경로에서 저걸 실행해야 한다.
+(나의 경우는 front-end 폴더)
+명령어를 입력하면 이렇게 쌍둥이 폴더가 뙇! 생긴다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/e2b0db90-d93b-11e9-b3fc-338dc1bf1c7a/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;오 씐기씐기!! 진짜 똑같은게 새로 생성되었다!!&lt;/p&gt;
+&lt;h2 id=&quot;다시-이동&quot;&gt;&lt;a href=&quot;#%EB%8B%A4%EC%8B%9C-%EC%9D%B4%EB%8F%99&quot; aria-label=&quot;다시 이동 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;다시 이동&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;cd adwards-frontend&lt;/code&gt;
+다시 원본폴더로 이동 고고!&lt;/p&gt;
+&lt;h2 id=&quot;중간에-tig-깔아주었음&quot;&gt;&lt;a href=&quot;#%EC%A4%91%EA%B0%84%EC%97%90-tig-%EA%B9%94%EC%95%84%EC%A3%BC%EC%97%88%EC%9D%8C&quot; aria-label=&quot;중간에 tig 깔아주었음 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;중간에 tig 깔아주었음&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;apt-get install tig&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/5fdefdc0-d93e-11e9-b3fc-338dc1bf1c7a/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;tig 명령어 치면 이렇게 다 내역을 볼 수 있음!
+나갈땐 아마 q였나? 치면 나갈 수 있다!&lt;/p&gt;
+&lt;h2 id=&quot;gcm&quot;&gt;&lt;a href=&quot;#gcm&quot; aria-label=&quot;gcm permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;gcm&lt;/h2&gt;
+&lt;p&gt;rebase를 하기 전에 우리는 로컬에 있는 master 브랜치를 업데이트 해줘야 한다!
+그러기 위해선 쳌아웃을 해준다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git checkout master&lt;/code&gt;
+&lt;code class=&quot;language-text&quot;&gt;git pull origin master&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;pull까지 땡겼으면 다시 마스터에서 원래 작업하던 브랜치로 돌아간다. 쳌아웃!
+그 전에 &lt;code class=&quot;language-text&quot;&gt;git status&lt;/code&gt; 명령어를 쳐서 내가 정말로 커밋을 다 끝냈는지 확인한다.
+rebase는 push 전 단계에서 하는거기 때문에 commit까진 다 해야한다.&lt;/p&gt;
+&lt;h2 id=&quot;rebase&quot;&gt;&lt;a href=&quot;#rebase&quot; aria-label=&quot;rebase permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;rebase&lt;/h2&gt;
+&lt;p&gt;아기다리 고기다리던 rebase 시간!! 몸과 마음을 가다듬고 정신 집중쓰! 아주 중요한 시간
+두 가지 방법이 있다.
+master에 현재 브랜치를 합치는 방법과 HEAD에서 커밋의 개수만큼 세서 합치는 방법!
+난 둘다 해보았다 ㅋㅋ
+후자부터 한번 살펴보자.&lt;/p&gt;
+&lt;h3 id=&quot;최근-커밋-리스트-개수-세는-rebase&quot;&gt;&lt;a href=&quot;#%EC%B5%9C%EA%B7%BC-%EC%BB%A4%EB%B0%8B-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EA%B0%9C%EC%88%98-%EC%84%B8%EB%8A%94-rebase&quot; aria-label=&quot;최근 커밋 리스트 개수 세는 rebase permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;최근 커밋 리스트 개수 세는 rebase&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git rebase -i HEAD~3&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;난 최근 commit이 3개라서 HEAD~3라고 했음.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/aa6f02e0-da33-11e9-bf68-cd3d4fa5a9f9/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;명령어를 치면 최근 커밋한 목록이 3개 나온다.
+처음에는 전부 pick으로 되어있는데, pick은 하나만 남기고 전부 squash로 바꿔준다. s로 써도 된다.
+그래서 내가 할로윈 호박을 썸네일로 했지 ㅋㅋㅋ
+하나만 남기고 전부 찌부찌부해서 커밋을 하나로 줄여준다는 의미쓰~!&lt;/p&gt;
+&lt;p&gt;ctrl+x하면 끝내기다. 그다음에 변경사항을 저장하겠습니까?가 뜨면 y. 그다음 엔터누르고 넘어가면&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/d5b1fe30-da33-11e9-9562-5567d9b20f9d/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;커밋 메시지는 최종적으로 한 개만 남겨야 함. #을 이용해 필요없는 커밋메시지는 주석처리 하거나 지워준다!
+나는 최종 메시지를 seperated components로 남겼다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/b9947780-d940-11e9-a678-0f96d91a512c/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;이거 한담에 내 branch에서 push하고 pr까지 날리면 성공!
+만약에 conflict가 난다면… 아래의 링크를 참조하시오..!&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;successfully rebased and updated&lt;/code&gt; 어쩌구가 뜨면 당신은 성공한 것입니다! 추카추카~
+이제 평소와 마찬가지로 push 날리고 Github에서 Pull request 날리면 된다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/018c8920-da35-11e9-ac20-6f4a737fa10d/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;그러면 확실히 보일것이다.
+커밋 3개였던걸 1개로 줄였다!! 오ㅋㅋㅋㅋ 신기하구먼&lt;/p&gt;
+&lt;p&gt;인제 또 다른 방법을 소개소개쓰~~&lt;/p&gt;
+&lt;h3 id=&quot;master-브랜치에-직접-접근하는-방식&quot;&gt;&lt;a href=&quot;#master-%EB%B8%8C%EB%9E%9C%EC%B9%98%EC%97%90-%EC%A7%81%EC%A0%91-%EC%A0%91%EA%B7%BC%ED%95%98%EB%8A%94-%EB%B0%A9%EC%8B%9D&quot; aria-label=&quot;master 브랜치에 직접 접근하는 방식 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;master 브랜치에 직접 접근하는 방식&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git rebase -i master feature/ad_upload&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;저 타이틀이 맞는 말인진 모르겠다.. 아직 아마추어이기 때문이다 나는ㅋㅋㅋ&lt;/p&gt;
+&lt;p&gt;여튼 git rebase -i를 치고 master와 마스터에 병합할 브랜치명을 순서대로 써준다!
+여기서 -i는 interactive하게 처리하겠다는 의미&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/b9102ab0-dc11-11e9-920f-9faaccb2a511/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;그럼 아까와 동일한 화면이 뜨고, pick은 하나만 남기고 전부 s로 바꿔주면 끝!
+두번째 rebase 도전이라 이번엔 commit을 좀 많이 해봤다 ㅋㅋ&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/f01789e0-dc11-11e9-920f-9faaccb2a511/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/fed334c0-dc11-11e9-920f-9faaccb2a511/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/3cc27610-dc12-11e9-920f-9faaccb2a511/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;역시나 성공쓰!
+사실 이렇게 되기 전에 한번 conflict 나서 당황했던 적이 있다 ㅋㅋㅋ&lt;/p&gt;
+&lt;p&gt;만약 충돌이 있다면 수정 후 &lt;code class=&quot;language-text&quot;&gt;git add .&lt;/code&gt; 하고 그담에 &lt;code class=&quot;language-text&quot;&gt;git rebase --continue&lt;/code&gt;
+그냥 터미널에 써진대로 고대로 읽으면서 하면 된다..ㅋㅋ&lt;/p&gt;
+&lt;p&gt;이렇게 나의 rebase 도전은 성공적으로 끝났다.
+아 근데 다른 팀원분과 branch 충돌이 별로 안 일어나서 성공이였는데,,,
+나중에 계속 충돌날까봐 벌써 무섭다~~~ 커밋 개수대로 충돌을 처리해야해서 넘나 귀찮은 과정인 것!
+그래도 난 개발자니까 꼼꼼하게 커밋을 남기는게 나은것 같아서 앞으로 커밋은 더 많이 할 예정!&lt;/p&gt;
+&lt;h2 id=&quot;reference&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;위코드 rebase 세션&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[wecode 8주차_1일 TIL_리액트에서 탭 이동 및 선택한 탭 색깔 칠하기]]></title><description><![CDATA[위코드 49일차. 어차피 주말에도 매일 나오니까 인제 주말까지 포함해서 세기로 마음먹었다ㅋㅋ 리액트에서 탭 이동하면 각 탭별 화면이 구현되고, 또 선택한 탭의 색깔이 바뀌는 로직을 짜보았다!]]></description><link>https://gollumnima.github.io//posts/wecode8_1TIL_react_switchingTab</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode8_1TIL_react_switchingTab</guid><pubDate>Mon, 16 Sep 2019 20:29:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/0f8a3690-dab6-11e9-b89c-ad3a038b9fd8/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;오늘 점심먹고서부터 시작된 나의 삽질은 저녁먹기 바로 직전에 끝이 났다ㅋㅋ
 탭이동 하는 로직은 안 쓰는 사이트가 없기 때문에 꼭 알아야하는 로직이다!
 삽질을 꽤나 오래하긴 했지만 일단 정리를 해야 까먹지 않을것 같아서 정리 시작!&lt;/p&gt;
