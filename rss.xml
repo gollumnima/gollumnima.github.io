@@ -1,4 +1,152 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 22 Sep 2019 01:54:46 GMT</lastBuildDate><item><title><![CDATA[wecode 8주차_3일 TIL_프로젝트 할 때 코드구조 깔끔하게 잡아보자]]></title><description><![CDATA[위코드 51일차. 훌륭한 개발자의 덕목 중 하나인 유지보수능력.. 그걸 위해선 애초에 코드를 적을때 깔끔하게 적는 것이 좋다! 오늘은 프로젝트용 혹은 개인습관을 위해 코드구조를 깔끔하게 잡아보는 방법들을 적어보았다!]]></description><link>https://gollumnima.github.io//posts/wecode8_3TIL_project_code_clean</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode8_3TIL_project_code_clean</guid><pubDate>Wed, 18 Sep 2019 10:46:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/9505e600-dcd4-11e9-9f0d-b11d7ac62e29/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 22 Sep 2019 08:51:42 GMT</lastBuildDate><item><title><![CDATA[wecode 8주차_4일 TIL_프로젝트에 해시태그 추가기능을 넣어보자!]]></title><description><![CDATA[위코드 52일차. 한창 2차프로젝트가 진행중인 지금. 프로젝트에 해시태그 추가 및 제거기능을 넣어보았다. 라이브러리를 쓰지 않고도 js와 css를 이용해서 태그 넣는 방법을 알아보았다!]]></description><link>https://gollumnima.github.io//posts/wecode8_4TIL_css_hashtag</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode8_4TIL_css_hashtag</guid><pubDate>Thu, 19 Sep 2019 17:48:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/843a3db0-dd12-11e9-906f-2bc170a4c86a/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;요즘 다들 정말 많이 하는 인스타그램! 나도 정말 많이 한다
+먹을거 사진 올리는 재미가 쏠쏠~~
+인스타그램에서만 해시태그를 쓰는건 아니지만 가장 대표적인 예라서 썸네일은 인서타로 ㅋㅋㅋㅋ&lt;/p&gt;
+&lt;p&gt;팀원분이 2차 프로젝트에 태그 추가하는 기능을 넣어달라고 요청하셔서
+열심히 구글링한 결과.. 찾아냈다!!!
+그냥 하드코딩만 하면 실력이 늘지 않으니 분석하려고 포스팅해본다 ㅋㅋ
+(참고로 나는 styled-component를 사용했다.)&lt;/p&gt;
+&lt;p&gt;코드 먼저 봅시다.&lt;/p&gt;
+&lt;h2 id=&quot;state객체-내부에-선언&quot;&gt;&lt;a href=&quot;#state%EA%B0%9D%EC%B2%B4-%EB%82%B4%EB%B6%80%EC%97%90-%EC%84%A0%EC%96%B8&quot; aria-label=&quot;state객체 내부에 선언 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;state객체 내부에 선언&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;this.state = {tags: [&amp;quot;핵꿀잼&amp;quot;, &amp;quot;리워드대박&amp;quot;]}&lt;/code&gt;
+먼저 state 안에 tags라는 배열을 선언해주고, 그 안에 디폴트 태그값을 넣어준다!&lt;/p&gt;
+&lt;h2 id=&quot;태그-제거하는-기능&quot;&gt;&lt;a href=&quot;#%ED%83%9C%EA%B7%B8-%EC%A0%9C%EA%B1%B0%ED%95%98%EB%8A%94-%EA%B8%B0%EB%8A%A5&quot; aria-label=&quot;태그 제거하는 기능 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;태그 제거하는 기능&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;  removeTags = i =&amp;gt; {
+    const newTags = [...this.state.tags];
+    newTags.splice(i, 1);
+    this.setState({ tags: newTags });
+  };&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;엔터로-추가-백스페이스로-제거-기능&quot;&gt;&lt;a href=&quot;#%EC%97%94%ED%84%B0%EB%A1%9C-%EC%B6%94%EA%B0%80-%EB%B0%B1%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4%EB%A1%9C-%EC%A0%9C%EA%B1%B0-%EA%B8%B0%EB%8A%A5&quot; aria-label=&quot;엔터로 추가 백스페이스로 제거 기능 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;엔터로 추가, 백스페이스로 제거 기능&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;  inputKeyDown = e =&amp;gt; {
+    const val = e.target.value;
+    if (e.key === &amp;quot;Enter&amp;quot; &amp;amp;&amp;amp; val) {
+      if (
+        this.state.tags.find(tag =&amp;gt; tag.toLowerCase() === val.toLowerCase())
+      ) {
+        return;
+      }
+      this.setState({ tags: [...this.state.tags, val] });
+      this.tagInput.value = null;
+    } else if (e.key === &amp;quot;Backspace&amp;quot; &amp;amp;&amp;amp; !val) {
+      this.removeTag(this.state.tags.length - 1);
+    }
+  };&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;엔터를 쳤을 때 값이 추가될 수 있도록 하는 기능인데..
+솔직히 LowerCase 부분은 왜 넣었는지 모르겠… 어서 지우고 테스트를 해봤다 룰루~&lt;/p&gt;
+&lt;p&gt;저걸 지우면 똑같은 문자를 대소문자 바꿔썼을때 추가가 되고, 저게 있어야 중복이 방지된다 ㅋㅋ
+여튼 입력한 글자를 setState를 이용해 tags 배열에 추가를 하고..
+아래는 백스페이스 눌렀을 때 태그를 지우는 기능쓰~&lt;/p&gt;
+&lt;p&gt;리턴 전에 디스트럭처링을 먼저 해주고..
+&lt;code class=&quot;language-text&quot;&gt;const { tags } = this.state;&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;태그-구조&quot;&gt;&lt;a href=&quot;#%ED%83%9C%EA%B7%B8-%EA%B5%AC%EC%A1%B0&quot; aria-label=&quot;태그 구조 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;태그 구조&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;TagWrapper&amp;gt;
+            &amp;lt;TagUL&amp;gt;
+              {tags.map((tag, i) =&amp;gt; (
+                &amp;lt;TagLI key={tag}&amp;gt;
+                  {tag}
+                  &amp;lt;TagBtn
+                    onClick={() =&amp;gt; {
+                      this.removeTags(i);
+                    }}
+                  &amp;gt;
+                    +
+                  &amp;lt;/TagBtn&amp;gt;
+                &amp;lt;/TagLI&amp;gt;
+              ))}
+              &amp;lt;TagSpace&amp;gt;
+                &amp;lt;TagInput
+                  onKeyDown={this.inputKeyDown}
+                  ref={c =&amp;gt; {
+                    this.tagInput = c;
+                  }}
+                /&amp;gt;
+              &amp;lt;/TagSpace&amp;gt;
+            &amp;lt;/TagUL&amp;gt;
+          &amp;lt;/TagWrapper&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;생긴건 간단하게 생겨가지고 꽤나 html 요소들이 필요하다 ㅋㅋㅋ
+TagInput이 태그를 입력하는 입력칸이고.. 그렇게 입력하면 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;TagLI&amp;gt;&lt;/code&gt;버튼들이 생겨난다!
+css 속성도 함께 살펴보자.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const TagWrapper = styled.div`
+  width: 363px;
+  background: white;
+  border-radius: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px 5px 0;
+`;
+
+const TagUL = styled.ul`
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+`;
+
+const TagLI = styled.li`
+  align-items: center;
+  background: linear-gradient(
+    to right top,
+    #233e6a,
+    #44417c,
+    #6c3f86,
+    #953785,
+    #bb2979
+  );
+  border-radius: 2px;
+  color: white;
+  display: flex;
+  font-weight: 300;
+  list-style: none;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  padding: 5px 10px;
+`;
+
+const TagBtn = styled.button`
+  align-items: center;
+  appearance: none;
+  background: #333333;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 12px;
+  height: 15px;
+  justify-content: center;
+  line-height: 0;
+  margin-left: 8px;
+  transform: rotate(45deg);
+  width: 15px;
+`;
+
+const TagSpace = styled.li`
+  background: none;
+  flex-grow: 1;
+  padding: 0;
+`;
+
+const TagInput = styled.input.attrs({
+  type: &amp;quot;text&amp;quot;,
+  placeholder: &amp;quot;원하는 태그를 최대 5개까지 입력해주세요&amp;quot;
+})`
+  border: 1px solid #bdbdbd;
+  border-radius: 4px;
+  width: 100%;
+  height: 43px;
+`;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;일단 다 써본 다음에 개발자도구를 열어서 바꾸고 싶은 속성값들은 바꿔주면 된다 ㅋㅋ
+이렇게까지 하면 어떠한 결과물이 나오냐..!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/2f29a1a0-dd15-11e9-906f-2bc170a4c86a/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;이렇게 뙇!!
+나는 우리 프로젝트의 로고 색깔에 맞춰 파+보로 bg color를 설정했는데 단색으로 해도 예쁠듯&lt;/p&gt;
+&lt;p&gt;사실 placeholder에 태그 5개 입력하라고 했는데.. 아직 제한 기능은 못 넣었다.
+급한불부터 끄고 나중에 작업할 시간 있을때 해봐야지 ㅋㅋㅋㅋ&lt;/p&gt;
+&lt;h2 id=&quot;reference&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@jerrylowm/build-a-tags-input-react-component-from-scratch-1524f02acb9a&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://medium.com/@jerrylowm/build-a-tags-input-react-component-from-scratch-1524f02acb9a&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[wecode 8주차_3일 TIL_프로젝트 할 때 코드구조 깔끔하게 잡아보자]]></title><description><![CDATA[위코드 51일차. 훌륭한 개발자의 덕목 중 하나인 유지보수능력.. 그걸 위해선 애초에 코드를 적을때 깔끔하게 적는 것이 좋다! 오늘은 프로젝트용 혹은 개인습관을 위해 코드구조를 깔끔하게 잡아보는 방법들을 적어보았다!]]></description><link>https://gollumnima.github.io//posts/wecode8_3TIL_project_code_clean</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode8_3TIL_project_code_clean</guid><pubDate>Wed, 18 Sep 2019 10:46:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/9505e600-dcd4-11e9-9f0d-b11d7ac62e29/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;훌륭한 개발자의 덕목 중 하나인 유지보수 능력!
 그걸 잘 하려면 코드의 어느 위치에 무엇이 있는지 잘 알아야 한다.
 그러기 위해선 처음에 코드를 칠 때부터 깔끔하게 치면 좋을것..! 오늘은 그 팁에 대해 알아보려고 한다~&lt;/p&gt;
