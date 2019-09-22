@@ -1,4 +1,144 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sat, 21 Sep 2019 10:20:21 GMT</lastBuildDate><item><title><![CDATA[wecode 8주차_2일 TIL_Git에서 rebase써서 commit 횟수를 줄여보자!]]></title><description><![CDATA[위코드 50일차. 개발자에겐 뭐라도 한 줄 줄이는게 일상. 오늘은 GitHub에 올라가는 commit 개수를 줄이기 위한 방법으로 rebase에 대해 알아보았다!]]></description><link>https://gollumnima.github.io//posts/wecode8_2TIL_git_rebase</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode8_2TIL_git_rebase</guid><pubDate>Tue, 17 Sep 2019 19:13:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/85c91cf0-dc13-11e9-920f-9faaccb2a511/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 22 Sep 2019 01:54:46 GMT</lastBuildDate><item><title><![CDATA[wecode 8주차_3일 TIL_프로젝트 할 때 코드구조 깔끔하게 잡아보자]]></title><description><![CDATA[위코드 51일차. 훌륭한 개발자의 덕목 중 하나인 유지보수능력.. 그걸 위해선 애초에 코드를 적을때 깔끔하게 적는 것이 좋다! 오늘은 프로젝트용 혹은 개인습관을 위해 코드구조를 깔끔하게 잡아보는 방법들을 적어보았다!]]></description><link>https://gollumnima.github.io//posts/wecode8_3TIL_project_code_clean</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode8_3TIL_project_code_clean</guid><pubDate>Wed, 18 Sep 2019 10:46:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/9505e600-dcd4-11e9-9f0d-b11d7ac62e29/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;훌륭한 개발자의 덕목 중 하나인 유지보수 능력!
+그걸 잘 하려면 코드의 어느 위치에 무엇이 있는지 잘 알아야 한다.
+그러기 위해선 처음에 코드를 칠 때부터 깔끔하게 치면 좋을것..! 오늘은 그 팁에 대해 알아보려고 한다~&lt;/p&gt;
+&lt;h2 id=&quot;bem&quot;&gt;&lt;a href=&quot;#bem&quot; aria-label=&quot;bem permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;BEM&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/d836de10-dcd5-11e9-896f-973158c4c46a/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;뱀… 우리가 아는 그 뱀이 아니다. Block Element Modifier의 줄임말이다.
+클래스명을 지을 때 아무렇게나 짓지말고 그 클래스가 속한 범위내의 구조대로 이름을 짓는것이다.
+근데 BEM 규칙을 따르자고 만들긴 했지만 실제 업무 들어가면 회사마다 스타일이 다르니 회사의 방침을 따를 것..!!
+(경험상 회사 들어가기 전에 한번 써보는것도 나쁘지 않을것 같음)&lt;/p&gt;
+&lt;p&gt;쓰는 방법은 대충 이러하다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;div class=&amp;quot;card&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;card__header&amp;quot;&amp;gt;
+
+        &amp;lt;h2 class=&amp;quot;card__header__title&amp;quot;&amp;gt;Title text here&amp;lt;/h2&amp;gt;
+
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;card__body&amp;quot;&amp;gt;
+
+        &amp;lt;img class=&amp;quot;card__body__img&amp;quot; src=&amp;quot;some-img.png&amp;quot;&amp;gt;
+
+        &amp;lt;p class=&amp;quot;card__body__text&amp;quot;&amp;gt;Lorem ipsum dolor sit amet, consectetur&amp;lt;/p&amp;gt;
+        &amp;lt;p class=&amp;quot;card__body__text&amp;quot;&amp;gt;Adipiscing elit.
+            &amp;lt;a href=&amp;quot;/somelink.html&amp;quot; class=&amp;quot;card__body__text__link&amp;quot;&amp;gt;Pellentesque amet&amp;lt;/a&amp;gt;
+        &amp;lt;/p&amp;gt;
+
+    &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href =&quot;https://medium.com/fed-or-dead/battling-bem-5-common-problems-and-how-to-avoid-them-5bbd23dee319&quot; target=&quot;_blank&quot;&gt;코드 출처 클릭!&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;제일 큰 div의 클래스명인 card가 제일 앞에있고 그 card의 헤더부분과 바디부분으로 나뉘는데..
+이렇게 클래스명만 보면 굉장히 직관적이기 때문에 남의 코드라도 쉽게 파악할 수 있다는 장점쓰!
+근데 쓰다보면 언더바 파티가 열린다~ 가장 큰 단점쓰 ㅋㅋ&lt;/p&gt;
+&lt;h2 id=&quot;css는-타입별-속성대로-그룹화해서-적자&quot;&gt;&lt;a href=&quot;#css%EB%8A%94-%ED%83%80%EC%9E%85%EB%B3%84-%EC%86%8D%EC%84%B1%EB%8C%80%EB%A1%9C-%EA%B7%B8%EB%A3%B9%ED%99%94%ED%95%B4%EC%84%9C-%EC%A0%81%EC%9E%90&quot; aria-label=&quot;css는 타입별 속성대로 그룹화해서 적자 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;CSS는 타입별 속성대로 그룹화해서 적자&lt;/h2&gt;
+&lt;p&gt;위에서 html 태그 구조를 BEM method로 쓰는 방법을 알아보았는데 CSS 적는대로 나름의 규칙들이 많다.
+그 중에 하나인… 타입별 속성대로 그룹화해서 적자는 방법을 적어본다.
+abc 순으로 적는 방법도 있다는데 그것보다는 타입별로 나눠서 쓰는 이 방법이 좀 더 괜찮아보인다 ㅋㅋ&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Layout Properties (position, float, clear, display)&lt;/li&gt;
+&lt;li&gt;Box Model Properties (width, height, margin, padding)&lt;/li&gt;
+&lt;li&gt;Visual Properties (color, background, border, box-shadow)&lt;/li&gt;
+&lt;li&gt;Typography Properties (font-size, font-family, text-align, text-transform)&lt;/li&gt;
+&lt;li&gt;Misc Properties (cursor, overflow, z-index)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이 방법의 예시..&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;.button {
+    display:inline-block;
+    margin:1em 0;
+    padding:1em 4em;
+
+    color:#fff;
+    background:#196e76;
+    border:0.25em solid #196e76;
+    box-shadow:inset 0.25em 0.25em 0.5em rgba(0,0,0,0.3),
+               0.5em 0.5em 0 #444;
+
+    font-size:3em;
+    font-family:Avenir, Helvetica, Arial, sans-serif;
+    text-align:center;
+    text-transform:uppercase;
+    text-decoration:none;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href =&quot;https://webdesign.tutsplus.com/articles/outside-in-ordering-css-properties-by-importance--cms-21685&quot; target=&quot;_blank&quot;&gt;코드 출처 클릭!&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;확실히 이렇게 나눠서 적으니까 훨씬 깔끔하다!
+CSS 수정할때도 두리번두리번 거리지 않아도 뭐가 어디에 있는지 눈에 잘 들어온다ㅋㅋ&lt;/p&gt;
+&lt;p&gt;이렇게 쓰는 습관을 들여야하는데… 생각없이 코드 치다보면 내 책상처럼 더러워져있는 코드판 ㅠㅠ&lt;/p&gt;
+&lt;h2 id=&quot;destructuring&quot;&gt;&lt;a href=&quot;#destructuring&quot; aria-label=&quot;destructuring permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;destructuring&lt;/h2&gt;
+&lt;p&gt;ES6에서 처음 나온 개념이다. 이건 나중에 다시 정리할거긴한데 간단히 코드로 보자면!&lt;/p&gt;
+&lt;p&gt;Routes 이름 하나하나 다 변수화 시켜서 고고고&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;    const title = this.state.videoTitle.trim();
+    const link = this.state.videoLink.trim();
+    const thumbnail = this.state.videoThumbnail.trim();
+    const cate = this.state.videoCate.trim();
+    const desc = this.state.videoDesc.trim();&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이러한 코드가 있는데.. 오른쪽 항에 있는 것들은 다 state안에 있는 값이다.
+그러므로 우리는 선언을 해준다!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const {
+      videoTitle,
+      videoLink,
+      videoThumbnail,
+      videoCate,
+      videoDesc
+    } = this.state;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 선언을 해주면 위의 코드에서 this.state를 생략할 수 있다 개이득! 다시 써보면&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;   const title = videoTitle.trim();
+    const link = videoLink.trim();
+    const thumbnail = videoThumbnail.trim();
+    const cate = videoCate.trim();
+    const desc = videoDesc.trim();&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 깔끔하게 딱 떨어진다!&lt;/p&gt;
+&lt;h2 id=&quot;변수화를-생활화-하자&quot;&gt;&lt;a href=&quot;#%EB%B3%80%EC%88%98%ED%99%94%EB%A5%BC-%EC%83%9D%ED%99%9C%ED%99%94-%ED%95%98%EC%9E%90&quot; aria-label=&quot;변수화를 생활화 하자 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;변수화를 생활화 하자&lt;/h2&gt;
+&lt;p&gt;토큰이나 url같은 공통적인 값들은 src폴더 아래 config 폴더를 따로 파서 정리해놓으면 좋다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import { ADDRESS } from &amp;quot;Config/Config.js&amp;quot;;
+//중략
+let request = fetch(ADDRESS + &amp;quot;recipe/category&amp;quot;);
+//중략&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;코드를 다 쓰지 않아서 약간 이상하긴한데! 여튼 이런식으로.. 변수화를 생활화 한다면 훨씬 보기 좋은 깔끔한 코드 완성쓰!
+자주 쓰는 함수는 src폴더 아래 utils 폴더에 정리해놓으면 좋다.
+이때, 인자 유무가 중요한데, 함수 조건을 인자 있/없으로 구분해서 코드를 짜놓아야 한다!&lt;/p&gt;
+&lt;h2 id=&quot;경로설정---packagejs에서-설정&quot;&gt;&lt;a href=&quot;#%EA%B2%BD%EB%A1%9C%EC%84%A4%EC%A0%95---packagejs%EC%97%90%EC%84%9C-%EC%84%A4%EC%A0%95&quot; aria-label=&quot;경로설정   packagejs에서 설정 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;경로설정 - package.js에서 설정&lt;/h2&gt;
+&lt;p&gt;../../이렇게 들어가면 너무 복잡해지니깐 아예 경로설정을 해주는 것!
+먼저 package.json에 들어간다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;  &amp;quot;scripts&amp;quot;: {
+    &amp;quot;start&amp;quot;: &amp;quot;NODE_PATH=./src react-scripts start&amp;quot;,
+    &amp;quot;build&amp;quot;: &amp;quot;NODE_PATH=./src react-scripts build&amp;quot;,
+    &amp;quot;test&amp;quot;: &amp;quot;react-scripts test&amp;quot;,
+    &amp;quot;eject&amp;quot;: &amp;quot;react-scripts eject&amp;quot;
+  }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;scripts 객체 안의 start와 build 안에 &lt;code class=&quot;language-text&quot;&gt;&amp;quot;NODE_PATH=./src&lt;/code&gt; 를 추가해준다.
+이 말인즉슨, src밑에 있는 경로를 절대경로로 설정하겠다는 뜻이다!&lt;/p&gt;
+&lt;p&gt;우리가 보통 리액트에서 import할 때는 경로를 타고타고 들어가서…
+&lt;code class=&quot;language-text&quot;&gt;import Main from &amp;quot;Pages/Main/Main&amp;quot;&lt;/code&gt; 이렇게 가거나 쩜쩜을 남발하게 되는데
+인제 &lt;code class=&quot;language-text&quot;&gt;import Main from &amp;quot;Pages/Main&amp;quot;&lt;/code&gt; 까지만 쓰도록 바꿔줄 수 있다.
+물론 이렇게 하려면 index.js가 각 폴더 안에 있어야 한다.&lt;/p&gt;
+&lt;p&gt;Main이라는 폴더 안에는 Main.js와 index.js가 있는 것이고,
+그 index.js에는 &lt;code class=&quot;language-text&quot;&gt;export { default } from &amp;quot;./Main&amp;quot;&lt;/code&gt; 이렇게 쓰면 된다.
+이게 뭘 줄인거냐면…&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import Main from &amp;quot;./MAin&amp;quot;
+export default Main&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이걸 줄여서 한 줄로 뙇!&lt;/p&gt;
+&lt;p&gt;이렇게 쓰는 이유는 경로를 줄이려고도 있지만 로직을 좋게하려는 이유도 있다.
+index.js에서 Main을 정의하고 에러가 났을때 index.js가 굉장히 많은데 어떤 경로의 index.js에서 에러가 난지 모른다…
+여튼 바꾸면 사용하는 쪽에서 Main을 접근하게 되서 디버깅을 할때도 훨씬 수월하다는 점..!&lt;/p&gt;
+&lt;h2 id=&quot;styled-component-쓸-때-export-위에다-쓰기&quot;&gt;&lt;a href=&quot;#styled-component-%EC%93%B8-%EB%95%8C-export-%EC%9C%84%EC%97%90%EB%8B%A4-%EC%93%B0%EA%B8%B0&quot; aria-label=&quot;styled component 쓸 때 export 위에다 쓰기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;styled component 쓸 때 export 위에다 쓰기&lt;/h2&gt;
+&lt;p&gt;나같은 경우는 깔끔함(?)을 위해 export 위에 styled component 요소들을 나열하곤 했는데
+그것보단 export는 가장 하단에 있는게 낫다고 한다!&lt;/p&gt;
+&lt;h2 id=&quot;import-순서&quot;&gt;&lt;a href=&quot;#import-%EC%88%9C%EC%84%9C&quot; aria-label=&quot;import 순서 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;import 순서&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;react 먼저&lt;/li&gt;
+&lt;li&gt;library ex) Link 같은 것,&lt;/li&gt;
+&lt;li&gt;util (config.js)&lt;/li&gt;
+&lt;li&gt;component 아래 있는 것들&lt;/li&gt;
+&lt;li&gt;css 관련된것&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;css는 습관적으로 가장 하단에 쓰긴 했는데 라이브러리를 표기할땐 좀 정신없이 썼던것 같다..
+앞으론 최대한 이 순서대로 적어야지!!&lt;/p&gt;
+&lt;h2 id=&quot;reference&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/fed-or-dead/battling-bem-5-common-problems-and-how-to-avoid-them-5bbd23dee319&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://medium.com/fed-or-dead/battling-bem-5-common-problems-and-how-to-avoid-them-5bbd23dee319&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://webdesign.tutsplus.com/articles/outside-in-ordering-css-properties-by-importance--cms-21685&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://webdesign.tutsplus.com/articles/outside-in-ordering-css-properties-by-importance—cms-21685&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;위코드 프론트앤드 세션&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[wecode 8주차_2일 TIL_Git에서 rebase써서 commit 횟수를 줄여보자!]]></title><description><![CDATA[위코드 50일차. 개발자에겐 뭐라도 한 줄 줄이는게 일상. 오늘은 GitHub에 올라가는 commit 개수를 줄이기 위한 방법으로 rebase에 대해 알아보았다!]]></description><link>https://gollumnima.github.io//posts/wecode8_2TIL_git_rebase</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode8_2TIL_git_rebase</guid><pubDate>Tue, 17 Sep 2019 19:13:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/85c91cf0-dc13-11e9-920f-9faaccb2a511/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;git이랑 이제 조금 친해졌나 싶었는데 아직 갈 길이 한참 남은 걸 깨달았다.
 이번주 위코드 세션에서는 rebase가 무엇인지에 대해 배우게 되었다 ㅋㅋ&lt;/p&gt;
 &lt;p&gt;이번 주제의 썸네일이 왜 할로윈 호박이나면.. 호박과 관련되기도 하고.. rebase는 할로윈의 밤처럼 으스스하기 때문이다.&lt;/p&gt;
