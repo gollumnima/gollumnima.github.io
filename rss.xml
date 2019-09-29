@@ -1,4 +1,50 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 22 Sep 2019 08:51:42 GMT</lastBuildDate><item><title><![CDATA[wecode 8주차_4일 TIL_프로젝트에 해시태그 추가기능을 넣어보자!]]></title><description><![CDATA[위코드 52일차. 한창 2차프로젝트가 진행중인 지금. 프로젝트에 해시태그 추가 및 제거기능을 넣어보았다. 라이브러리를 쓰지 않고도 js와 css를 이용해서 태그 넣는 방법을 알아보았다!]]></description><link>https://gollumnima.github.io//posts/wecode8_4TIL_css_hashtag</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode8_4TIL_css_hashtag</guid><pubDate>Thu, 19 Sep 2019 17:48:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/843a3db0-dd12-11e9-906f-2bc170a4c86a/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 29 Sep 2019 03:16:53 GMT</lastBuildDate><item><title><![CDATA[wecode 9주차_7일 TIL_CRA 실행시 yarn start가 안되는 에러 해결]]></title><description><![CDATA[위코드 62일차. 이번주는 2차 프로젝트 마무리 짓느라 포스팅이 많이 밀렸는데.. 앞으로 쭉 해나갈 예정이다. 오늘은 날 2시간동안 힘들게 했던 CRA에서 yarn start 명령어 입력시 생긴 에러에 대해서 써보았다!]]></description><link>https://gollumnima.github.io//posts/wecode9_7TIL_react_error</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode9_7TIL_react_error</guid><pubDate>Sun, 29 Sep 2019 12:07:23 GMT</pubDate><content:encoded>&lt;p&gt;2차 프로젝트 마무리 짓느라 많이도 밀린 포스팅..
+이제 프로젝트도 끝났으나 여유 시간이 약간 생겨서 못했던 공부와 포스팅을 병행할 예정~&lt;/p&gt;
+&lt;p&gt;오늘의 주제는…&lt;/p&gt;
+&lt;h2 id=&quot;cra-실행시-yarn-start가-안돼요&quot;&gt;&lt;a href=&quot;#cra-%EC%8B%A4%ED%96%89%EC%8B%9C-yarn-start%EA%B0%80-%EC%95%88%EB%8F%BC%EC%9A%94&quot; aria-label=&quot;cra 실행시 yarn start가 안돼요 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;CRA 실행시 yarn start가 안돼요!&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/b351c560-e25c-11e9-a7eb-9d155685d206/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;언제 안되느냐…
+바로 지금이다 나에겐&lt;br&gt;
+에러 생긴 김에 블로그 포스팅을 하기로 마음먹었다 ㅋㅋ&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/ecd05430-e25e-11e9-a7eb-9d155685d206/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;이 순서대로 해보라는데.. pacakage-lock.json이나 yarn.lock은 없어서 1번은 패쓰~
+2번… node_modules를 지우라는데… 진짜???? 일단 지워본다 ㄱㄱ&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/4f65c170-e25f-11e9-a7eb-9d155685d206/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;또다시 yarn start 했는데 127에러… 구글링 하기전에 나는 이미 다른 사람의 해결책을 보고 따라했다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot; https://github.com/facebook/create-react-app/issues/5825 &quot;&gt;이 글을 보고 했는데&lt;/a&gt;
+하리프리야가네산이라는 분의 답변을 보고 했는데 왜 안되지..?&lt;br&gt;
+다시 react에서 알려준 순서대로 도전도전&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/a0a50d60-e260-11e9-bbca-93d7aa4138bb/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;package.json 안의 webpack을 지우란다… 지워보았다.
+그런 다음 npm이나 yarn을 다시 깔래서 깔아보았다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/054fc610-e261-11e9-a4c2-fdfd8195e079/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;yarn 명령어로 yarn을 설치한 모습.
+4번까지 하면 웬만해선 문제가 해결된다는데… 난 해결되지 않았기 때문에 5번부터 다시 꼼꼼히 정독쓰…&lt;/p&gt;
+&lt;ol start=&quot;5&quot;&gt;
+&lt;li&gt;If you used npm, install yarn (&lt;a href=&quot;http://yarnpkg.com/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;http://yarnpkg.com/&lt;/a&gt;) and repeat the above steps with it instead.
+This may help because npm has known issues with package hoisting which may get resolved in future versions.&lt;/li&gt;
+&lt;li&gt;Check if /home/dooreplay/node_modules/babel-eslint is outside your project directory.
+For example, you might have accidentally installed something in your home folder.&lt;/li&gt;
+&lt;li&gt;Try running npm ls babel-eslint in your project folder.
+This will tell you which other package (apart from the expected react-scripts) installed babel-eslint.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;5번을 읽고 yarn.lock 파일 지우고 다시 &lt;code class=&quot;language-text&quot;&gt;yarn start&lt;/code&gt; 해봤는데 그래도 안된다.
+&lt;code class=&quot;language-text&quot;&gt;sudo yarn start&lt;/code&gt;도 안먹힌다… 황당쓰… 그럴땐 6번으로 고&lt;/p&gt;
+&lt;p&gt;보니까 node_modules 폴더가 홈 폴더에 있는데… 원래 있었나..? 언제부터 거기에 있었지?
+7번의 babel-eslint 파일은 죽어라 찾아봐도 없는데…&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/dd99c540-e264-11e9-a4c2-fdfd8195e079/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;CRA를 네 번정도를 반복한거 같다 이 문제를 해결하려고 ㅠㅠ 화나!!
+아침에 일찍 왔는데 에러 해결하려고 2시간은 쏟아부은거 같다 ㅠㅠ
+여튼 동기님의 도움으로 해결쓰! 어떻게 했냐…&lt;/p&gt;
+&lt;p&gt;일단 시작을 &lt;code class=&quot;language-text&quot;&gt;npx create-react-app 폴더명&lt;/code&gt;으로 했고..(그전까진 npx 안하고 cra만 했다)
+npx를 써줘야 최신 버전을 뭐 자동으로 업데이트 해준다는거 같다
+리액트 공식 페이지에서도 npx를 쓰라고 권장하라고 하니 앞으로 쭉 써야겠다!&lt;/p&gt;
+&lt;p&gt;여튼… yarn start를 했는데 또 안돼!!!!
+그래서 홈 폴더에 있는 node_modules를 바탕화면으로 옮겼다 ㅋㅋㅋ 삭제하긴 무서우니까&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/2ba6d980-e265-11e9-bbca-93d7aa4138bb/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;오????/ 된다된다!!! 드디어 된다!!
+못본 새에 디자인이 많이 바뀌었군… &lt;br&gt;원래는 하늘색이었는데 ㅋㅋㅋㅋ&lt;/p&gt;
+&lt;p&gt;여튼… 오늘의 에러는 이렇게 해결쓰…☆&lt;/p&gt;</content:encoded></item><item><title><![CDATA[wecode 8주차_4일 TIL_프로젝트에 해시태그 추가기능을 넣어보자!]]></title><description><![CDATA[위코드 52일차. 한창 2차프로젝트가 진행중인 지금. 프로젝트에 해시태그 추가 및 제거기능을 넣어보았다. 라이브러리를 쓰지 않고도 js와 css를 이용해서 태그 넣는 방법을 알아보았다!]]></description><link>https://gollumnima.github.io//posts/wecode8_4TIL_css_hashtag</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode8_4TIL_css_hashtag</guid><pubDate>Thu, 19 Sep 2019 17:48:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/843a3db0-dd12-11e9-906f-2bc170a4c86a/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;요즘 다들 정말 많이 하는 인스타그램! 나도 정말 많이 한다
 먹을거 사진 올리는 재미가 쏠쏠~~
 인스타그램에서만 해시태그를 쓰는건 아니지만 가장 대표적인 예라서 썸네일은 인서타로 ㅋㅋㅋㅋ&lt;/p&gt;
