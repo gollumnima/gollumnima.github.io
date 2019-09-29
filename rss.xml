@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 29 Sep 2019 03:16:53 GMT</lastBuildDate><item><title><![CDATA[wecode 9주차_7일 TIL_CRA 실행시 yarn start가 안되는 에러 해결]]></title><description><![CDATA[위코드 62일차. 이번주는 2차 프로젝트 마무리 짓느라 포스팅이 많이 밀렸는데.. 앞으로 쭉 해나갈 예정이다. 오늘은 날 2시간동안 힘들게 했던 CRA에서 yarn start 명령어 입력시 생긴 에러에 대해서 써보았다!]]></description><link>https://gollumnima.github.io//posts/wecode9_7TIL_react_error</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode9_7TIL_react_error</guid><pubDate>Sun, 29 Sep 2019 12:07:23 GMT</pubDate><content:encoded>&lt;p&gt;2차 프로젝트 마무리 짓느라 많이도 밀린 포스팅..
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 29 Sep 2019 06:58:05 GMT</lastBuildDate><item><title><![CDATA[wecode 9주차_7일 TIL_Git에서 pull request가 안 될때 문제 해결방법]]></title><description><![CDATA[위코드 62일차. 2차 프로젝트를 마무리 지어야 하는데.. git에서 pull request를 하는 데 문제가 발생..! 생각보다 간단한 문제였는데 빨간 글씨로 can't라니까 넘나 무서웠던 것.... 여튼 해결 방법에 대해 써보았다!]]></description><link>https://gollumnima.github.io//posts/wecode9_7TIL_git_error</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode9_7TIL_git_error</guid><pubDate>Sun, 29 Sep 2019 15:41:23 GMT</pubDate><content:encoded>&lt;h2 id=&quot;cant-automatically-merge&quot;&gt;&lt;a href=&quot;#cant-automatically-merge&quot; aria-label=&quot;cant automatically merge permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Can’t automatically merge&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/6a424fa0-e281-11e9-9cc9-c52279a372a5/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;분명 master branch에서 pull 받았을 때 아무 문제가 없었는데…
+feature/css_little이라는 branch에서 master로 pull request를 날리려고 하는데
+&lt;code class=&quot;language-text&quot;&gt;can&amp;#39;t automatically merge&lt;/code&gt; 라는 에러가 발생..!&lt;/p&gt;
+&lt;p&gt;고 옆에 글씨를 읽어보면… 걱정 ㄴㄴ pr은 날릴수 있다능!!
+이라고 써있지만.. 그 어딜 봐도 pull request 버튼은 보이지 않는다
+근데 이상한게.. 분명 conflict가 났어야 하는데… 충돌이 일어나지 않았다…&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/600559a0-e282-11e9-a13e-c1f521813d57/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;왜지…?
+충돌이 났어야하는데…
+문제의 원인은 거기에 있었던 것 같다 ㅋㅋㅋ&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/31973318/github-cant-automatically-merge&quot;&gt;여기 답변&lt;/a&gt;을 살펴보면 해결방법을 알 수있다.
+다른 branch에서 이미 conflict가 났었고.. 아마 그게 제대로 해결이 안 됐던 모양?! 맞나?? 아닌가??
+모르겠다 ㅋㅋㅋㅋㅋ
+여튼… 이럴땐 master branch에서 강제로 pull을 해주는 방법밖에 없다!&lt;/p&gt;
+&lt;h2 id=&quot;해결책&quot;&gt;&lt;a href=&quot;#%ED%95%B4%EA%B2%B0%EC%B1%85&quot; aria-label=&quot;해결책 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;해결책&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;git checkout master&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;git pull&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;git checkout 내 브랜치&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;git merge master&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;공동으로 작업할 땐 웬만해선 master branch를 건드리면 안되는데
+이건 진짜 도저히 방법이 없고.. 난 pr을 꼭 날려야 했기에
+팀원분의 양해를 구하고 위의 해결책에 따라 명령어를 입력쓰~~&lt;/p&gt;
+&lt;p&gt;그랬더니 드디어 conflict가 났다!!!!!!
+conflict가 이렇게 반가울수가…&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/af681d60-e283-11e9-a13e-c1f521813d57/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;conflict를 해결하고.. add, commit에 push.. pr까지 무사히 끝냈다.&lt;br/&gt;
+영상 촬영까지 끝냈기 때문에 넘나 뿌듯!!&lt;br/&gt;
+2차 프로젝트는 아쉽지만 이만 바이바이…☆&lt;br/&gt;
+더 구현해보고 싶은 기능들이 많지만 나는 또 다른 공부를 해야하기 때문에…!!!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[wecode 9주차_6일 TIL_CRA 실행시 yarn start가 안되는 에러 해결]]></title><description><![CDATA[위코드 61일차. 이번주는 2차 프로젝트 마무리 짓느라 포스팅이 많이 밀렸는데.. 앞으로 쭉 해나갈 예정이다. 오늘은 날 2시간동안 힘들게 했던 CRA에서 yarn start 명령어 입력시 생긴 에러에 대해서 써보았다!]]></description><link>https://gollumnima.github.io//posts/wecode9_6TIL_react_error</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode9_6TIL_react_error</guid><pubDate>Sat, 28 Sep 2019 12:07:23 GMT</pubDate><content:encoded>&lt;p&gt;2차 프로젝트 마무리 짓느라 많이도 밀린 포스팅..
 이제 프로젝트도 끝났으나 여유 시간이 약간 생겨서 못했던 공부와 포스팅을 병행할 예정~&lt;/p&gt;
 &lt;p&gt;오늘의 주제는…&lt;/p&gt;
 &lt;h2 id=&quot;cra-실행시-yarn-start가-안돼요&quot;&gt;&lt;a href=&quot;#cra-%EC%8B%A4%ED%96%89%EC%8B%9C-yarn-start%EA%B0%80-%EC%95%88%EB%8F%BC%EC%9A%94&quot; aria-label=&quot;cra 실행시 yarn start가 안돼요 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;CRA 실행시 yarn start가 안돼요!&lt;/h2&gt;
