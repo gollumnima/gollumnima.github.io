@@ -1,4 +1,233 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 29 Sep 2019 06:58:05 GMT</lastBuildDate><item><title><![CDATA[wecode 9주차_7일 TIL_Git에서 pull request가 안 될때 문제 해결방법]]></title><description><![CDATA[위코드 62일차. 2차 프로젝트를 마무리 지어야 하는데.. git에서 pull request를 하는 데 문제가 발생..! 생각보다 간단한 문제였는데 빨간 글씨로 can't라니까 넘나 무서웠던 것.... 여튼 해결 방법에 대해 써보았다!]]></description><link>https://gollumnima.github.io//posts/wecode9_7TIL_git_error</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode9_7TIL_git_error</guid><pubDate>Sun, 29 Sep 2019 15:41:23 GMT</pubDate><content:encoded>&lt;h2 id=&quot;cant-automatically-merge&quot;&gt;&lt;a href=&quot;#cant-automatically-merge&quot; aria-label=&quot;cant automatically merge permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Can’t automatically merge&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 02 Oct 2019 07:17:04 GMT</lastBuildDate><item><title><![CDATA[wecode 10주차_1일 TIL_공식문서와 함께하는 둘둘의 Next.js 도전기]]></title><description><![CDATA[위코드 63일차. 기업협업 간 첫 날! 내가 출근한 기업에서는 Next.js라는 프레임워크를 이용하고 있어서 본격 Next.js를 사용해보기 전, 공식문서로 공부를 해보았다]]></description><link>https://gollumnima.github.io//posts/wecode10_1TIL_nextjs</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode10_1TIL_nextjs</guid><pubDate>Mon, 30 Sep 2019 16:05:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/627c4b00-e35c-11e9-a56b-8914a6ec2e86/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Next.js를 한번 써보았다!
+리액트랑 비슷한데.. 리액트만 쓰다가 이걸 써보니 진짜 신박하다!&lt;/p&gt;
+&lt;p&gt;내가 썼던 React가 Client Side Rendering(CSR) 방식 이었다면, Next는 Server Side Rendering(SSR)방식이다.
+리액트에선 프론트부분을 작성하고 데이터는 백앤드 서버에서 받아오는 방식이었다.
+클라이언트 따로, 서버 따로.. 각각 작성해야 했는데!
+Next.js는 이 과정을 따로 해줄 필요 없이 한방에 뙇!!! 하는거라고… 이해하면 되려나?&lt;/p&gt;
+&lt;h2 id=&quot;시작하기&quot;&gt;&lt;a href=&quot;#%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0&quot; aria-label=&quot;시작하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;시작하기&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;mkdir hello-next // 아무 이름의 폴더 생성
+cd hello-next // 만든 폴더로 이동고고
+yarn init -y // 초기화 해주기
+yarn add react react-dom next // next와 react 깔기
+mkdir pages // pages 폴더 만들기&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;여튼… 내 프로젝트 안에 pages 폴더를 만들고 &lt;code class=&quot;language-text&quot;&gt;code .&lt;/code&gt;으로 vscode를 켜준다!
+여기서 젤 중요한게 pages 폴더를 만드는 일이다.
+React는 모든 js파일을 src폴더 하에서 시작하는것처럼 Next.js는 pages에서 모든 것이 시작된다고 한다!&lt;/p&gt;
+&lt;h2 id=&quot;packagejson에-추가&quot;&gt;&lt;a href=&quot;#packagejson%EC%97%90-%EC%B6%94%EA%B0%80&quot; aria-label=&quot;packagejson에 추가 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;package.json에 추가&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;{
+  &amp;quot;name&amp;quot;: &amp;quot;hello-next&amp;quot;,
+  &amp;quot;version&amp;quot;: &amp;quot;1.0.0&amp;quot;,
+  &amp;quot;license&amp;quot;: &amp;quot;MIT&amp;quot;,
+  &amp;quot;scripts&amp;quot;: {
+     &amp;quot;dev&amp;quot;: &amp;quot;next&amp;quot;,
+    &amp;quot;build&amp;quot;: &amp;quot;next build&amp;quot;,
+    &amp;quot;start&amp;quot;: &amp;quot;next start&amp;quot;
+  },
+  &amp;quot;dependencies&amp;quot;: {
+    &amp;quot;next&amp;quot;: &amp;quot;^2.1.0&amp;quot;,
+    &amp;quot;react&amp;quot;: &amp;quot;^15.4.2&amp;quot;,
+    &amp;quot;react-dom&amp;quot;: &amp;quot;^15.4.2&amp;quot;
+  }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이걸 추가해줌으로 우린 &lt;code class=&quot;language-text&quot;&gt;yarn run dev&lt;/code&gt; 명령어로 프로젝트를 시작할 수 있다.&lt;/p&gt;
+&lt;p&gt;어찌됐든 명령어를 입력하면..&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/c9986e80-e380-11e9-83c5-b5732aa124ce/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;터미널에 ready, event, wait 등의 메시지가 색깔색깔별로 뜬다.
+명령어 입력 후 3000 port로 접속해 보자..!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/fe4c19b0-e380-11e9-8d67-1ddd28a8c819/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;404 error가 뜬다!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/18e11000-e381-11e9-8d67-1ddd28a8c819/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Next.js 공식 문서의 learn 페이지에 가면 퀴즈와 함께 설명이 있는데
+에러가 날지 모르고 3번을 눌렀으나 답은 2번이였닼ㅋㅋ 왜 에러가 난거지
+index.js 파일이 없어서 그런듯?? 만들어주자.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const Index = () =&amp;gt; (
+    &amp;lt;div&amp;gt;
+        &amp;lt;p&amp;gt;Hello Next.js&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+)
+
+export default Index;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;신기하게 Next.js는 react를 import 안해와도 된다 ㅋㅋ 신기씐기!&lt;/p&gt;
+&lt;h2 id=&quot;about-page-만들기&quot;&gt;&lt;a href=&quot;#about-page-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;about page 만들기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;About page 만들기&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;export default () =&amp;gt; (
+    &amp;lt;div&amp;gt;
+        &amp;lt;p&amp;gt;This is the about page&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/0cce8490-e35f-11e9-b0fe-0bdcf6561528/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;터미널엔 이러한 글자들이 뜬다!!!
+react때랑은 다르게 페이지 하나 하나마다 build되고 compile되는 과정을 글자로 알려준다 ㅋㅋ&lt;/p&gt;
+&lt;h2 id=&quot;link태그&quot;&gt;&lt;a href=&quot;#link%ED%83%9C%EA%B7%B8&quot; aria-label=&quot;link태그 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Link태그&lt;/h2&gt;
+&lt;p&gt;컴포넌트를 만들고 나서 import를 안 해도 되는것도 신기했지만 더 신기했던건 Link.
+Next.js 안에 Router가 내장되어있기 때문이다 ㅋㅋ
+Link 기능을 쓰려면 &lt;code class=&quot;language-text&quot;&gt;import Link from &amp;#39;next/link&amp;#39;&lt;/code&gt; 이거 한줄 써서 import 해야하긴 한다.
+router를 다운로드는 안 받아도 된다 ㅋㅋ&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import Link from &amp;#39;next/link&amp;#39;
+
+const Index = () =&amp;gt; (
+    &amp;lt;div&amp;gt;
+        &amp;lt;h1&amp;gt;
+            안녕, Next.js
+        &amp;lt;/h1&amp;gt;
+        &amp;lt;h2&amp;gt;
+            &amp;lt;Link href=&amp;quot;/about&amp;quot;&amp;gt;
+                &amp;lt;a&amp;gt;소개&amp;lt;/a&amp;gt;
+            &amp;lt;/Link&amp;gt;
+        &amp;lt;/h2&amp;gt;
+    &amp;lt;/div&amp;gt;
+);
+
+export default Index;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;리액트는 Link 안에 to를 썼지만, Next는 to 대신 href를 써준다.
+그리고 Link Component 내부엔 또 다른 컴포넌트가 들어가거나 element가 들어가야 한다!!&lt;/p&gt;
+&lt;p&gt;공식문서에 따르면…
+We know that Next.js is all about pages. We can create a page by exporting a React component, and putting that component inside the pages directory. Then it will have a fixed URL based on the file name.&lt;/p&gt;
+&lt;p&gt;그니까 파일이름 그 자체가 걍 url의 이름이 되는 것..!!
+리액트땐 Routes.js 들어가서 직접 이름을 설정해줬는데 Next는 걍 파일이름 자체가 url 경로&lt;/p&gt;
+&lt;h2 id=&quot;header-만들기&quot;&gt;&lt;a href=&quot;#header-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;header 만들기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Header 만들기&lt;/h2&gt;
+&lt;p&gt;component라는 폴더를 만들고 그 안에 Header.js 파일은 만들어놓은 상태다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import Link from &amp;#39;next/link&amp;#39;;
+
+const linkStyle = {
+    marginRight: &amp;#39;1rem&amp;#39;
+}
+const Header = () =&amp;gt; {
+    return (
+        &amp;lt;div&amp;gt;
+            &amp;lt;Link href=&amp;quot;/&amp;quot;&amp;gt;&amp;lt;a style={linkStyle}&amp;gt;홈&amp;lt;/a&amp;gt;&amp;lt;/Link&amp;gt;
+            &amp;lt;Link href=&amp;quot;/about&amp;quot;&amp;gt;&amp;lt;a style={linkStyle}&amp;gt;소개&amp;lt;/a&amp;gt;&amp;lt;/Link&amp;gt;
+        &amp;lt;/div&amp;gt;
+    );
+};
+
+export default Header;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 하면 Header라는 파일에 home과 about으로 가는 경로가 써 있으니깐
+이걸 또 import 해서 모든 페이지에 붙이면 되겠지!
+근데 이것보다 더 간편한 방법이 있다..&lt;/p&gt;
+&lt;h2 id=&quot;layout-만들기&quot;&gt;&lt;a href=&quot;#layout-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;layout 만들기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Layout 만들기&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import Header from &amp;quot;./Header&amp;quot;
+
+const layoutStyle = {
+    margin: 20,
+    padding: 20,
+    border: `1px solid #DDD`
+};
+
+
+const Layout = props =&amp;gt; (
+    &amp;lt;div style={layoutStyle}&amp;gt;
+        &amp;lt;Header /&amp;gt;
+        {props.children}
+    &amp;lt;/div&amp;gt;
+);
+
+export default Layout;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Header Component를 불러오고 그 밑엔 props의 자식 컴포넌트가 들어오도록 props로 넘겨주는 방식..!
+오.. 신박해!&lt;/p&gt;
+&lt;p&gt;이렇게 해줬으면 인제 각 페이지에서 Header 컴포넌트를 제거하고
+가장 바깥쪽 div를 Layout Component로 감싸주면 된다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import MyLayout from &amp;quot;../comp/MyLayout&amp;quot;
+
+export default function About() {
+  return (
+    &amp;lt;div&amp;gt;
+      &amp;lt;MyLayout /&amp;gt;
+      &amp;lt;p&amp;gt;This is the about page&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+  )
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;요런식으로! ㅋㅋㅋㅋㅋ
+그럼 이렇게 뙇!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/a01a39c0-e3e5-11e9-812e-b93d8ea65a84/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;근데… 암만 봐도 난 이 과정들이 넘 비효율적인것 같다 ㅠㅠ&lt;/p&gt;
+&lt;p&gt;리액트에선 NavBar 컴포넌트 만든걸 그냥 Routes.js파일 안에 넣으면 끝이었는데
+뭐가 이렇게 번거로운지… 내가 아직 잘 몰라서 그런건가!
+분명 더 간편한 방법이 있을것 같은데.. 지금으로썬 모르겠다 ㅠㅠ&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/2a7d78c0-e3e6-11e9-96af-c59b887e2153/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;공식문서 퀴즈에서.. props.children 지워보래서 지워봤는데 아무일도 일어나지 않았고
+그래서 1번을 골랐을 뿐인데 틀렸댄다 ㅠㅠㅠ&lt;/p&gt;
+&lt;p&gt;그래서 정말 파일 토씨 하나 틀리지 않게 하려고 완전한 복붙 후 다시 props.children을 지워보았다.
+Like this!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import Header from &amp;#39;./Header&amp;#39;
+
+const layoutStyle = {
+  margin: 20,
+  padding: 20,
+  border: &amp;#39;1px solid #DDD&amp;#39;
+}
+
+export default function Layout(props) {
+  return (
+    &amp;lt;div style={layoutStyle}&amp;gt;
+      &amp;lt;Header /&amp;gt;
+      {/* {props.children} */}
+    &amp;lt;/div&amp;gt;
+  )
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;그랬더니…!!!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/4fa952a0-e3ea-11e9-812e-b93d8ea65a84/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;드디어 아무 내용도 뜨지 않았다!!!
+역시 공식문서의 말을 잘 들어야 한다…ㅋㅋㅋ
+여튼… 위와 같은 Layout 파일을 만들거면 인자로 props를.. 그 아래엔 props.children을 꼭 써주자.&lt;/p&gt;
+&lt;h2 id=&quot;hoc-방식으로-해보기&quot;&gt;&lt;a href=&quot;#hoc-%EB%B0%A9%EC%8B%9D%EC%9C%BC%EB%A1%9C-%ED%95%B4%EB%B3%B4%EA%B8%B0&quot; aria-label=&quot;hoc 방식으로 해보기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;HOC 방식으로 해보기&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import Header from &amp;#39;./Header&amp;#39;;
+
+const layoutStyle = {
+  margin: 20,
+  padding: 20,
+  border: &amp;#39;1px solid #DDD&amp;#39;
+};
+
+const withLayout = Page =&amp;gt; {
+  return () =&amp;gt; (
+    &amp;lt;div style={layoutStyle}&amp;gt;
+      &amp;lt;Header /&amp;gt;
+      &amp;lt;Page /&amp;gt;
+    &amp;lt;/div&amp;gt;
+  );
+};
+
+export default withLayout;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;withLayout을 정의해주고…
+각각의 컴포넌트에 withLayout을 export 해준다 이렇게!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import withLayout from &amp;#39;../components/MyLayout&amp;#39;;
+
+const Page = () =&amp;gt; &amp;lt;p&amp;gt;Hello Next.js&amp;lt;/p&amp;gt;;
+
+export default withLayout(Page);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;넘나 신기한것…
+아직 HOC 방식으로 코드를 쳐보지 않았는데 대충 이런 느낌이었군!&lt;/p&gt;
+&lt;h2 id=&quot;props로-넘겨주는-방법쓰&quot;&gt;&lt;a href=&quot;#props%EB%A1%9C-%EB%84%98%EA%B2%A8%EC%A3%BC%EB%8A%94-%EB%B0%A9%EB%B2%95%EC%93%B0&quot; aria-label=&quot;props로 넘겨주는 방법쓰 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;props로 넘겨주는 방법쓰&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import Header from &amp;#39;./Header&amp;#39;;
+
+const layoutStyle = {
+  margin: 20,
+  padding: 20,
+  border: &amp;#39;1px solid #DDD&amp;#39;
+};
+
+const Layout = props =&amp;gt; (
+  &amp;lt;div style={layoutStyle}&amp;gt;
+    &amp;lt;Header /&amp;gt;
+    {props.content}
+  &amp;lt;/div&amp;gt;
+);
+
+export default Layout;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;같은 방식이긴 한데.. 인자로 props가 들어가고 아래엔 props.content를 써준다.&lt;br /&gt;
+이 Layout을 적용할 각각의 폴더에는..!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import Layout from &amp;#39;../components/MyLayout.js&amp;#39;;
+
+const indexPageContent = &amp;lt;p&amp;gt;Hello Next.js&amp;lt;/p&amp;gt;;
+
+export default function Index() {
+  return &amp;lt;Layout content={indexPageContent} /&amp;gt;;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;props의 content에 들어갈 부분을 변수로 정의해주고
+return 값에는 Layout Component를 불러주고 그 요소로 contetn={위에서 선언한 변수}를 넣어준다.
+아… 이건 진짜 핵 귀찮은 방법인거 같다 ㅠㅠㅠㅠ&lt;/p&gt;
+&lt;p&gt;일단은 글이 길어질것 같으니 다음 포스팅에 이어서…☆&lt;/p&gt;</content:encoded></item><item><title><![CDATA[wecode 9주차_7일 TIL_Git에서 pull request가 안 될때 문제 해결방법]]></title><description><![CDATA[위코드 62일차. 2차 프로젝트를 마무리 지어야 하는데.. git에서 pull request를 하는 데 문제가 발생..! 생각보다 간단한 문제였는데 빨간 글씨로 can't라니까 넘나 무서웠던 것.... 여튼 해결 방법에 대해 써보았다!]]></description><link>https://gollumnima.github.io//posts/wecode9_7TIL_git_error</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode9_7TIL_git_error</guid><pubDate>Sun, 29 Sep 2019 15:41:23 GMT</pubDate><content:encoded>&lt;h2 id=&quot;cant-automatically-merge&quot;&gt;&lt;a href=&quot;#cant-automatically-merge&quot; aria-label=&quot;cant automatically merge permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Can’t automatically merge&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/6a424fa0-e281-11e9-9cc9-c52279a372a5/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;분명 master branch에서 pull 받았을 때 아무 문제가 없었는데…
 feature/css_little이라는 branch에서 master로 pull request를 날리려고 하는데
