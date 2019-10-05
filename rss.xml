@@ -1,4 +1,129 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 02 Oct 2019 07:44:50 GMT</lastBuildDate><item><title><![CDATA[wecode 10주차_2일 TIL_공식문서와 함께하는 둘둘의 Next.js 도전기 2탄]]></title><description><![CDATA[위코드 64일차. 기업협업 이틀차! 하필 휴일과 위워크 가는 날때문에 이틀이나 쉬게(?) 되서 금요일부터 본격적으로 임무가 주어지는데! 그 전까지 Next.js와 코드분석을 해보는 중이다. 지난번 포스팅에 이어 Next.js 2탄이다.]]></description><link>https://gollumnima.github.io//posts/wecode10_2TIL_nextjs</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode10_2TIL_nextjs</guid><pubDate>Tue, 01 Oct 2019 16:19:23 GMT</pubDate><content:encoded>&lt;h2 id=&quot;dynamic-pages&quot;&gt;&lt;a href=&quot;#dynamic-pages&quot; aria-label=&quot;dynamic pages permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Dynamic Pages&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sat, 05 Oct 2019 01:13:57 GMT</lastBuildDate><item><title><![CDATA[wecode 10주차_6일 TIL_깊은 복사와 얕은 복사 그리고 객체의 참조]]></title><description><![CDATA[위코드 68일차. 현재 Next.js 초기 세팅 하는 법을 열심히 정리중인데 아직 완성은 못했다. 마침 위코드에서 하루에 한 주제씩 자바스크립트에 대해 생각해볼 문제를 던져주셔서 푸는중! 오늘은 그 첫 단계, 깊은 복사와 얕은 복사 그리고 객체의 참조에 대해 써보았다!]]></description><link>https://gollumnima.github.io//posts/wecode10_6TIL_object_ref</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode10_6TIL_object_ref</guid><pubDate>Sat, 05 Oct 2019 10:06:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/00a54810-e707-11e9-973a-55350a1abd48/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;한번쯤은 짚고넘어가야 했던 부분인데 이제서야 정리해본다!&lt;br /&gt;
+깊은 복사와 얕은 복사는 뭘까?&lt;/p&gt;
+&lt;h2 id=&quot;string-number-boolean에서의-복사&quot;&gt;&lt;a href=&quot;#string-number-boolean%EC%97%90%EC%84%9C%EC%9D%98-%EB%B3%B5%EC%82%AC&quot; aria-label=&quot;string number boolean에서의 복사 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;String, Number, Boolean에서의 복사&lt;/h2&gt;
+&lt;p&gt;먼저 예제부터 살펴보자&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let x = &amp;#39;마카롱&amp;#39;
+let y = x
+y = &amp;#39;바게트&amp;#39;
+console.log(x,y)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;다음과 같은 식에서 y에 x를 대입해서 y는 마카롱이 되었지만
+y에 또다시 바게트라는 값을 대입했기 때문에 콘솔을 찍어보면
+&lt;code class=&quot;language-text&quot;&gt;마카롱,바게트&lt;/code&gt; 라는 결과가 나오게 된다.&lt;/p&gt;
+&lt;p&gt;y의 값은 변해도 x의 값엔 영향을 주지 않는다&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/878de9d0-e708-11e9-9db5-fda9d04b0052/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;변수는 모두 메모리의 어딘가에 저장이 되는데, 대입을 하면 그 변수의 이름은 저장된 메모리의 주소를 가리킨다.
+객체 말고 string, boolean, number들은 딱 그 값을 복사하는데
+객체 같은 경우는 좀 다르다.
+배열 또한 객체기 때문에 예시를 배열로 들어보았다~&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let arr = [1,2,3]
+let plus = arr;
+plus[0]=0;
+console.log(arr);
+console.log(plus);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위의 코드를 콘솔에 찍어보면 둘 다 [0,2,3]이 나온다.
+메모리에 [1,2,3]이라는 값을 가진 애는 arr와 plus 둘.
+값은 하나인데 변수가 여러개일 때 이것을 참조라고 한다.&lt;br /&gt;
+마치 내 이름이 김두리지만 둘둘이라던지 킹둘이라던지 별명이 많은 것처럼 훗&lt;br /&gt;
+동일한 값에 변수가 여러개기 때문에 변수가 바뀌면 원본도 바뀌게 된다!&lt;br /&gt;
+이걸 방지하려면 메모리에 한 값당 한 변수씩! 할당을 해줘야한다.&lt;/p&gt;
+&lt;h2 id=&quot;복사&quot;&gt;&lt;a href=&quot;#%EB%B3%B5%EC%82%AC&quot; aria-label=&quot;복사 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;복사&lt;/h2&gt;
+&lt;p&gt;여기서 나오는게 바로 복사라는 개념이다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;얕은 복사 : 상위객체만 새로 생성되고 내부 객체는 참조관계&lt;/li&gt;
+&lt;li&gt;깊은 복사 : 내부객체까지 전부 다 새로 생성되는 것&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;예제&quot;&gt;&lt;a href=&quot;#%EC%98%88%EC%A0%9C&quot; aria-label=&quot;예제 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;예제&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let profile = {
+  name: &amp;quot;김개발&amp;quot;,
+  address: {
+    home: &amp;quot;한강아파트&amp;quot;,
+    company: &amp;quot;위워크 선릉2호점&amp;quot;
+  },
+  hobby: &amp;quot;programming&amp;quot;
+}
+
+const addProperty = info =&amp;gt; {
+}
+
+// 호출 예
+let newProfile = addProperty({ age: 20 });
+console.log(&amp;#39;profile =&amp;gt; &amp;#39;, profile);
+console.log(&amp;#39;newProfile =&amp;gt;&amp;#39;, newProfile);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;addProperty 라는 함수를 통해 newProfile에는 새로운 값이 추가되어야 하고, 원본 객체는 손상시키면 안된다.&lt;/p&gt;
+&lt;h2 id=&quot;내가-접근한-방법&quot;&gt;&lt;a href=&quot;#%EB%82%B4%EA%B0%80-%EC%A0%91%EA%B7%BC%ED%95%9C-%EB%B0%A9%EB%B2%95&quot; aria-label=&quot;내가 접근한 방법 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;내가 접근한 방법&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const addProperty = info =&amp;gt; {
+  const sth_new = {}
+  for(let i in profile) {
+    sth_new[i] = profile[i]
+  }
+  return Object.assign(sth_new, info)
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;먼저 sth&lt;em&gt;new라는 빈 객체를 만들고 for in 문을 돌려서
+profile의 값들을 다 빈 객체에 옮겼고,
+리턴 값으론 Object.assign을 이용해 인자를 들어가는 info와 sth&lt;/em&gt;new를 merge시켜주었다.&lt;/p&gt;
+&lt;p&gt;근데 굳이 for in 문을 안 돌려도 됐던 것..!!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const addProperty = info =&amp;gt; {
+  const copyProperty = Object.assign({}, profile);
+  return Object.assign(copyProperty, info)
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;그냥 새 객체를 Object.assign()을 이용해 선언해주고
+리턴에 그걸 한번 더 써서 info를 넣어주면 됐다 헐~~&lt;/p&gt;
+&lt;p&gt;더 간단하게는&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const addProperty = info =&amp;gt; {
+  return {
+    ...info,
+    ...profile
+  }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;세상에… 전개연산자로 한큐에 끝낼수 있다
+전개연산자를 한정적으로만 써서 이런 기능이 있을줄 몰랐다&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_syntax&quot;&gt;MDN 전개연산자&lt;/a&gt;에서 딱 처음 두개,
+apply 대신이랑 new와 함께 쓰는 것만 해봤는데 복사에 이렇게 유용하게 쓰이다닛..! 자주 활용해봐야겠다.&lt;/p&gt;
+&lt;p&gt;더 고난이도 방법으론 재귀를 쓰는 방법이 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const addProperty = info =&amp;gt; {
+ let newProfile = {};
+ // recursion
+ function copyObject(data, newData){
+   let typeOfInputData = typeof(data);
+   if(typeOfInputData != &amp;#39;object&amp;#39;){
+       return data;
+   }
+   else{
+     for(let key in data){
+         let typeOfData = typeof(data[key]);
+         if(typeOfData === &amp;#39;object&amp;#39;){
+          if(Array.isArray(data[key])){
+               newData[key] = [];
+           }
+           else{
+               newData[key] = {};
+           }
+           copyObject(data[key], newData[key]);
+         }
+         else{
+           newData[key] = data[key];
+         }
+     }
+   }
+   return newData;
+ }
+ // 원본 복사
+ copyObject(profile, newProfile);
+ // 객체 추가
+ copyObject(info, newProfile);
+ return newProfile;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;우리 기수 동기인 광훈님의 방법..
+와… 정말 어나더 클래스 대단쓰
+이걸 재귀로 생각할 수 있었다니 와… 그저 감탄만 나온다&lt;/p&gt;
+&lt;p&gt;하나의 주제에 대해 서로 다양한 방법으로 생각해볼 수 있는 좋은 시간이었다!
+다음 주제는 무엇이 될지 궁금하군 룰루~♬&lt;/p&gt;
+&lt;h2 id=&quot;reference&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;wecode repl.it&lt;/li&gt;
+&lt;li&gt;MDN&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[wecode 10주차_2일 TIL_공식문서와 함께하는 둘둘의 Next.js 도전기 2탄]]></title><description><![CDATA[위코드 64일차. 기업협업 이틀차! 하필 휴일과 위워크 가는 날때문에 이틀이나 쉬게(?) 되서 금요일부터 본격적으로 임무가 주어지는데! 그 전까지 Next.js와 코드분석을 해보는 중이다. 지난번 포스팅에 이어 Next.js 2탄이다.]]></description><link>https://gollumnima.github.io//posts/wecode10_2TIL_nextjs</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode10_2TIL_nextjs</guid><pubDate>Tue, 01 Oct 2019 16:19:23 GMT</pubDate><content:encoded>&lt;h2 id=&quot;dynamic-pages&quot;&gt;&lt;a href=&quot;#dynamic-pages&quot; aria-label=&quot;dynamic pages permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Dynamic Pages&lt;/h2&gt;
 &lt;p&gt;이번 챕터에서는 리액트에서처럼 마찬가지로 router 기능을 써볼건데
 마찬가지로 Next.js에 기본적으로 내장되어 있는 기능이기 때문에 import만 해오면 된다!&lt;/p&gt;
 &lt;p&gt;공식문서 주소에 나온 clone해온 파일의 3번째 index.js를 다음과 같이 수정해준다.&lt;/p&gt;
