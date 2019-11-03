@@ -1,83 +1,332 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 03 Nov 2019 06:07:01 GMT</lastBuildDate><item><title><![CDATA[wecode 11주차_2일 TIL_JS에서 Number의 값 중 infinity와 NaN에 대해 알아보자]]></title><description><![CDATA[위코드 71일차. 끝나지 않은 Next.js 초기 세팅 포스팅.. 그래서 오늘은 또 위코드에서 던져준 자바스크립트 문제에 대해 정리해보았다. 오늘은 그 두 번째 단계, Number의 값 중 Infinity와 NaN에 대해 정리해보았다!]]></description><link>https://gollumnima.github.io//posts/wecode11_2TIL_Num</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode11_2TIL_Num</guid><pubDate>Tue, 08 Oct 2019 12:54:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/92e20700-ea3a-11e9-afe6-196b0b97fa8e/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;number&quot;&gt;&lt;a href=&quot;#number&quot; aria-label=&quot;number permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Number&lt;/h2&gt;
-&lt;p&gt;자바스크립트에서 Number란 64bit floating point로 이루어진 숫자형 데이터이다.&lt;br /&gt;
-정수, 소수 다 Number가 되지만 infinity나 NaN 또한 Number이다!&lt;br /&gt;
-infinity와 NaN에 대해서 더 알아보자!&lt;/p&gt;
-&lt;h2 id=&quot;nan&quot;&gt;&lt;a href=&quot;#nan&quot; aria-label=&quot;nan permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;NaN&lt;/h2&gt;
-&lt;p&gt;말 그대로 Not a Number. 숫자가 아니라는 뜻!!
-위코드 예시 문제에서 NaN을 리턴하라는 문제가 있어서 도전도전&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function returnNaN() {
-  return 3/&amp;#39;가&amp;#39;;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 03 Nov 2019 11:43:21 GMT</lastBuildDate><item><title><![CDATA[정적언어인 TypeScript에 대해 알아보자 1탄-정적언어와 타입선언]]></title><description><![CDATA[위코드에서의 3개월 과정은 끝났지만 나의 블로깅은 계속된다! 여태 기업협업한다고, 취준한다고 나태해져서 글을 안 쓴지 너무 오래되었다.... 이제 다시 부지런히 쓰자!! 새롭게 마음을 먹은 이후로 쓰는 첫 포스팅 주제는 바로바로 TypeScript!!]]></description><link>https://gollumnima.github.io//posts/typescript_1</link><guid isPermaLink="false">https://gollumnima.github.io//posts/typescript_1</guid><pubDate>Sun, 03 Nov 2019 15:10:23 GMT</pubDate><content:encoded>&lt;p&gt;이번 포스팅부터 맥북으로 작성하였습니다. 😜 &amp;#x3C;- 맥북의 상징 이모티콘&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/d91b9b70-fdd4-11e9-971e-89fe6d75cd84/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Ts하면 생각나는건.. 왜 타슈밖에 없죠..? 왜 타슈의 이니셜 같죠…?
+타슈가 뭔지 모르는 분들을 위해 살짝 알려드리자면…&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/0b8dbb10-fdd5-11e9-8bf4-311cdb2c16fe/image.png&quot; alt=&quot;image.png&quot;&gt;
+(이미지 출처 : 타슈 홈페이지)
+대전시에서 운영하는 자전거서비스 이름입니다 ㅋㅋㅋㅋ
+여튼… 타슈의 Ts 말고 우리는 TypeScript의 Ts를 알아볼겁니다! 룰루~&lt;/p&gt;
+&lt;p&gt;그 전에 정적언어와 동적언어에 대해 먼저 알아보고 갑시다!&lt;/p&gt;
+&lt;h2 id=&quot;정적언어와-동적언어&quot;&gt;&lt;a href=&quot;#%EC%A0%95%EC%A0%81%EC%96%B8%EC%96%B4%EC%99%80-%EB%8F%99%EC%A0%81%EC%96%B8%EC%96%B4&quot; aria-label=&quot;정적언어와 동적언어 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;정적언어와 동적언어&lt;/h2&gt;
+&lt;h4 id=&quot;동적언어&quot;&gt;&lt;a href=&quot;#%EB%8F%99%EC%A0%81%EC%96%B8%EC%96%B4&quot; aria-label=&quot;동적언어 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;동적언어&lt;/h4&gt;
+&lt;p&gt;정적언어와 동적언어를 언제 써야 하는지에 대한 구분은 바로 “Type”을 언제 결정하느냐에 따라 다른데요.
+우리에게 넘나 친숙한 자바스크립트는 동적언어입니다.
+그말인즉슨, 타입을 미리 결정하지 않고 변수를 먼저 선언해도 되는것!!
+변수를 선언한 이후에 타입을 맘대로 지지고 볶고 해도 에러가 나지 않습니다.
+이렇게…!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/b0c50a50-fdd7-11e9-8bf4-311cdb2c16fe/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;동적언어의-장점&quot;&gt;&lt;a href=&quot;#%EB%8F%99%EC%A0%81%EC%96%B8%EC%96%B4%EC%9D%98-%EC%9E%A5%EC%A0%90&quot; aria-label=&quot;동적언어의 장점 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;동적언어의 장점&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;타입고민없이 걍 써도 되서 배우기 쉬움&lt;/li&gt;
+&lt;li&gt;코드의 양이 적을때 생산성 굿굿&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;동적언어의-단점&quot;&gt;&lt;a href=&quot;#%EB%8F%99%EC%A0%81%EC%96%B8%EC%96%B4%EC%9D%98-%EB%8B%A8%EC%A0%90&quot; aria-label=&quot;동적언어의 단점 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;동적언어의 단점&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;타입 오류가 런타임시 발견쓰&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;정적언어&quot;&gt;&lt;a href=&quot;#%EC%A0%95%EC%A0%81%EC%96%B8%EC%96%B4&quot; aria-label=&quot;정적언어 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;정적언어&lt;/h4&gt;
+&lt;p&gt;오늘 소개해드릴 타입스크립트가 바로 정적언어 중에 하나입니다.
+자바스크립트와는 달리 타입을 미리 결정한 후에 변수를 선언해야 합니다.
+예를 들어…&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/d6042570-fdd8-11e9-a470-596c2bdea20d/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;아까와 동일한 코드를 TypeScript에 입력해보면 이러한 타입 에러가 발생합니다.
+이런식으로 자동으로 타입을 인식하는 기능을 타입추론(type inference)라고 한다고 하네용!
+그렇담 저 코드에 에러가 발생하지 않게 하려면 어떻게 해야할까요!
+미리 타입을 선언해줘야 하겠죠?&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/5075f8b0-fdd9-11e9-a470-596c2bdea20d/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;짠! 미리 변수의 타입을 숫자 혹은 string 이라고 지정해주니 무서운 빨간줄은 안 생겼어요.
+Ts에서 변수를 선언할 때는 위와 같이 변수 이름과 콜론, 타입을 써주면 됩니다.&lt;/p&gt;
+&lt;h4 id=&quot;정적언어의-장점&quot;&gt;&lt;a href=&quot;#%EC%A0%95%EC%A0%81%EC%96%B8%EC%96%B4%EC%9D%98-%EC%9E%A5%EC%A0%90&quot; aria-label=&quot;정적언어의 장점 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;정적언어의 장점&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;코드의 양이 많을 때 생산성 굿굿&lt;/li&gt;
+&lt;li&gt;타입 오류가 컴파일시 발견쓰&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;정적언어의-단점&quot;&gt;&lt;a href=&quot;#%EC%A0%95%EC%A0%81%EC%96%B8%EC%96%B4%EC%9D%98-%EB%8B%A8%EC%A0%90&quot; aria-label=&quot;정적언어의 단점 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;정적언어의 단점&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;변수 선언할때마다 타입 고민쓰… 진입장벽 높음 ㅠㅠ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;타입스크립트의-여러-가지-타입&quot;&gt;&lt;a href=&quot;#%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%9D%98-%EC%97%AC%EB%9F%AC-%EA%B0%80%EC%A7%80-%ED%83%80%EC%9E%85&quot; aria-label=&quot;타입스크립트의 여러 가지 타입 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;타입스크립트의 여러 가지 타입&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/39b398c0-fdda-11e9-971e-89fe6d75cd84/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;아까 위에서 간략하게 설명하긴 했지만..!&lt;br /&gt;
+Ts에서 타입을 선언할 때는 변수 이름과 콜론, 타입을 선언해주어야 합니다.&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;자, 이제 타입스크립트에서 타입을 다루는 방식에 대해 알아보자能!&lt;/p&gt;
+&lt;h4 id=&quot;number-boolead-string&quot;&gt;&lt;a href=&quot;#number-boolead-string&quot; aria-label=&quot;number boolead string permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;number, boolead, string&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const size: number = 123;
+const isBig: boolean = size &amp;gt;= 123;
+const msg: string = isBig ? &amp;#39;big&amp;#39; : &amp;#39;small&amp;#39;;
+
+console.log(size); // 123
+console.log(isBig); // true
+console.log(msg); // big&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;number면 number, boolean이면 boolean, string이면 string이라고 선언한다.&lt;br /&gt;
+그 와중에 msg 선언하는 거 넘나 신박… 삼항연산자를 이용해서 저렇게 해줄수도 있군..! 😎&lt;/p&gt;
+&lt;h4 id=&quot;숫자형-배열-및-혼합형-배열&quot;&gt;&lt;a href=&quot;#%EC%88%AB%EC%9E%90%ED%98%95-%EB%B0%B0%EC%97%B4-%EB%B0%8F-%ED%98%BC%ED%95%A9%ED%98%95-%EB%B0%B0%EC%97%B4&quot; aria-label=&quot;숫자형 배열 및 혼합형 배열 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;숫자형 배열 및 혼합형 배열&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// 숫자형 배열
+const arr1: number[] = [1, 2, 3];
+const arr2: Array&amp;lt;number&amp;gt; = [2, 4, 6];
+arr1.push(4)
+arr2.push(8)
+arr2.push(&amp;#39;ten&amp;#39;) // Error!
+console.log(arr1) // [1,2,3,4]
+console.log(arr2) // [2,4,6,8]
+
+// 혼합형 배열
+const size: number = 123;
+const isBig: boolean = size &amp;gt;= 123;
+const msg: string = isBig ? &amp;#39;big&amp;#39; : &amp;#39;small&amp;#39;;
+const data : [string, number] = [msg, size];
+console.log(data); // [&amp;#39;big&amp;#39;, 123]
+console.log(data[0].substr(1)); // ig
+console.log(data[1].substr(1)); // Error!&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;숫자형 배열의 타입은 &lt;code class=&quot;language-text&quot;&gt;number[]&lt;/code&gt; 라고 선언해주거나 &lt;code class=&quot;language-text&quot;&gt;Array&amp;lt;number&amp;gt;&lt;/code&gt;라고 선언한다.
+number와 string이 혼합된 배열은 선언할 때 &lt;code class=&quot;language-text&quot;&gt;[string, number]&lt;/code&gt;라고 선언해준다.
+data라는 배열을 선언했는데, data의 1번째 값의 타입은 숫자이므로 거기서 substr을 쓸 수 없으니까 Error 발생!!&lt;/p&gt;
+&lt;p&gt;여튼 저런 혼합형 배열을 tuple이라고도 한다!&lt;/p&gt;
+&lt;h4 id=&quot;null과-undefined&quot;&gt;&lt;a href=&quot;#null%EA%B3%BC-undefined&quot; aria-label=&quot;null과 undefined permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;null과 undefined&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let v1: undefined = undefined;
+let v2: null = null;
+v1 = 123;
+
+let v3: number | undefined = undefined;
+v3 = 123;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;undefined는 undefined로, null은 null로 선언해준다.
+JS와의 차이점을 살펴보자면.. &lt;br /&gt;
+(이 아래의 캡쳐화면은 JS에서의 화면입니다)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/7f361890-fdf4-11e9-a859-9b228597c293/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;JS에선 null의 type이 object였는데 TS에선 null의 type은 null이다!&lt;/li&gt;
+&lt;li&gt;JS에선 초기에 null이나 undefined여도 변수에 새로운 값을 할당하면 변수에 그 값이 대입이 되지만, TS에선 Type Error가 발생한다…!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;문자열-리터럴과-숫자-리터럴-타입&quot;&gt;&lt;a href=&quot;#%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%A6%AC%ED%84%B0%EB%9F%B4%EA%B3%BC-%EC%88%AB%EC%9E%90-%EB%A6%AC%ED%84%B0%EB%9F%B4-%ED%83%80%EC%9E%85&quot; aria-label=&quot;문자열 리터럴과 숫자 리터럴 타입 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;문자열 리터럴과 숫자 리터럴 타입&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let num: 10 | 20 | 30;
+num = 10;
+// num = 15; 숫자 10, 20, 30만 가질수 있는 타입으로 정의된 것이라 type error!
+
+let job: &amp;#39;frontend&amp;#39; | &amp;#39;backend&amp;#39;;
+// job = &amp;#39;designer&amp;#39; 마찬가지로 type error!&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;숫자 리터럴 타입을 정의할 때, number가 아니라 직접적인 숫자를 대입하면 해당하는 숫자만 가지도록 정의가 되는 것이라&lt;br /&gt;
+변수에 다른 숫자를 할당하면 Type Error가 발생하게 된다!&lt;br /&gt;
+문자열 리터럴도 마찬가지다. 선언했을 때 당시의 문자가 아니라면 Type Error 발생!&lt;/p&gt;
+&lt;h4 id=&quot;any&quot;&gt;&lt;a href=&quot;#any&quot; aria-label=&quot;any permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Any&lt;/h4&gt;
+&lt;p&gt;말 그대로 Any! so cool하게 어떤 타입의 값이든 허용하는 타입니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let value: any;
+value = 123;
+value = &amp;#39;456&amp;#39;;
+value = () =&amp;gt; {};&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;실제로 타입을 알 수 없거나 타입 정의가 되지 않은 외부 패키지(자바스크립트라던지.. javascript라던지..)를 사용할때 쓰면 된다.
+그치만 남발하지 않는게 좋다. 우리가 TS를 쓰는 이유가 없어지니깐 ㅠㅠ&lt;/p&gt;
+&lt;h4 id=&quot;void와-never&quot;&gt;&lt;a href=&quot;#void%EC%99%80-never&quot; aria-label=&quot;void와 never permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;void와 never&lt;/h4&gt;
+&lt;p&gt;void는 아무값도 반환하지 않고 종료되는 함수에,&lt;br /&gt;
+never은 예외 발생으로 비정상적으로 종료되거나 무한루프 때문에 종료되지 않는 함수에 씀&lt;br /&gt;
+이건 깊이 들어가봐야 알겠지만.. 왜 never같은 값을 선언해주는지 아직은 모르겠다 😂&lt;br /&gt;
+애초에 무한루프 안 걸리게 로직을 짜야하는거 아닌가 ? ㅠㅠ 모르겠다…&lt;/p&gt;
+&lt;p&gt;여튼.. 예시를 함 보자!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function f1(): void {
+    console.log(&amp;#39;hungry&amp;#39;);
+}
+
+function f2(): never {
+    throw new Error(&amp;#39;some error&amp;#39;);
+}
+
+function infiniteLoop(): never {
+    while (true) {
+    }
 }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;문제의 예시 해답은 이렇게 주어졌지만 나는 꼼수를 써서&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function returnNaN() {
-  return NaN;
+&lt;p&gt;대충 어떤건지 알겠는데 저걸 굳이 왜 써주는지는 아직도 의문쓰..!&lt;br /&gt;
+이건 담주 목욜에 있을 위코드 프론트앤드 스터디 이후 더 자세히 알게되지 않을까..😱&lt;/p&gt;
+&lt;h4 id=&quot;object&quot;&gt;&lt;a href=&quot;#object&quot; aria-label=&quot;object permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;object&lt;/h4&gt;
+&lt;p&gt;예시를 먼저 보자!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let obj: object;
+obj = { name: &amp;#39;Doori&amp;#39; };
+console.log(obj.name) // 세상에 타입에러 발생...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;obj라는 변수는 object라고 선언해주었지만, 그 안에 들어가는 값은 정의를 해주지 않아서 Type Error 발생… 진짜 너무하네
+일반적으로 객체에서 속성정보를 포함해서 타입을 정의하려면 인터페이스를 이용하는데.. 이건 글이 길어지므로 다음 이 시간에! 🤓&lt;/p&gt;
+&lt;h4 id=&quot;교차타입과-유니온타입&quot;&gt;&lt;a href=&quot;#%EA%B5%90%EC%B0%A8%ED%83%80%EC%9E%85%EA%B3%BC-%EC%9C%A0%EB%8B%88%EC%98%A8%ED%83%80%EC%9E%85&quot; aria-label=&quot;교차타입과 유니온타입 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;교차타입과 유니온타입&lt;/h4&gt;
+&lt;p&gt;설명은 코드를 먼저 보시오..!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let numnum: (1 | 3 | 5) &amp;amp; (3 | 5 | 7);
+numnum = 3;
+numnum = 1;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;교차타입은 &amp;#x26; 기호로, 유니온타입은 |으로 표시한다.&lt;br /&gt;
+위에서 이미 타입을 문자열 혹은 숫자로 정의하고 싶을때 유니온타입을 쓴 적이 있다.&lt;br /&gt;
+근데 numnum이 1 또는 3또는 5 이고 3 또는 5또는 7인데&lt;br /&gt;
+3과 5가 겹치니까 3 또는 5가 아니면 타입에러가 난다… 당황쓰..&lt;br /&gt;
+그러면 1과 7은 억울해서 어떻게 사나…&lt;/p&gt;
+&lt;p&gt;이것에 대한 의문도 다음주 목요일에 있을 위코드 프론트앤드 스터디 때 풀 예정!🥺&lt;/p&gt;
+&lt;h4 id=&quot;열거형-타입&quot;&gt;&lt;a href=&quot;#%EC%97%B4%EA%B1%B0%ED%98%95-%ED%83%80%EC%9E%85&quot; aria-label=&quot;열거형 타입 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;열거형 타입&lt;/h4&gt;
+&lt;p&gt;열거형 타입의 원소는 값으로 사용될 수도, 타입으로 사용될 수도 있음.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;enum Fruit {
+  Apple, Strawberry=2, Kiwi
+}
+
+console.log(Fruit.Apple, Fruit.Strawberry, Fruit.Kiwi); // 0 2 3&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;열거형 타입에서 첫 번째 값에 할당을 해주지 않으면 무조건 0이 할당됨.&lt;br /&gt;
+각각의 값들엔 string이나 number의 값을 줄 수 있는데, 할당되지 않은 값에는 이전 값에서 +1 된 만큼의 값이 할당된다!&lt;br /&gt;
+위의 예시에서 딸기가 2여서 그 옆의 키위는 자동으로 3이 되었다.&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;아래의 예는 열거형 타입의 객체의 속성을 예시로 들어봤다!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;enum Fruit {
+  Apple, Strawberry=2, Kiwi
+}
+
+console.log(Fruit.Strawberry); // 2
+console.log(Fruit[&amp;#39;Strawberry&amp;#39;]); // 2
+console.log(Fruit[2]); // Strawberry&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;세번째 콘솔은 좀 신박하다 ㅋㅋ&lt;br /&gt;
+원소의 이름과 값이 양방향으로 매핑되어 있어서 값에 할당된 숫자를 입력해도 해당하는 값이 불러와진다 오오~&lt;/p&gt;
+&lt;p&gt;근데 열거형 타입의 값이 문자열일때는 세번째 방식이 통하지 않는다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;enum Numb {
+  One=&amp;#39;first&amp;#39;, Two=&amp;#39;second&amp;#39;, Three=&amp;#39;third&amp;#39;
+}
+console.log(Numb.One); // first
+console.log(Numb[&amp;#39;One&amp;#39;]); // first
+console.log(Numb[&amp;#39;first&amp;#39;]) // Error!&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;열거형 타입을 자주 쓰는 경우 몇 가지 유틸리티 함수를 만들어 쓰는게 좋다고 한다!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;열거형 타입의 원소의 개수를 알려주는 함수&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function getEnumLength(enumObject: any) {
+  const keys = Object.keys(enumObject);
+  return keys.reduce(
+    (acc,key)=&amp;gt; (typeof enumObject[key] === &amp;#39;string&amp;#39; ? acc+1 : acc),0
+  );
 }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;그냥 NaN이 리턴되게 했다 ㅋㅋㅋㅋㅋㅋ&lt;br /&gt;
-가끔 개발자의 실수로 웹페이지에서 금액 대신 NaN이 뜨는 에러를 볼 수 있다.
-&lt;br /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/2df2b950-ea3c-11e9-b595-afef7cf6fa1e/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;이렇게 ㅋㅋㅋㅋㅋㅋㅋ&lt;br /&gt;
-아니 계산을 어떻게 하라는건가욧ㅋㅋ
-여튼.. MDN 문서의 내용을 덧붙이자면..!&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;NaN === NaN;        // false
-isNaN(NaN);         // true&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;NaN과 NaN은 같을 수 없고.. isNaN으로 NaN인지 여부를 확인가능쓰
-NaN과 숫자의 연산을 해보면 어떨까?
-a는 양의 정수이고, b는 NaN이다.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/3c7f5d90-ea3f-11e9-872c-41fe4572e8d5/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;음의 정수로 시도해봐도 똑같다.&lt;br /&gt;
-무조건 NaN과의 연산을 통해 NaN이 나오게 된다!&lt;/p&gt;
-&lt;p&gt;이제 infinity로 넘어가자!&lt;br /&gt;
-내꺼하자 ha~ 의 인피니티 말고 무한대 인피니티!&lt;/p&gt;
-&lt;h2 id=&quot;infinity&quot;&gt;&lt;a href=&quot;#infinity&quot; aria-label=&quot;infinity permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Infinity&lt;/h2&gt;
-&lt;p&gt;아까 NaN에서도 생략했지만, NaN과 Infinity는 전역객체의 속성이다.&lt;br /&gt;
-그 말은 즉슨, 우리가 window에 이미 저장되어있는 값이기 때문에 console.log를 찍었을때 그 값이 바로 나온다는 사실!&lt;/p&gt;
-&lt;p&gt;또한.. NaN과는 조금 다르게 Infinity를 이용해 NaN보단 약간 더 다양한 연산이 가능하다는 사실..!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/a935ad50-ea3e-11e9-b6ee-7fe3815f8a47/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Infinity * 양의정수 === Infinity
-Infinity / 양의정수 === Infinity
-양의정수 / Infinity === 0
-Infinity * 음의정수 === -Infinity
-Infinity / 음의정수 === -Infinity
-음의정수 / Infinity === -0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;-0은… 뭔지 모르겠다..
-수학전공인 울 언니한테 물어봐야겠다!ㅋㅋㅋㅋ&lt;/p&gt;
-&lt;p&gt;여튼.. 위코드에서 준 문제는 더치페이 문제!&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function dutch(count, price) {
-  const dutchMoney = price/count;
-  if (Number.isInteger(dutchMoney)) {
-    return dutchMoney
-  }
-  else if (dutchMoney+1 === Infinity) {
-    return 0
+&lt;ul&gt;
+&lt;li&gt;열거형 타입에 존재하는 값인지 검사하는 함수&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function isValidEnumValue(enumObject: any, value: never | string) {
+  if (typeof value === &amp;#39;number&amp;#39;) {
+    return !!enumObject[value];
   }
   else {
-    return +dutchMoney.toFixed(2)
+    return (
+      Object.keys(enumObject)
+      .filter(key =&amp;gt; isNaN(Number(key)))
+      .find(key =&amp;gt; enumObject[key] === value) != null
+    );
   }
 }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;나는 이 문제를 정수인지, infinity인지, 소수인지로 나눠서 생각해보았다!&lt;br /&gt;
-소수일 경우 소수 셋째자리에서 반올림을 해서 자릿수를 두개로 맞춰야하는데.. &lt;br /&gt;찾아보니 toFixed()라는 함수가 있는것!&lt;/p&gt;
-&lt;h4 id=&quot;tofixed&quot;&gt;&lt;a href=&quot;#tofixed&quot; aria-label=&quot;tofixed permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;toFixed()&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;숫자를 괄호안의 수 만큼의 자릿수를 갖는 숫자로 변형&lt;/li&gt;
-&lt;li&gt;괄호안에 숫자가 안들어가면 디폴트값이 0&lt;/li&gt;
-&lt;li&gt;소수점이 길면 반올림하고, 짧으면 0으로 채운다&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;위의 코드에서 +dutchMoney라고 해준 이유는 Number(dutchMoney) 대신 뒤에 남는 0을 지워주기 위함ㅋㅋ
-근데 모델솔루션을 보고 또 깜놀…&lt;/p&gt;
-&lt;p&gt;모델솔루션의 해답..&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function dutch(count, price) {
-  let result = price/count;
+&lt;p&gt;자 그럼 이걸 어떻게 적용하냐가 중요한데!
+아래의 예시를 같이 보시죠..!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;enum Fruit {
+  Apple,
+  Banana,
+  Orange
+}
 
-  if (!isFinite(result)) return 0;
+enum Language {
+  Korean = &amp;#39;ko&amp;#39;,
+  English = &amp;#39;en&amp;#39;,
+  Chinese = &amp;#39;ch&amp;#39;
+}
 
-  return Number((price/count).toFixed(2));
+console.log(getEnumLength(Fruit), getEnumLength(Language)); // 3 3&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위의 함수에서 첫번째 식을 적용해보면 길이가 3으로 잘 나온다.
+근데 두번째 식은 내가 뭔가 잘 못 쓴건지.. 자꾸 에러가 나서 이건 다음 기회에 알아보도록 하자!&lt;/p&gt;
+&lt;p&gt;원래는 해당하는 object에 그 값이 있는지 확인할 수 있는 식이다.
+Language안에 Jp가 있으면 false가 나오고.. 이런 식인데 왜 에러가 날까~ 😂&lt;/p&gt;
+&lt;h4 id=&quot;상수-열거형&quot;&gt;&lt;a href=&quot;#%EC%83%81%EC%88%98-%EC%97%B4%EA%B1%B0%ED%98%95&quot; aria-label=&quot;상수 열거형 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;상수 열거형&lt;/h4&gt;
+&lt;p&gt;const 로 선언하는 enum을 상수 열거형이라고 하는데 여기까진 괜찮다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const enum Fruit {
+  Apple, Banana, Orange
+}
+
+const fruit: Fruit = Fruit.Apple;
+
+const enum Language {
+  Korean = &amp;#39;ko&amp;#39;,
+  English = &amp;#39;en&amp;#39;,
+  Chinese = &amp;#39;ch&amp;#39;
+}
+
+const lang: Language = Language.Korean;
+
+console.log(fruit) // 0
+console.log(lang) // &amp;#39;ko&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;약간의 특이점이 있다면.. const를 쓰면 객체형을 쓸 수 없다는것..?
+아까 객체의 길이를 세주었던 함수를 다시 써보자&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function getEnumLength(enumObject: any) {
+  const keys = Object.keys(enumObject);
+  return keys.reduce(
+    (acc,key)=&amp;gt; (typeof enumObject[key] === &amp;#39;string&amp;#39; ? acc+1 : acc),0
+  );
+}
+
+const enum Fruit {
+  Apple, Banana, Orange
+}
+console.log(getEnumLength(Fruit))	// Error!&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;아까였으면 3이 나왔을 값이 에러가 발생한다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/8dc716e0-fe29-11e9-b56d-6bd204953205/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;const는 변수선언할 때 말고 enum을 써야할 땐 웬만해선 쓰지말자!&lt;/p&gt;
+&lt;h4 id=&quot;함수-타입&quot;&gt;&lt;a href=&quot;#%ED%95%A8%EC%88%98-%ED%83%80%EC%9E%85&quot; aria-label=&quot;함수 타입 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;함수 타입&lt;/h4&gt;
+&lt;p&gt;함수타입을 정의하려면 매개변수 타입과 반환타입이 있는데..&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function getInfoTxt(name: string, age: number) : string { // 매개변수 타입
+  const nameTxt = name.substr(0, 10);
+  const ageTxt = age &amp;gt;= 35 ? &amp;#39;senior&amp;#39; : &amp;#39;junior&amp;#39;;
+  return `name : ${nameTxt}, age: ${ageTxt}`
+}
+
+const v1: string = getInfoTxt(&amp;#39;mike&amp;#39;, 23);  // 반환타입
+console.log(v1) // name : mike, age: junior
+const v2: string = getInfoTxt(&amp;#39;mike&amp;#39;, &amp;#39;23&amp;#39;); // Error!&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;코드의 첫줄에 있는 것처럼 parameter로 들어가는 값에 타입을 정의 한게 바로 매개변수 타입
+그리고 함수의 리턴값이 대입되는 변수에 타입을 정의한게 반환타입!&lt;/p&gt;
+&lt;p&gt;v2에서의 에러는 매개변수 타입이 age가 number라고 정해져있지만 string이 들어가서 탈락!&lt;/p&gt;
+&lt;h4 id=&quot;선택-매개변수&quot;&gt;&lt;a href=&quot;#%EC%84%A0%ED%83%9D-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98&quot; aria-label=&quot;선택 매개변수 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;선택 매개변수&lt;/h4&gt;
+&lt;p&gt;말그대로 써주는 게 필수가 아니라 선택인 매개변수를 말한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function getInfoTxt(name: string, age: number, language?: string) : string {
+  const nameTxt = name.substr(0, 10);
+  const ageTxt = age &amp;gt;= 35 ? &amp;#39;senior&amp;#39; : &amp;#39;junior&amp;#39;;
+  const languageTxt= language ? language.substr(0,10): &amp;#39;&amp;#39;;
+  return `name : ${nameTxt}, age: ${ageTxt}, language: ${languageTxt}`
+}
+
+getInfoTxt(&amp;#39;mike&amp;#39;, 23, &amp;#39;ko&amp;#39;);
+getInfoTxt(&amp;#39;mike&amp;#39;, 23); // language는 생략가능쓰 
+getInfoTxt(&amp;#39;mike&amp;#39;, 23, 123); // Error!&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;첫번째 줄에 language가 string이라고 지정되기 전 ? 가 쓰인다.
+이렇게 물음표 콜론, 그 다음 타입이 나올 경우가 선택 매개변수!&lt;/p&gt;
+&lt;p&gt;두번째 콘솔처럼 선택매개변수는 생략이 가능쓰
+But, 써 줬는데 타입이 매칭되지 않으면 에러가 난다!!&lt;/p&gt;
+&lt;p&gt;추가로, 선택매개변수는 꼭 필수 매개변수의 오른쪽에 와야 하는데&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function getInfoTxt(name: string, language?: string, age: number) : string {.....}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 쓰면 탈락! 그럼 어떻게 써줘야하냐..&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function getInfoTxt {
+	name: string,
+    language: string | undefined,
+    age: number,
+}: string {....}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;선택매개변수가 필수 매개변수 중간에 껴있을 경우 꼭 undefined를 유니온타입으로 써줘야 한다!&lt;/p&gt;
+&lt;h4 id=&quot;매개변수의-기본값-정하기&quot;&gt;&lt;a href=&quot;#%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%EC%9D%98-%EA%B8%B0%EB%B3%B8%EA%B0%92-%EC%A0%95%ED%95%98%EA%B8%B0&quot; aria-label=&quot;매개변수의 기본값 정하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;매개변수의 기본값 정하기&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function getInfoTxt(
+    name: string, 
+    age: number = 28,
+    language = &amp;#39;korean&amp;#39;
+  ) : string {
+  // 생략.....
+}
+
+console.log(getInfoTxt(&amp;#39;mike&amp;#39;)); 
+console.log(getInfoTxt(&amp;#39;mike&amp;#39;, 23)); 
+console.log(getInfoTxt(&amp;#39;mike&amp;#39;, 23, &amp;#39;en&amp;#39;));&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;여기서 콘솔에 찍은 값 세 가지 모두 에러가 나지 않는다.
+기본값이 있는 매개변수들은 모두 선택매개변수라고 했다. 즉, name만 필수란 말씀.&lt;/p&gt;
+&lt;p&gt;여기서 의문이 드는것은.. 문자열 리터럴과 숫자 리터럴 변수 선언을 할 땐
+해당하는 숫자나 문자열이 아닐경우 에러가 났는데.. 이건 변수 선언이 아니라 함수형이라 예외인건가?&lt;/p&gt;
+&lt;p&gt;이것에 대한 궁금증도 목요일 스터디에서 풀릴 예정!&lt;/p&gt;
+&lt;h4 id=&quot;나머지-매개변수&quot;&gt;&lt;a href=&quot;#%EB%82%98%EB%A8%B8%EC%A7%80-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98&quot; aria-label=&quot;나머지 매개변수 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;나머지 매개변수&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function getInfoTxt(name: string, ...rest: string[]): string {
+//....
 }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;isFinite로 일단 무한대인지 판별을 하고..
-소수인지 정수인지 판별할 필요없이 숫자의 뒤에는 toFixed, 앞에는 Number로 쓰면
-소수일땐 소수점 두 자리만 남기고, 정수일땐 알아서 정수로 변형시켜 줄 수있다.&lt;/p&gt;
-&lt;p&gt;간단한 문제였는데 한번도 깊이 생각해보지 못했던 Infinity와 NaN에 대해 생각해보고 좋았다!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[wecode 11주차_2일 TIL_JS에서 Number의 값 중 infinity와 NaN에 대해 알아보자]]></title><description><![CDATA[위코드 71일차. 끝나지 않은 Next.js 초기 세팅 포스팅.. 그래서 오늘은 또 위코드에서 던져준 자바스크립트 문제에 대해 정리해보았다. 오늘은 그 두 번째 단계, Number의 값 중 Infinity와 NaN에 대해 정리해보았다!]]></description><link>https://gollumnima.github.io//posts/wecode11_2TIL_Num</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode11_2TIL_Num</guid><pubDate>Tue, 08 Oct 2019 12:54:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/92e20700-ea3a-11e9-afe6-196b0b97fa8e/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;말그대로 rest를 써서 타입을 정의할 수 있다는 것 같은데 책에는 예시가 부실하다 ㅋㅋ
+나중에 차차 알아갈 예정쓰!&lt;/p&gt;
+&lt;p&gt;this타입 쓸 차롄데 글이 너무 길어지기도 하고, 재미없어 지는것 같아서 다음 포스팅에 계속!&lt;/p&gt;
+&lt;h2 id=&quot;reference&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/basic-types.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.typescriptlang.org/docs/handbook/basic-types.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;도서 실전 리액트 프로그래밍(이재승 저)&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[wecode 11주차_2일 TIL_JS에서 Number의 값 중 infinity와 NaN에 대해 알아보자]]></title><description><![CDATA[위코드 71일차. 끝나지 않은 Next.js 초기 세팅 포스팅.. 그래서 오늘은 또 위코드에서 던져준 자바스크립트 문제에 대해 정리해보았다. 오늘은 그 두 번째 단계, Number의 값 중 Infinity와 NaN에 대해 정리해보았다!]]></description><link>https://gollumnima.github.io//posts/wecode11_2TIL_Num</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode11_2TIL_Num</guid><pubDate>Tue, 08 Oct 2019 12:54:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/92e20700-ea3a-11e9-afe6-196b0b97fa8e/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;number&quot;&gt;&lt;a href=&quot;#number&quot; aria-label=&quot;number permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Number&lt;/h2&gt;
 &lt;p&gt;자바스크립트에서 Number란 64bit floating point로 이루어진 숫자형 데이터이다.&lt;br /&gt;
 정수, 소수 다 Number가 되지만 infinity나 NaN 또한 Number이다!&lt;br /&gt;
