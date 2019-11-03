@@ -1,4 +1,268 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 03 Nov 2019 11:43:21 GMT</lastBuildDate><item><title><![CDATA[정적언어인 TypeScript에 대해 알아보자 1탄-정적언어와 타입선언]]></title><description><![CDATA[위코드에서의 3개월 과정은 끝났지만 나의 블로깅은 계속된다! 여태 기업협업한다고, 취준한다고 나태해져서 글을 안 쓴지 너무 오래되었다.... 이제 다시 부지런히 쓰자!! 새롭게 마음을 먹은 이후로 쓰는 첫 포스팅 주제는 바로바로 TypeScript!!]]></description><link>https://gollumnima.github.io//posts/typescript_1</link><guid isPermaLink="false">https://gollumnima.github.io//posts/typescript_1</guid><pubDate>Sun, 03 Nov 2019 15:10:23 GMT</pubDate><content:encoded>&lt;p&gt;이번 포스팅부터 맥북으로 작성하였습니다. 😜 &amp;#x3C;- 맥북의 상징 이모티콘&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 03 Nov 2019 12:57:33 GMT</lastBuildDate><item><title><![CDATA[React에서 자식 컴포넌트끼리의 데이터 교환]]></title><description><![CDATA[2차 프로젝트 때 나에게 두통을 줬던 자식 컴포넌트에서 자식 컴포넌트로 데이터 보내기... 까먹을 수도 있으니 기억을 더듬아 다시 정리해보았다!]]></description><link>https://gollumnima.github.io//posts/react_sibling_component</link><guid isPermaLink="false">https://gollumnima.github.io//posts/react_sibling_component</guid><pubDate>Mon, 04 Nov 2019 21:47:23 GMT</pubDate><content:encoded>&lt;hr&gt;
+&lt;p&gt;2차 프로젝트 때의 기억을 더듬어 써보는 포스팅..
+코드 엉성함 주의 😂😂😂&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/45e0c9f0-e125-11e9-ac74-991045cdf4ca/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;sibling-component간-데이터-교환&quot;&gt;&lt;a href=&quot;#sibling-component%EA%B0%84-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B5%90%ED%99%98&quot; aria-label=&quot;sibling component간 데이터 교환 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;sibling component간 데이터 교환&lt;/h2&gt;
+&lt;p&gt;일반적으로 우리가 부모 component에서 자식 component로 데이터를 보낼땐 props를 이용한다.&lt;br /&gt;
+하지만, 반대로 자식에서 부모에게 데이터를 보낼 수 있는 것일까?!&lt;br /&gt;
+정통(?)적으론 힘든 일이라서 리덕스나 컨텍스트같은 개념들이 나왔겠지..?&lt;br /&gt;
+하지만 우리의 리액트세상에 불가능이란 없다!! 할 수는 있다 ㅋㅋ&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;콜백함수&quot;&gt;&lt;a href=&quot;#%EC%BD%9C%EB%B0%B1%ED%95%A8%EC%88%98&quot; aria-label=&quot;콜백함수 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;콜백함수&lt;/h2&gt;
+&lt;p&gt;그때도 지금도 나에겐 아직 넘나 어색한 콜백함수를 이용하면 자식에서 부모로 정보를 넘길 수 있다.&lt;br /&gt;
+그렇다면 콜백함수란 뭘까?&lt;br /&gt;
+바로바로!! 함수를 인자로 사용하는 함수를 말한다.&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;예시를 통해 살펴보자…&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/d882a770-fe2f-11e9-aff5-3513ca67697d/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;2차 프로젝트인 애드워드 프로젝트에서 골치 아팠던 것 중 하나..&lt;br /&gt;
+동영상 업로드 버튼을 누르면 모달창이 뜨는데!&lt;/p&gt;
+&lt;h4 id=&quot;막판에-급하게-모바일-버전으로-수정하느라-css가-깨진건-무시해주세요-ㅋㅋ&quot;&gt;&lt;a href=&quot;#%EB%A7%89%ED%8C%90%EC%97%90-%EA%B8%89%ED%95%98%EA%B2%8C-%EB%AA%A8%EB%B0%94%EC%9D%BC-%EB%B2%84%EC%A0%84%EC%9C%BC%EB%A1%9C-%EC%88%98%EC%A0%95%ED%95%98%EB%8A%90%EB%9D%BC-css%EA%B0%80-%EA%B9%A8%EC%A7%84%EA%B1%B4-%EB%AC%B4%EC%8B%9C%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94-%E3%85%8B%E3%85%8B&quot; aria-label=&quot;막판에 급하게 모바일 버전으로 수정하느라 css가 깨진건 무시해주세요 ㅋㅋ permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;(막판에 급하게 모바일 버전으로 수정하느라 css가 깨진건 무시해주세요 ㅋㅋ)&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/2f736dd0-fe30-11e9-8a44-a5519ded29c0/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;왼쪽에 광고영상 업로드, 퀴즈 업로드라는 두개의 탭이 있고,
+각각의 탭을 누를 경우 오른쪽 빈 공간에 해당 탭의 컴포넌트를 불러오는 식이다.&lt;/p&gt;
+&lt;p&gt;근데 우리 프로젝트 특성상, 광고영상 고유의 id가 있어야 했고,
+그 아이디는 광고정보를 ‘POST’로 보냈을 때 모든 정보가 유효하면 백앤드쪽에서 넘어 오는 id였고,
+나는 해당하는 id를 퀴즈 업로드 시 ‘POST’로 같이 부쳐줘야 했다!&lt;/p&gt;
+&lt;p&gt;이틀을 고민해도 답이 안 나왔는데..
+동기 사랑~ 나라 사랑~~ 광훈님의 도움으로😆 콜백함수를 이용하게 되었다!&lt;/p&gt;
+&lt;p&gt;일단.. 코드를 보기 전 내 컴포넌트 구조를 다시 한번 살펴보자면!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/9622be30-fe32-11e9-aff5-3513ca67697d/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;ModalForm이라는 부모 컴포넌트 하에
+AdVideoForm과 AdQuizForm이라는 자식 컴포넌트들이 있는 건데..&lt;br /&gt;
+resId라는 값을 자식=&gt;부모=&gt;자식 컴포넌트 순으로 전달을 해야 하는 것!&lt;/p&gt;
+&lt;p&gt;일단 부모 컴포넌트에 콜백함수를 작성한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// ModalForm.js(부모 컴포넌트)
+class ModalForm extends Component {
+  constructor() {
+    super();
+    this.state = {
+      activeTab: &amp;quot;videoTab&amp;quot;,
+      visible: true,
+      resId: 0
+    };
+  }
+
+  onUpdateResId = resId =&amp;gt; {
+    this.setState({
+      resId: resId
+    });
+  };
+
+  switchMenu = activeTab =&amp;gt; {
+    this.setState({ activeTab: activeTab });
+  };
+
+  onClose = () =&amp;gt; {
+    const { visible } = this.state;
+    if (visible === !!visible) {
+      this.setState({
+        visible: false
+      });
+    } else {
+      this.setState({
+        visible: true
+      });
+    }
+  };
+
+  render() {
+    let subView = [
+      { videoTab: &amp;lt;AdVideoForm onUpdateResId={this.onUpdateResId} key=&amp;quot;0&amp;quot; /&amp;gt; },
+      { quizTab: &amp;lt;AdQuizForm key=&amp;quot;1&amp;quot; resId={this.state.resId} /&amp;gt; }
+    ];
+
+    return (
+      &amp;lt;ModalBackground canSee={this.visible}&amp;gt;
+        &amp;lt;ModalWrapper&amp;gt;
+          &amp;lt;TitleWrapper&amp;gt;
+            &amp;lt;TitleLetters&amp;gt;Adwards&amp;lt;/TitleLetters&amp;gt;
+          &amp;lt;/TitleWrapper&amp;gt;
+          &amp;lt;AdVideoWrapper&amp;gt;
+            &amp;lt;AdLeft&amp;gt;
+              &amp;lt;LeftUL&amp;gt;
+                &amp;lt;AdSideLILef
+                  active={this.state.activeTab === &amp;quot;videoTab&amp;quot;}
+                  onClick={() =&amp;gt; this.switchMenu(&amp;quot;videoTab&amp;quot;)}
+                &amp;gt;
+                  &amp;lt;Span&amp;gt;광고 영상 업로드&amp;lt;/Span&amp;gt;
+                &amp;lt;/AdSideLILef&amp;gt;
+                &amp;lt;AdSideLIRig
+                  active={this.state.activeTab === &amp;quot;quizTab&amp;quot;}
+                  onClick={() =&amp;gt; this.switchMenu(&amp;quot;quizTab&amp;quot;)}
+                &amp;gt;
+                  &amp;lt;Span&amp;gt;퀴즈 업로드&amp;lt;/Span&amp;gt;
+                &amp;lt;/AdSideLIRig&amp;gt;
+              &amp;lt;/LeftUL&amp;gt;
+            &amp;lt;/AdLeft&amp;gt;
+            &amp;lt;AdRight&amp;gt;
+              {subView.map((el, key) =&amp;gt; {
+                el.key = key;
+                return el[this.state.activeTab];
+              })}
+            &amp;lt;/AdRight&amp;gt;
+          &amp;lt;/AdVideoWrapper&amp;gt;
+          &amp;lt;CloseOK&amp;gt;
+            &amp;lt;CloseLetter cancel onClick={this.onClose}&amp;gt;
+              취소
+            &amp;lt;/CloseLetter&amp;gt;
+            &amp;lt;Link to=&amp;quot;/biz_main&amp;quot; style={{ textDecoration: &amp;quot;none&amp;quot; }}&amp;gt;
+              &amp;lt;CloseLetter&amp;gt;확인&amp;lt;/CloseLetter&amp;gt;
+            &amp;lt;/Link&amp;gt;
+          &amp;lt;/CloseOK&amp;gt;
+        &amp;lt;/ModalWrapper&amp;gt;
+      &amp;lt;/ModalBackground&amp;gt;
+    );
+  }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;하나하나 코드를 다시 뜯어보자면&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/8a5256f0-fe33-11e9-8a44-a5519ded29c0/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;먼저 부모 컴포넌트의 state에 resId를 0으로 초기화 시켜주고..&lt;br /&gt;
+onUpdateResId 라는 함수를 만들고, 들어오는 값과 동일한 값으로 state값을 업데이트 시키기&lt;/p&gt;
+&lt;p&gt;이제 자식컴포넌트로 가서…&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// AdVideoForm(resId를 받는 자식컴포넌트)
+// .... 중략..
+  onClickSave = e =&amp;gt; {
+    const {
+      videoTitle,
+      videoLink,
+      videoThumbnail,
+      videoCate,
+      videoDesc,
+      videoBudget,
+      videoPrice,
+      tags,
+      videoInterests
+    } = this.state;
+
+    const title = videoTitle.trim();
+    const link = videoLink.trim();
+    const thumbnail = videoThumbnail.trim();
+    const desc = videoDesc.trim();
+    const cate = videoCate;
+    const budget = videoBudget.trim();
+    const price = videoPrice.trim();
+    const interests = videoInterests;
+    const tag = tags;
+
+    if (
+      title === &amp;quot;&amp;quot; ||
+      link === &amp;quot;&amp;quot; ||
+      thumbnail === &amp;quot;&amp;quot; ||
+      desc === &amp;quot;&amp;quot; ||
+      cate === &amp;quot;&amp;quot; ||
+      budget === &amp;quot;&amp;quot; ||
+      price === &amp;quot;&amp;quot;
+    ) {
+      alert(&amp;quot;모든 칸을 채워주세요&amp;quot;);
+    } else {
+      fetch(&amp;quot;http://13.125.254.18:8000/advertisement&amp;quot;, {
+        method: &amp;quot;POST&amp;quot;,
+        headers: {
+          Authorization: `${AuthAd}`
+        },
+        body: JSON.stringify({
+          title: title,
+          video_link: link,
+          thumbnail: thumbnail,
+          ad_category_id: cate,
+          description: desc,
+          budget: budget,
+          price_per_view: price,
+          tag: tag,
+          interests_type_id: interests
+        })
+      })
+        .then(response =&amp;gt; {
+          if (response.status !== 200) {
+            return response.json();
+          } else {
+            alert(&amp;quot;영상 정보가 저장되었습니다.&amp;quot;);
+            return response.json();
+          }
+        })
+        .then(response =&amp;gt; {
+          this.props.onUpdateResId(response);
+          this.setState({
+            resId: response
+          });
+        });
+  // 중략...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;다시 코드를 하나 하나 뜯어보자! 씹고 뜯고 맛보고 즐기고~😜&lt;br /&gt;
+&lt;br /&gt;
+&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/0ba15df0-fe34-11e9-aff5-3513ca67697d/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;아까와 마찬가지로 resId를 state안에 넣어서 초기화 해주고..&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/54255cc0-fe34-11e9-aff5-3513ca67697d/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;유저가 입력한 정보가 서버로 잘 보내지면 response에서 resId가 넘어오는데
+여기서 부모컴포넌트에 썼던 onUpdateResId라는 함수를 props로 넘겨서 response를 받는다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/bb264f90-fe36-11e9-aff5-3513ca67697d/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;개발자도구-네트워크 탭을 확인해보면 값이 아주 잘 들어왔다!&lt;br /&gt;
+이렇게 resId를 업데이트 해주고 다시 부모컴포넌트로 돌아가서..&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/9d0c0a70-fe33-11e9-8a44-a5519ded29c0/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;response를 통해 받은 값을 콜백함수를 통해 resId에 담아서 업데이트를 해주었다!&lt;br /&gt;
+이제 이 업데이트한 값을 또 다른 자식 컴포넌트로 보내야 하는데..&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/ffe17170-fe34-11e9-aff5-3513ca67697d/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;바로 아래에 또다른 자식컴포넌트를 부르는 탭이 있어서&lt;br /&gt;
+저기다가 바로 resId를 부모 컴포넌트의 state의 resId라고 대입을 해준다!&lt;/p&gt;
+&lt;p&gt;이제 AdQuizForm 컴포넌트로 넘어가보자.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;  onSaveQuiz = e =&amp;gt; {
+    const {
+      quizQuestion,
+      quizRightAnswer,
+      testOne,
+      testTwo,
+      testThree,
+      testFour
+    } = this.state;
+    const question = quizQuestion.trim();
+    question.trim();
+    if (
+      question === &amp;quot;&amp;quot; ||
+      testOne === &amp;quot;&amp;quot; ||
+      testTwo === &amp;quot;&amp;quot; ||
+      testThree === &amp;quot;&amp;quot; ||
+      testFour === &amp;quot;&amp;quot;
+    ) {
+      alert(&amp;quot;모든 칸을 채워주세요&amp;quot;);
+    } else {
+      fetch(&amp;quot;http://13.125.254.18:8000/quiz&amp;quot;, {
+        method: &amp;quot;POST&amp;quot;,
+        headers: {
+          Authorization: `${AuthAd}`
+        },
+        body: JSON.stringify({
+          ad_id: this.props.resId.advertisement_id,
+          quizzes: [
+            {
+              content: quizQuestion,
+              choices: [testOne, testTwo, testThree, testFour],
+              answers: quizRightAnswer
+            }
+          ]
+        })
+      }).then(response =&amp;gt; {
+        if (response.status !== 200) {
+          return response.json();
+        } else {
+          alert(&amp;quot;퀴즈 정보가 저장되었습니다.&amp;quot;);
+        }
+      });
+    }
+  };&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;자식=&gt;부모로 넘기는게 진짜 힘든 과정이었는데 이제 정말 다 왔다!&lt;br /&gt;
+부모=&gt;자식으로 넘기는건 걍 props 쓰면 되니까 넘나 간단한 것~&lt;/p&gt;
+&lt;p&gt;확인차.. render 밑에다 console.log(this.props, ‘props)를 찍어보았다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/ea521dd0-fe36-11e9-8221-0996ebd35fe7/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;아주 잘 찍히고 있다!
+서버로 보낼때는 ad&lt;em&gt;id라는 이름으로 보내야 하기 때문에&lt;br /&gt;
+Body에 `ad&lt;/em&gt;id: this.props.resId.advertisement_id`라는 값을 실어준다.
+그럼 해결쓰!&lt;/p&gt;
+&lt;p&gt;이걸 해결하고 나서의 교훈..&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;구조는 최대한 간단하게 짜자. depth가 깊어지면 쥬금…ㅠㅠ&lt;/li&gt;
+&lt;li&gt;리덕스를 공부하자.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;애초에 리덕스를 공부했으면 이걸로 고민했을 일이 없는 거였는데!
+리덕스 안 쓰고 쌩으로 하려니 넘나 힘들었던 것…
+기술은 괜히 발전하는게 아니다 ㅋㅋㅋㅋ&lt;/p&gt;</content:encoded></item><item><title><![CDATA[정적언어인 TypeScript에 대해 알아보자 1탄-정적언어와 타입선언]]></title><description><![CDATA[위코드에서의 3개월 과정은 끝났지만 나의 블로깅은 계속된다! 여태 기업협업한다고, 취준한다고 나태해져서 글을 안 쓴지 너무 오래되었다.... 이제 다시 부지런히 쓰자!! 새롭게 마음을 먹은 이후로 쓰는 첫 포스팅 주제는 바로바로 TypeScript!!]]></description><link>https://gollumnima.github.io//posts/typescript_1</link><guid isPermaLink="false">https://gollumnima.github.io//posts/typescript_1</guid><pubDate>Sun, 03 Nov 2019 15:10:23 GMT</pubDate><content:encoded>&lt;p&gt;이번 포스팅부터 맥북으로 작성하였습니다. 😜 &amp;#x3C;- 맥북의 상징 이모티콘&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/d91b9b70-fdd4-11e9-971e-89fe6d75cd84/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Ts하면 생각나는건.. 왜 타슈밖에 없죠..? 왜 타슈의 이니셜 같죠…?
