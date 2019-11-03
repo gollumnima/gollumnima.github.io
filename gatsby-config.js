@@ -50,11 +50,9 @@ module.exports = {
           {
             site {
               siteMetadata {
-                url: "https://gollumnima.github.io/",
-                title: "Doori's Dev Log",
-                subtitle: "둘둘's Dooreplay!",
-                copyright: "© All rights reserved.",
-                disqusShortname: "dooreplay" 
+                site_url: url
+                title
+                description: subtitle 
               }
             }
           }
