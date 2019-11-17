@@ -1,4 +1,100 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 17 Nov 2019 11:51:37 GMT</lastBuildDate><item><title><![CDATA[TypeScript로 블록체인 만들기(feat.니콜라스형)]]></title><description><![CDATA[매주 목요일은 위코드 프론트앤드 스터디(a.k.a 프스) 목요일 전에 미리 타입스크립트 인터페이스를 공부하려다 너무 멀리 와버린 포스팅... 노마드코더 강의를 보고 블록체인을 만들어봤는데, 블록체인의 '블'자도 모르고 걍 타입스크립트 공부하려고 강의 듣고 따라친 글]]></description><link>https://gollumnima.github.io//posts/typescript_blockchain</link><guid isPermaLink="false">https://gollumnima.github.io//posts/typescript_blockchain</guid><pubDate>Sat, 16 Nov 2019 20:42:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/f1948710-092e-11ea-9e05-cf069c31c421/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 17 Nov 2019 12:41:13 GMT</lastBuildDate><item><title><![CDATA[node.js 를 이용해서 크롤링 도전!]]></title><description><![CDATA[지난 번에 python에서 beautiful soup을 이용해서 크롤링을 해보았는데, 이번엔 node.js를 이용해 크롤링하고 mongoDB에 저장하는 걸 도전!!! 노드알못이라 정확한 설명은 없다, 과정만 적었을 뿐! 자세한 설명은 언제가 될지 모를 다음번 포스팅을 기약하며..]]></description><link>https://gollumnima.github.io//posts/nodeJS_crawling</link><guid isPermaLink="false">https://gollumnima.github.io//posts/nodeJS_crawling</guid><pubDate>Sun, 17 Nov 2019 21:36:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/6b38e640-0931-11ea-9719-7d092f99b44c/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;위코드에 있다보면 다양한 세션들이 많이 열린다.&lt;br /&gt;
+선택과 집중을 강조하시기 때문에 모든 세션들은 선택사항 이지만!!!&lt;br /&gt;
+이날은.. 죽일놈의 호기심 때문에 선택과 집중을 포기하기로 했다.&lt;/p&gt;
+&lt;h2 id=&quot;crawling&quot;&gt;&lt;a href=&quot;#crawling&quot; aria-label=&quot;crawling permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Crawling&lt;/h2&gt;
+&lt;p&gt;옛날엔 html안에 모든 데이터를 심은 상태로 페이지를 만들었기 때문에 크롤링이 쉬웠는데&lt;br /&gt;
+요즘은 SPA로 페이지 작업을 많이들 하기 때문에 크롤링이 쉽지가 않다.&lt;br /&gt;
+그래서 팬텀 JS나 셀레늄 같은걸 써서 비동기로 처리해서 크롤링을 한다고 하는데..&lt;br /&gt;
+이날 우리의 목표는 node.js를 이용해 크롤링 하고, 몽고 db에 넣는 것이었다.&lt;/p&gt;
+&lt;h2 id=&quot;nodejs-란&quot;&gt;&lt;a href=&quot;#nodejs-%EB%9E%80&quot; aria-label=&quot;nodejs 란 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Node.js 란?&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/0d122850-0932-11ea-9e05-cf069c31c421/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;node.js는 언어도, 프레임워크도, 라이브러리도 아니다. JavaScript Runtime 환경이다.&lt;br /&gt;
+더 간단히 말하자면 백앤드 시스템이 자바스크립트에서도 돌아갈 수 있도록 도와주는 것!&lt;br /&gt;
+원래 node.js에서 ES6 문법이 적용이 안 됐었는데 업글 되고 node 12버전부터 최신문법 적용된다!&lt;/p&gt;
+&lt;p&gt;여튼 node에서의 require이 import와 같다고 한다.&lt;/p&gt;
+&lt;h2 id=&quot;도전-클래스101-크롤링하기&quot;&gt;&lt;a href=&quot;#%EB%8F%84%EC%A0%84-%ED%81%B4%EB%9E%98%EC%8A%A4101-%ED%81%AC%EB%A1%A4%EB%A7%81%ED%95%98%EA%B8%B0&quot; aria-label=&quot;도전 클래스101 크롤링하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;도전! 클래스101 크롤링하기&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/a090a430-0932-11ea-aa94-f3699ad0167a/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;오늘의 목표는 클래스101의 카테고리 정보 크롤링하기!&lt;br /&gt;
+카테고리가 어딨냐하면… 클래스101 사이트에서 스크롤을 좀 더 내려보면&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/c568dca0-0932-11ea-9e05-cf069c31c421/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;굉장히 어중띈 곳에 카테고리 정보가 뙇!!&lt;/p&gt;
+&lt;p&gt;저 카테고리 정보를 가져오려면 먼저 개발자도구를 열고…&lt;br /&gt;
+네트워크탭의 XHR눌러서 body에 categorysummarylist 써잇는 쿼리 복붙해야 한다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/1357e190-0933-11ea-aa94-f3699ad0167a/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;신기한건 endpoint가 전부 graphql 한 개로 되어있다는 것…!&lt;br /&gt;
+여튼 이게 중요한 게 아니고..!&lt;br /&gt;
+스크롤을 내려 Request Payload 에 내가 원하는 정보가 있는걸 확인하고 복붙 고고&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const axios = require(&amp;#39;axios&amp;#39;);
+
+// axios.get(&amp;#39;https://class101.net/&amp;#39;).then((response)=&amp;gt;{
+//     console.log(response)
+// })
+
+axios.post(&amp;#39;https://gql-prod.class101.net/graphql&amp;#39;, {
+    operationName:&amp;quot;CategorySummaryList&amp;quot;,
+    variables:{&amp;quot;categoryFilter&amp;quot;:{&amp;quot;isHide&amp;quot;:false},&amp;quot;offset&amp;quot;:0,&amp;quot;limit&amp;quot;:9999},
+    query:  `fragment CategorySummary on Category {
+             _id
+             firestoreId
+             title
+             iconUrl
+             __typename
+            }
+
+                query CategorySummaryList($categoryFilter: PreCategoryFilter!, $limit: Int, $offset: Int) {
+                    categories: getCategories(categoryFilter: $categoryFilter, limit: $limit, offset: $offset) {
+                      ...CategorySummary
+                       __typename
+                            }
+                        }
+               `
+
+
+}).then((response)=&amp;gt; {
+    console.log(response.data)
+})&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;시간 관계상 node.js의 문법 및 코드 한줄한줄을 이해할 수 없었기 때문에&lt;br /&gt;
+일단 주어진 양식에 개발자도구에서 긁어온 정보를 복붙 해보았다!&lt;/p&gt;
+&lt;h3 id=&quot;여기서-잠깐&quot;&gt;&lt;a href=&quot;#%EC%97%AC%EA%B8%B0%EC%84%9C-%EC%9E%A0%EA%B9%90&quot; aria-label=&quot;여기서 잠깐 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;여기서 잠깐!&lt;/h3&gt;
+&lt;p&gt;node.js 에서 &lt;code class=&quot;language-text&quot;&gt;node 경로&lt;/code&gt;를 입력하면 콘솔창을 사용할 수 있다.&lt;br /&gt;
+나는 src디렉토리 아래의 craw파일의 콘솔을 보기 위해 &lt;code class=&quot;language-text&quot;&gt;node src/craw&lt;/code&gt;를 입력해봄&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/395673e0-0549-11ea-ac63-55a9515c3308/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;콘솔로그에 response를 쳐보면 위와같이 뜨고&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/e20b0a60-0548-11ea-8b36-0500379121cf/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;콘솔로그에 response.data 쳤을땐 위와깉이 뜬다.&lt;/p&gt;
+&lt;p&gt;마지막 줄 콘솔찍는 부분을 JSON.stringify로 받아보자.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;}).then((response)=&amp;gt; { console.log(JSON.stringify(response.data, null,2)) })&lt;/code&gt;
+이렇게 하면..!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/8707faa0-0549-11ea-ac63-55a9515c3308/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;오오 씐기씐기!!
+title에 내가 원하는 카테고리명들이 뙇!!!&lt;/p&gt;
+&lt;h2 id=&quot;mongodb-설치하기&quot;&gt;&lt;a href=&quot;#mongodb-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0&quot; aria-label=&quot;mongodb 설치하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;MongoDB 설치하기&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/93b12170-0934-11ea-8b5e-01a0e8eb699a/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;노드도 초록, 몽고도 초록초록 친환경적이고 좋군~&lt;/p&gt;
+&lt;p&gt;일단 &lt;a href=&quot;https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
+&quot;&gt;공식문서&lt;/a&gt; 보고 터미널에서 몽고디비와 친구들을 설치해보았다.&lt;br /&gt;
+(아래는 맥 명령어 기준입니다.)&lt;br /&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;brew tap mongodb/brew
+brew install mongodb-community@4.2
+// 위의 두개 설치하고
+brew services start mongodb-community
+// 이걸로 실행&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;아-몽고디비-컴파스도-깔아줍니다-검색해서-다운고고&quot;&gt;&lt;a href=&quot;#%EC%95%84-%EB%AA%BD%EA%B3%A0%EB%94%94%EB%B9%84-%EC%BB%B4%ED%8C%8C%EC%8A%A4%EB%8F%84-%EA%B9%94%EC%95%84%EC%A4%8D%EB%8B%88%EB%8B%A4-%EA%B2%80%EC%83%89%ED%95%B4%EC%84%9C-%EB%8B%A4%EC%9A%B4%EA%B3%A0%EA%B3%A0&quot; aria-label=&quot;아 몽고디비 컴파스도 깔아줍니다 검색해서 다운고고 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;아!! 몽고디비 컴파스도 깔아줍니다. 검색해서 다운고고!&lt;/h3&gt;
+&lt;p&gt;아래의 화면은 몽고디비 컴파스로 보이는 화면. 약간 포스트맨의 역할을 하는 것 같다&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/6f71ac10-054e-11ea-9105-53a6223ef9ce/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;오 신기신기!!!!!!!&lt;br /&gt;
+일단 이번 포스팅은 이게 끝이다 ㅋㅋㅋㅋ&lt;/p&gt;
+&lt;p&gt;지난번엔 파이썬으로 크롤링도 해보았고, 이번엔 node.JS 도전!!!&lt;br /&gt;
+나중에 좀 더 파보고.. 위코드에서 했던 1차 프로젝트를 한번 손보고싶닼ㅋㅋ&lt;br /&gt;
+1년 안에 할 수 있겠지????&lt;/p&gt;
+&lt;p&gt;일단 급한건 리액트니깐.. 리액트부터 열심히 파보자. 아자아자!!&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;불코딩열코딩빡코딩죽코딩&quot;&gt;&lt;a href=&quot;#%EB%B6%88%EC%BD%94%EB%94%A9%EC%97%B4%EC%BD%94%EB%94%A9%EB%B9%A1%EC%BD%94%EB%94%A9%EC%A3%BD%EC%BD%94%EB%94%A9&quot; aria-label=&quot;불코딩열코딩빡코딩죽코딩 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🔥불코딩!열코딩!빡코딩!죽코딩!🔥&lt;/h2&gt;
+&lt;p&gt;지난번 파이썬 크롤링 포스팅이 궁금하다면? &lt;a href=&quot;https://gollumnima.github.io/posts/wecode6_2TIL_crawling&quot;&gt;여기&lt;/a&gt; 클릭&lt;/p&gt;
+&lt;h2 id=&quot;reference&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;위코드 node.js 크롤링 세션&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[TypeScript로 블록체인 만들기(feat.니콜라스형)]]></title><description><![CDATA[매주 목요일은 위코드 프론트앤드 스터디(a.k.a 프스) 목요일 전에 미리 타입스크립트 인터페이스를 공부하려다 너무 멀리 와버린 포스팅... 노마드코더 강의를 보고 블록체인을 만들어봤는데, 블록체인의 '블'자도 모르고 걍 타입스크립트 공부하려고 강의 듣고 따라친 글]]></description><link>https://gollumnima.github.io//posts/typescript_blockchain</link><guid isPermaLink="false">https://gollumnima.github.io//posts/typescript_blockchain</guid><pubDate>Sat, 16 Nov 2019 20:42:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/f1948710-092e-11ea-9e05-cf069c31c421/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;본 포스팅은 노마드코더 TypeScript로 블록체인 만들기 강의를 보고 따라 친 글입니다.&lt;/p&gt;
 &lt;h2 id=&quot;typescript-간단-초기세팅&quot;&gt;&lt;a href=&quot;#typescript-%EA%B0%84%EB%8B%A8-%EC%B4%88%EA%B8%B0%EC%84%B8%ED%8C%85&quot; aria-label=&quot;typescript 간단 초기세팅 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;TypeScript 간단 초기세팅&lt;/h2&gt;
 &lt;ol&gt;
