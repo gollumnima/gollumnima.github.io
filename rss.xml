@@ -1,4 +1,448 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Fri, 08 Nov 2019 02:56:50 GMT</lastBuildDate><item><title><![CDATA[구글 웹 세미나-Google Search Engine과 이것저것]]></title><description><![CDATA[이번주 수요일에 있었던 구글 웹지식 세미나를 다녀온 후기훅이~ 잘못된 정보는 추후 수정할 예정입니다!]]></description><link>https://gollumnima.github.io//posts/google_searchEngine</link><guid isPermaLink="false">https://gollumnima.github.io//posts/google_searchEngine</guid><pubDate>Fri, 08 Nov 2019 11:54:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/e234f8e0-01cc-11ea-b83c-616848bbc88e/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 17 Nov 2019 11:51:37 GMT</lastBuildDate><item><title><![CDATA[TypeScript로 블록체인 만들기(feat.니콜라스형)]]></title><description><![CDATA[매주 목요일은 위코드 프론트앤드 스터디(a.k.a 프스) 목요일 전에 미리 타입스크립트 인터페이스를 공부하려다 너무 멀리 와버린 포스팅... 노마드코더 강의를 보고 블록체인을 만들어봤는데, 블록체인의 '블'자도 모르고 걍 타입스크립트 공부하려고 강의 듣고 따라친 글]]></description><link>https://gollumnima.github.io//posts/typescript_blockchain</link><guid isPermaLink="false">https://gollumnima.github.io//posts/typescript_blockchain</guid><pubDate>Sat, 16 Nov 2019 20:42:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/f1948710-092e-11ea-9e05-cf069c31c421/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;본 포스팅은 노마드코더 TypeScript로 블록체인 만들기 강의를 보고 따라 친 글입니다.&lt;/p&gt;
+&lt;h2 id=&quot;typescript-간단-초기세팅&quot;&gt;&lt;a href=&quot;#typescript-%EA%B0%84%EB%8B%A8-%EC%B4%88%EA%B8%B0%EC%84%B8%ED%8C%85&quot; aria-label=&quot;typescript 간단 초기세팅 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;TypeScript 간단 초기세팅&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;yarn init
+초기화 명령어를 통해 package.json 생성&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/7e981670-090e-11ea-9351-21b3a9e07049/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;yarn global add typescript
+글로벌로 깔아주었음&lt;/li&gt;
+&lt;li&gt;tsconfig.json 생성&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;{
+  &amp;quot;compilerOptions&amp;quot;: {
+    &amp;quot;module&amp;quot;: &amp;quot;commonjs&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;ES2015&amp;quot;,
+    &amp;quot;sourceMap&amp;quot;: true
+  },
+  &amp;quot;include&amp;quot;: [&amp;quot;index.ts&amp;quot;],
+  &amp;quot;exclude&amp;quot;: [&amp;quot;node_modules&amp;quot;]
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 설정해주었음&lt;/p&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;index.ts 생성&lt;br /&gt;
+&lt;code class=&quot;language-text&quot;&gt;console.log(&amp;quot;hello&amp;quot;)&lt;/code&gt; 라는 간단한 명령어 입력후 터미널에 tsc 명령어를 입력해보면
+index.js와 index.js.map 파일이 생성된다!
+근데 tsc 명령어 보다 yarn 을 쓰고 싶어서 package.json 수정고고&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;{
+  &amp;quot;name&amp;quot;: &amp;quot;typechain&amp;quot;,
+  &amp;quot;version&amp;quot;: &amp;quot;1.0.0&amp;quot;,
+  &amp;quot;main&amp;quot;: &amp;quot;index.js&amp;quot;,
+  &amp;quot;license&amp;quot;: &amp;quot;MIT&amp;quot;,
+  &amp;quot;scripts&amp;quot;: {
+    &amp;quot;start&amp;quot;: &amp;quot;node index.js&amp;quot;,
+    &amp;quot;prestart&amp;quot;: &amp;quot;tsc&amp;quot;
+  }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/86863310-0910-11ea-bba5-27daf000bedd/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;짜잔~ 이렇게 터미널 상에 콘솔이 찍힌다.&lt;/p&gt;
+&lt;h2 id=&quot;typescript--타입쓰&quot;&gt;&lt;a href=&quot;#typescript--%ED%83%80%EC%9E%85%EC%93%B0&quot; aria-label=&quot;typescript  타입쓰 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;TypeScript : 타입쓰&lt;/h2&gt;
+&lt;p&gt;간단한 예제로 콘솔을 찍어보자.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const name = &amp;quot;Doori&amp;quot;,
+  age = 28,
+  gender = &amp;quot;female&amp;quot;;
+
+const sayHi = (name, age, gender) =&amp;gt; {
+  console.log(`Hello ${name}, you are ${age}, you are a ${gender}`);
+};
+
+sayHi(name, age, gender);
+
+export {};&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;제일 마지막줄에 export {}를 하지 않으면 에러 발생!&lt;/p&gt;
+&lt;p&gt;이렇게 했을때 터미널에 콘솔이 아주 잘 찍힌다.&lt;br /&gt;
+하지만 sayHi라는 함수에서 인자를 하나 빼보면 어떨까?&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/8e1f6e60-0911-11ea-bba5-27daf000bedd/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;정말 까다로운 녀석이다. 바로 에러를 뱉는다!&lt;br /&gt;
+하지만 이렇게 깐깐한 만큼 나중에 디버깅할때 좀 더 수월해진다는 장점쓰~&lt;br /&gt;
+인자가 세 개지만 꼭 두 개만 쓰고싶다? 그럼 방법이 또 있쥐&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const name = &amp;quot;Doori&amp;quot;,
+  age = 28,
+  gender = &amp;quot;female&amp;quot;;
+
+const sayHi = (name, age, gender?) =&amp;gt; {
+  console.log(`Hello ${name}, you are ${age}, you are a ${gender}`);
+};
+
+sayHi(name, age);
+
+export {};&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;인자 뒤에 물음표를 붙이면 필수적인 인자가 아닌 선택적인 것!&lt;br /&gt;
+yarn start를 해보면 대신 콘솔이 &lt;code class=&quot;language-text&quot;&gt;Hello Doori, you are 28, you are a undefined&lt;/code&gt; 이렇게 찍힌다 ㅋㅋ&lt;/p&gt;
+&lt;p&gt;자세한건 지난번 타입스크립트 정리 1탄 글을 참고해보자!&lt;br /&gt;
+&lt;a href=&quot;https://gollumnima.github.io/posts/typescript_1&quot;&gt;지난번 타입스크립트 정리글 링크&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;tsc-watch&quot;&gt;&lt;a href=&quot;#tsc-watch&quot; aria-label=&quot;tsc watch permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;TSC watch&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add tsc-watch --dev&lt;/code&gt; 명령어로 tsc watch를 깔아주고…
+package.json을 다시 한번 수정!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// package.json
+{
+  &amp;quot;name&amp;quot;: &amp;quot;typechain&amp;quot;,
+  &amp;quot;version&amp;quot;: &amp;quot;1.0.0&amp;quot;,
+  &amp;quot;main&amp;quot;: &amp;quot;index.js&amp;quot;,
+  &amp;quot;license&amp;quot;: &amp;quot;MIT&amp;quot;,
+  &amp;quot;scripts&amp;quot;: {
+    &amp;quot;start&amp;quot;: &amp;quot;tsc-watch --onSuccess \&amp;quot; node dist/index.js\&amp;quot; &amp;quot;
+  },
+  &amp;quot;devDependencies&amp;quot;: {
+    &amp;quot;tsc-watch&amp;quot;: &amp;quot;^4.0.0&amp;quot;
+  },
+  &amp;quot;dependencies&amp;quot;: {
+    &amp;quot;crypto-js&amp;quot;: &amp;quot;^3.1.9-1&amp;quot;,
+    &amp;quot;typescript&amp;quot;: &amp;quot;^3.7.2&amp;quot;
+  }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;tsconfig.json도 수정&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// tssconfig.json
+{
+  &amp;quot;compilerOptions&amp;quot;: {
+    &amp;quot;module&amp;quot;: &amp;quot;commonjs&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;ES2015&amp;quot;,
+    &amp;quot;sourceMap&amp;quot;: true,
+    &amp;quot;outDir&amp;quot;: &amp;quot;dist&amp;quot;
+  },
+  &amp;quot;include&amp;quot;: [&amp;quot;src/**/*&amp;quot;],
+  &amp;quot;exclude&amp;quot;: [&amp;quot;node_modules&amp;quot;]
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;include쪽을 보면.. 모든 파일을 src 하에 관리하겠단 소리라서
+내가 만든 index.ts 파일을 src 밑으로 넣어준다.&lt;/p&gt;
+&lt;p&gt;이렇게 설정을 해주면 모든 TypeScript는 src로 들어가고, 컴파일된 것들은 dist로 들어간다.
+yarn start 하면 에러가 안 나야 하는데&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/8dd12db0-0919-11ea-bba5-27daf000bedd/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;이런 에러가 뜬다??? &lt;br /&gt;
+&lt;code class=&quot;language-text&quot;&gt;yarn add typescript&lt;/code&gt; 명령어로 조진다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/a05eef30-0919-11ea-b582-93c0e6ad9fde/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;yarn start를 다시 하면 잘 나온다!&lt;br /&gt;
+저게 지금 watch모드가 실행중인건데.. 무언가 변화가 생기면 인제 dist에 기록이 된다&lt;/p&gt;
+&lt;h2 id=&quot;interface&quot;&gt;&lt;a href=&quot;#interface&quot; aria-label=&quot;interface permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Interface&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/4d452c00-091a-11ea-9831-e73723558cd7/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;위와 같이 입력했을때 에러 발생..!
+그래서 여기에 인터페이스를 적용할거다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;interface Human {
+  name: string;
+  age: number;
+  gender: string;
+}
+
+const person = {
+  name: &amp;quot;Doori&amp;quot;,
+  age: 28,
+  gender: &amp;quot;female&amp;quot;
+};
+
+const sayHi = (person: Human): string =&amp;gt; {
+  return `Hello ${person.name}, you are ${person.age}, you are a ${person.gender}!`;
+};
+
+console.log(sayHi(person));
+
+export {};&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Human이라는 인터페이스를 객체형식으로 만들었고, sayHi라는 함수에 person의 타입을 Human으로 정의해주었다.&lt;br /&gt;
+그랬더니 에러가 발생하지 않았다! 오 씐기씐기&lt;br /&gt;
+주의할 점은 객체 쓰는것처럼 템플릿 리터럴 안의 변수명을 dot notation을 이용해 써야한다.&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;인터페이스라는 개념은 JS에 없고 TS에만 있는거라는데.. &lt;br /&gt;나중에 한.. ES13쯤 가면 자바스크립트에도 분명 생긴다 ㅋㅋㅋ&lt;/p&gt;
+&lt;h2 id=&quot;class-in-typescript&quot;&gt;&lt;a href=&quot;#class-in-typescript&quot; aria-label=&quot;class in typescript permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Class in TypeScript&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;class Human {
+  public name: string;
+  public age: number;
+  public gender: string;
+  constructor(name: string, age: number, gender: string) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+  }
+}
+
+const chicken = new Human(&amp;quot;NeNe&amp;quot;, 10, &amp;quot;rooster&amp;quot;);
+
+const sayHi = (person: Human): string =&amp;gt; {
+  return `Hello ${person.name}, you are ${person.age}, you are a ${person.gender}!`;
+};
+
+console.log(sayHi(chicken));
+
+export {};&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;인터페이스와 비슷하지만 class를 이용하는 방법도 있다.&lt;br /&gt;
+이걸 왜쓰냐? 자바스크립트가 인터페이스는 인식하지 못하기 때문! 또한 TS를 쓰는 측면에서 좀더 안전한 방법이라고 한다.&lt;/p&gt;
+&lt;p&gt;만약에 Human 클래스 내부에 public을 private으로 쓰면 해당하는 인자를 Human 클래스 외부에서 쓸 수 없다. 예시를 한번 보자!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/f8e55ed0-091b-11ea-aabc-79c24bf061cc/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;age를 public이 아닌 private으로 설정하면 요렇게 에러 발생!&lt;br /&gt;
+코딩알못일땐 굉장히 쓸모없는 기능이라고 생각했을텐데.. 그래도 몇 달 공부했다고 저 기능이 나중에 유용하게 쓰일것 같단 생각이 팍팍ㅋㅋㅋ&lt;/p&gt;
+&lt;h2 id=&quot;block-chain-만들기&quot;&gt;&lt;a href=&quot;#block-chain-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;block chain 만들기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Block Chain 만들기&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;class Block {
+  public index: number;
+  public hash: string;
+  public previousHash: string;
+  public data: string;
+  public timestamp: number;
+  constructor(
+    index: number,
+    hash: string,
+    previousHash: string,
+    data: string,
+    timestamp: number
+  ) {
+    this.index = index;
+    this.hash = hash;
+    this.previousHash = previousHash;
+    this.data = data;
+    this.timestamp = timestamp;
+  }
+}
+
+const genesisBlock: Block = new Block(0, &amp;quot;2020202020202&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;Hello&amp;quot;, 123456);
+
+let blockchain: Block[] = [genesisBlock];
+
+console.log(blockchain);
+
+export {};&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 하면 콘솔도 아주 잘 찍힌다!&lt;br /&gt;
+여기서 테스트 한 가지… blockchain에다가 다른걸 푸쉬해보자.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;blockchain.push(&amp;quot;gold&amp;quot;);&lt;/code&gt; 를 한번 시험삼아 해보면..&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/4389d730-091d-11ea-b582-93c0e6ad9fde/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;짠! 이렇게 에러 발생!
+클래스 안의 parameter로 쓰이지 않은 값을 푸쉬하려니 당연히 되지 않는다.&lt;/p&gt;
+&lt;h2 id=&quot;block-chain---two&quot;&gt;&lt;a href=&quot;#block-chain---two&quot; aria-label=&quot;block chain   two permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Block Chain - Two&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add crypto-js&lt;/code&gt; 명령어로 크립토 설치!&lt;br /&gt;
+사실 니코의 다른 블록체인 강의를 듣지 못해서 블록체인 개념은 잘 모른다.&lt;br /&gt;
+근데 일단 crypto가 해쉬를 위한 암호화 도구인걸로 이해했다!ㅋㅋ&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import * as CryptoJS from &amp;quot;crypto-js&amp;quot;;
+
+class Block {
+  public index: number;
+  public hash: string;
+  public previousHash: string;
+  public data: string;
+  public timestamp: number;
+
+// 여기서 static을 바깥에서 이 메소드를 부르지 못한다.
+  static calculateBlockHash = (
+    index: number,
+    previousHash: string,
+    timestamp: number,
+    data: string
+  ): string =&amp;gt;
+    CryptoJS.SHA256(index + previousHash + timestamp + data).toString();
+
+  constructor(
+    index: number,
+    hash: string,
+    previousHash: string,
+    data: string,
+    timestamp: number
+  ) {
+    this.index = index;
+    this.hash = hash;
+    this.previousHash = previousHash;
+    this.data = data;
+    this.timestamp = timestamp;
+  }
+}
+
+const genesisBlock: Block = new Block(0, &amp;quot;2020202020202&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;Hello&amp;quot;, 123456);
+
+let blockchain: Block[] = [genesisBlock];
+
+const getBlockchain = (): Block[] =&amp;gt; blockchain;
+
+const getLastestBlock = (): Block =&amp;gt; blockchain[blockchain.length - 1];
+
+const getNewTimeStamp = (): number =&amp;gt; Math.round(new Date().getTime() / 1000);
+
+export {};&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;갑자기 알 수 없는 함수들이 많아지고 있는데.. 흠.. 일단.. 따라치고 본다…&lt;br /&gt;
+따라치다 보면 타입스크립트가 익숙해지겠지 ㅠㅠ&lt;/p&gt;
+&lt;h2 id=&quot;block-chain---three&quot;&gt;&lt;a href=&quot;#block-chain---three&quot; aria-label=&quot;block chain   three permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Block Chain - Three&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import * as CryptoJS from &amp;quot;crypto-js&amp;quot;;
+
+class Block {
+  public index: number;
+  public hash: string;
+  public previousHash: string;
+  public data: string;
+  public timestamp: number;
+
+  static calculateBlockHash = (
+    index: number,
+    previousHash: string,
+    timestamp: number,
+    data: string
+  ): string =&amp;gt;
+    CryptoJS.SHA256(index + previousHash + timestamp + data).toString();
+
+  constructor(
+    index: number,
+    hash: string,
+    previousHash: string,
+    data: string,
+    timestamp: number
+  ) {
+    this.index = index;
+    this.hash = hash;
+    this.previousHash = previousHash;
+    this.data = data;
+    this.timestamp = timestamp;
+  }
+}
+
+const genesisBlock: Block = new Block(0, &amp;quot;2020202020202&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;Hello&amp;quot;, 123456);
+
+let blockchain: Block[] = [genesisBlock];
+
+const getBlockchain = (): Block[] =&amp;gt; blockchain;
+
+const getLastestBlock = (): Block =&amp;gt; blockchain[blockchain.length - 1];
+
+const getNewTimeStamp = (): number =&amp;gt; Math.round(new Date().getTime() / 1000);
+
+const createNewBlock = (data: string): Block =&amp;gt; {
+  const previousBlock: Block = getLastestBlock();
+  const newIndex: number = previousBlock.index + 1;
+  const newTimestamp: number = getNewTimeStamp();
+  const newHash: string = Block.calculateBlockHash(
+    newIndex,
+    previousBlock.hash,
+    newTimestamp,
+    data
+  );
+  const newBlock: Block = new Block(
+    newIndex,
+    newHash,
+    previousBlock.hash,
+    data,
+    newTimestamp
+  );
+  return newBlock;
+};
+
+console.log(createNewBlock(&amp;quot;hello&amp;quot;), createNewBlock(&amp;quot;bye bye&amp;quot;));
+
+export {};&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;콘솔을 살펴보자.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/463048a0-0929-11ea-9e05-cf069c31c421/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;값이 아주 잘 나오고 있다. crypto.js가 만들어낸 hash 넘나 신기..!&lt;br /&gt;
+근데 보면 index 값이 동일하게 나온다. 그래서 다시 도전!!&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;block-chain---last&quot;&gt;&lt;a href=&quot;#block-chain---last&quot; aria-label=&quot;block chain   last permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Block Chain - Last&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import * as CryptoJS from &amp;quot;crypto-js&amp;quot;;
+
+class Block {
+  static calculateBlockHash = (
+    index: number,
+    previousHash: string,
+    timestamp: number,
+    data: string
+  ): string =&amp;gt;
+    CryptoJS.SHA256(index + previousHash + timestamp + data).toString();
+
+  static validateStructure = (aBlock: Block): boolean =&amp;gt;
+    typeof aBlock.index === &amp;quot;number&amp;quot; &amp;amp;&amp;amp;
+    typeof aBlock.hash === &amp;quot;string&amp;quot; &amp;amp;&amp;amp;
+    typeof aBlock.previousHash === &amp;quot;string&amp;quot; &amp;amp;&amp;amp;
+    typeof aBlock.timestamp === &amp;quot;number&amp;quot; &amp;amp;&amp;amp;
+    typeof aBlock.data === &amp;quot;string&amp;quot;;
+
+  public index: number;
+  public hash: string;
+  public previousHash: string;
+  public data: string;
+  public timestamp: number;
+
+  constructor(
+    index: number,
+    hash: string,
+    previousHash: string,
+    data: string,
+    timestamp: number
+  ) {
+    this.index = index;
+    this.hash = hash;
+    this.previousHash = previousHash;
+    this.data = data;
+    this.timestamp = timestamp;
+  }
+}
+
+const genesisBlock: Block = new Block(0, &amp;quot;2020202020202&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;Hello&amp;quot;, 123456);
+
+let blockchain: Block[] = [genesisBlock];
+
+const getBlockchain = (): Block[] =&amp;gt; blockchain;
+
+const getLastestBlock = (): Block =&amp;gt; blockchain[blockchain.length - 1];
+
+const getNewTimeStamp = (): number =&amp;gt; Math.round(new Date().getTime() / 1000);
+
+const createNewBlock = (data: string): Block =&amp;gt; {
+  const previousBlock: Block = getLastestBlock();
+  const newIndex: number = previousBlock.index + 1;
+  const newTimestamp: number = getNewTimeStamp();
+  const newHash: string = Block.calculateBlockHash(
+    newIndex,
+    previousBlock.hash,
+    newTimestamp,
+    data
+  );
+  const newBlock: Block = new Block(
+    newIndex,
+    newHash,
+    previousBlock.hash,
+    data,
+    newTimestamp
+  );
+  addBlock(newBlock);
+  return newBlock;
+};
+
+const getHashforBlock = (aBlock: Block): string =&amp;gt;
+  Block.calculateBlockHash(
+    aBlock.index,
+    aBlock.previousHash,
+    aBlock.timestamp,
+    aBlock.data
+  );
+
+const isBlockValid = (candidateBlock: Block, previousBlock: Block): boolean =&amp;gt; {
+  if (!Block.validateStructure(candidateBlock)) {
+    return false;
+  } else if (previousBlock.index + 1 !== candidateBlock.index) {
+    return false;
+  } else if (previousBlock.hash !== candidateBlock.previousHash) {
+    return false;
+  } else if (getHashforBlock(candidateBlock) !== candidateBlock.hash) {
+    return false;
+  } else {
+    return true;
+  }
+};
+
+const addBlock = (candidateBlock: Block): void =&amp;gt; {
+  if (isBlockValid(candidateBlock, getLastestBlock())) {
+    blockchain.push(candidateBlock);
+  }
+};
+
+createNewBlock(&amp;quot;second block&amp;quot;);
+createNewBlock(&amp;quot;third block&amp;quot;);
+createNewBlock(&amp;quot;fourth block&amp;quot;);
+
+console.log(blockchain);
+
+export {};&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;어디 콘솔을 한번 찍어보자..!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/7715bb80-092e-11ea-9e05-cf069c31c421/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;서로 다른 인덱스 넘버, 서로 다른 해시값! 아주 잘 찍히고 있다.&lt;br /&gt;
+사실 블록체인은 아직도 모르겠다..ㅋㅋㅋ&lt;br /&gt;
+예전같으면 블록체인의 원리와 역사 다 검색해서 포스팅에 넣었을텐데.. 시간이 매우 없다ㅠ&lt;br /&gt;
+깊게 파보는건 다음 기회에!!!! 공부할 게 넘넘 많다리~~~&lt;/p&gt;
+&lt;p&gt;근데 대충 타입스크립트가 어떻게 적용되는지는 얼추 알겠다.&lt;br /&gt;
+빠른 시일 내에 내가 CRA로 만든 페이지들을 타입스크립트로 변형해서 올릴수 있기를..😂😂&lt;/p&gt;
+&lt;h2 id=&quot;reference&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;노마드코더 타입스크립트로 블록체인 만들기&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[구글 웹 세미나-Google Search Engine과 이것저것]]></title><description><![CDATA[이번주 수요일에 있었던 구글 웹지식 세미나를 다녀온 후기훅이~ 잘못된 정보는 추후 수정할 예정입니다!]]></description><link>https://gollumnima.github.io//posts/google_searchEngine</link><guid isPermaLink="false">https://gollumnima.github.io//posts/google_searchEngine</guid><pubDate>Fri, 08 Nov 2019 11:54:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/e234f8e0-01cc-11ea-b83c-616848bbc88e/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;정성스럽게 쓴 글이 구글에 검색이 잘 안 된다면 너무너무너무 슬프겠죠..? ㅠㅠ
 내가 쓴 글이 구글 검색결과에 잘 나오게 하려면 Google Search Console을 잘 이용해야 하는데요!
 이를 위해 구글에서 개발자들을 위한 세미나를 열어주었죠.. 물론 저도 참석했고요 :)
