@@ -1,4 +1,143 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 24 Nov 2019 05:56:32 GMT</lastBuildDate><item><title><![CDATA[폴리필과 크로스 브라우징이란 무엇인가?]]></title><description><![CDATA[면접 단골질문이기도 하고, 프론트앤드 개발자라면 무조건 알고 있어야 하는, 피할 수 없는 이 개념에 대해 미루고 미루다가 드디어 정리해보기로 결심했다.]]></description><link>https://gollumnima.github.io//posts/cross_brosing</link><guid isPermaLink="false">https://gollumnima.github.io//posts/cross_brosing</guid><pubDate>Sat, 23 Nov 2019 15:24:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/2b5824e0-0db5-11ea-9b8e-afeb0eb247ad/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 24 Nov 2019 08:39:14 GMT</lastBuildDate><item><title><![CDATA[리액트에서 prop-types이용해서 타입 체크해보기]]></title><description><![CDATA[정적언어에서 쓰이는 Type Check.. 리액트에서도 쓸 수 있다??? 바로 바로 prop-types를 이용해서! 오늘은 prop-types를 이용해 타입을 체크하는 법에 대해 간단히 알아보고자 한다.]]></description><link>https://gollumnima.github.io//posts/prop_types</link><guid isPermaLink="false">https://gollumnima.github.io//posts/prop_types</guid><pubDate>Sun, 24 Nov 2019 17:37:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/f7498f10-0e7f-11ea-ae3e-b5d32084644b/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;정적언어에서 Type을 체크하는 것처럼, React에서도 타입을 체크해볼 수 있다.
+바로바로 prop-types를 이용하는 것!&lt;/p&gt;
+&lt;p&gt;이게 귀찮은 작업이긴 해도, 일단 써보면 좋은 이유?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;코드 가독성 굿굿&lt;/li&gt;
+&lt;li&gt;디버깅 굿굿&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;설치&quot;&gt;&lt;a href=&quot;#%EC%84%A4%EC%B9%98&quot; aria-label=&quot;설치 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;설치&lt;/h2&gt;
+&lt;p&gt;yarn이나 npm을 이용해 prop-types 패키지를 설치해준다.&lt;/p&gt;
+&lt;h2 id=&quot;사용&quot;&gt;&lt;a href=&quot;#%EC%82%AC%EC%9A%A9&quot; aria-label=&quot;사용 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;사용&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;import 하기! &lt;br /&gt;
+여타 다른 패키지들과 동일하게 import해서 쓸 수 있다.
+&lt;code class=&quot;language-text&quot;&gt;import PropTypes from &amp;quot;prop-types&amp;quot;;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;타입 체크&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) =&amp;gt; (
+// 중략
+);
+Poster.propTypes = {
+  id: PropTypes.number.isRequired,
+  imageUrl: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  rating: PropTypes.number,
+  year: PropTypes.string,
+  isMovie: PropTypes.bool
+};&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;함수형 컴포넌트에서는 인자로 들어가는 값들을 그 함수 아래에서 타입 체크 해줄수 있다.&lt;br /&gt;
+클래스형에서도 마찬가지로 props로 넘김받는 값들의 타입을 체크 해주면 된다.&lt;/p&gt;
+&lt;h2 id=&quot;어떤-타입들이-있을까&quot;&gt;&lt;a href=&quot;#%EC%96%B4%EB%96%A4-%ED%83%80%EC%9E%85%EB%93%A4%EC%9D%B4-%EC%9E%88%EC%9D%84%EA%B9%8C&quot; aria-label=&quot;어떤 타입들이 있을까 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;어떤 타입들이 있을까?&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;  optionalArray: PropTypes.array,
+  optionalBool: PropTypes.bool,
+  optionalFunc: PropTypes.func,
+  optionalNumber: PropTypes.number,
+  optionalObject: PropTypes.object,
+  optionalString: PropTypes.string,
+  optionalSymbol: PropTypes.symbol,
+
+
+  optionalNode: PropTypes.node,
+
+  optionalElement: PropTypes.element,
+
+  optionalMessage: PropTypes.instanceOf(Message),
+
+  optionalEnum: PropTypes.oneOf([&amp;#39;News&amp;#39;, &amp;#39;Photos&amp;#39;]),
+
+  optionalUnion: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.instanceOf(Message)
+  ]),
+
+  optionalArrayOf: PropTypes.arrayOf(PropTypes.number),
+
+  optionalObjectOf: PropTypes.objectOf(PropTypes.number),
+
+  optionalObjectWithShape: PropTypes.shape({
+    color: PropTypes.string,
+    fontSize: PropTypes.number
+  }),
+
+  requiredFunc: PropTypes.func.isRequired,
+
+  requiredAny: PropTypes.any.isRequired,&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;자바스크립트의 원시타입 뿐만 아니라 다양하게 타입을 체크해볼 수 있는데&lt;br /&gt;
+shape이나 oneOfType 같은것도 설정해볼 수 있고…&lt;br /&gt;
+Custom으로 타입을 체크해볼 수 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;customProp: function(props, propName, componentName) {
+    if (!/matchme/.test(props[propName])) {
+      return new Error(
+        &amp;#39;Invalid prop `&amp;#39; + propName + &amp;#39;` supplied to&amp;#39; +
+        &amp;#39; `&amp;#39; + componentName + &amp;#39;`. Validation failed.&amp;#39;
+      );
+    }
+  },
+
+customArrayProp: PropTypes.arrayOf(function(propValue, key, componentName, location, propFullName) {
+    if (!/matchme/.test(propValue[key])) {
+      return new Error(
+        &amp;#39;Invalid prop `&amp;#39; + propFullName + &amp;#39;` supplied to&amp;#39; +
+        &amp;#39; `&amp;#39; + componentName + &amp;#39;`. Validation failed.&amp;#39;
+      );
+    }
+  })&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;요런 식으로..!&lt;br /&gt;
+공식문서에 있는걸 긁어온거고.. 아직까지 써본적은 없다.ㅋㅋㅋ&lt;/p&gt;
+&lt;h2 id=&quot;isrequired&quot;&gt;&lt;a href=&quot;#isrequired&quot; aria-label=&quot;isrequired permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;isRequired&lt;/h2&gt;
+&lt;p&gt;필수로 있어야 하는 값에는 가장 끝에 isRequired를 붙여준다.&lt;br /&gt;
+isRequired라고 써준 값이 비어있다면 에러 발생!&lt;/p&gt;
+&lt;h2 id=&quot;예시&quot;&gt;&lt;a href=&quot;#%EC%98%88%EC%8B%9C&quot; aria-label=&quot;예시 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;예시&lt;/h2&gt;
+&lt;p&gt;노마드 강의를 보다 보면 prop-types를 필수적으로 쓰는 것 같다.&lt;br /&gt;
+코드를 쓰는 좋은 습관쓰~? 😎&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;많고 많은 컴포넌트 중에 골라온 Section Component&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import React from &amp;quot;react&amp;quot;;
+import PropTypes from &amp;quot;prop-types&amp;quot;;
+import styled from &amp;quot;styled-components&amp;quot;;
+
+const Container = styled.div`
+  margin-bottom: 50px;
+  :not(:last-chile) {
+    margin-bottom: 50px;
+  }
+`;
+
+const Title = styled.span`
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 25px;
+`;
+
+const Grid = styled.div`
+  display: grid;
+  margin-top: 25px;
+  grid-template-columns: repeat(auto-fill, 125px);
+  grid-gap: 25px;
+`;
+
+const Section = ({ title, children }) =&amp;gt; (
+  &amp;lt;Container&amp;gt;
+    &amp;lt;Title&amp;gt;{title}&amp;lt;/Title&amp;gt;
+    &amp;lt;Grid&amp;gt;{children}&amp;lt;/Grid&amp;gt;
+  &amp;lt;/Container&amp;gt;
+);
+
+Section.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([PropTypes.node])
+};
+
+export default Section;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;React 공식문서 보면서 PropTypes에 node를 써주는것 보고 넘 신기했는데..&lt;br /&gt;
+이미 니꼬가 강의에서 썼었네??&lt;br /&gt;
+근데 난 기억이 안나네?? 강의 다시 들어야겠네?? 😂😂&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;급히 끝내보기.. 출처는 리액트 공식문서다.&lt;/p&gt;
+&lt;h2 id=&quot;reference&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://reactjs-kr.firebaseapp.com/docs/typechecking-with-proptypes.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://reactjs-kr.firebaseapp.com/docs/typechecking-with-proptypes.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[폴리필과 크로스 브라우징이란 무엇인가?]]></title><description><![CDATA[면접 단골질문이기도 하고, 프론트앤드 개발자라면 무조건 알고 있어야 하는, 피할 수 없는 이 개념에 대해 미루고 미루다가 드디어 정리해보기로 결심했다.]]></description><link>https://gollumnima.github.io//posts/cross_brosing</link><guid isPermaLink="false">https://gollumnima.github.io//posts/cross_brosing</guid><pubDate>Sat, 23 Nov 2019 15:24:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/2b5824e0-0db5-11ea-9b8e-afeb0eb247ad/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;위코드 기업협업 중간에 한창 면접을 보러다닐 때의 일이다.&lt;br /&gt;&lt;/p&gt;
 &lt;p&gt;크로스 브라우징이 뭔지 아는지, 폴리필이 뭔지 아는지에 대해 물어본 회사도 있었지만&lt;br /&gt;
 ES6 문법을 미지원하는 브라우저의 경우 어떻게 할 것인가에 대한 질문이 있었고&lt;br /&gt;
