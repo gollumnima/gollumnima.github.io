@@ -1,4 +1,268 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 01 Dec 2019 06:27:21 GMT</lastBuildDate><item><title><![CDATA[리액트에서 mobX 이용해 상태관리 해보자]]></title><description><![CDATA[급하게 만들어보고 싶은 웹페이지가 있는데, 리덕스는 공부하면 할수록 끝이 없을것 같다.. 그래서 도전해본다, mobX. 나에게 몹은 몬스터였는데.. 몹X니까 몬스터 아님쓰?ㅋㅋㅋㅋ]]></description><link>https://gollumnima.github.io//posts/mobX_1</link><guid isPermaLink="false">https://gollumnima.github.io//posts/mobX_1</guid><pubDate>Sat, 30 Nov 2019 14:15:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/6e89ea80-13fc-11ea-8254-91d59d50bb4f/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 01 Dec 2019 13:31:03 GMT</lastBuildDate><item><title><![CDATA[Next.js 초기세팅 삽질기. 정답이 아닙니다. 삽질기입니다]]></title><description><![CDATA[임시저장글 목록을 뒤적이다.. 발견한 Next.js 초기세팅 글. 저장글이 쌓여감에 따라 언젠가는 잊혀지겠구나 싶어서 이제서야 풀어본다. 정리가 아직도 안 된 느낌이지만 일단 쓰고 수정해볼 예정!!]]></description><link>https://gollumnima.github.io//posts/nextJS_setting</link><guid isPermaLink="false">https://gollumnima.github.io//posts/nextJS_setting</guid><pubDate>Sun, 01 Dec 2019 20:19:29 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/9b7491d0-143d-11ea-a41b-e7a7edc6a163/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;주의사항-이-포스팅은-정답이-아닌-삽질기이고-앞으로도-이-여정은-계속될-예정입니다&quot;&gt;&lt;a href=&quot;#%EC%A3%BC%EC%9D%98%EC%82%AC%ED%95%AD-%EC%9D%B4-%ED%8F%AC%EC%8A%A4%ED%8C%85%EC%9D%80-%EC%A0%95%EB%8B%B5%EC%9D%B4-%EC%95%84%EB%8B%8C-%EC%82%BD%EC%A7%88%EA%B8%B0%EC%9D%B4%EA%B3%A0-%EC%95%9E%EC%9C%BC%EB%A1%9C%EB%8F%84-%EC%9D%B4-%EC%97%AC%EC%A0%95%EC%9D%80-%EA%B3%84%EC%86%8D%EB%90%A0-%EC%98%88%EC%A0%95%EC%9E%85%EB%8B%88%EB%8B%A4&quot; aria-label=&quot;주의사항 이 포스팅은 정답이 아닌 삽질기이고 앞으로도 이 여정은 계속될 예정입니다 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;주의사항 이 포스팅은 정답이 아닌 삽질기이고, 앞으로도 이 여정은 계속될 예정입니다.&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.appbase.io/part1-getting-started-with-react-and-nextjs-4f28a6a0c38e&quot;&gt;이아저씨 포스팅&lt;/a&gt; 보고 약간 따라함.&lt;/p&gt;
+&lt;h2 id=&quot;시작&quot;&gt;&lt;a href=&quot;#%EC%8B%9C%EC%9E%91&quot; aria-label=&quot;시작 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;시작&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://gollumnima.github.io/posts/wecode10_1TIL_nextjs&quot;&gt;지난번 포스팅&lt;/a&gt;과 동일&lt;/p&gt;
+&lt;h2 id=&quot;express&quot;&gt;&lt;a href=&quot;#express&quot; aria-label=&quot;express permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Express&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add express&lt;/code&gt; 명령어로 설치 고고! &lt;br /&gt;
+express를 하냐 안 하냐의 차이는.. 잘은 모르지만 custom API routes를 다룰때 좋다 함!&lt;br /&gt;
+이어서…&lt;/p&gt;
+&lt;p&gt;server.js를 파일을 만드는데, 꼭 package.json과 동일한 위치에 놔야함&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//server.js
+const express = require(&amp;#39;express&amp;#39;);
+const next = require(&amp;#39;next&amp;#39;);
+
+const port = parseInt(process.env.PORT, 10) || 3000;
+const dev = process.env.NODE_ENV !== &amp;#39;production&amp;#39;;
+const app = next({ dev });
+const handle = app.getRequestHandler();
+app.prepare().then(() =&amp;gt; {
+  const server = express();
+  server.get(&amp;#39;*&amp;#39;, (req, res) =&amp;gt; handle(req, res));
+  server.listen(port, (err) =&amp;gt; {
+    if (err) throw err;
+    // console.log(`🤘 on http://localhost:${port}`);
+  });
+});&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;console 찍히는 부분은 Eslint 때문인지 뭔지 자꾸 귀찮게 Problem이 떠서 주석처리했다&lt;br /&gt;
+여튼 처음에 경로가 중요하다고 써놨는데… 경로설정을 제대로 하지 않으면&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/155106a0-e64e-11e9-9324-4fb150f05a53/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;MoDULE_NOT_FOUND&lt;/code&gt;라는 error 발생!
+그럴땐, 두 가지를 확인해야 한다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;node_modules 유무&lt;/li&gt;
+&lt;li&gt;경로확인&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;나는 일단 &lt;code class=&quot;language-text&quot;&gt;rm -rf node_modules&lt;/code&gt; 명령어로 node_modules를 삭제해주고&lt;br /&gt;
+&lt;code class=&quot;language-text&quot;&gt;npm isntall&lt;/code&gt;로 다시 깔아주었다.&lt;br /&gt;
+하지만 yarn start를 하는 순간 결과는 똑같은 MNF(Module not found의 줄임말쓰~)&lt;br /&gt;
+그래서 다른분께 여쭤봤더니 경로가 잘못된것 같다고 하셔서.. server.js 파일 경로를 보니
+pages 안에 들어있었다!!!! 그래서 이걸 다시 밖으로 뺌 ㄱㄱ&lt;/p&gt;
+&lt;p&gt;그랬더니 에러는 빠염~&lt;/p&gt;
+&lt;h2 id=&quot;eslint-깔기&quot;&gt;&lt;a href=&quot;#eslint-%EA%B9%94%EA%B8%B0&quot; aria-label=&quot;eslint 깔기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Eslint 깔기&lt;/h2&gt;
+&lt;p&gt;CRA의 방식과 약간 다른것 같음&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add -D babel-eslint eslint eslint-config-airbnb eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-babel eslint-plugin-import&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;이 명령어로 시작! 난 수도 없으면 안돼~
+그리고 .eslintrc.js라는 파일 생성&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//eslintrc.js file
+module.exports = {
+ extends: [&amp;#39;airbnb&amp;#39;],
+ env: {
+  browser: true,
+ },
+ parser: &amp;#39;babel-eslint&amp;#39;,
+ rules: {
+  indent: 0,
+  &amp;#39;no-tabs&amp;#39;: 0,
+  &amp;#39;eol-last&amp;#39;: [&amp;#39;error&amp;#39;, &amp;#39;always&amp;#39;],
+  &amp;#39;no-underscore-dangle&amp;#39;: 0,
+  &amp;#39;react/jsx-indent&amp;#39;: 0,
+  &amp;#39;react/jsx-indent-props&amp;#39;: 0,
+  &amp;#39;react/jsx-filename-extension&amp;#39;: 0,
+  &amp;#39;react/forbid-prop-types&amp;#39;: 0,
+  &amp;#39;react/require-default-props&amp;#39;: 0,
+ },
+};&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;혹시나 prettier를 안 깐 분들은 vscode 스토어?에서 설치고고&lt;br /&gt;
+그다음에 명령어 입력 고고 &lt;code class=&quot;language-text&quot;&gt;yarn add -D prettier&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;그담엔 settings에 들어가서 json파일에 이걸 추가해준다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;{
+  &amp;quot;editor.formatOnSave&amp;quot;: true,
+  &amp;quot;prettier.eslintIntegration&amp;quot;: true
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;그러면 빨간줄이 뙇!! 행복쓰~&lt;/p&gt;
+&lt;h2 id=&quot;eslint-rules-off&quot;&gt;&lt;a href=&quot;#eslint-rules-off&quot; aria-label=&quot;eslint rules off permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Eslint rules off&lt;/h2&gt;
+&lt;p&gt;.eslintrc.js 파일을 보면 객체안에 rules라는 값들이 있는데..&lt;br /&gt;
+0은 off 1은 on이다. true/false 값을 이용해서 그렇게 한듯..?! 똑똑해~&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt; rules: {
+    indent: 0,
+    &amp;quot;no-tabs&amp;quot;: 0,
+    &amp;quot;eol-last&amp;quot;: [&amp;quot;error&amp;quot;, &amp;quot;always&amp;quot;],
+    &amp;quot;no-console&amp;quot;: 0,
+    &amp;quot;no-underscore-dangle&amp;quot;: 0,
+    &amp;quot;react/jsx-indent&amp;quot;: 0,
+    &amp;quot;react/jsx-indent-props&amp;quot;: 0,
+    &amp;quot;react/jsx-filename-extension&amp;quot;: 0,
+    &amp;quot;react/react-in-jsx-scope&amp;quot;: 0,
+    &amp;quot;react/forbid-prop-types&amp;quot;: 0,
+    &amp;quot;react/require-default-props&amp;quot;: 0
+  }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위에서 Eslint가 잘 구동되서 빨간줄 나와서 행복했던 것도 잠시…&lt;br /&gt;
+빨간줄 땜에 넘나 스트레스를 받아서 구글링 해본 결과물로 off 효과주기!&lt;br /&gt;
+검색하면 굉장히 항목이 많다.. 난 일단 이정도로만 설정해놓았다&lt;/p&gt;
+&lt;h2 id=&quot;폴더구조-확인&quot;&gt;&lt;a href=&quot;#%ED%8F%B4%EB%8D%94%EA%B5%AC%EC%A1%B0-%ED%99%95%EC%9D%B8&quot; aria-label=&quot;폴더구조 확인 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;폴더구조 확인&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/c8dbb3e0-e712-11e9-9e4c-35b0af6c260b/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;일단은 이렇게 세팅해놓은 상태이다.&lt;br /&gt;
+화면에 구현되어야 하는 모든 기능과 페이지들은 pages 디렉토리 안에 들어가야 한다.&lt;br /&gt;
+하나씩 찬찬히 살펴보자&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;index.js : /로 시작하는 루트 디렉토리! 걍 메인이라고 보면 된다.&lt;/li&gt;
+&lt;li&gt;_app.js : 공통레이웃을 위한 공간이라는데.. 난 Layout.js를 따로 만들어놨는데 이거랑 같이 써야하나?&lt;/li&gt;
+&lt;li&gt;_document.js : index.html과 같은 역할. 온갖 script tag와 기타등등은 다 여기다가 저장쓰!&lt;/li&gt;
+&lt;li&gt;_error.js : 에러가 났을때 나오는 화면&lt;/li&gt;
+&lt;li&gt;next.config.js : path 설정 및 기타 등등 설정&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;난 material-ui와 Next.js를 함께 쓴 예시를 클론받아서 거기를 통해 _app.js와 _document.js 양식을 채워나갔다 ㅋㅋ
+src 디렉토리의 Link, theme,ProTip도 무슨 기능을 하는진 모르겠으나 일단 추가해보았다.
+그래야 에러가 안 날거같아ㅓ ㅋㅋㅋ&lt;/p&gt;
+&lt;h2 id=&quot;static-폴더의-위치&quot;&gt;&lt;a href=&quot;#static-%ED%8F%B4%EB%8D%94%EC%9D%98-%EC%9C%84%EC%B9%98&quot; aria-label=&quot;static 폴더의 위치 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;static 폴더의 위치&lt;/h2&gt;
+&lt;p&gt;와… 엄청난 통수를 맞았던 static 폴더.&lt;br /&gt;
+모든 게 다 pages 안에 들어가있어야 할 것 같아서 당연히 pages에 넣었는데&lt;br /&gt;
+아무리 노력을 해봐도 이미지가 안 뜨는 것…&lt;/p&gt;
+&lt;p&gt;열심히 구글구글링을 해본 결과…&lt;br /&gt;
+static 폴더는 root 경로에 있어야 한다고… pages와 동일 선상에..! 소오름&lt;br /&gt;
+옮기니까 사진 바로 왕 크게 뜬다 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 오예&lt;/p&gt;
+&lt;h2 id=&quot;nextjs에서-sass-사용하기&quot;&gt;&lt;a href=&quot;#nextjs%EC%97%90%EC%84%9C-sass-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0&quot; aria-label=&quot;nextjs에서 sass 사용하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Next.js에서 SASS 사용하기&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add @zeit/next-sass node-sass&lt;/code&gt; 설치는 이렇게&lt;br /&gt;
+근데 설치한다고 다가 아니다.. 또 뭔갈 해줘야지 에러가 안난다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const withSass = require(&amp;#39;@zeit/next-sass&amp;#39;);
+
+const commonsChunkConfig = (config, test = /\.css$/) =&amp;gt; {
+  config.plugins = config.plugins.map((plugin) =&amp;gt; {
+    if (
+      plugin.constructor.name === &amp;#39;CommonsChunkPlugin&amp;#39;
+      // disable filenameTemplate checks here because they never match
+      // (plugin.filenameTemplate === &amp;#39;commons.js&amp;#39; ||
+      //     plugin.filenameTemplate === &amp;#39;main.js&amp;#39;)
+      // do check for minChunks though, because this has to (should?) exist
+      &amp;amp;&amp;amp; plugin.minChunks != null
+    ) {
+      const defaultMinChunks = plugin.minChunks;
+      plugin.minChunks = (module, count) =&amp;gt; {
+        if (module.resource &amp;amp;&amp;amp; module.resource.match(test)) {
+          return true;
+        }
+        return defaultMinChunks(module, count);
+      };
+    }
+    return plugin;
+  });
+  return config;
+};
+
+module.exports = withSass({
+  cssModules: true,
+  webpack: (config) =&amp;gt; {
+    config = commonsChunkConfig(config, /\.(sass|scss|css)$/);
+    return config;
+  },
+});&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위의 폴더구조에서 살펴보았던 next.config.js 파일에 이걸 추가해준다.&lt;br /&gt;
+추가해주지 않으면 CSSLoader 어쩌구 하면서 에러가 난다.&lt;br /&gt;
+구글링의 힘이 정말 대단하다.. 다들 똑같은 데서 에러가 발생하는구나 정말ㅋㅋ&lt;/p&gt;
+&lt;h2 id=&quot;layout-활용&quot;&gt;&lt;a href=&quot;#layout-%ED%99%9C%EC%9A%A9&quot; aria-label=&quot;layout 활용 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Layout 활용&lt;/h2&gt;
+&lt;p&gt;사실 이 레이아웃 컴포넌트를 _app.js에 넣는게 맞는지, index.js에 넣는게 맞는지 모른다.
+근데 일단 index.js에 넣어보았다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import React from &amp;#39;react&amp;#39;;
+import Container from &amp;#39;@material-ui/core/Container&amp;#39;;
+import Typography from &amp;#39;@material-ui/core/Typography&amp;#39;;
+import Box from &amp;#39;@material-ui/core/Box&amp;#39;;
+import MuiLink from &amp;#39;@material-ui/core/Link&amp;#39;;
+import ProTip from &amp;#39;./src/ProTip&amp;#39;;
+import Link from &amp;#39;./src/Link&amp;#39;;
+import Layout from &amp;#39;./global/Layout&amp;#39;;
+
+function Copyright() {
+  return (
+    &amp;lt;Typography variant=&amp;quot;body2&amp;quot; color=&amp;quot;textSecondary&amp;quot; align=&amp;quot;center&amp;quot;&amp;gt;
+      Copyright ©
+      &amp;lt;MuiLink color=&amp;quot;inherit&amp;quot; href=&amp;quot;https://material-ui.com/&amp;quot;&amp;gt;
+        Your Website
+      &amp;lt;/MuiLink&amp;gt;
+      {new Date().getFullYear()}
+    &amp;lt;/Typography&amp;gt;
+  );
+}
+
+export default function Index() {
+  return (
+    &amp;lt;Layout&amp;gt;
+      &amp;lt;Container maxWidth=&amp;quot;sm&amp;quot;&amp;gt;
+        &amp;lt;Box my={4}&amp;gt;
+          {/* variant가 화면에 보이는 실제 글씨 크기 */}
+          &amp;lt;Typography variant=&amp;quot;h4&amp;quot; component=&amp;quot;h1&amp;quot; gutterBottom&amp;gt;
+            Next.js example
+          &amp;lt;/Typography&amp;gt;
+          &amp;lt;Link href=&amp;quot;/about&amp;quot; color=&amp;quot;secondary&amp;quot;&amp;gt;
+            Go to the about page
+          &amp;lt;/Link&amp;gt;
+          &amp;lt;ProTip /&amp;gt;
+          &amp;lt;Copyright /&amp;gt;
+        &amp;lt;/Box&amp;gt;
+      &amp;lt;/Container&amp;gt;
+    &amp;lt;/Layout&amp;gt;
+  );
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;내가 실습을 나가있던 기업의 경우, material-ui를 사용하기 때문에&lt;br /&gt;
+material-ui와 Next.js를 함께 쓴 예시를 깃허브를 통해 클론했다.&lt;br /&gt;
+&lt;a href=&quot;https://github.com/mui-org/material-ui&quot;&gt;아마여기 였을듯&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;여튼.. Layout 파일에는&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import Navbar from &amp;#39;./Navbar&amp;#39;;
+import Footer from &amp;#39;./Footer&amp;#39;;
+import &amp;#39;./Footer.scss&amp;#39;;
+
+const Layout = (props) =&amp;gt; (
+  &amp;lt;&amp;gt;
+    &amp;lt;Navbar /&amp;gt;
+    {props.children}
+    &amp;lt;Footer /&amp;gt;
+  &amp;lt;/&amp;gt;
+);
+
+export default Layout;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 해주면 신기하게 이 안에 요소들이 다 들어간다!&lt;/p&gt;
+&lt;p&gt;라잌 디스&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/fa3ee9a0-e714-11e9-9e4c-35b0af6c260b/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;넘나 신기한것ㅋㅋ&lt;/p&gt;
+&lt;p&gt;음… 뭔가 굉장히 많이 설치했던것 같은데 글로 써보니 얼마 없네..?&lt;br /&gt;
+중간에 써놨던 글이 임시저장 실패해서 좀 날라간거 같기도 하고..?&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;bootstrap--material-icon-사용&quot;&gt;&lt;a href=&quot;#bootstrap--material-icon-%EC%82%AC%EC%9A%A9&quot; aria-label=&quot;bootstrap  material icon 사용 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;bootstrap &amp;#x26; material icon 사용&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;sudo yarn add bootstrap-material-design-icons&lt;/code&gt;
+이걸 깔아봐도 아이콘이 안뜨고..&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://google.github.io/material-design-icons/&quot;&gt;방법&lt;/a&gt;은 구글에 있었다.
+이 문서에 나온대로 &lt;code class=&quot;language-text&quot;&gt;sudo yarn add material-design-icons&lt;/code&gt; 궈궈
+_document.js 파일에 link tag도 넣어주고
+&lt;code class=&quot;language-text&quot;&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://fonts.googleapis.com/icon?family=Material+Icons&amp;quot; /&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;그러나 에러가 발생…&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/c2361c00-e740-11e9-b416-f12e8a5138e9/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;바로 구글링 궈궈!&lt;br /&gt;
+다양한 답변들이 있었지만 나는 이 방법을 택했다..&lt;br /&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;sudo yarn cache clean
+sudo yarn install --network-concurrency 1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;그랬더니 웬걸… 이제 된다 된다!??’&lt;/p&gt;
+&lt;p&gt;근데 아이콘은 잠시 보류.. 내가 원하는 아이콘이 아니였음..&lt;/p&gt;
+&lt;h2 id=&quot;sass-적용-다시&quot;&gt;&lt;a href=&quot;#sass-%EC%A0%81%EC%9A%A9-%EB%8B%A4%EC%8B%9C&quot; aria-label=&quot;sass 적용 다시 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;SASS 적용 다시!&lt;/h2&gt;
+&lt;p&gt;열심히 구글링 해서 config 파일을 다시 바꿈&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const withSass = require(&amp;#39;@zeit/next-sass&amp;#39;);
+const withCSS = require(&amp;#39;@zeit/next-css&amp;#39;);
+
+module.exports = withCSS(
+  withSass({
+    webpack(config) {
+      config.module.rules.push({
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        use: {
+          loader: &amp;#39;url-loader&amp;#39;,
+          options: {
+            limit: 100000,
+          },
+        },
+      });
+
+      return config;
+    },
+  }),
+);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;드디어 SASS가 먹혀벌임!&lt;/p&gt;
+&lt;h2 id=&quot;bootstrap-적용&quot;&gt;&lt;a href=&quot;#bootstrap-%EC%A0%81%EC%9A%A9&quot; aria-label=&quot;bootstrap 적용 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;bootstrap 적용&lt;/h2&gt;
+&lt;p&gt;Layout에 이거 추가
+&lt;code class=&quot;language-text&quot;&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css&amp;quot; /&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;진짜-진짜-이상한-에러&quot;&gt;&lt;a href=&quot;#%EC%A7%84%EC%A7%9C-%EC%A7%84%EC%A7%9C-%EC%9D%B4%EC%83%81%ED%95%9C-%EC%97%90%EB%9F%AC&quot; aria-label=&quot;진짜 진짜 이상한 에러 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;진짜 진짜 이상한 에러&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/aacf6e20-e9a4-11e9-b145-25a68bfbc53d/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;npm i -g npm@latest&lt;/code&gt;로 해결하긴 했는데 찝찝쓰~&lt;/p&gt;
+&lt;p&gt;아직도 어색한 Next.js… 언제쯤 친해질련지
+이 글은 지속적으로 수정할 예정이다&lt;/p&gt;
+&lt;h2 id=&quot;다시한번-말하지만-이-글은-정답지가-아닌-삽질기&quot;&gt;&lt;a href=&quot;#%EB%8B%A4%EC%8B%9C%ED%95%9C%EB%B2%88-%EB%A7%90%ED%95%98%EC%A7%80%EB%A7%8C-%EC%9D%B4-%EA%B8%80%EC%9D%80-%EC%A0%95%EB%8B%B5%EC%A7%80%EA%B0%80-%EC%95%84%EB%8B%8C-%EC%82%BD%EC%A7%88%EA%B8%B0&quot; aria-label=&quot;다시한번 말하지만 이 글은 정답지가 아닌 삽질기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;다시한번 말하지만 이 글은 정답지가 아닌 삽질기!!&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[리액트에서 mobX 이용해 상태관리 해보자]]></title><description><![CDATA[급하게 만들어보고 싶은 웹페이지가 있는데, 리덕스는 공부하면 할수록 끝이 없을것 같다.. 그래서 도전해본다, mobX. 나에게 몹은 몬스터였는데.. 몹X니까 몬스터 아님쓰?ㅋㅋㅋㅋ]]></description><link>https://gollumnima.github.io//posts/mobX_1</link><guid isPermaLink="false">https://gollumnima.github.io//posts/mobX_1</guid><pubDate>Sat, 30 Nov 2019 14:15:23 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/6e89ea80-13fc-11ea-8254-91d59d50bb4f/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;벨로퍼트 님의 글을 보고 따라해 본 mobX&lt;br /&gt;
 mobX는 먼저 4가지 개념을 알고 있어야 한다.&lt;/p&gt;
 &lt;h2 id=&quot;observable-state&quot;&gt;&lt;a href=&quot;#observable-state&quot; aria-label=&quot;observable state permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Observable state&lt;/h2&gt;
