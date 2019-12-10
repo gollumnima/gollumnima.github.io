@@ -1,4 +1,90 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Doo Reply!]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sat, 07 Dec 2019 10:22:44 GMT</lastBuildDate><item><title><![CDATA[백엔드 개발자없이 데이터베이스 만들기 2탄- Cloud firestore 활용]]></title><description><![CDATA[지난번 firebase 소개편에 이어 firebase에서 가져온 data를 적용하는 포스팅! 포스팅 한 편이 너무 긴 느낌이라 미래의 독자들을 위해 앞으론 이렇게 짤막하게 끊어볼 예정이다 ㅋㅋ]]></description><link>https://gollumnima.github.io//posts/firebase_applying</link><guid isPermaLink="false">https://gollumnima.github.io//posts/firebase_applying</guid><pubDate>Sat, 07 Dec 2019 19:02:29 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/1e8dfb60-18da-11ea-8759-35ac578710df/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Doo Reply!]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Tue, 10 Dec 2019 06:02:43 GMT</lastBuildDate><item><title><![CDATA[나도 할수있어bility! Node.js 공부하기 1탄]]></title><description><![CDATA[평일에 블로그를 쓰는 건 참 오랜만... 이번에 허선생님과 노드 공부를 시작하게 된 기념으로 Node.js 본격 포스팅을 해보려고 한다.]]></description><link>https://gollumnima.github.io//posts/nodeJS_1</link><guid isPermaLink="false">https://gollumnima.github.io//posts/nodeJS_1</guid><pubDate>Tue, 10 Dec 2019 14:59:29 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/646b3810-1ae6-11ea-ae36-e7205b12a901/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;&lt;a href=&quot;https://www.zerocho.com/category/NodeJS/post/578b5a36d8316615006bee0f&quot;&gt;제로초님 블로그&lt;/a&gt;를 많이 참고한 글입니다.&lt;/b&gt;&lt;/p&gt;
+&lt;h2 id=&quot;middleware&quot;&gt;&lt;a href=&quot;#middleware&quot; aria-label=&quot;middleware permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Middleware&lt;/h2&gt;
+&lt;p&gt;요청에 대한 응답이 들어오면 그 중간에 껴서 어떠한 동작을 하라고 명령해주는 프로그램.
+비선실세 같은 존재?
+Express.js도 middleware를 사용하는데 그 종류에는 Morgan, Compression, Session, Body-parser, Cookie-parser, Method-override, Cors, Multer 등이 있다고 함&lt;/p&gt;
+&lt;p&gt;express에서 middleware를 사용할땐 &lt;code class=&quot;language-text&quot;&gt;app.use(미들웨어())&lt;/code&gt; 이런식으로!&lt;/p&gt;
+&lt;h2 id=&quot;module-system&quot;&gt;&lt;a href=&quot;#module-system&quot; aria-label=&quot;module system permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Module System&lt;/h2&gt;
+&lt;p&gt;module은 독립적인 하나의 소프트웨어임.
+특히나 Node.js에선 파일 하나하나가 모듈로서 기능하는데, 꼭!!
+이전 스크립트의 변수를 사용하겠다고 선언해야 한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// calc.js
+fuction add(a,b) {
+  return a+b;
+}
+module.exports = add;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;React에서 export 해가는 것처럼 Node.js에선 export를 이런식으로 하는데,
+이걸 적용하려면 require를 통해 변수에 담아준다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// main.js
+const add = require(&amp;#39;./calc.js&amp;#39;)
+console.log(add(1,2))&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;근데 이게 좀 귀찮다 싶으면 더 간단한 방법이 있다.
+React에서도 비슷한 방법이 쓰이는데, 아예 변수이름 혹은 함수이름 자체를 export 되는 default 값으로 설정하는 것.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;exports.add = function(a, b) {
+  return a + b;
+};&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;여기서 알아야할 점은 module.exports에 객체형으로 함수 혹은 변수들이 들어가기 때문에
+exports를 쓰려면 꼭 .을 붙여서 객체의 속성값을 넣어줘야 한다.&lt;/p&gt;
+&lt;h2 id=&quot;ressend와-resjson의-차이점&quot;&gt;&lt;a href=&quot;#ressend%EC%99%80-resjson%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90&quot; aria-label=&quot;ressend와 resjson의 차이점 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;res.send와 res.json의 차이점?&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;res.send
+string형태를 전송한다..?
+그래서 JSON.stringify를 꼭 써줘야 한다.&lt;/li&gt;
+&lt;li&gt;res.json
+null이나 undefined와 같이 객체형태가 아닌 값들도 객체로 넘겨서 받을 수 있는 애?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;routing&quot;&gt;&lt;a href=&quot;#routing&quot; aria-label=&quot;routing permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Routing&lt;/h2&gt;
+&lt;p&gt;클라이언트에서 보내는 주소에 따라 다른 처리를 하는 것. (클라이언트의 요청을 미들웨어로 분배하는 것)
+&lt;code class=&quot;language-text&quot;&gt;app.REST API(&amp;#39;/주소&amp;#39;. 콜백함수)&lt;/code&gt;
+위와 같은 형식으로 나타냄.
+get 외에도 post, put, delete 등이 있음.
+근데 put과 delete를 사용하려면 method-override 패키지 설치해야 함&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;wild card
+&lt;code class=&quot;language-text&quot;&gt;app.get(&amp;#39;/post/:id&amp;#39;, () =&amp;gt; {})&lt;/code&gt;;
+이런식으로 콜론 적는것!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;구글 검색에서의 wild card는 *표를 사용해서 단어와 단어 사이에 들어가는 키워드를 맞춰줬었는데
+Node.js에서의 wild card는 동적 라우팅과 비슷하다고 보면 될것 같다!&lt;/p&gt;
+&lt;h2 id=&quot;route-paths&quot;&gt;&lt;a href=&quot;#route-paths&quot; aria-label=&quot;route paths permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Route paths&lt;/h2&gt;
+&lt;p&gt;request가 만들어지는 end point를 정의하는 것? Route paths 는 string, string pattern, 정규식으로 이루어질 수 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;app.get(&amp;#39;/&amp;#39;, function (req, res) {
+  res.send(&amp;#39;root&amp;#39;)
+})&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;router-method&quot;&gt;&lt;a href=&quot;#router-method&quot; aria-label=&quot;router method permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;router method&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// GET method route
+app.get(&amp;#39;/&amp;#39;, function (req, res) {
+  res.send(&amp;#39;GET request to the homepage&amp;#39;)
+})
+
+// POST method route
+app.post(&amp;#39;/&amp;#39;, function (req, res) {
+  res.send(&amp;#39;POST request to the homepage&amp;#39;)
+})&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;기타&quot;&gt;&lt;a href=&quot;#%EA%B8%B0%ED%83%80&quot; aria-label=&quot;기타 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;기타&lt;/h2&gt;
+&lt;p&gt;지난번 프로젝트에서 사용했던 server.js에서의 express&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// server.js
+const express = require(&amp;#39;express&amp;#39;);
+const next = require(&amp;#39;next&amp;#39;);
+
+const port = parseInt(process.env.PORT, 10) || 3000;
+const dev = process.env.NODE_ENV !== &amp;#39;production&amp;#39;;
+const app = next({ dev });
+const handle = app.getRequestHandler();
+app.prepare().then(() =&amp;gt; {
+  const server = express();
+  server.get(&amp;#39;*&amp;#39;, (req, res) =&amp;gt; handle(req, res));
+  server.listen(port, (err) =&amp;gt; {
+    if (err) throw err;
+    // console.log(`🤘 on http://localhost:${port}`);
+  });
+});&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;reference&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;제로초님 블로그 중 Node 모듈 시스템, 익스프레스 미들웨어와 라우팅&lt;/li&gt;
+&lt;li&gt;Express.js 공식문서(&lt;a href=&quot;https://expressjs.com/en/guide/routing.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://expressjs.com/en/guide/routing.html&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[백엔드 개발자없이 데이터베이스 만들기 2탄- Cloud firestore 활용]]></title><description><![CDATA[지난번 firebase 소개편에 이어 firebase에서 가져온 data를 적용하는 포스팅! 포스팅 한 편이 너무 긴 느낌이라 미래의 독자들을 위해 앞으론 이렇게 짤막하게 끊어볼 예정이다 ㅋㅋ]]></description><link>https://gollumnima.github.io//posts/firebase_applying</link><guid isPermaLink="false">https://gollumnima.github.io//posts/firebase_applying</guid><pubDate>Sat, 07 Dec 2019 19:02:29 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/1e8dfb60-18da-11ea-8759-35ac578710df/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;firebase-데이터-정보를-객체에-담기&quot;&gt;&lt;a href=&quot;#firebase-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%95%EB%B3%B4%EB%A5%BC-%EA%B0%9D%EC%B2%B4%EC%97%90-%EB%8B%B4%EA%B8%B0&quot; aria-label=&quot;firebase 데이터 정보를 객체에 담기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;firebase 데이터 정보를 객체에 담기&lt;/h2&gt;
 &lt;h4 id=&quot;1-첫번째-시도&quot;&gt;&lt;a href=&quot;#1-%EC%B2%AB%EB%B2%88%EC%A7%B8-%EC%8B%9C%EB%8F%84&quot; aria-label=&quot;1 첫번째 시도 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. 첫번째 시도&lt;/h4&gt;
 &lt;p&gt;state에 빈 객체를 넣어두고, setState함수를 이용해 객체에 데이터를 담으려고 했다.&lt;/p&gt;
