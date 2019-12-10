@@ -1,4 +1,224 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Doo Reply!]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Tue, 10 Dec 2019 06:05:49 GMT</lastBuildDate><item><title><![CDATA[나도 할수있어bility! Node.js 공부하기 1탄]]></title><description><![CDATA[평일에 블로그를 쓰는 건 참 오랜만... 이번에 허선생님과 노드 공부를 시작하게 된 기념으로 Node.js 본격 포스팅을 해보려고 한다.]]></description><link>https://gollumnima.github.io//posts/nodeJS_1</link><guid isPermaLink="false">https://gollumnima.github.io//posts/nodeJS_1</guid><pubDate>Tue, 10 Dec 2019 14:59:29 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/646b3810-1ae6-11ea-ae36-e7205b12a901/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Doo Reply!]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Tue, 10 Dec 2019 13:28:55 GMT</lastBuildDate><item><title><![CDATA[허선생님과 Node.js 공부 - 노드 초기세팅, 비동기, router]]></title><description><![CDATA[허선생님의 찰떡같은 명강의를 듣고 블로그 정리해보기! node를 파보니까 자바스크립트 작동원리에 대해 더 잘 이해하게 되는것 같기도 하고?? 넘 재밌는 시간!]]></description><link>https://gollumnima.github.io//posts/nodeJS_2</link><guid isPermaLink="false">https://gollumnima.github.io//posts/nodeJS_2</guid><pubDate>Wed, 11 Dec 2019 21:23:29 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/98513bc0-1b22-11ea-929c-e3202fd1cd14/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;허선생님의 귀중한 강의를 듣고 정리해 본 노드 포스팅!&lt;/b&gt;&lt;br/&gt;
+썸네일의 잎사귀는 노드 느낌 나서 뙇!&lt;br/&gt;
+우리 허선생님은 찰떡같이 가르치셨으나, 학생(나 ㅋㅋㅋ)이 못 알아듣고 왜곡해서 이상한 말을 썼을 수도 있음을..👉👈&lt;/p&gt;
+&lt;h2 id=&quot;nodejs-특징--장점쓰&quot;&gt;&lt;a href=&quot;#nodejs-%ED%8A%B9%EC%A7%95--%EC%9E%A5%EC%A0%90%EC%93%B0&quot; aria-label=&quot;nodejs 특징  장점쓰 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Node.js 특징 &amp;#x26;&amp;#x26; 장점쓰&lt;/h2&gt;
+&lt;p&gt;node.js는 프레임워크가 아니라 언어다. 자바스크립트의 구현체 중 하나이다.&lt;br/&gt;
+특정 상황에서 수학 계산보단 입출력이 많을때 좋은 언어이다.&lt;br/&gt;
+파일을 읽고 쓰고..할때! 데이터베이스 접근을 자주 할 때 좋다!&lt;/p&gt;
+&lt;p&gt;크롬엔 없지만 노드에만 있는 기능으론 app path가 있어서 파일 입출력을 노드가 컨트롤 할 수 있다.
+대신 윈도우와 관련된건 없…!&lt;br/&gt;
+그래도 자바스크립트 문법을 대부분 따른다는게 JS를 공부한 나에겐 가장 큰 장점쓰!&lt;br/&gt;
+윈도우 관련된 기능 없으면 뭐어때! http관련된 기능이 노드에 기본적으로 들어가 있다.&lt;/p&gt;
+&lt;h2 id=&quot;blocking-과-none-blocking-io&quot;&gt;&lt;a href=&quot;#blocking-%EA%B3%BC-none-blocking-io&quot; aria-label=&quot;blocking 과 none blocking io permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;blocking 과 none blocking io&lt;/h2&gt;
+&lt;p&gt;흔히 말하는 동기와 비동기에 대한 것이다!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/c921de60-1b38-11ea-b0bb-6f74ba5f3951/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;동기blocking-io&quot;&gt;&lt;a href=&quot;#%EB%8F%99%EA%B8%B0blocking-io&quot; aria-label=&quot;동기blocking io permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;동기(blocking i/o)&lt;/h4&gt;
+&lt;p&gt;일반적인 웹서버를 생각해보자.&lt;br/&gt;
+푸드트럭에서 일하는 사람이 전자레인지에서 음식 데펴서 손님에게 주는 것&lt;br/&gt;
+전자렌지를 돌리는 동안 똘똘한 사람들이라면 다른 음식을 조리하거나 음식을 주문받을텐데 비효율적으로 작동하는 방식이다.
+(내가 보기엔 비효율적이지만 분명 뭔가 장점이 있겠지)&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;다른 행동을 하지 않고 오로지 전자레인지 앞에서 음식이 다 조리 될때까지 기다린다ㅠㅠ
+Python이 대표적인 동기방식이라고 한다!&lt;/p&gt;
+&lt;h4 id=&quot;비동기non-blocking-io&quot;&gt;&lt;a href=&quot;#%EB%B9%84%EB%8F%99%EA%B8%B0non-blocking-io&quot; aria-label=&quot;비동기non blocking io permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;비동기(non blocking i/o)&lt;/h4&gt;
+&lt;p&gt;컴잘알이 아닌 내가 보기엔 동기보다 똘똘한 방식.&lt;br/&gt;
+전자레인지에 음식 집어넣고 기다리는 동안 다른 일을 한다. 똑똑해~&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;전자레인지 앞에서 대기타는 일처럼 코드상에서 신경쓰지 않고 넘어가도 되는 작업들을 넘겨버리는 게 바로 비동기라고 한다!
+&lt;br/&gt;
+&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;+ 여기서 잠깐 multi thread 이야기!&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/96b84940-1b43-11ea-9c04-0bf27d5086c5/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;(single thread와 multi thread에 대해선 나중에 한번 정리하고 넘어갈 예정)&lt;br/&gt;
+그림과 같이 컴퓨터가 다섯 대 있다고 쳐보자. 그렇다면 서버도 그에 맞게 다섯 개가 필요함&lt;br/&gt;
+근데 내가 돌리는 컴퓨터 개수보다 접속자수가 많아지면 그게 동기방식으로 처리가 되서 비효율적이게 된다~&lt;/p&gt;
+&lt;p&gt;데이터베이스가 놀고 있어서 웹 서버는 강제로 휴식중..&lt;br/&gt;
+빨리 일 시켜야 하는데 서버에서도 데이터 베이스를 기다리느라 아무것도 안하게 되는데…
+이러한 현상을 해결하기 위한게 바로 &lt;b&gt;비동기 처리 방식&lt;/b&gt;이다!&lt;/p&gt;
+&lt;p&gt;서버가 멍때리고 기다리는게 아니라 그때그때 계산해서 할 수 있는 행동을 전부 처리한다!&lt;br/&gt;
+기다려야 하는 행동은 놔두고 먼저 처리할 수 있는 일을 처리하는 것&lt;/p&gt;
+&lt;p&gt;허선생님 진짜 찰떡같은 비유 최고..! 박수~~ 👏👏👏&lt;br/&gt;
+여튼 react에서의 axios나 fetch가 바로 이런 비동기 처리방식이다!&lt;/p&gt;
+&lt;h2 id=&quot;실습해보자&quot;&gt;&lt;a href=&quot;#%EC%8B%A4%EC%8A%B5%ED%95%B4%EB%B3%B4%EC%9E%90&quot; aria-label=&quot;실습해보자 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;실습해보자!&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;빈 폴더 하나 만들어서 초기화해준다. 명령어는
+&lt;code class=&quot;language-text&quot;&gt;npm init&lt;/code&gt;&lt;br/&gt;
+react 프로젝트 만들땐 -y를 붙였는데 이걸 안 붙이면&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/001830f0-1b15-11ea-a0de-bf8adf7e444e/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;이렇게 값들을 하나 하나 설정을 해줘야 한다.
+그래서 -y는 모두 yes를 뜻하는 것..!&lt;br/&gt;
+여튼 이 과정을 통해 package.json 파일이 생성된다.&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;server.js 파일을 만든다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// server.js
+let foo = 2;
+console.log(foo);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;터미널에 &lt;code class=&quot;language-text&quot;&gt;node server&lt;/code&gt;명령어를 입력하면 콘솔에 2가 뜬다.&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;app.js 파일도 만들어준다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const http = require(&amp;#39;http&amp;#39;);
+const app = require(&amp;#39;./app&amp;#39;);
+// 경로를 안 붙이면 module이라고 생각하고, 경로를 붙이면 파일이라고 생각하면 됨
+// listener를 가지고 있으면 app으로서 작동을 함.
+
+http.createServer(app).listen(8000, () =&amp;gt; {
+  console.log(&amp;#39;서버 시작할게유~&amp;#39;);
+});
+// inbound 요청을 듣겠다. 리쓴
+// 듣기 시작한 이후에 콘솔찍겠다&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;express 설치&lt;br/&gt;
+명령어는 &lt;code class=&quot;language-text&quot;&gt;yarn add express&lt;/code&gt; 입력 궈궈!&lt;br/&gt;
+아직 express.js에 대해 잘은 모르지만 일단 해본다. 나중에 정리할 예정쓰!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const express = require(&amp;#39;express&amp;#39;);
+
+const app = express();
+// express는 class 인데 한번 더 묶어서 클래스처럼 안 보인다.
+
+console.log(&amp;#39;4&amp;#39;);
+app.get(&amp;#39;/foo&amp;#39;, () =&amp;gt; {
+  console.log(&amp;#39;요청을 받았다 오바!&amp;#39;);
+});
+
+module.exports = app;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;지금 app.js에 콘솔로 4를 찍고 있는데
+그 전에 server.js에도 숫자를 찍어놨다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;console.log(&amp;#39;1&amp;#39;);
+
+const http = require(&amp;#39;http&amp;#39;);
+const app = require(&amp;#39;./app&amp;#39;);
+
+// 경로를 안 붙이면 module이라고 생각하고, 경로를 붙이면 파일이라고 생각하면 됨
+// listener를 가지고 있으면 app으로서 작동을 함.
+
+console.log(&amp;#39;2&amp;#39;);
+
+http.createServer(app).listen(8000, () =&amp;gt; {
+  console.log(&amp;#39;3&amp;#39;);
+  console.log(&amp;#39;서버 시작할게유~&amp;#39;);
+  // 비동기 코드라 가장 늦게 실행됨
+});
+// inbound 요청을 듣겠다. 리쓴
+// 듣기 시작한 이후에 콘솔찍겠다
+
+console.log(&amp;#39;5&amp;#39;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;server.js에서 서버가 시작되는 거니까 첫줄의 1이 가장 먼저 찍히고,&lt;br/&gt;&lt;/li&gt;
+&lt;li&gt;server.js에 있는 app require를 실행하기 위해&lt;br /&gt;
+&lt;code class=&quot;language-text&quot;&gt;module.exports = app;&lt;/code&gt;위의 코드를 먼저 실행&lt;br /&gt;
+그래서 app.js에서 값을 불러오니까 app에 있는 4가 두번째로 찍히고,&lt;br/&gt;&lt;/li&gt;
+&lt;li&gt;그 다음 줄부터는 순서대로 찍힌다. (숫자 4까지 있을 때)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;근데 마지막 줄에 5가 있으면 어떻게 될까?&lt;br/&gt;
+5는 가장 마지막 줄에 있지만 createServer함수가 비동기 방식으로 인자로 들어간 함수를 받기 때문에
+인자로 들어간 함수 안의 콘솔들이 가장 늦게 찍힌다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/7144dbb0-1b16-11ea-a5d2-e149b859f4b5/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;그리하여 콘솔찍히는 순서는 1-4-2-5-3-서버 시작할게유~ 순!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/f6862b80-1b16-11ea-b06d-87feba7af501/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;콘솔창에는 값이 잘 찍히고 있는데, 문제는 웹페이지이다!&lt;br /&gt;
+localhost:8000으로 접속해보면…&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/e67d8e40-1b16-11ea-a0de-bf8adf7e444e/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;요청을 받았기 때문에 서버에는(터미널에는) 콘솔 값이 찍히는데 웹페이지가 안뜬다!&lt;br /&gt;
+크롭탭만 봐도 뭔가 돌고 있는데.. 아무것도 뜨지 않는다.&lt;/p&gt;
+&lt;p&gt;일단 서버를 재시작(ctrl+c) 해야하는데,
+그것보다 좀 더 효율적인 방법으로 nodemon을 깔아준다.&lt;/p&gt;
+&lt;h2 id=&quot;가라-노드몬&quot;&gt;&lt;a href=&quot;#%EA%B0%80%EB%9D%BC-%EB%85%B8%EB%93%9C%EB%AA%AC&quot; aria-label=&quot;가라 노드몬 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;가라 노드몬!&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;설치는 &lt;code class=&quot;language-text&quot;&gt;npm i nodemon&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;package.json에 start script를 추가해준다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;{
+  &amp;quot;name&amp;quot;: &amp;quot;node-1&amp;quot;,
+  &amp;quot;version&amp;quot;: &amp;quot;1.0.0&amp;quot;,
+  &amp;quot;description&amp;quot;: &amp;quot;&amp;quot;,
+  &amp;quot;main&amp;quot;: &amp;quot;index.js&amp;quot;,
+  &amp;quot;scripts&amp;quot;: {
+    &amp;quot;start&amp;quot;: &amp;quot;npx nodemon ./server&amp;quot;
+  },
+  &amp;quot;author&amp;quot;: &amp;quot;&amp;quot;,
+  &amp;quot;license&amp;quot;: &amp;quot;ISC&amp;quot;,
+  &amp;quot;dependencies&amp;quot;: {
+    &amp;quot;express&amp;quot;: &amp;quot;^4.17.1&amp;quot;,
+    &amp;quot;nodemon&amp;quot;: &amp;quot;^2.0.1&amp;quot;
+  }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;다시 한번 웹페이지를 확인해주는데…&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/53e86b80-1b17-11ea-b06d-87feba7af501/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;흰 화면이 뜨는데 걍 흰색.. 내 요청을 씹은거다 ㅠㅠ&lt;/p&gt;
+&lt;h2 id=&quot;node에서-string-object-error-넘기기&quot;&gt;&lt;a href=&quot;#node%EC%97%90%EC%84%9C-string-object-error-%EB%84%98%EA%B8%B0%EA%B8%B0&quot; aria-label=&quot;node에서 string object error 넘기기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;node에서 string, object, error 넘기기&lt;/h2&gt;
+&lt;p&gt;이번엔 명령어를 입력해보자.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// app.js
+app.get(&amp;#39;/foo&amp;#39;, (req, res, next) =&amp;gt; {
+    res.send(&amp;#39;배고파&amp;#39;);
+});&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;그랬더니 뙇! 임의의 태그가 생겼다!!&lt;br /&gt;
+그냥 string으로 써서 일단 이런 임시 태그가 body에 생기는 것이고..&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/6d3bba10-1b17-11ea-84ae-6db8b11a429d/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;이번엔 json형태로 써보자.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// app.js
+app.get(&amp;#39;/foo&amp;#39;, (req, res, next) =&amp;gt; {
+    res.json({ 둘둘쓰: &amp;#39;배곱&amp;#39; });
+});&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;짠!! 객체형태의 값이 화면에 나온다. 이렇게&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/a6bc0880-1b17-11ea-b06d-87feba7af501/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;나는 chrome json.viewer extension을 쓰고 있어서 예쁘게 나왔는데&lt;br /&gt;
+원래대로라면 정말 날 것 그대로 나온다.&lt;/p&gt;
+&lt;p&gt;에러도 한 번 내보자! 참고로 4로 시작한건 일부러 내는 에러..ㅋㅋ&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// app.js
+app.get(&amp;#39;/foo&amp;#39;, (req, res, next) =&amp;gt; {
+    res.status(401).json({ 둘둘쓰: &amp;#39;배곱&amp;#39; });
+});&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/e0fe9580-1b17-11ea-8cbc-5bb18cbd781d/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;에러도 아주 잘 나고 있다. 좋았어!&lt;/p&gt;
+&lt;h2 id=&quot;router&quot;&gt;&lt;a href=&quot;#router&quot; aria-label=&quot;router permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Router&lt;/h2&gt;
+&lt;p&gt;이번엔 라우팅을 위한 코드를 쳐볼거다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const express = require(&amp;#39;express&amp;#39;);
+
+const app = express();
+
+app.get(&amp;#39;/foo&amp;#39;, (req, res, next) =&amp;gt; {
+//   res.status(401).json({ 둘둘쓰: &amp;#39;배곱&amp;#39; });
+});
+
+app.get(&amp;#39;/user&amp;#39;, (req, res, next) =&amp;gt; {
+  res.status(200).json({ name: &amp;#39;유저 목록&amp;#39; });
+});
+
+
+app.get(&amp;#39;/user/:id&amp;#39;, (req, res, next) =&amp;gt; {
+  const id = req.params;
+  console.log(id);
+  res.status(200).json({
+    name: &amp;#39;허선생님&amp;#39;,
+    id
+  }); // 원래는 id: id 인데, 객체 값과 프로퍼티가 동일하면 지워짐. 놀라운 세상!
+});
+
+module.exports = app;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;주소창에 &lt;code class=&quot;language-text&quot;&gt;http://localhost:8000/user?page=222&amp;amp;offset=20&lt;/code&gt;를 쳐보면&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/9002a940-1b18-11ea-b06d-87feba7af501/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;짠~ 페이지에 json형태로 데이터가 잘 나오고 있고!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/d6877cb0-1b18-11ea-b06d-87feba7af501/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;짠~ 콘솔창에 page와 offset 정보가 잘 나오고 있고!&lt;/p&gt;
+&lt;h2 id=&quot;middleware&quot;&gt;&lt;a href=&quot;#middleware&quot; aria-label=&quot;middleware permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Middleware&lt;/h2&gt;
+&lt;p&gt;지난번에 비선실세 같은 존재라고 이해하고 넘어갔는데.. 막 그런건 아닌거 같고 ㅋㅋ
+app.get()&amp;#x3C;=== 이게 라우터고
+라우터의 괄호안에 들어가는 게 바로 미들웨어다!&lt;/p&gt;
+&lt;p&gt;라우터는 실행할지 말지를 정해주는 역할이고,
+미들웨어는 요청이나 응답이 들어오면 그걸 처리하는 함수다. 알고보니 비선실세는 라우터..&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;app.get()
+app.post()
+app.use()
+app.all()&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위와 같이 다양한 방식의 명령어가 있는데&lt;br /&gt;
+그중에 app.use()는 유일하게 url을 쓰지 않아도 함수를 쓸 수 있다!&lt;br /&gt;
+app.all()은 CRUD 네 가지 메소드 중 아무거나 접근을 하겠다는 것.&lt;/p&gt;
+&lt;p&gt;일단 배운 내용에 대해 여기까지 정리해봤는데..&lt;br/&gt;
+허선생님께서 알기 쉽게 핵심만 쏙쏙 설명해주셔서 정말 감동쓰ㅠㅠ 감사합니다~&lt;br /&gt;
+일단 코드를 쳐보면 좀 더 감이 오겠지? 화이팅 화이팅~~~&lt;/p&gt;</content:encoded></item><item><title><![CDATA[제로초님 블로그 보고 Node.js 개념 익히기]]></title><description><![CDATA[평일에 블로그를 쓰는 건 참 오랜만... 이번에 허선생님과 노드 공부를 시작하게 된 기념으로 Node.js 본격 포스팅을 해보려고 한다.]]></description><link>https://gollumnima.github.io//posts/nodeJS_1</link><guid isPermaLink="false">https://gollumnima.github.io//posts/nodeJS_1</guid><pubDate>Tue, 10 Dec 2019 14:59:29 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/646b3810-1ae6-11ea-ae36-e7205b12a901/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;b&gt;&lt;a href=&quot;https://www.zerocho.com/category/NodeJS/post/578b5a36d8316615006bee0f&quot;&gt;제로초님 블로그&lt;/a&gt;를 많이 참고한 글입니다.&lt;/b&gt;&lt;/p&gt;
 &lt;h2 id=&quot;middleware&quot;&gt;&lt;a href=&quot;#middleware&quot; aria-label=&quot;middleware permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Middleware&lt;/h2&gt;
 &lt;p&gt;요청에 대한 응답이 들어오면 그 중간에 껴서 어떠한 동작을 하라고 명령해주는 프로그램.
