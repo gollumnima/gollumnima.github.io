@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Doo Reply!]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 11 Dec 2019 01:13:41 GMT</lastBuildDate><item><title><![CDATA[허선생님과 Node.js 공부 - 노드 초기세팅, 비동기, router]]></title><description><![CDATA[허선생님의 찰떡같은 명강의를 듣고 블로그 정리해보기! node를 파보니까 자바스크립트 작동원리에 대해 더 잘 이해하게 되는것 같기도 하고?? 넘 재밌는 시간!]]></description><link>https://gollumnima.github.io//posts/nodeJS_2</link><guid isPermaLink="false">https://gollumnima.github.io//posts/nodeJS_2</guid><pubDate>Wed, 11 Dec 2019 21:23:29 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/98513bc0-1b22-11ea-929c-e3202fd1cd14/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Doo Reply!]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 11 Dec 2019 02:22:53 GMT</lastBuildDate><item><title><![CDATA[허선생님과 Node.js 공부 - 노드 초기세팅, 비동기, router]]></title><description><![CDATA[허선생님의 찰떡같은 명강의를 듣고 블로그 정리해보기! node를 파보니까 자바스크립트 작동원리에 대해 더 잘 이해하게 되는것 같기도 하고?? 넘 재밌는 시간!]]></description><link>https://gollumnima.github.io//posts/nodeJS_2</link><guid isPermaLink="false">https://gollumnima.github.io//posts/nodeJS_2</guid><pubDate>Wed, 11 Dec 2019 21:23:29 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/98513bc0-1b22-11ea-929c-e3202fd1cd14/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;b&gt;허선생님의 귀중한 강의를 듣고 정리해 본 노드 포스팅!&lt;/b&gt;&lt;br/&gt;
 썸네일의 잎사귀는 노드 느낌 나서 뙇!&lt;br/&gt;
 우리 허선생님은 찰떡같이 가르치셨으나, 학생(나 ㅋㅋㅋ)이 못 알아듣고 왜곡해서 이상한 말을 썼을 수도 있음..👉👈&lt;/p&gt;
@@ -375,6 +375,48 @@ placeholder에 state에 있는 값 말고 firebase에 있는 데이터를 불러
 &lt;p&gt;이건 내가 입력한 값이 절대 아니다. firebase에 내가 설정한 데이터를 받아온거다!&lt;/p&gt;
 &lt;p&gt;와.. 그럼 handleChange값을 안 받아도 되는거니까 진짜 핵 간단한거네..?? 와우!!!&lt;br /&gt;
 앞으로 코드가 훨씬 짧아질 것 같은 느낌적인 느낌이 든다 ㅋㅋㅋ&lt;/p&gt;
+&lt;h2 id=&quot;훅스-적용하기hooks-with-firebase&quot;&gt;&lt;a href=&quot;#%ED%9B%85%EC%8A%A4-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0hooks-with-firebase&quot; aria-label=&quot;훅스 적용하기hooks with firebase permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;훅스 적용하기(hooks with firebase)&lt;/h2&gt;
+&lt;p&gt;클래스형과 마찬가지로 db객체를 import 해온다.&lt;br /&gt;
+useEffect와 useState 둘 다 쓸 것이므로 이것 또한 import 하기!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import React, { useEffect, useState } from &amp;quot;react&amp;quot;;
+import { db } from &amp;quot;../../firebase&amp;quot;;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;그 다음엔 함수형 컴포넌트 안에 코드를 친다!!
+훅스를 아직 마스터 한 게 아니라.. &lt;br /&gt; &lt;a href=&quot;https://dev.to/bmcmahen/using-firebase-with-react-hooks-21ap&quot;&gt;이 분 블로그&lt;/a&gt;를 많이 참고함!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// 생략.. 함수형 컴포넌트 껍데기겠죠? 훗
+  const [infoArr, setInfo] = useState([]); // update
+  const currentNumber = 6;
+useEffect(() =&amp;gt; {
+    console.log(&amp;quot;effect&amp;quot;);
+    const unsub = db.collection(&amp;quot;left_seat&amp;quot;).onSnapshot(snapshot =&amp;gt; {
+      const allInfo = snapshot.docs.map(
+        doc =&amp;gt;
+          // id: doc.id,
+          doc.data()[currentNumber]
+      );
+      setInfo(allInfo.filter(v =&amp;gt; v));
+    });
+    return () =&amp;gt; {
+      console.log(&amp;quot;cleanUp&amp;quot;);
+      unsub();
+    };
+  }, []);
+
+  return (
+    &amp;lt;&amp;gt;
+    // div 구조 생략쓰
+      {infoArr.map(el =&amp;gt; (
+        &amp;lt;Layout
+        left={el.pre_left} /&amp;gt;
+
+  // 중략...... div 구조 생략쓰
+  &amp;lt;/&amp;gt;
+// 생략쓰&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;코드는 이러하고.. 나의 firestore 구조는 이렇게..!
+&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/94a1ba50-1bbc-11ea-85a5-8bbbb773a859/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;field 추가할 때 map을 선택하면 요렇게 객체 구조로 만들 수 있다.
+구조가 잘못 되서 갈아 엎기를 반복하다가 나름 적당한 구조를 선택했다!&lt;/p&gt;
+&lt;p&gt;여튼 훅스로 이렇게 firestore 적용도 완료!!
+소소한 코드지만 홈페이지에 보여지는 부분 중 하나가 나의 손을 거치게 된다는 게 넘 뿌듯할 따름이다.&lt;/p&gt;
 &lt;h3 id=&quot;-더불어&quot;&gt;&lt;a href=&quot;#-%EB%8D%94%EB%B6%88%EC%96%B4&quot; aria-label=&quot; 더불어 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;+ 더불어…&lt;/h3&gt;
 &lt;p&gt;위의 포스팅은 어떠한 기관과 관련된 게 절대 아닙니다! 값도, 이름도 제가 막 설정한 임의의 값입니다!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[백엔드 개발자없이 데이터베이스 만들기 1탄 - Cloud Firestore 소개]]></title><description><![CDATA[회사에 백앤드 개발자가 없거나 혹은 너무 바쁘다? 그럴때 백앤드 개발자 없이도 혼자 개발할수 있어bility! Firebase - cloud firestore 활용법을 알아보자!]]></description><link>https://gollumnima.github.io//posts/firebase_start</link><guid isPermaLink="false">https://gollumnima.github.io//posts/firebase_start</guid><pubDate>Fri, 06 Dec 2019 21:17:29 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/48292eb0-175c-11ea-b9a7-a78e4358fcc9/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;firebase란&quot;&gt;&lt;a href=&quot;#firebase%EB%9E%80&quot; aria-label=&quot;firebase란 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Firebase란?&lt;/h2&gt;
