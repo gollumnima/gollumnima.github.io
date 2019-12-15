@@ -1,4 +1,256 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Doo Reply!]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Thu, 12 Dec 2019 02:43:53 GMT</lastBuildDate><item><title><![CDATA[허선생님과 Node.js 공부 - 노드 초기세팅, 비동기, router]]></title><description><![CDATA[허선생님의 찰떡같은 명강의를 듣고 블로그 정리해보기! node를 파보니까 자바스크립트 작동원리에 대해 더 잘 이해하게 되는것 같기도 하고?? 넘 재밌는 시간!]]></description><link>https://gollumnima.github.io//posts/nodeJS_2</link><guid isPermaLink="false">https://gollumnima.github.io//posts/nodeJS_2</guid><pubDate>Wed, 11 Dec 2019 21:23:29 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/98513bc0-1b22-11ea-929c-e3202fd1cd14/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Doo Reply!]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 15 Dec 2019 03:28:39 GMT</lastBuildDate><item><title><![CDATA[유인동님의 함수형 프로그래밍 - 순수함수, 일급함수, currying, reduce]]></title><description><![CDATA[허선생님의 추천을 받고 인프런에 올라온 유인동님의 함수형 프로그래밍 강의를 정리해보고 있다. 성격이 급해서 빨리빨리에 집중하다 보니 중요한 것들을 놓치고 있는 것 같아서 다시 자바스크립트 공부중인 요즘!]]></description><link>https://gollumnima.github.io//posts/functional_programming1</link><guid isPermaLink="false">https://gollumnima.github.io//posts/functional_programming1</guid><pubDate>Sun, 15 Dec 2019 11:45:29 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/1f276140-1ee5-11ea-a04d-b735fbfc6528/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;성공적인-프로그래밍이란&quot;&gt;&lt;a href=&quot;#%EC%84%B1%EA%B3%B5%EC%A0%81%EC%9D%B8-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%9D%B4%EB%9E%80&quot; aria-label=&quot;성공적인 프로그래밍이란 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;성공적인 프로그래밍이란?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;사용성, 성능, 확장성, 기획 변경에 대한 대응력이 좋은 것..!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;함수형-프로그래밍&quot;&gt;&lt;a href=&quot;#%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D&quot; aria-label=&quot;함수형 프로그래밍 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;함수형 프로그래밍&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;성공적인 프로그래밍을 위해 부수 효과보다는 조합성을 강조하는 프로그래밍 패러다임&lt;/li&gt;
+&lt;li&gt;부수효과를 지양하는 것 =&gt; 순수함수 만드는 것&lt;/li&gt;
+&lt;li&gt;조합성을 강조하는 것 =&gt; 모듈화 수준을 높이는 것&lt;/li&gt;
+&lt;li&gt;순수함수 =&gt; 오류를 줄이고 안정성을 높이는 것. 다시 말해 &lt;br /&gt; 동일한 인자를 주면 동일한 결과를 리턴하는 것(부수효과가 없음)&lt;/li&gt;
+&lt;li&gt;모듈화 수준 높아짐 =&gt; 생산성 높이는 것&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ex)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const add = (a,b) =&amp;gt; a+b
+add(10,5)
+
+let c= 20;
+const add2 = (a,b) =&amp;gt; a+b+c;
+add2(10,5)
+
+console.log(c,&amp;#39;c 이전값&amp;#39;)
+const add3 = (a,b) =&amp;gt; {
+  c=b;
+  console.log(c, &amp;#39;c 이전값&amp;#39;)
+  return a+b
+}
+
+add3(20,30)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위의 식에서 add가 순수함수! add2나 add3는 부수효과가 있어서 순수함수라 할 수 없다.
+순수함수는 평가시점에 따라 결과가 달라지지 않고, 항상 동일한 결과를 리턴하기 때문에 안전하다!!&lt;/p&gt;
+&lt;h2 id=&quot;일급함수&quot;&gt;&lt;a href=&quot;#%EC%9D%BC%EA%B8%89%ED%95%A8%EC%88%98&quot; aria-label=&quot;일급함수 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;일급함수&lt;/h2&gt;
+&lt;p&gt;함수를 runtime에서 값으로 담을 수 있고, 변수로 담을 수 있고, 인자로 담을 수 있는 것&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let f1 = (a) =&amp;gt; a*a
+console.log(f1(5))
+
+const f3 = (f) =&amp;gt; f()
+f3(() =&amp;gt; 10)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;순수함수와 일급함수를 합친 공식을 한번 만들어보자&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const add_maker = (a) =&amp;gt; {
+// 이 부분이 클로저
+  return (b) =&amp;gt; a+b
+}
+
+let add10 = add_maker(10)
+console.log(add10(20)) // 30&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;한 가지 예시 더!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const f4 = (f1,f2,f3) =&amp;gt; f3(f1()+f2());
+f4(()=&amp;gt;2,()=&amp;gt;1,a=&amp;gt;a*a) // 9&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;함수형 프로그래밍을 하면 이런 식으로 순수함수를 조합하고, 순수함수들이 최종적으로 결과를 만들면 이를 통해 로직을 만들어간다!&lt;/p&gt;
+&lt;h2 id=&quot;요즘-개발이야기쓰&quot;&gt;&lt;a href=&quot;#%EC%9A%94%EC%A6%98-%EA%B0%9C%EB%B0%9C%EC%9D%B4%EC%95%BC%EA%B8%B0%EC%93%B0&quot; aria-label=&quot;요즘 개발이야기쓰 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;요즘 개발이야기쓰&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;재미/실시간성 =&gt; 라이브 방송, 실시간 댓글, 협업, 메신저&lt;/li&gt;
+&lt;li&gt;독창성/완성도 =&gt; 애니메이션, 무한스크롤, 벽돌&lt;/li&gt;
+&lt;li&gt;더 많아져야 하는 동시성 =&gt; 비동기 I/O, CSP, Actor, STM…&lt;/li&gt;
+&lt;li&gt;더 빨라야 하는 반응성/고가용성 =&gt; ELB, Auto Sacling, OTP Supervisor…&lt;/li&gt;
+&lt;li&gt;대용량/정확성/병렬성 =&gt; MapReduce, Clojure Reducers…&lt;/li&gt;
+&lt;li&gt;복잡도/MSA… =&gt; 많아지고 세밀해지는 도구들… 타협할 수 없는 생산성&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;스멀스멀 다가오는 FP..(Functional Programming)
+좋아지는 하드웨어 성능, 좋아지는 컴파일러로 인해
+함수형 프로그래밍 기술도 점점 향상되고 있음!&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;“함수형 프로그래밍은 애플리케이션, 함수의 구성요소, 더 나아가서 언어 자체를 함수처럼 여기도록 만들고, 이러한 함수 개념을 가장 우선순위에 놓는다.”&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;“함수형 사고방식은 문제의 해결방법을 동사(함수)들로 구성(조합)하는 것”&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i&gt;ㅡ마이클 포커스 &amp;#x3C;클로저 프로그래밍의 즐거움&gt; 중…&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;객체지향에선 데이터를 만든다음에 그 데이터에 맞게 함수를 만드는데,
+함수형에선 그 반대로 함수를 먼저 만들고 시작!&lt;/p&gt;
+&lt;p&gt;우리는 함수형을 왜 써야 하는가보다는 어떻게 전환하는 가에 대해 생각을 해야 한다!&lt;/p&gt;
+&lt;h2 id=&quot;다형성&quot;&gt;&lt;a href=&quot;#%EB%8B%A4%ED%98%95%EC%84%B1&quot; aria-label=&quot;다형성 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;다형성…&lt;/h2&gt;
+&lt;p&gt;method는 객체지향 프로그래밍.&lt;br /&gt;
+method의 특징은 해당 클래스에 정의되어 있기 때문에 해당 클래스의 인스턴스에만 사용할 수 있음.
+예를 들어 map과 filter는 배열에서만 사용 가능쓰&lt;/p&gt;
+&lt;p&gt;함수형 프로그래밍을 사용하면 다형성도 높아진다!&lt;/p&gt;
+&lt;p&gt;객체지향은 해당하는 객체가 생겨야 평가를 할 수 있어서 데이터가 꼭 생겨야 하는데,
+함수형은 데이터 없이도 함수가 존재할 수 있기 때문에 좀 더 실용적이게 되는 것&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/43f93440-1ee9-11ea-88c2-c54c28403982/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;커링&quot;&gt;&lt;a href=&quot;#%EC%BB%A4%EB%A7%81&quot; aria-label=&quot;커링 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;커링&lt;/h2&gt;
+&lt;p&gt;커링은 함수와 인자를 다루는 기법을 말한다.&lt;br/&gt; 함수에 인자를 하나씩 적용해나가다가 필요한 인자가 채워지면 함수 본체를 실행하는 것.&lt;br /&gt;
+JS에선 커링이 지원되지 않지만, 일급함수가 지원되고 평가시점을 마음대로 다룰수 있기 때문에 커링과 같은 기법을 얼마든지 구현할 수 있다.&lt;br /&gt;
+위에서 만들었던 add_maker도 커링이라고 할 수 있다!&lt;/p&gt;
+&lt;p&gt;예시 코드를 보자..!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function curry(fn) {
+  return function(a) {
+    return function(b) {
+      return fn(a,b);
+    }
+  }
+}
+
+const add = curry(function(a,b){
+  return a+b
+})
+
+let add10 = add(10);
+add10(5) // 15
+add(3)add(5) // 8&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;fn에 a+b 라는 함수가 들어간것이고, a+b 라는 값을 기억했다가
+return 부분에서 a가 인자로 들어가고, b가 인자로 들어가는 함수가 차례로 진행되는데
+결론적으로 a+b 더하는 식으로 이어진다.&lt;/p&gt;
+&lt;p&gt;여기서 add10을 처음에 정의해준 것처럼 변수에 어떠한 값을 먼저 담아야 그게 계속 진행이 되는듯? 어렵다리~~&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function curry(fn) {
+  return function(a,b) {
+    return arguments.length === 2 ? fn(a,b) : function (b) { return fn(a,b)}
+  }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이런식으로도 표현된다고 한다.. 와우…&lt;/p&gt;
+&lt;p&gt;빼기도 한번 만들어볼건데.. 저 식을 저대로 적용하면 -값 적용이 애매하게 된다.
+그래서 순서대로 적용하기 위해 식을 약간 변형해주었다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function curryr(fn) {
+  return function (a,b) {
+    return arguments.length === 2 ? fn(a,b) : function (b) { return fn(b,a)}
+  }
+}
+
+const sub = curryr(function(a,b) {
+  return a-b
+})
+
+let sub10 = sub(10);
+sub(10)(5) // -5&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 하면 오른쪽에서 왼쪽으로 진행되기 때문에 로직에 잘 들어맞게 된다.&lt;/p&gt;
+&lt;p&gt;아래는 커링함수를 get함수에 적용한 코드이다. 이렇게 쓰는 방법도 있구나~~~&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let users = [
+  {id:1, name: &amp;#39;doori&amp;#39;, age: 28},
+  {id:2, name: &amp;#39;dori&amp;#39;, age: 38},
+  {id:3, name: &amp;#39;duri&amp;#39;, age: 48},
+  {id:4, name: &amp;#39;diri&amp;#39;, age: 58},
+  {id:5, name: &amp;#39;dari&amp;#39;, age: 18},
+  {id:6, name: &amp;#39;deri&amp;#39;, age: 8},
+  {id:7, name: &amp;#39;douri&amp;#39;, age: 98},
+]
+
+function get(obj, key) {
+  return obj === null ? undefined : obj[key]
+}
+
+let user1 = users[0];
+console.log(user1.name)
+console.log(get(user1,&amp;#39;name&amp;#39;))
+
+// 요렇게 하는 방법도 있지만..
+
+function curryr(fn) {
+  return function (a,b) {
+    return arguments.length === 2 ? fn(a,b) : function (b) { return fn(b,a)}
+  }
+}
+
+function get(obj, key) {
+  return obj === null ? undefined : obj[key]
+}
+
+const _get = curryr(function(obj,key) {
+  return obj === null ? undefined : obj[key]})
+
+let user1 = users[0];
+console.log(_get(user1, &amp;#39;name&amp;#39;))
+console.log(_get(&amp;#39;name&amp;#39;)(user1))&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;여튼 다시.. 정리하자면! 커링이란~! 본체함수를 실행시키기 원하는 시점까지 미뤄두었다가 최종적으로 평가하는 기법이라고 함.
+커링 넘 어렵다리~~&lt;/p&gt;
+&lt;h2 id=&quot;reduce&quot;&gt;&lt;a href=&quot;#reduce&quot; aria-label=&quot;reduce permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;reduce&lt;/h2&gt;
+&lt;p&gt;와.. reduce 개념이 엄청 헷갈리고 별로 안 좋아했는데 유인동쌤 최고다 진짜&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;function _reduce(list, iter,memo) { }&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;일단 기본 개념은 요로코롬 배열과, 함수와, 직전값이 들어가는건데
+아까 위에서 나왔던 add 함수를 생각해보자면…&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;_reduce([1,2,3], function(a,b) {
+  return a+b;
+},0)
+
+memo = add(0,1)
+memo = add(memo,2)
+memo = add(memo,3)
+add(add(add(0,1),2),3);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;memo는 배열을 돌면서 초기값과 더해주는데
+그 값을 기억했다가 직전값과 더해서 최종적인 합계를 도출해낸다.&lt;/p&gt;
+&lt;p&gt;filter나 map은 배열이 인자로 들어가서 배열을 리턴해내지만,
+reduce는 배열이 들어가면 어떠한 숫자가 나오거나 하나의 객체를 뱉어낸다!&lt;/p&gt;
+&lt;p&gt;reduce가 합계를 도출하는건 알았는데 배열이 들어갔을때 객체를 뱉어낸다는건&lt;br /&gt;
+우리 허선생님을 통해 처음 알게된 사실… 넘 신기 ㅠㅠ&lt;br /&gt;
+reduce… 앞으로 함수형 프로그래밍을 하려면 자주 쓰게 될것같은데
+얼른 더 친해져야겠다 두리듀스!!!! Do Reduce!!!!&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;그런 의미에서 풀어보는 &lt;b&gt;WeCode JS Exercise 문제!&lt;/b&gt;&lt;br/&gt;
+내가 지난번 면접에서 질문 받았던 것을 예리님께서 문제화 해주셨다.&lt;/p&gt;
+&lt;p&gt;Q. 4개의 값을 인자로 받는 함수가 있는데, 인자가 null이나 undefined일 경우 프로퍼티에 추가하면 안된다. 예를 들어 input값이 1, null, 3, undefined 이면 output은 { a: 1, c: 3 }이어야 한다.&lt;/p&gt;
+&lt;p&gt;나의 눈물겨운 첫 시도&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const neesArgs = (h,j,k,l) =&amp;gt; {
+  let obj = {};
+  obj = {a:h, b:j, c:k, d:l}
+  if (h === undefined || typeof h === null) {
+    delete obj.a;
+  }
+  else if (j === undefined || typeof j === null) {
+    delete obj.b;
+  }
+  else if (k === undefined || typeof k === null) {
+    delete obj.c;
+  }
+  else if (l === undefined || typeof l === &amp;#39;&amp;#39;){
+    delete obj.d;
+    // null을 어떻게 잡아야하나
+  }
+  return obj;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;코드는 굉장히 길고 조잡하지만, null값은 삭제 할 수 없었다.&lt;br /&gt;
+그러던 중 허선생님의 꿀팁으로 Object.entries()와 reduce를 써보게 되는데…&lt;br /&gt;
+허선생님이 풀땐 이해가 쏙쏙 된거 같았는데 혼자 하려니 안된다.&lt;br /&gt;
+그렇다.. 과거의 나는 허선생님의 코드를 완전히 이해를 하지 못한것이었다 ㅋㅋㅋ&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const neesArgs  = (...args) =&amp;gt; {
+  let obj = {a:args[0], b: args[1], c: args[2], d: args[3]};
+  return Object.entries(obj).reduce((prev, curr) =&amp;gt; {
+    const key = curr[0];
+    const value = curr[1];
+    return (value !== undefined || null) ? Object.assign({},{key : value} ): null
+  },&amp;#39;&amp;#39;)
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;어떻게든 코드를 줄여보고자 삼항연산자를 썼지만.. 리턴값은 null&lt;br /&gt;
+접근이 잘못되었다는걸 깨닫고 다른 방법을 찾아본다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const neesArgs  = (...args) =&amp;gt; {
+  let obj = {a:args[0], b: args[1], c: args[2], d: args[3]}
+  let temp = {}
+  let converted = Object.entries(obj).filter(el=&amp;gt; {
+    return el[1]
+  })
+  console.log(converted[0][1],&amp;#39;ㅂㅏ뀐거&amp;#39;) // [ [ &amp;#39;a&amp;#39;, 1 ], [ &amp;#39;c&amp;#39;, 2 ] ] &amp;#39;ㅂㅏ뀐거&amp;#39;
+  for(let i in converted) {
+    temp[converted[i][0]] = converted[i][1]
+  }
+  return temp; // { &amp;#39;2&amp;#39;: undefined, a: undefined }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;reduce를 쓰지 않고 for in문을 이용해서 접근해보았다.&lt;br /&gt;
+이렇게도 값이 나오긴 하는데.. reduce를 너무 쓰고 싶었다.
+그래서 &lt;a href=&quot;https://medium.com/dailyjs/rewriting-javascript-converting-an-array-of-objects-to-an-object-ec579cafbfc7&quot;&gt;이 블로그&lt;/a&gt;를 참고해서 내가 짠 식에 적용해보았다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const neesArgs  = (...args) =&amp;gt; {
+  let obj = {a:args[0], b: args[1], c: args[2], d: args[3]};
+  return Object.entries(obj).reduce((obj, item) =&amp;gt; {
+    if (item[1] !== undefined &amp;amp;&amp;amp; item[1] !==  null) {
+      obj[item[0]] = item[1]
+    }
+    return obj
+  },{})
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;결과는 성공적.. 드뎌 제출완료쓰&lt;br /&gt;
+허선생님은 쫌 더 간단하게 풀었던 것 같은데.. 월요일날 물어봐야지 ㅠㅠ&lt;/p&gt;
+&lt;p&gt;부족함이 너무 느껴져서 공부할 게 태산인 요즘이지만!
+이렇게 하나 하나 개념 정리하면서 넘어가면 언젠간 잘하게 되겠지!!&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;문어,지지말자!! 화이팅쓰!!! 문어발식 공부하는 모든 개발자분들~&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/0fbf8d50-1ee4-11ea-b5c9-61067e78208a/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;reference&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.inflearn.com/course/%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D#&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.inflearn.com/course/%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D#&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/dailyjs/rewriting-javascript-converting-an-array-of-objects-to-an-object-ec579cafbfc7&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://medium.com/dailyjs/rewriting-javascript-converting-an-array-of-objects-to-an-object-ec579cafbfc7&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[허선생님과 Node.js 공부 - 노드 초기세팅, 비동기, router]]></title><description><![CDATA[허선생님의 찰떡같은 명강의를 듣고 블로그 정리해보기! node를 파보니까 자바스크립트 작동원리에 대해 더 잘 이해하게 되는것 같기도 하고?? 넘 재밌는 시간!]]></description><link>https://gollumnima.github.io//posts/nodeJS_2</link><guid isPermaLink="false">https://gollumnima.github.io//posts/nodeJS_2</guid><pubDate>Wed, 11 Dec 2019 21:23:29 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/98513bc0-1b22-11ea-929c-e3202fd1cd14/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;b&gt;허선생님의 귀중한 강의를 듣고 정리해 본 노드 포스팅!&lt;/b&gt;&lt;br/&gt;
 썸네일의 잎사귀는 노드 느낌 나서 뙇!&lt;br/&gt;
 우리 허선생님은 찰떡같이 가르치셨으나, 학생(나 ㅋㅋㅋ)이 못 알아듣고 왜곡해서 이상한 말을 썼을 수도 있음..👉👈&lt;/p&gt;
