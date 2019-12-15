@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Doo Reply!]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 15 Dec 2019 03:28:39 GMT</lastBuildDate><item><title><![CDATA[유인동님의 함수형 프로그래밍 - 순수함수, 일급함수, currying, reduce]]></title><description><![CDATA[허선생님의 추천을 받고 인프런에 올라온 유인동님의 함수형 프로그래밍 강의를 정리해보고 있다. 성격이 급해서 빨리빨리에 집중하다 보니 중요한 것들을 놓치고 있는 것 같아서 다시 자바스크립트 공부중인 요즘!]]></description><link>https://gollumnima.github.io//posts/functional_programming1</link><guid isPermaLink="false">https://gollumnima.github.io//posts/functional_programming1</guid><pubDate>Sun, 15 Dec 2019 11:45:29 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/1f276140-1ee5-11ea-a04d-b735fbfc6528/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Doo Reply!]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 15 Dec 2019 09:38:21 GMT</lastBuildDate><item><title><![CDATA[유인동님의 함수형 프로그래밍 - 순수함수, 일급함수, currying, reduce]]></title><description><![CDATA[허선생님의 추천을 받고 인프런에 올라온 유인동님의 함수형 프로그래밍 강의를 정리해보고 있다. 성격이 급해서 빨리빨리에 집중하다 보니 중요한 것들을 놓치고 있는 것 같아서 다시 자바스크립트 공부중인 요즘!]]></description><link>https://gollumnima.github.io//posts/functional_programming1</link><guid isPermaLink="false">https://gollumnima.github.io//posts/functional_programming1</guid><pubDate>Sun, 15 Dec 2019 11:45:29 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/1f276140-1ee5-11ea-a04d-b735fbfc6528/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;성공적인-프로그래밍이란&quot;&gt;&lt;a href=&quot;#%EC%84%B1%EA%B3%B5%EC%A0%81%EC%9D%B8-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%9D%B4%EB%9E%80&quot; aria-label=&quot;성공적인 프로그래밍이란 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;성공적인 프로그래밍이란?&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;사용성, 성능, 확장성, 기획 변경에 대한 대응력이 좋은 것..!&lt;/li&gt;
@@ -250,7 +250,187 @@ reduce… 앞으로 함수형 프로그래밍을 하려면 자주 쓰게 될것�
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.inflearn.com/course/%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D#&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.inflearn.com/course/%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D#&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://medium.com/dailyjs/rewriting-javascript-converting-an-array-of-objects-to-an-object-ec579cafbfc7&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://medium.com/dailyjs/rewriting-javascript-converting-an-array-of-objects-to-an-object-ec579cafbfc7&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[허선생님과 Node.js 공부 - 노드 초기세팅, 비동기, router]]></title><description><![CDATA[허선생님의 찰떡같은 명강의를 듣고 블로그 정리해보기! node를 파보니까 자바스크립트 작동원리에 대해 더 잘 이해하게 되는것 같기도 하고?? 넘 재밌는 시간!]]></description><link>https://gollumnima.github.io//posts/nodeJS_2</link><guid isPermaLink="false">https://gollumnima.github.io//posts/nodeJS_2</guid><pubDate>Wed, 11 Dec 2019 21:23:29 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/98513bc0-1b22-11ea-929c-e3202fd1cd14/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[허선생님과 Node.js 공부 - error 발생시키기, 중첩라우팅, fs]]></title><description><![CDATA[오늘도 허선생님의 강의 듣고 정리하기 시간! 내 이해력에 비해 진도가 빠르지만.. 이렇게 블로깅으로 기록을 해놓으면 언젠간 이해하지 않을까 싶어서 오늘도 블로그 달린다!!! ]]></description><link>https://gollumnima.github.io//posts/nodeJS_3</link><guid isPermaLink="false">https://gollumnima.github.io//posts/nodeJS_3</guid><pubDate>Thu, 12 Dec 2019 16:37:29 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/3b541bc0-1c0a-11ea-b7f5-31ede584ba37/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;error-발생시키기&quot;&gt;&lt;a href=&quot;#error-%EB%B0%9C%EC%83%9D%EC%8B%9C%ED%82%A4%EA%B8%B0&quot; aria-label=&quot;error 발생시키기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;error 발생시키기&lt;/h2&gt;
+&lt;p&gt;status에 따라 에러가 발생하도록 내가 error number와 메시지를 지정할 수 있다.
+예를 들어 지정하지 않은 앤드포인트에 접속했을 때 404가 발생하도록 해보자.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;app.use((req, res, next) =&amp;gt; {
+   res.status(404).json({
+     message: &amp;#39;존재하지 않는 url입니다&amp;#39;
+   });
+});&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;response의 status가 404 일때 다음과 같은 메시지가 뜨도록 설정했다.&lt;br /&gt;
+다음과 같은 방식으로도 해볼 수도 있다!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;app.use((req, res, next) =&amp;gt; {
+  const err = new Error(&amp;#39;존재하지 않는 url 입니다&amp;#39;);
+  err.status = 404;
+  next(err);
+});&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;우리 허선생님께서 최대한 효율적인 방법을 가르쳐주려고 노력을 많이 해주신다 감동쓰 ㅠㅠ&lt;/p&gt;
+&lt;h2 id=&quot;guard&quot;&gt;&lt;a href=&quot;#guard&quot; aria-label=&quot;guard permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;guard&lt;/h2&gt;
+&lt;p&gt;로그인과 같이 인증을 통해 접근이 가능한 페이지를 만들어줄거다.
+cookie-parser를 이용해서 일단 쿠키 데이터를 만들어줄거다!
+설치는 간단쓰! &lt;code class=&quot;language-text&quot;&gt;npm i cookie-parser&lt;/code&gt; 로 설치하기&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const express = require(&amp;#39;express&amp;#39;);
+const app = express();
+const cookieParser = require(&amp;#39;cookie-parser&amp;#39;);
+const routes = require(&amp;#39;./routes&amp;#39;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;cookieParser라는 변수를 하나 만들어서 cookie-parser메소드를 불러오고,
+그 다음엔 &lt;code class=&quot;language-text&quot;&gt;app.use(cookieParser())&lt;/code&gt; app.use 메소드 내에서 저 함수를 실행시켜야 한다.&lt;/p&gt;
+&lt;h2 id=&quot;중첩-라우트&quot;&gt;&lt;a href=&quot;#%EC%A4%91%EC%B2%A9-%EB%9D%BC%EC%9A%B0%ED%8A%B8&quot; aria-label=&quot;중첩 라우트 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;중첩 라우트&lt;/h2&gt;
+&lt;p&gt;저 위의 코드판에서 routes 변수에 담은 저 값은 뭘까?&lt;br /&gt;
+같은 경로에 routes.js 파일이 있거나 아니면 같은 경로에 존재하는 routes 디렉토리 내의 index.js를 뜻한다.
+나는 후자에 속하는데, 그렇담 routes 디렉토리의 index.js를 까보자&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// index.js
+const express = require(&amp;#39;express&amp;#39;);
+
+// ▶︎
+const router = express.Router();
+const user = require(&amp;#39;./user&amp;#39;);
+
+// ★
+router.get(&amp;#39;/login&amp;#39;, (req, res, next) =&amp;gt; {
+  res
+    .cookie(&amp;#39;usertype&amp;#39;, 1)
+    .status(200)
+    .json({ message: &amp;#39;로그인 테[스트 했습니다&amp;#39; });
+});
+
+router.use((req, res, next) =&amp;gt; {
+  console.log(&amp;#39;매 요청마다 작도ㅓㅇ&amp;#39;);
+  next();
+});
+module.exports = router;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;★ 별쪽 코드를 보면.. router가 get 메소드를 받고있다.&lt;br/&gt;
+원래 이건 app의 입장에서만 받을 수 있는건데 ▶︎ 부분을 보면
+router가 express에서 Router로서 값이 담겼다.
+express모듈을 불러와서 router라는 변수가 마치 app 인것처럼 행동할 수 있는 것..! 맞나?&lt;/p&gt;
+&lt;p&gt;그리하여… ★ 코드를 다시 한번 확인해보자면…!&lt;br /&gt;
+/login url로 접속했을때 res의 쿠키가 usertype:1이고,
+마침 그 상태가 200이면 message: 로그인 테스트했습니다. 가 뜨게 하는건데&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/ce685860-1bef-11ea-aee9-abd517690d87/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;짠 이렇게 뜬다!
+개발자도구를 열어 Application을 확인해보면 쿠키도 잘 들어와 있다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/6aa476d0-1f1c-11ea-8fa5-b9dd989fc091/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;요렇게!&lt;/p&gt;
+&lt;p&gt;나의 콘솔창도 한번 보자&lt;/p&gt;
+&lt;p&gt;정리해보자면, 지금 구조가 login 페이지에 접속하면 쿠키가 생성이 되는 거고
+checkUser 함수가 적용된 코드에는 권한이 필요한 것이다.
+쿠키를 지우고 로그인을 거치지 않은 채, 다른 페이지를 접속하면 권한이 없다고 나온다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/13c1f430-1c9e-11ea-a292-c164e0afb82f/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;요렇게! 짱신기~&lt;/p&gt;
+&lt;p&gt;더 나아가서.. checkUser함수를 controllers 디렉토리의 auth.js에 넣어주자.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;app.use((req, res, next) =&amp;gt; {
+  console.log(req.cookies);
+  if (req.cookies.usertype === 1) return next();
+  const err = new Error(&amp;#39;권한이 없네용&amp;#39;);
+  err.status = 401;
+  next(err);
+  // node.js에선 else를 안 쓰고 바로 리턴해버림. 중괄호를 최대한 줄이려는 관습이 있음
+});
+
+login 한다음에 user 들어가면 유저목록이 뜨는데
+로그인 하기 전에 user 먼저 들어가면 권한이 없다고 에러 발생&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;cookie의 usertype이 1이 아닐 경우 에러를 던지는 코드다.
+index.js에서 로그인할때의 쿠키를 지정하는 코드가 있는데 그걸 살짝 바꿔줄거다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;router.get(&amp;#39;/login&amp;#39;, (req, res, next) =&amp;gt; {
+  res
+    .cookie(&amp;#39;macaron&amp;#39;, 2)
+    .status(200)
+    .json({ message: &amp;#39;로그인 테[스트 했습니다&amp;#39; });
+});&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;res에서 쿠키가 들어오는 곳을 macaron으로 바꿔주었다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/14f26fd0-1f0d-11ea-bf45-79721d598144/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;그러고 나서 user페이지에 들어가보자.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/7c8d1c80-1f0d-11ea-80d8-65652475e66e/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;쿠키가 usertype, 1이 아니기 때문에 접근 불가쓰~&lt;/p&gt;
+&lt;p&gt;여기까지 중첩라우터와 guard를 살펴봤고..
+인제 진짜 신기한 걸 할꺼다!&lt;/p&gt;
+&lt;h2 id=&quot;file-system-module&quot;&gt;&lt;a href=&quot;#file-system-module&quot; aria-label=&quot;file system module permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;File System Module&lt;/h2&gt;
+&lt;p&gt;노드는 신기하게도 파일의 읽고 쓰기가 가능하다!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// services/json.js
+const fs = require(&amp;#39;fs&amp;#39;);
+const path = require(&amp;#39;path&amp;#39;);
+
+// 옛날방식의 비동기를 promise형으로 바꾼 것
+const readJSON = (name) =&amp;gt; new Promise((resolve, reject) =&amp;gt; {
+  // dirname은 절대경로 찍는 명령어
+  fs.readFile(path.join(__dirname, `../data/${name}.json`), (err, data) =&amp;gt; {
+    if (err) return reject(err);
+    try {
+      const result = JSON.parse(data);
+      resolve(result);
+    } catch (e) {
+      reject(e);
+    }
+    resolve();
+  });
+});
+
+const writeJSON = (name, data) =&amp;gt; new Promise((resolve, reject) =&amp;gt; {
+  try {
+    const json = JSON.stringify(data);
+    fs.writeFile(path.join(__dirname, `../data/${name}.json`), json, (err) =&amp;gt; {
+      // 파일저장이 잘 됐는지 안됐는지 확인하는거니까 에러밖에 안 넣어줘도 됨
+      if (err) return reject(err);
+      resolve(true); // 생략가능
+    });
+  } catch (e) {
+    reject(e);
+  }
+  // 첫번째가 경로, 두번째가 데이터, 세번째가 콜백
+});
+
+module.exports = {
+  readJSON, writeJSON // 똑같은 이름으로 내보내서 키랑 밸류 생략쓰
+};&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위와 같이 파일 읽기 및 쓰기 코드를 써준다.
+그 다음에 routes 디렉토리 안의 user.js 에 아래와 같이 써준다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// routes/user.js
+const express = require(&amp;#39;express&amp;#39;);
+const validator = require(&amp;#39;express-validator&amp;#39;);
+const {validationMiddleware} = require(&amp;#39;../controllers/validator&amp;#39;)
+
+const router = express.Router();
+const { checkUser } = require(&amp;#39;../controllers/auth&amp;#39;);
+// const checkUser = require(&amp;#39;../controllers/auth&amp;#39;).checkUser 같은거임
+const json = require(&amp;#39;../services/json&amp;#39;);
+
+router.use(checkUser);
+
+router.get(&amp;#39;/&amp;#39;, checkUser, (req, res, next) =&amp;gt; {
+  json.writeJSON(&amp;#39;test&amp;#39;, { test: &amp;#39;성공쓰&amp;#39; })
+    .then((rs) =&amp;gt; {
+      console.log(rs);
+    }).catch((er) =&amp;gt; {
+      console.log(er);
+    });
+  const page = req.query;
+  console.log(req.query);
+  res.status(200).json({ name: &amp;#39;유저 목록&amp;#39; });
+});
+
+// user에만 권한이 있고, user/id 에는 영향 안줌. 독립적으로 작동함
+router.get(&amp;#39;/:id&amp;#39;, validationMiddleware(
+  validator.param(&amp;#39;id&amp;#39;).toInt().isInt(),
+),(req, res, next) =&amp;gt; {
+  const id = req.params.id;
+  console.log(id);
+  res.status(200).json({
+    name: &amp;#39;허선생님&amp;#39;,
+    id
+  }); // id: id 객체 값과 프로퍼티가 동일하면 지워짐.
+});
+
+module.exports = router;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;그 다음에 서버를 켜고 routes에 등록되어 있는 user로 접속을 해보자!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/0586d2b0-1f09-11ea-9ebb-a9e9116b5b0c/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;원래 data 디렉토리 안에는 아무 것도 없었으나…&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/2f4773c0-1f09-11ea-b3f4-e73280e2e0cc/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;서버를 켜고 접속하는 순간 test.json 파일이 data 폴더 내부에 생성된다.
+그리고 메시지는 user.js에서 내가 설정한대로 성공쓰라고 뙇!!&lt;/p&gt;
+&lt;p&gt;없던 파일을 이렇게 만들어내다니.. 넘나 신기한 노드의 세상~&lt;br /&gt;
+아직도 이해못하는 부분들이 많지만.. Promise랑 call back함수 열심히 공부해야지 ㅠ&lt;/p&gt;</content:encoded></item><item><title><![CDATA[허선생님과 Node.js 공부 - 노드 초기세팅, 비동기, router]]></title><description><![CDATA[허선생님의 찰떡같은 명강의를 듣고 블로그 정리해보기! node를 파보니까 자바스크립트 작동원리에 대해 더 잘 이해하게 되는것 같기도 하고?? 넘 재밌는 시간!]]></description><link>https://gollumnima.github.io//posts/nodeJS_2</link><guid isPermaLink="false">https://gollumnima.github.io//posts/nodeJS_2</guid><pubDate>Wed, 11 Dec 2019 21:23:29 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/98513bc0-1b22-11ea-929c-e3202fd1cd14/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;b&gt;허선생님의 귀중한 강의를 듣고 정리해 본 노드 포스팅!&lt;/b&gt;&lt;br/&gt;
 썸네일의 잎사귀는 노드 느낌 나서 뙇!&lt;br/&gt;
 우리 허선생님은 찰떡같이 가르치셨으나, 학생(나 ㅋㅋㅋ)이 못 알아듣고 왜곡해서 이상한 말을 썼을 수도 있음..👉👈&lt;/p&gt;
