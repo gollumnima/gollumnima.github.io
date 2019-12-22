@@ -1,4 +1,56 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Doo Reply!]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Thu, 19 Dec 2019 13:05:50 GMT</lastBuildDate><item><title><![CDATA[허선생님과 함께하는 Maria DB로 데이터 만들기와 Node.js에서 적용]]></title><description><![CDATA[프로젝트 할때 mock-up 데이터 만들려고 json형식의 데이터 파일을 vscode에서 만든 적은 있었는데, 실제 백앤드 데이터 테이블을 만든 적은 없었다! 근데 오늘, 그걸 해냈다! maria DB로 데이터 만들어 본 후기훅이~]]></description><link>https://gollumnima.github.io//posts/nodeJS_4</link><guid isPermaLink="false">https://gollumnima.github.io//posts/nodeJS_4</guid><pubDate>Thu, 19 Dec 2019 10:01:29 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/026a7750-2155-11ea-b3a3-bb0fc898801e/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Doo Reply!]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 22 Dec 2019 09:37:30 GMT</lastBuildDate><item><title><![CDATA[reduce를 이용한 유용한 함수, 자바스크립트 pipeline에 대해 알아보자!]]></title><description><![CDATA[허선생님의 노드 수업을 들으면서 처음 들어봤던 개념, pipeline. 자바스크립트 세상은 아직도 내가 모르는 게 엄청 많구나~~ 열심히 공부하자 둘둘]]></description><link>https://gollumnima.github.io//posts/pipeline</link><guid isPermaLink="false">https://gollumnima.github.io//posts/pipeline</guid><pubDate>Sun, 22 Dec 2019 18:29:39 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/b4e4bda0-2498-11ea-bf90-6f14d76347bb/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;pipeline&quot;&gt;&lt;a href=&quot;#pipeline&quot; aria-label=&quot;pipeline permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;pipeline&lt;/h2&gt;
+&lt;p&gt;아마 함수형 프로그래밍에서 나온 개념일듯..?!
+인자로 받은 함수들을 순차적으로 실행시키는 함수를 말한다.&lt;/p&gt;
+&lt;p&gt;이렇게만 말하면 뭔지 이해가 잘 안가니 예시를 들어보자!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const getName = (person) =&amp;gt; person.name
+console.log(getName({name: &amp;#39;whatispipeline&amp;#39;}))
+
+const uppercase = string =&amp;gt; string.toUpperCase();
+console.log(uppercase(&amp;#39;whatispipeline&amp;#39;))&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위와 같이 getName이라는 함수와 uppercase라는 함수가 있다.
+이를 동시에 실행시키려면 uppercase와 getName함수를 같이 실행시키는 방법이 있다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;uppercase(getName({name:&amp;#39;whatispipeline&amp;#39;}))&lt;/code&gt; 요렇게!&lt;/p&gt;
+&lt;p&gt;근데 여기에 함수를 두 개 더 추가하면 어떻게 될까?&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const reverse = str =&amp;gt; str.split(&amp;#39;&amp;#39;).reverse().join(&amp;#39;&amp;#39;)
+console.log(reverse(&amp;#39;whatispipeline&amp;#39;))
+
+const get6Char = string =&amp;gt; string.substring(0,6)
+console.log(get6Char(&amp;#39;whatispipeline&amp;#39;))&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이 함수들을 동시에 실행시켜 본다면..?
+&lt;code class=&quot;language-text&quot;&gt;reverse(get6Char(uppercase(getName({ name: &amp;#39;whatispipeline&amp;#39; }))))&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;식이 너무 지저분해 보인다… 코드의 가독성을 위해 pipeline을 적용해보자.
+pipe함수는 전역에 저장되어 있는 메소드가 아니기 때문에 선언을 먼저 해줘야 한다.&lt;/p&gt;
+&lt;h2 id=&quot;pipe함수-선언&quot;&gt;&lt;a href=&quot;#pipe%ED%95%A8%EC%88%98-%EC%84%A0%EC%96%B8&quot; aria-label=&quot;pipe함수 선언 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;pipe함수 선언&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;const pipe = (...funcs) =&amp;gt; x =&amp;gt; funcs.reduce((v,f)=&amp;gt; f(v),x)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;reduce에 인자로 두 개의 값이 들어가는데,
+v는 currentValue이고, f는 currentFunction이다.
+정의된 함수에 현재의 값을 넣고, 마지막 인자로는 원래 함수들에 들어갈 인자를 적어주었다.&lt;/p&gt;
+&lt;p&gt;이제 pipe에 함수들을 넣어주기만 하면 된다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;pipe(
+getName,
+uppercase,
+get6Char, reverse)({name:&amp;#39;whatispipeline&amp;#39;})&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;아까 위에서 썼던 코드보단 뭔가 더 정돈된 느낌이다. 일단 보기 깔끔하다!&lt;/p&gt;
+&lt;p&gt;pipe말고도 compose라는 것도 있는데, reduceRight메소드를 이용한다.
+reduce는 들어봤어도 reduceRight은 생전 처음 보는데 와.. 앞으로 공부할 것들이 정말 많구나 하는걸 오늘 또 새삼 느낀다.&lt;br /&gt;
+reduceRight이 궁금한 사람들은 &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight&quot;&gt;MDN문서&lt;/a&gt;를 참고하시길!!&lt;/p&gt;
+&lt;h2 id=&quot;compose함수-선언&quot;&gt;&lt;a href=&quot;#compose%ED%95%A8%EC%88%98-%EC%84%A0%EC%96%B8&quot; aria-label=&quot;compose함수 선언 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;compose함수 선언&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;const compose = (...fns) =&amp;gt; x =&amp;gt; fns.reduceRight((v,f)=&amp;gt;f(v),x)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;pipe를 선언해줬던 것과 동일하게 compose 함수를 선언해준다.
+여기서 주의할점은 reduceRight은 오른쪽에서 왼쪽으로 reduce를 실행시키기 때문에
+인자들의 순서를 pipe와는 반대로 써주어야 한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;compose(
+  reverse,
+  get6Char,
+  uppercase, getName)({name:&amp;#39;whatispipeline&amp;#39;})&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;콘솔을 찍어보면 아까와 동일한 결과가 나온다.&lt;br /&gt;
+pipe든 compose든 아직은 어떤 곳에다가 적용을 해야할지 잘 모르겠으나.. 일단 정리해놓으면 언젠간 쓰겠지?&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;reference&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.freecodecamp.org/news/pipe-and-compose-in-javascript-5b04004ac937/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.freecodecamp.org/news/pipe-and-compose-in-javascript-5b04004ac937/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[허선생님과 함께하는 Maria DB로 데이터 만들기와 Node.js에서 적용]]></title><description><![CDATA[프로젝트 할때 mock-up 데이터 만들려고 json형식의 데이터 파일을 vscode에서 만든 적은 있었는데, 실제 백앤드 데이터 테이블을 만든 적은 없었다! 근데 오늘, 그걸 해냈다! maria DB로 데이터 만들어 본 후기훅이~]]></description><link>https://gollumnima.github.io//posts/nodeJS_4</link><guid isPermaLink="false">https://gollumnima.github.io//posts/nodeJS_4</guid><pubDate>Thu, 19 Dec 2019 10:01:29 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/026a7750-2155-11ea-b3a3-bb0fc898801e/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;maria-db-설치하기&quot;&gt;&lt;a href=&quot;#maria-db-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0&quot; aria-label=&quot;maria db 설치하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Maria db 설치하기&lt;/h2&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;brew install mariadb&lt;/code&gt; 명령어로 설치!&lt;/p&gt;
 &lt;ul&gt;
