@@ -1,4 +1,120 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Doo Reply!]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 25 Dec 2019 15:54:34 GMT</lastBuildDate><item><title><![CDATA[속깊은 JavaScript-변수와 스코프 그리고 웹의 역사]]></title><description><![CDATA[허선생님의 강추도서, 속깊은 Javascript를 드디어 접하다! 이번 포스팅에선 1장과 2장의 내용인 스코프와 클로저에 대해 다룰것이다.]]></description><link>https://gollumnima.github.io//posts/scope_closure</link><guid isPermaLink="false">https://gollumnima.github.io//posts/scope_closure</guid><pubDate>Wed, 25 Dec 2019 18:29:39 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/3cb23d90-26bd-11ea-9fc7-0f544af7c2b0/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Doo Reply!]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Thu, 26 Dec 2019 13:29:59 GMT</lastBuildDate><item><title><![CDATA[timestamp를 현재시간으로 바꿔주는 moment.js와 커링의 콜라보]]></title><description><![CDATA[timestamp를 현재시간으로 바꿔주는 moment.js를 활용하려다 보니, 지난시간 배운 클로저를 이용한 커링을 써먹게 되었다. 코드가 완전 짧아지는 신세계! 지금 바로 공개합니다.]]></description><link>https://gollumnima.github.io//posts/currying_momentJS</link><guid isPermaLink="false">https://gollumnima.github.io//posts/currying_momentJS</guid><pubDate>Thu, 26 Dec 2019 21:48:39 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/0dfffd60-26c3-11ea-bcc6-ff5d30595a6f/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;moment.js에 대한 설명을 하기 이전에 먼저 currying에 대해 짚고 넘어가보자!
+currying은 지난번에 포스팅했던 클로저를 활용해서 코드를 좀 더 단순화 하는 기법이다.
+클로저가 궁금한 분들은 &lt;a href=&quot;https://gollumnima.github.io/posts/scope_closure&quot;&gt;지난번 포스팅&lt;/a&gt; 고고!&lt;/p&gt;
+&lt;h2 id=&quot;currying&quot;&gt;&lt;a href=&quot;#currying&quot; aria-label=&quot;currying permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;currying&lt;/h2&gt;
+&lt;p&gt;간단한 예제부터 살펴보자. 더하기를 해줄거다!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let sum = function(x) {
+  return function(y) {
+    return x+y;
+  }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;sum이라는 변수 안에 x를 인자로 받는 익명함수를 넣어줄건데,
+이 함수는 y를 인자로 받는 익명함수를 리턴하고, 그 익명함수는 최종적으로 x+y를 리턴한다.&lt;/p&gt;
+&lt;p&gt;화살표함수를 이용해서 쫌 더 줄여보자!&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;const sum = x =&amp;gt; y =&amp;gt; x+y&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;놀라운 세상!!
+근데 더하기 같은 경우는 순서가 그다지 중요하지 않으므로 이번엔 제곱연산을 해보자.&lt;/p&gt;
+&lt;p&gt;Answer라는 함수를 만들어줄건데, 이 Answer를 이용해서 제곱하는 square, 세제곱하는 cubic, 네제곱하는 strange도 만들어줄거다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function Answer(num) {
+  return function (n) {
+    return Math.pow(n,num)
+  }
+}
+
+const square = Answer(2)
+const cubic = Answer(3)
+const strange = Answer(4)
+
+console.log(square(2)) // 4
+console.log(cubic(2)) // 8
+console.log(strange(2)) // 16&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;콘솔을 찍어보면 정확히 내가 원하는 값이 나온다!
+커링을 이용해서 더 줄여볼까?&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;const Answer = num =&amp;gt; n =&amp;gt; Math.pow(n,num)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;더하기는 순서가 상관없었지만, 제곱은 인자가 들어가는 순서가 중요하므로 조심 또 조심!&lt;br /&gt;
+n의 num제곱을 결과값으로 리턴해야 하는데,
+square는 Answer의 제곱, 즉 여기서 Answer에 들어가는 인자는 num이다.
+이 Answer함수 내부에 들어있는 n을 인자로 받는 익명함수가 결국 우리가 원하는 값을 리턴하는데
+square(3)은 결국 Answer(2)(3)과 똑같은 값이기 때문에 3의 제곱인 9를 리턴한다.&lt;/p&gt;
+&lt;p&gt;자 그럼 이제 moment에서 적용해보자.&lt;/p&gt;
+&lt;h2 id=&quot;momentjs&quot;&gt;&lt;a href=&quot;#momentjs&quot; aria-label=&quot;momentjs permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;moment.js&lt;/h2&gt;
+&lt;p&gt;moment.js, react-moment… 이것저것 종류가 참 많다.
+둘 다 깔긴 했었는데, 나는 일단 timestamp를 예쁜 날짜형식으로 바꾸는게 목적이어서
+moment-timezone을 설치했다.&lt;/p&gt;
+&lt;p&gt;설치는 간편하게 이렇게! &lt;code class=&quot;language-text&quot;&gt;yarn add moment-timezone&lt;/code&gt;&lt;br /&gt;
+가져다 쓸때도 간단하게 &lt;code class=&quot;language-text&quot;&gt;import moment from &amp;quot;moment-timezone&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;moment도 moment지만 나는 Hooks도 어색하고, timezone의 숫자를 얻어내는 것부터 힘들었다.
+어쨌든… 먼저 firestore field에서 timezone 숫자값을 얻어내자.&lt;/p&gt;
+&lt;p&gt;지난번과 코드가 약간 달라졌다. ClassInfo라는 객체에 모든 정보가 담겨있도록 받았다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const ClassInfo = db.collection(&amp;quot;left_seat&amp;quot;).doc(&amp;#39;wecoder&amp;#39;)
+const CurrentIndexOfClass = db.collection(&amp;quot;left_seat&amp;quot;).doc(&amp;#39;current_th&amp;#39;)
+
+const fetchData = async () =&amp;gt; {
+  try {
+    const classIndex = await CurrentIndexOfClass.get()
+      .then(doc =&amp;gt; {
+        const result = doc.data()
+        return result.current
+      })
+
+    const classInfo = await ClassInfo.get()
+      .then(doc =&amp;gt; doc.data())
+    return classInfo[classIndex]
+  } catch (err) {
+    console.log(err)
+    throw err
+  }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ClassInfo에서 특정 숫자를 입력했을때 해당하는 정보를 받아오기 위해
+classIndex라는 숫자 또한 이용했다.&lt;/p&gt;
+&lt;p&gt;classInfo에서 starting&lt;em&gt;date,closing&lt;/em&gt;date를 통해 timezone 숫자를 받아오는데
+closing_date 자체가 객체기 때문에 seconds라는 property까지 접근해주어야 한다.&lt;br /&gt;
+그렇게 접근했을때의 값은 unix number이기 때문에 우리는 moment를 이용해 내가 원하는 형식의 날짜로 다시 한 번 변형해줘야 한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const allDate = value =&amp;gt; {
+  if (!value || !value.seconds) return &amp;#39;&amp;#39;
+  return moment(value.seconds * 1000).tz(&amp;#39;Asia/Seoul&amp;#39;).format(&amp;#39;YYYY년 M월 D일&amp;#39;)
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;랜더링 되는 중에 undefined가 잠시잠깐 뜰 수 있는데, 그걸 방지하기 위해 value 값이 없거나 value.seconds가 없을때 에러나서 터지지 말라고 쿠션 조건을 한줄 넣어 주었다.&lt;/p&gt;
+&lt;p&gt;리턴되는 moment함수에선 value.seconds에 1000을 곱해줬는데, 이 작업을 해주지 않으면 1970년으로 나온다 ㅋㅋㅋ&lt;br /&gt;
+그리고 .tz에 해당 지역에 대한 정보를 넣어줘야 시차(?)가 맞는다.&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;format은 진짜 진짜 진짜로 핵 신기하다.&lt;br /&gt;
+YYYY-MM-DD 해도 되고, YYYY년 MM월 DD일 해도 된다 오오~&lt;br /&gt;
+근데 MM월 말고 M월이라고 해도 된다.&lt;br /&gt;
+M월이라고 하면 한 자릿수인 달엔 01월, 02월 이렇게 표시되는데 M만 하면 그런 걱정은 놉!&lt;/p&gt;
+&lt;p&gt;진짜 똑똑한 라이브러리다 와~~~ 만든 사람에게 박수 👏👏👏&lt;/p&gt;
+&lt;p&gt;어찌됐든… 이렇게 만든 allDate를 그냥 밑에다가 적용하기만 하면 된다.
+&lt;code class=&quot;language-text&quot;&gt;allDate(classInfo.starting_date)&lt;/code&gt; 이렇게!&lt;/p&gt;
+&lt;p&gt;근데 나에게 주어진 과제는 연도가 포함된 날짜와 연도가 포함되지 않은 날짜 두 개!&lt;br /&gt;
+식을 두 번씩 쓰면 코드가 쓸데없이 길어지기 때문에 utils에 moment라는 함수를 따로 만들어주었다.
+이렇게 함수를 따로 빼주면 moment도 한번만 import 하면 되니까 완전 개이득!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// utils/moment.js
+
+import moment from &amp;quot;moment-timezone&amp;quot;
+
+const formatDate = config =&amp;gt; {
+    return value =&amp;gt; {
+        if (!value || !value.seconds) return &amp;#39;&amp;#39;
+        return moment(value.seconds * 1000)
+            .tz(&amp;#39;Asia/Seoul&amp;#39;)
+            .format(config)
+    }
+}
+
+export const withYear = formatDate(&amp;#39;YYYY년M월D일&amp;#39;)
+export const withoutYear = formatDate(&amp;#39;M월D일&amp;#39;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;일단 함수로 한 번 빼줘서 moment를 한 번만 import해도 되고,&lt;br /&gt;
+위에서 allDate를 쓰는 식으로 썼다면 비슷한 템플릿의 코드를 두 번 썼어야 했던 것도
+withYear과 withoutYear이라는 변수를 선언해서 코드는 단 한 번만 써준다 와~&lt;/p&gt;
+&lt;p&gt;적용할 때는 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;span&amp;gt;개강일: {withoutYear(classInfo.starting_date)}&amp;lt;/span&amp;gt;&lt;/code&gt;
+걍 요렇게 해주면 끝!!&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;아 물론 utils/moment함수를 import 해줘야 적용할 수 있겠쥐~
+뭔가 굉장히 똑똑해진 느낌쓰~&lt;/p&gt;
+&lt;p&gt;앞으로 코드를 어떻게 하면 더 효율적으로 줄일 수 있을지를 많이 고민해봐야 할 것 같다!&lt;/p&gt;
+&lt;h2 id=&quot;reference&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;허선생님의 꿀팁&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[속깊은 JavaScript-변수와 스코프 그리고 웹의 역사]]></title><description><![CDATA[허선생님의 강추도서, 속깊은 Javascript를 드디어 접하다! 이번 포스팅에선 1장과 2장의 내용인 스코프와 클로저에 대해 다룰것이다.]]></description><link>https://gollumnima.github.io//posts/scope_closure</link><guid isPermaLink="false">https://gollumnima.github.io//posts/scope_closure</guid><pubDate>Wed, 25 Dec 2019 18:29:39 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/3cb23d90-26bd-11ea-9fc7-0f544af7c2b0/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;본 포스팅은 양성익님의 속깊은 Javascript를 읽고 정리해본 글입니다.&lt;/p&gt;
 &lt;h2 id=&quot;웹과-자바스크립트&quot;&gt;&lt;a href=&quot;#%EC%9B%B9%EA%B3%BC-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8&quot; aria-label=&quot;웹과 자바스크립트 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;웹과 자바스크립트&lt;/h2&gt;
 &lt;p&gt;웹에 대해선 위코드 커리큘럼 중 2주차에 세션을 통해 간단히 정리해본 적이 있는데,
