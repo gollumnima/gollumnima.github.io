@@ -1,4 +1,119 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Doo Reply!]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Thu, 26 Dec 2019 13:29:59 GMT</lastBuildDate><item><title><![CDATA[timestamp를 현재시간으로 바꿔주는 moment.js와 커링의 콜라보]]></title><description><![CDATA[timestamp를 현재시간으로 바꿔주는 moment.js를 활용하려다 보니, 지난시간 배운 클로저를 이용한 커링을 써먹게 되었다. 코드가 완전 짧아지는 신세계! 지금 바로 공개합니다.]]></description><link>https://gollumnima.github.io//posts/currying_momentJS</link><guid isPermaLink="false">https://gollumnima.github.io//posts/currying_momentJS</guid><pubDate>Thu, 26 Dec 2019 21:48:39 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/0dfffd60-26c3-11ea-bcc6-ff5d30595a6f/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Doo Reply!]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sat, 28 Dec 2019 06:54:45 GMT</lastBuildDate><item><title><![CDATA[속깊은 JavaScript - 자바스크립트의 변수 ]]></title><description><![CDATA[지난번 1,2장 정리에 이어 속깊은 자바스크립트 3장을 정리해보았다. 자바스크립트에서 가장 기본적이면서도 필수적인 변수에 대한 글.]]></description><link>https://gollumnima.github.io//posts/js_variable</link><guid isPermaLink="false">https://gollumnima.github.io//posts/js_variable</guid><pubDate>Sat, 28 Dec 2019 15:14:39 GMT</pubDate><content:encoded>&lt;p&gt;본 포스팅은 양성익님의 속깊은 Javascript를 읽고 정리해본 글입니다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/61d15760-289c-11ea-bf43-87ed2aca4d7c/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;변수에 대해선 위코드 1주차때 한번 정리한적이 있는데, 속깊은 자바스크립트(이하 속깊자) 3장 내용이 마침 변수에 대한 거라서 다시한번 정리 고고!&lt;br /&gt;
+지난번 포스팅은 스크롤을 좀만 내리면 링크를 걸어놨다~&lt;/p&gt;
+&lt;h2 id=&quot;자바스크립트-기본형과-typeof&quot;&gt;&lt;a href=&quot;#%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EB%B3%B8%ED%98%95%EA%B3%BC-typeof&quot; aria-label=&quot;자바스크립트 기본형과 typeof permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;자바스크립트 기본형과 typeof&lt;/h2&gt;
+&lt;p&gt;자바스크립트의 기본형 변수에는 여섯 가지가 있는데&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;number&lt;/li&gt;
+&lt;li&gt;string&lt;/li&gt;
+&lt;li&gt;boolean&lt;/li&gt;
+&lt;li&gt;undefined&lt;/li&gt;
+&lt;li&gt;null&lt;/li&gt;
+&lt;li&gt;symbol&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;위의 것들이 기본형 변수이다.&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;JS는 이러한 기본형 변수들과 Object를 기초로 하는 객체들로 구성되는데, 특정 변수가 어떤 형태인지 확인하는 연산자로 typeof 를 사용한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;typeof true // boolean
+typeof undefined // undefined
+typeof null // object&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;희한하게 null의 type을 살펴보면 object이다.&lt;br /&gt;
+자바스크립트 세상에선 null이 기본형으로 구분 되어있지만 왜 type은 object일까?&lt;br /&gt;
+JS가 개발되었을 당시, 타 언어들과 마찬가지로 null이면 0이라는 값을 가지는 객체로 취급해서 개발을 했는데
+typeof null의 결과값을 null로 바꿔버리면 이미 만들어진 웹페이지들에 영향을 주기 때문에 결국 수정은 안했다는 소문이..&lt;/p&gt;
+&lt;h2 id=&quot;new-string과--string의-차이&quot;&gt;&lt;a href=&quot;#new-string%EA%B3%BC--string%EC%9D%98-%EC%B0%A8%EC%9D%B4&quot; aria-label=&quot;new string과  string의 차이 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;new String(&quot;&quot;)과 &quot;&quot;, String(&quot;&quot;)의 차이&lt;/h2&gt;
+&lt;p&gt;이게 뭔지 알아보기 전에 먼저 instanceof에 대해 알아보자.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;왼쪽이 instanceof 오른쪽이니&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;윗줄의 코드처럼 보통 두 개의 인자를 받으며, 왼쪽에 받는 인자가 오른쪽에 받는 인자의 인스턴스인지 확인하고 맞으면 true, 아니라면 false를 리턴한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function Macaron (name, flavour) {
+  this.name = name;
+  this.flavour = flavour;
+}
+
+let gift = new Macaron(&amp;quot;veryVeryStrawBerry&amp;quot;, &amp;quot;strawberry&amp;quot;);
+
+console.log(gift instanceof Macaron); // true
+console.log(gift instanceof Object); // true
+console.log(typeof gift); // &amp;#39;object&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;여기서 알아둬야 할 점은 instanceof는 기본형에 대해선 동작하지 않는다는 점!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;console.log(true instanceof Boolean); // false
+console.log(22 instanceof Number); // false
+console.log([0,1,2] instanceof Array); // true&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;왜냐? 배열을 생성하는 표현식은 내부적으로 new Array()와 같은 형태를 취하기 때문
+string도 한번 확인해볼까?&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const color1 = new String(&amp;#39;blue&amp;#39;)
+const color2 = &amp;quot;blue&amp;quot;
+
+console.log(color1); // [String: &amp;#39;blue&amp;#39;]
+console.log(color2); // &amp;#39;blue&amp;#39;
+console.log(color1 === color2); // false
+console.log(color2 instanceof String) // false
+console.log(color2 instanceof Object) // false&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;color1과 color2는 똑같은 파랑이지만 완전히 같진 않다.
+물론 === 말고 느슨한 비교를 하면 동일하다고 나오긴 하지만, 약간 생긴것도 다르다.
+그래서 일반적인 string이 String 클래스의 인스턴스가 될수없다.&lt;/p&gt;
+&lt;p&gt;근데 기가 막힌건 이거다!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;console.log(color1.constructor === String) // true
+console.log(color2.constructor === String) // true&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;color2의 constructor가 String이라고..? String의 인스턴스는 아니였는데 얘 뭐지…&lt;br /&gt;
+얘의 생성자가 String인 이유는 color2.constructor를 생성할때 내부적으로 형변환이 일어나는데 그 다음에 constructor에 접근하기 때문이라고 한다.&lt;/p&gt;
+&lt;p&gt;이게 내부 스크립트상 돌아가는 내용에 대해선 책에 자세히 나와있다. 책 사세요~&lt;/p&gt;
+&lt;h2 id=&quot;글로벌-변수&quot;&gt;&lt;a href=&quot;#%EA%B8%80%EB%A1%9C%EB%B2%8C-%EB%B3%80%EC%88%98&quot; aria-label=&quot;글로벌 변수 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;글로벌 변수&lt;/h2&gt;
+&lt;p&gt;사실 글로벌 변수를 쓰는걸 지양하기 위해 자바스크립트에서 let과 const가 나오게 됐는데
+왜 글로벌 변수를 쓰는게 위험한지 지금부터 알아보자!&lt;/p&gt;
+&lt;p&gt;일단 JS는 웹에서 쓰인다는 특수성을 가지고 있고, 웹과 다른 애플리케이션들의 차이점에는&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;소스와 데이터의 공개성과 다양한 라이브러리 등 외부 소스 활용&lt;/li&gt;
+&lt;li&gt;비동기 로직과 이벤트 기반 처리&lt;/li&gt;
+&lt;li&gt;PC부터 모바일까지 다양한 브라우징 환경&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이렇게 세 가지가 있는데, 지금부터 글로벌 변수를 쓰면 안되는 이유와 함께 특징을 살펴보자&lt;/p&gt;
+&lt;p&gt;첫번째와 두번째 이유로 글로벌 변수를 쓰게 되면 충돌이 나게 된다.&lt;br /&gt;
+세번째 이유는! 변수 메모리 관리 차원에서 쓰지 않기.&lt;br /&gt;
+웹 페이지가 떠 있는 한 모든 글로벌 변수가 메모리에 상주해서 컴퓨팅자원이 소모된다.&lt;br /&gt;
+여기서 나오는 개념이 바로 garbage collection이다.&lt;/p&gt;
+&lt;h3 id=&quot;garbage-collection&quot;&gt;&lt;a href=&quot;#garbage-collection&quot; aria-label=&quot;garbage collection permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Garbage Collection&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/db9f2860-291e-11ea-9558-a369eb307b94/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;자바스크립트는 변수의 메모리 관리 전략으로 자바의 garbage collection을 사용한다.&lt;br /&gt;
+그래서 해당 변수를 참조하는 다른 변수나 함수가 있다면 메모리에서 해제하지 않는다.&lt;br /&gt;
+JS에서 딱 한번만 순차적으로 실행되고 다시 호출될 일이 없으면 글로벌 변수들은 자신을 참조하는 다른 변수나 함수가 없어서 메모리에서 해제쓰~&lt;/p&gt;
+&lt;p&gt;하지만 JS는 이벤트 콜백 함수가 많이 사용되서 글로벌 변수는 하나 이상의 함수에서 참조할 확률이 높다.
+또, 동적 변수 참조가 가능해서 하위 스코프가 살아있다면 상위 변수들도 계속 참조할 수 있는 상태로 남아 있게 된다.&lt;/p&gt;
+&lt;p&gt;그래서 모바일 브라우저의 메모리 사용을 원활하게 하기 위해 잠시 사용할 변수는 로컬변수로 현재 스코프에 올려서 사용하고, 사용 안 할 때는 해제하는 게 좋다.&lt;/p&gt;
+&lt;h2 id=&quot;window-객체&quot;&gt;&lt;a href=&quot;#window-%EA%B0%9D%EC%B2%B4&quot; aria-label=&quot;window 객체 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;window 객체&lt;/h2&gt;
+&lt;p&gt;다른 언어와 다르게 자바스크립트는 글로벌 영역도 하나의 변수로 정의해서 사용하고 있다.
+이 글로벌 영역은 window 객체가 관장하고 있는데, 과연 무엇일까! 이번 기회에 한번 제대로 알아보자.&lt;/p&gt;
+&lt;p&gt;먼저 Global Object는 어떠한 컨텍스트가 실행되기 전에 먼저 생성 된다.&lt;br /&gt;
+생성자가 없어서 new로 생성할 수 없으며, 함수로 호출할 수도, 프로토타입도 없다.&lt;br /&gt;
+HTML DOM환경에서 이 객체는 window 속성을 가지고 있으며 이게 바로 Global Object 그 자체!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/6da75090-2922-11ea-938b-4127dfc5d23f/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;이렇게 재귀적인 패턴도 엿볼 수 있다.&lt;/p&gt;
+&lt;h2 id=&quot;글로벌-변수-선언-방법&quot;&gt;&lt;a href=&quot;#%EA%B8%80%EB%A1%9C%EB%B2%8C-%EB%B3%80%EC%88%98-%EC%84%A0%EC%96%B8-%EB%B0%A9%EB%B2%95&quot; aria-label=&quot;글로벌 변수 선언 방법 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;글로벌 변수 선언 방법&lt;/h2&gt;
+&lt;p&gt;글로벌 변수 선언방법은 아래의 네 가지 방법이 가장 대표적이라고 한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;글로벌 스코프에서 var 써서 변수 선언&lt;/li&gt;
+&lt;li&gt;상위 스코프에서 같은 변수명으로 선언되지 않고 var없이 바로 변수 사용&lt;/li&gt;
+&lt;li&gt;window 객체가 재건언되지 않은 스코프에서 window.global과 같이 속성 추가&lt;/li&gt;
+&lt;li&gt;window 객체가 재선언되지 않은 스코프에서 window[“global”]과 같이 속성 추가&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/494bf2d0-292e-11ea-aef0-05e32caeab10/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;선언자 없으면 변수 선언 못할줄 알았는데 되네? 신기신기&lt;/p&gt;
+&lt;h2 id=&quot;글로벌-변수-선언-방법의-차이&quot;&gt;&lt;a href=&quot;#%EA%B8%80%EB%A1%9C%EB%B2%8C-%EB%B3%80%EC%88%98-%EC%84%A0%EC%96%B8-%EB%B0%A9%EB%B2%95%EC%9D%98-%EC%B0%A8%EC%9D%B4&quot; aria-label=&quot;글로벌 변수 선언 방법의 차이 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;글로벌 변수 선언 방법의 차이&lt;/h2&gt;
+&lt;p&gt;이건 지난번 포스팅에 써 놓은 내용을 참고하면 좋다.
+지난포스팅이 궁금하다면 &lt;a href=&quot;https://gollumnima.github.io/posts/wecode1_4_TIL_js/&quot;&gt;여기 클릭&lt;/a&gt;!!!&lt;/p&gt;
+&lt;p&gt;급하게 끝내는 것 같지만.. 정리하자면!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;다른언어에서처럼 자바스크립트에서도 글로벌변수 사용 자제하자&lt;/li&gt;
+&lt;li&gt;window객체는 글로벌 스코프의 변수들을 속성으로 가지고 있다&lt;/li&gt;
+&lt;li&gt;선언자 없이 변수 선언시 글로벌 변수가 될 위험성이 있다&lt;/li&gt;
+&lt;li&gt;스코프가 생성되면 선언자 하나에 변수들을 정의하는게 좋다&lt;/li&gt;
+&lt;li&gt;글로벌 변수 사용을 최소화하기 위해 클로저나 모듈패턴을 사용하자&lt;/li&gt;
+&lt;li&gt;상위 스코프에 있는 변수나 속성의 속성을 여러번 접근하는 경우 로컬 변수에 할당해서 사용하자&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;reference&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;속깊은 Javascript(양성익 저)&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[timestamp를 현재시간으로 바꿔주는 moment.js와 커링의 콜라보]]></title><description><![CDATA[timestamp를 현재시간으로 바꿔주는 moment.js를 활용하려다 보니, 지난시간 배운 클로저를 이용한 커링을 써먹게 되었다. 코드가 완전 짧아지는 신세계! 지금 바로 공개합니다.]]></description><link>https://gollumnima.github.io//posts/currying_momentJS</link><guid isPermaLink="false">https://gollumnima.github.io//posts/currying_momentJS</guid><pubDate>Thu, 26 Dec 2019 21:48:39 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/0dfffd60-26c3-11ea-bcc6-ff5d30595a6f/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;moment.js에 대한 설명을 하기 이전에 먼저 currying에 대해 짚고 넘어가보자!
 currying은 지난번에 포스팅했던 클로저를 활용해서 코드를 좀 더 단순화 하는 기법이다.
 클로저가 궁금한 분들은 &lt;a href=&quot;https://gollumnima.github.io/posts/scope_closure&quot;&gt;지난번 포스팅&lt;/a&gt; 고고!&lt;/p&gt;
