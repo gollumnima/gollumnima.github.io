@@ -1,4 +1,451 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Doo Reply!]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sat, 28 Dec 2019 06:54:45 GMT</lastBuildDate><item><title><![CDATA[속깊은 JavaScript - 자바스크립트의 변수 ]]></title><description><![CDATA[지난번 1,2장 정리에 이어 속깊은 자바스크립트 3장을 정리해보았다. 자바스크립트에서 가장 기본적이면서도 필수적인 변수에 대한 글.]]></description><link>https://gollumnima.github.io//posts/js_variable</link><guid isPermaLink="false">https://gollumnima.github.io//posts/js_variable</guid><pubDate>Sat, 28 Dec 2019 15:14:39 GMT</pubDate><content:encoded>&lt;p&gt;본 포스팅은 양성익님의 속깊은 Javascript를 읽고 정리해본 글입니다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Doo Reply!]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Tue, 07 Jan 2020 10:57:31 GMT</lastBuildDate><item><title><![CDATA[속깊은 JavaScript - 프로토타입 2탄]]></title><description><![CDATA[4장 프로토타입에 대한 이야기를 이어서 써본다. 한 장으로 끝내기엔 독자들이 지루해할까봐 두 번에 나눠서 정리해본다!]]></description><link>https://gollumnima.github.io//posts/js_proto_2</link><guid isPermaLink="false">https://gollumnima.github.io//posts/js_proto_2</guid><pubDate>Sat, 04 Jan 2020 19:33:39 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/1f0ee4d0-313c-11ea-9c82-b511d140c87f/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;자바스크립트에서의-상속-활용&quot;&gt;&lt;a href=&quot;#%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%97%90%EC%84%9C%EC%9D%98-%EC%83%81%EC%86%8D-%ED%99%9C%EC%9A%A9&quot; aria-label=&quot;자바스크립트에서의 상속 활용 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;자바스크립트에서의 상속 활용&lt;/h2&gt;
+&lt;p&gt;옛날처럼 웹페이지들이 단순한 정보 전달용으로만 썼을 때는 굳이 상속이 필요없었다.
+하지만 웹개발 방법론이 발달하면서 다양한 데이터 처리 동작들을 구현하기 시작했고, 객체지향의 개념과 함께 상속이 활용되는 경우가 늘어났다!&lt;/p&gt;
+&lt;h3 id=&quot;기존의-상속-구현-방법&quot;&gt;&lt;a href=&quot;#%EA%B8%B0%EC%A1%B4%EC%9D%98-%EC%83%81%EC%86%8D-%EA%B5%AC%ED%98%84-%EB%B0%A9%EB%B2%95&quot; aria-label=&quot;기존의 상속 구현 방법 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;기존의 상속 구현 방법&lt;/h3&gt;
+&lt;p&gt;초창기에는 아래의 코드와 같이 this 대신 새로운 obj를 반환하는 방식으로 상속을 구현했다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function Person() {
+  this.name = &amp;quot;anonymous&amp;quot;;
+  this.job = &amp;quot;none&amp;quot;;
+  this.sayHello = function () {
+    console.log(`Hello, my name is ${this.name}`);
+  };
+}
+
+function Doori() {
+  let obj = new Person();
+  obj.name = &amp;quot;Doori&amp;quot;;
+  obj.job = &amp;quot;FE_DEV&amp;quot;;
+  return obj;
+}
+
+let doori = new Doori();
+doori.sayHello();&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;그치만 이렇게 하면 아주 치명적인 단점이 있는데..&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;console.log(doori instanceof Doori); // false
+console.log(doori instanceof Person); // true&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;doori라는 변수가 Doori 말고 Person의 인스턴스로만 인식된다는 거..ㅠㅠ
+new Doori 키워드를 사용해 객체를 생성했는데, Doori의 인스턴스로 인식못하는 건 아주 치명적인 단점이 될 수 있다.
+그래서 이후 자바스크립트는 function에 기본으로 들어있는 프로토타입 속성을 새롱누 객체로 설정해 상속하는 방법을 채택했다.&lt;/p&gt;
+&lt;p&gt;아래는 객체로 프로토타입을 수정한 자바스크립트의 상속 구현 예시이다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let person = {
+  name : &amp;quot;anonymous&amp;quot;,
+  job : &amp;quot;none&amp;quot;,
+  sayHello : function () {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+}
+
+function Doori() {
+  this.name = &amp;quot;Doori&amp;quot;;
+}
+
+Doori.prototype = person;
+
+let doori = new Doori();
+doori.sayHello();
+person.sayHello();
+console.log(doori instanceof Doori); // true
+console.log(doori instanceof person); // Error!&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이제 doori는 Doori의 인스턴스인것으로 나오는데 문제는 person 변수를 상속했다는 걸 확인 못한다
+그래서 new로 새로운 객체를 만드는 방식으로 이 문제를 해결해보려고 한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function Person() {
+  this.name = &amp;quot;anonymous&amp;quot;;
+  this.sayHello = function () {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+}
+
+function Doori() {
+  this.name = &amp;quot;Doori&amp;quot;;
+}
+
+Doori.prototype = new Person();
+
+let doori = new Doori();
+doori.sayHello();
+console.log(doori instanceof Doori); // true
+console.log(doori instanceof Person); // true&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 바꿨을땐 겉으로 보면 instanceof문제는 해결된 것 같아서 정상적으로 작동하는것처럼 느껴지지만 사실 완전 해결된 건 아니다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/b1365f90-2ef4-11ea-b1db-754382fb2e0a/image.png&quot; alt=&quot;https://images.velog.io/post-images/dooreplay/b1365f90-2ef4-11ea-b1db-754382fb2e0a/image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;doori를 실제로 생성한건 Doori지만, &lt;code class=&quot;language-text&quot;&gt;doori.constructor&lt;/code&gt;를 콘솔에 찍어보면 function Person()이 나온다.
+이러한 이유로 일부 js개발자들은 new와 프로토타입을 수정해서 상속하는걸 좋아하지 않는다고 한다.
+자바스크립트 답지 않다고, 자바에서 억지로 가져온 키워드라고…!
+그럼 이렇게 생각하는 사람들이 주장하는 바람직한 상속법이란 무엇일까!&lt;/p&gt;
+&lt;h3 id=&quot;instanceof-동작-원리&quot;&gt;&lt;a href=&quot;#instanceof-%EB%8F%99%EC%9E%91-%EC%9B%90%EB%A6%AC&quot; aria-label=&quot;instanceof 동작 원리 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;instanceof 동작 원리&lt;/h3&gt;
+&lt;p&gt;자세한 과정에 대해선 속깊자 144p에 잘 나와있다.
+간략히만 짚고 넘어가자면! 일반적인 객체지향 언어에서는 생성자를 기준으로 비교해서 상속을 확인한다.
+하지만, 자바스크립트에선 생성자의 연결이 깨지는 현상때문에 생성자를 기준으로 두지 않고, 프로토타입을 서로 비교하면서 상속여부를 확인한다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;doori instanceof Doori&lt;/code&gt;가 true가 나오는 이유는
+Doori의 프로토타입도 new Person, doori변수에서 사용된 프로토타입도 new Person으로 동일해서 이다.
+내부적으로 생성된 생성자의 연결은 깨졌지만, instanceof가 프로토타입을 기준으로 비교하기 때문에 외부적으로 상속을 확인하는 동작은 정상으로 동작하는 것!&lt;/p&gt;
+&lt;h3 id=&quot;objectcreate-함수&quot;&gt;&lt;a href=&quot;#objectcreate-%ED%95%A8%EC%88%98&quot; aria-label=&quot;objectcreate 함수 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Object.create 함수&lt;/h3&gt;
+&lt;p&gt;위와 같이 내부에서 생성자로 객체를 생성할때 연결이 깨지는걸 싫어하는 개발자들이 만든게 바로 이 함수다!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/4489a890-2efc-11ea-8c37-6f879ec9a53a/image.png&quot; alt=&quot;https://images.velog.io/post-images/dooreplay/4489a890-2efc-11ea-8c37-6f879ec9a53a/image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;위의 캡쳐는 caniuse.com에서 Object.create 검색한 결과이다.
+속깊자 서적이 출간된 해와는 달리 현재 대부분의 브라우저에서 지원을 해주는 속성이다!&lt;/p&gt;
+&lt;p&gt;써보자!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function Person(name) {
+  this.name = name;
+}
+
+Person.prototype = {
+  yell: function() {
+    alert(`My name is ${this.name}`);
+  }
+};
+
+let doori = Object.create(Person.prototype);
+doori.name = &amp;quot;Doori&amp;quot;;
+doori.yell()&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;doori 변수에 doori.name과 같이 속성을 직접 부여하는게 비효율적으로 보이긴 하는데, 좀 더 직관적이다!
+여튼 이 방식대로 쓰면 new 키워드를 쓰지 않고도 함수 호출로 객체가 생성이 된다. 전체적으로 소스에 생성자의 개념이 약해지고 객체의 인스턴스와 인스턴스 간 상속을 강조하는 것이 Object.create함수의 특징!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/0f297aa0-2f05-11ea-baff-b5f62b3e7332/image.png&quot; alt=&quot;https://images.velog.io/post-images/dooreplay/0f297aa0-2f05-11ea-baff-b5f62b3e7332/image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;new 키워드를 사용하는 경우 상속여부를 instanceof를 통해 구분했다.
+근데 Object.create는 인자로 생성자가 아닌 객체를 받아서 이를 확인하는게 조금 다르다.
+다시 말해, 인자로 Person.prototype을 사용해서 생성한 뒤 Person을 비교하는 것이 약간 직관성이 떨어진다.
+예를들어…&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let person = {
+  yell: function() {
+    alert(`My name is ${this.name}`)
+  }
+}
+
+let doori = Object.create(person)
+doori.name = &amp;quot;Doori&amp;quot;;
+doori.yell();
+
+console.log(doori instanceof person)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;doori instanceof person&lt;/code&gt;을 콘솔창에 찍어보면 TypeError가 발생한다.
+Object.create는 객체간 상속을 시켜주는 함수라서 Function을 인자로 받는 instanceof를 실행했을 때에는 에러가 날 수밖에 없다.
+이럴때 필요한 것이 바로 Object.getPrototypeOf이다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/af74a2a0-2f05-11ea-92df-19a12d7a5013/image.png&quot; alt=&quot;https://images.velog.io/post-images/dooreplay/af74a2a0-2f05-11ea-92df-19a12d7a5013/image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;위의 캡쳐화면처럼 Object.create함수로 생성한 객체의 프로토타입을 확인하려면 &lt;code class=&quot;language-text&quot;&gt;Object.getPrototypeOf&lt;/code&gt;를 쓰시오~~&lt;/p&gt;
+&lt;p&gt;그밖에도.. Object.create함수 인자로 일반 객체를 활용했을 때는 isPrototypeOf를 쓰면 된다.(프로토타입 쪽에서 함수를 확인하려고 할 때)&lt;/p&gt;
+&lt;h3 id=&quot;objectcreate의-객체-초기화&quot;&gt;&lt;a href=&quot;#objectcreate%EC%9D%98-%EA%B0%9D%EC%B2%B4-%EC%B4%88%EA%B8%B0%ED%99%94&quot; aria-label=&quot;objectcreate의 객체 초기화 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Object.create의 객체 초기화&lt;/h3&gt;
+&lt;p&gt;객체 생성시엔 new 키워드를 사용하면 생성자 안에서 생성되는 객체를 초기화하는 작업을 수행할 수 있는데, Object.create함수 구현방법을 보면 Object.create와 별도로 객체를 초기화한다.
+이런 과정을 하나의 함수로 묶어서 객체별로 간단한 상속함수를 만들수도 있지만, Object.create함수는 2번째 인자를 선택적으로 받아서 객체를 초기화 한다.&lt;/p&gt;
+&lt;p&gt;예시를 살펴보자.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function Person(name) {
+  this.name = name
+}
+
+Person.prototype = {
+  yell: function() {
+    alert(`My name is ${this.name}`)
+  }
+}
+
+let doori = Object.create(Person.prototype, {
+  name: {
+    value : &amp;quot;Doori&amp;quot;
+  }
+})
+
+doori.yell() // &amp;quot;My name is Doori&amp;quot;
+doori.name = &amp;quot;Gollum&amp;quot;
+doori.yell() // &amp;quot;My name is Doori&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;doori.name을 골룸이라고 다시 설정해줬는데도 doori.yell을 실행시키면 골룸이 아닌 두리라고 뜬다.
+왜냐, Object.create함수를 통해 값만 설정하면 읽기전용 속성이 되서 값을 수정할 수 없다.
+이러한 읽기 전용 속성이 불편할것 같지만, 라이브러리를 만들때 굉장히 유용쓰..!&lt;/p&gt;
+&lt;p&gt;값을 수정하고 싶다면 Object.defineProperty 설정 파라미터를 수정해주면 된다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;value : 설정할 속성의 값(default: undefined)&lt;/li&gt;
+&lt;li&gt;configurable : 속성 지우거나 value 속성 외 설정속성을 바꿀지 여부(default : false)&lt;/li&gt;
+&lt;li&gt;enumerable : for-in 루프에서 해당 속성도 참조할지 여부(default : false)&lt;/li&gt;
+&lt;li&gt;writable : 속성 값 설정 가능 여부(default: false)&lt;/li&gt;
+&lt;li&gt;get: 속성 참조하게 되면 참조용으로 호출할 함수 (default: undefined)&lt;/li&gt;
+&lt;li&gt;set : 속성 설정하게 되면 설정용으로 호출할 함수 (default : undefined)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;예를 들어 이렇게 써주면 된다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let doori = Object.create(Person.prototype, {
+  name: {
+    value: &amp;quot;Gollum&amp;quot;,
+    configurable : true,
+    enumerable: true,
+    writable: true
+  }
+})&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;objectcreate와-new-키워드-콜라보&quot;&gt;&lt;a href=&quot;#objectcreate%EC%99%80-new-%ED%82%A4%EC%9B%8C%EB%93%9C-%EC%BD%9C%EB%9D%BC%EB%B3%B4&quot; aria-label=&quot;objectcreate와 new 키워드 콜라보 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Object.create와 new 키워드 콜라보&lt;/h3&gt;
+&lt;p&gt;두 개를 따로 쓰는 것이 아니라 조합해서 쓸 수도 있다는 사실!
+둘을 한꺼번에 쓰면 앞서 나왔던 생성자의 연결이 깨지는 것을 보완해 설정하면 더욱 좋겠죠?&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function Person() {
+  this.name = &amp;quot;anonymous&amp;quot;;
+}
+
+function Doori() {
+  this.name = &amp;quot;Doori&amp;quot;;
+}
+
+Doori.prototype = Object.create(Person.prototype, {
+  constructor: {
+    value: Doori
+  }
+})
+
+let doori = new Doori();
+console.log(doori instanceof Doori) // true
+console.log(doori instanceof Person) // true
+console.log(doori.constructor) // function Doori()&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 쓰게 되면 Object.create의 두번째 인자로 Doori.prototype의 생성자 속성을 읽기 전용으로 설정해서 기존에 JS가 자체적으로 가지고 있었던 생성자의 연결이 깨졌던 부분이 보완되서 new 키워드를 통한 상속을 사용할 수 있다.&lt;/p&gt;
+&lt;h3 id=&quot;class와-extends를-통한-상속&quot;&gt;&lt;a href=&quot;#class%EC%99%80-extends%EB%A5%BC-%ED%86%B5%ED%95%9C-%EC%83%81%EC%86%8D&quot; aria-label=&quot;class와 extends를 통한 상속 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;class와 extends를 통한 상속&lt;/h3&gt;
+&lt;p&gt;new키워드와 함수를 사용하는 것에 대해 함수가 모호한 기능을 수행하고 있다는걸 인지한 개발자들은 ECMAScript6 부터는 class와 extends 개념을 도입했다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;class Person {
+  constructor() {
+    this.name = &amp;quot;anonymous&amp;quot;
+  }
+}
+
+class Doori extends Person {
+  constructor() {
+    super();
+    this.name = &amp;quot;Doori&amp;quot;
+  }
+}
+
+let doori = new Doori();
+console.log(doori instanceof Doori) // true
+console.log(doori instanceof Person) // true
+console.log(doori.constructor) // class Doori extends Person&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;리액트 클래스형 컴포넌트에서 많이 본 구조다 ㅋㅋ
+여튼 js에서도 인제 클래스라는 개념이 생겨서 다른 객체지향 언어들과 비슷하게 상속을 할 수 있게 되었다.
+class와 extends를 쓰더라도 프로토타입 상속을 한것과 동일하게 instanceof가 작동하고, 생성자 또한 프로토타입과 동일하게 출력된다.&lt;/p&gt;
+&lt;h3 id=&quot;생성자-vs-objectcreate-성능-비교&quot;&gt;&lt;a href=&quot;#%EC%83%9D%EC%84%B1%EC%9E%90-vs-objectcreate-%EC%84%B1%EB%8A%A5-%EB%B9%84%EA%B5%90&quot; aria-label=&quot;생성자 vs objectcreate 성능 비교 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;생성자 vs Object.create 성능 비교&lt;/h3&gt;
+&lt;p&gt;성능 측면에서 보자면 생성자를 이용하는게 훨씬 좋다.
+근데 앞서 살펴본 몇 가지 이슈들이 있고, 사실상 객체를 18만 개 이상 생성할게 아니면 큰 차이는 없다.&lt;/p&gt;
+&lt;p&gt;Object.create는 new와 같이 자바스크립트에 객체지향 개념을 넣고자 하는 게 아니라, 원래 js가 가지고 있는 Object 기반의 언어적 특징을 강화하면서, 객체지향이 필요할때 활용할 수 있는 class와 extends 키워드를 정의했다.
+따라서 JS를 공부하는 우리 개발자들은 new와 Object.create를 구분해서 개발하는 지식이 필요하다!
+성능 이슈는 서버환경에서 큰 영향이 없지만 모바일 환경에서의 자바스크립트라면 조금 고민해볼 필요가 있다는 거..!&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;정리해보자&quot;&gt;&lt;a href=&quot;#%EC%A0%95%EB%A6%AC%ED%95%B4%EB%B3%B4%EC%9E%90&quot; aria-label=&quot;정리해보자 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;정리해보자&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Fucntion을 생성할 때 기본적으로 프로토타입 속성이 생성된다.&lt;/li&gt;
+&lt;li&gt;프로토타입을 다른 객체로 설정함으로써 다른 객체의 속성들과 함수들을 공유/상속 할 수 있다&lt;/li&gt;
+&lt;li&gt;객체는 프로토타입과 내부 링크로 연결되어 있어 프로토타입의 속성들을 자기의 속성인 것처럼 접근할 수 있다&lt;/li&gt;
+&lt;li&gt;객체에서 직접 this.constructor.prototype으로 접근하지 않으면 프로토타입의 값은 수정되지 않고, 현재 객체 내에 같은 이름의 속성이 설정되어 프로토타입의 설정값이 가려진다&lt;/li&gt;
+&lt;li&gt;new로 객체를 생성할 때 프로토타입은 객체 간 공유되어 메모리 자원이 절약될 수 있다&lt;/li&gt;
+&lt;li&gt;여러 개의 프로토타입 체인을 만들 경우 속성 조회에 있어서 성능 저하가 있을 수도 있다&lt;/li&gt;
+&lt;li&gt;여러 개의 프로토타입 체인을 만들 경우 속성 조회에 있어서 성능 저하가 있을 수도 있다&lt;/li&gt;
+&lt;li&gt;new는 생성자 기반 상속으로 사용되며 Object.create는 객체 기반 상속으로 사용된다.&lt;/li&gt;
+&lt;li&gt;객체지향을 위한 class와 extends가 키워드가 정의되어있다.&lt;/li&gt;
+&lt;li&gt;new와 생성자로 객체를 생성하는 것이 Object.create 로 생성하는 것보다 성능상 유리하다&lt;/li&gt;
+&lt;li&gt;성능 이슈는 객체를 다량응로 사용하는 경우 조심하면 좋지만 특별한 경우가 아니면 체감하기 힘들다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;reference&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;속깊은 자바스크립트 (양성익 저)&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[속깊은 JavaScript - 프로토타입 1탄]]></title><description><![CDATA[지난번 3장에 이어 이번엔 4장 프로토타입에 대한 이야기이다. 넘넘 어렵다리....]]></description><link>https://gollumnima.github.io//posts/js_proto_1</link><guid isPermaLink="false">https://gollumnima.github.io//posts/js_proto_1</guid><pubDate>Thu, 02 Jan 2020 19:25:39 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/bc50cc20-2af4-11ea-b839-83a2e19afd0b/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;프로토타입을-통한-객체지향-그리고-상속&quot;&gt;&lt;a href=&quot;#%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85%EC%9D%84-%ED%86%B5%ED%95%9C-%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EC%83%81%EC%86%8D&quot; aria-label=&quot;프로토타입을 통한 객체지향 그리고 상속 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;프로토타입을 통한 객체지향 그리고 상속&lt;/h2&gt;
+&lt;p&gt;자바나 C++같은 객체지향 언어와 달리 JS는 객체지향 개념을 지원하기 위해 프로토타입을 사용한다.
+이 프로토 타입으로 구현할 수 있는 대표적인 객체지향 개념이 바로 상속이다!&lt;br /&gt;
+프로토타입은 말 그대로 ‘원형’을 뜻하고 이게 뭔지는 스크롤 좀 더 내리면 알수있다.&lt;/p&gt;
+&lt;h3 id=&quot;자바스크립트와-자바에서의-객체-생성&quot;&gt;&lt;a href=&quot;#%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%99%80-%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C%EC%9D%98-%EA%B0%9D%EC%B2%B4-%EC%83%9D%EC%84%B1&quot; aria-label=&quot;자바스크립트와 자바에서의 객체 생성 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;자바스크립트와 자바에서의 객체 생성&lt;/h3&gt;
+&lt;p&gt;자바스크립트에선 자바의 문법 중 몇 가지를 따라하고 있는데 그 중 하나가 바로 new 키워드이다.
+자바에선 객체를 class로, 자바스크립트에선 function으로 정의하는데&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function Person(name, blog) {
+  this.name = name;
+  this.blog = blog;
+}
+
+let doori = new Person(&amp;quot;doori&amp;quot;,&amp;quot;gollumnima@github.io&amp;quot;);
+console.log(doori) // Person { name: &amp;#39;doori&amp;#39;, blog: &amp;#39;gollumnima@github.io&amp;#39; }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위의 예시만 봐도 js에서 function키워드는 class 대신 쓰인것처럼 보인다.
+그렇지만 자바의 소스코드와 비교해보면 거의 비슷!!
+객체 지향 관점에서 보면 자바스크립트에서 function은 자바의 class 생성자를 합쳐놓은 개념이라고 볼 수 있다.&lt;br /&gt;
+그치만 자바스크립트에도 class 키워드가 생겼다!! 다른 언어와 이질감을 줄이기 위해 만들었다는데&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;class Person {
+  constructor(name, blog) {
+    this.name = name;
+    this.blog = blog;
+  }
+}
+
+let doori = new Person(&amp;quot;doori&amp;quot;,&amp;quot;gollumnima@github.io&amp;quot;);
+console.log(doori)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 클래스로 정의하면 내부적으로 조금 특수한 function으로 정의된다.
+&lt;code class=&quot;language-text&quot;&gt;console.log(Person())&lt;/code&gt; 다음과 같이 콘솔을 찍어보자.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/393d4130-2c46-11ea-89dd-4764e5be6395/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;new 키워드없이 클래스함수를 바로 호출했을때 에러가 난다.
+이걸 이해하려면 먼저 함수호출과 this에 대해 이해해야 하는데!&lt;/p&gt;
+&lt;h3 id=&quot;this의-이해&quot;&gt;&lt;a href=&quot;#this%EC%9D%98-%EC%9D%B4%ED%95%B4&quot; aria-label=&quot;this의 이해 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;this의 이해&lt;/h3&gt;
+&lt;p&gt;this를 이해하기 위해선 먼저 함수 호출하는 방법에 대해서 알아야 한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;일반 함수로의 호출&lt;/li&gt;
+&lt;li&gt;멤버함수로의 호출&lt;/li&gt;
+&lt;li&gt;call()함수를 이용한 호출&lt;/li&gt;
+&lt;li&gt;apply()함수를 이용한 호출&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;각 호출 방법에 따라 결정되는 this를 살펴보자.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function what() {
+  return this.toString();
+}
+
+let is = {
+  it: what,
+  toString: function() {
+    return &amp;quot;[object is]&amp;quot;;
+  }
+};
+
+what();
+is.it();
+what.call();
+what.apply(is);
+is.it.call(undefined);
+is.it.call(is);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위의 코드를 실행시켜보면 다음과 같은 결과가 나온다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/ecd3c5a0-2c57-11ea-97d1-11e00e5c7a77/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;정리해보자면,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;일반함수에서의 this = window&lt;/li&gt;
+&lt;li&gt;멤버함수에서의 this = 해당 함수가 속한 객체&lt;/li&gt;
+&lt;li&gt;인자X call/apply에서의 this = window&lt;/li&gt;
+&lt;li&gt;인자1개 call/apply에서의 this = 첫번째 인자&lt;/li&gt;
+&lt;li&gt;인자x 멤버함수 call/apply에서의 this = window&lt;/li&gt;
+&lt;li&gt;인자1개 멤버함수 call/apply에서의 this = 첫번째 인자&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이처럼 this는 함수나 스코프 기반으로 결정되는 것이 아니라 호출 방법에 따라 변경된다.
+함수가 호출되는 방법 외에 this가 사용되는 경우가 또 있는데 그게 바로 생성자로 new 키워드를 사용할때 이다.&lt;/p&gt;
+&lt;h3 id=&quot;new-키워드&quot;&gt;&lt;a href=&quot;#new-%ED%82%A4%EC%9B%8C%EB%93%9C&quot; aria-label=&quot;new 키워드 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;new 키워드&lt;/h3&gt;
+&lt;p&gt;보통 자바와 같은 객체지향 언어에서 많이 쓰이는 new 키워드는 메모리를 새롭게 할당하고, 해당하는 클래스의 생성자를 호출해 인스턴스를 초기화한다.
+JS에서는 이와는 조금 다르게 new 키워드 뒤에 오는 객체의 생성자를 통해 생성과 초기화가 한번에 일어난다.&lt;/p&gt;
+&lt;p&gt;자세한 과정은 ECMAScript의 [[Construct]] 부분을 참고하면 좋다.
+물론 속깊자 122~123p에 아주 잘 나와있다!&lt;/p&gt;
+&lt;h3 id=&quot;프로토타입에-대한-표준-정의&quot;&gt;&lt;a href=&quot;#%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85%EC%97%90-%EB%8C%80%ED%95%9C-%ED%91%9C%EC%A4%80-%EC%A0%95%EC%9D%98&quot; aria-label=&quot;프로토타입에 대한 표준 정의 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;프로토타입에 대한 표준 정의&lt;/h3&gt;
+&lt;p&gt;new 키워드의 객체 생성/초기화 단계에 prototype이라는 속성이 나오는데,
+이는 다른 객체들과 공유되는 속성을 제공하는 객체를 말한다.
+생성자를 통해 객체를 생성할 때, 생성자의 prototype 속상을 내부적으로 참조하는데 여기서 기억해야 할 부분은 생성자의 속상인 prototype또한 하나의 객체라는 것!!&lt;/p&gt;
+&lt;p&gt;예시를 함께 살펴보자!&lt;/p&gt;
+&lt;h3 id=&quot;프로토타입의-사용-예&quot;&gt;&lt;a href=&quot;#%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85%EC%9D%98-%EC%82%AC%EC%9A%A9-%EC%98%88&quot; aria-label=&quot;프로토타입의 사용 예 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;프로토타입의 사용 예&lt;/h3&gt;
+&lt;p&gt;이미 위에서 썼던 Person 함수를 다시 가져와봤다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function Person(name, blog) {
+  this.name = name;
+  this.blog = blog;
+}
+
+Person.prototype.getName = function () {
+  return this.name;
+}
+Person.prototype.getBlog = function () {
+  return this.blog;
+}
+
+let doori = new Person(&amp;quot;Doori&amp;quot;,&amp;quot;gollumnima@github.io&amp;quot;)
+let strawberry = new Person(&amp;quot;Berry&amp;quot;,&amp;quot;berry@very.io&amp;quot;)
+console.log(doori.getName())
+console.log(doori.getBlog())
+console.log(strawberry.getName())
+console.log(strawberry.getBlog())&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;코드의 중간에 &lt;code class=&quot;language-text&quot;&gt;constructor.prototype&lt;/code&gt;을 통해 Person 생성자의 prototype 속성을 설정한다.
+이후 콘솔을 찍어보면 우리가 원하는 값이 나온다!
+이게 바로 생성자를 통해 생성된 객체들이 prototype을 공유하는것..!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Person.prototype.introduce = function() {
+  console.log(`Hi my name is ${this.name}, plz visit my blog -&amp;gt; ${this.blog}.`)
+}
+
+doori.introduce() // &amp;#39;Hi my name is Doori, plz visit my blog -&amp;gt; gollumnima@github.io.&amp;#39;
+
+Person.prototype.introduce = function() {
+  console.log(`Hello ${this.name}.`)
+}
+
+doori.introduce() // &amp;#39;Hello Doori.&amp;#39;
+
+Person.prototype.gender = &amp;quot;female&amp;quot;
+console.log(doori.gender) // &amp;#39;female&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위의 코드에서 확인할 수 있다시피&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;프로토타입에 새로운 속성 추가 가능&lt;/li&gt;
+&lt;li&gt;기존에 선언한 속성 수정 가능&lt;/li&gt;
+&lt;li&gt;함수가 아닌 변수도 추가 가능&lt;/li&gt;
+&lt;li&gt;추가된 모든 속성들을 모든 객체가 공유&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;프로토타입과-생성자&quot;&gt;&lt;a href=&quot;#%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85%EA%B3%BC-%EC%83%9D%EC%84%B1%EC%9E%90&quot; aria-label=&quot;프로토타입과 생성자 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;프로토타입과 생성자&lt;/h3&gt;
+&lt;p&gt;위에서 만든 Person 생성자와 그의 친구들을 다시 한번 살펴보자!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/ebb8cc00-2c94-11ea-835f-a1417a32432a/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;특이한 점은 getName과 getBlog 함수는 new Person 객체에 속하지 않고
+proto라는 프로토타입으로 남아있다는 점!&lt;/p&gt;
+&lt;p&gt;마찬가지로 쫌 더 위의 예시코드 중 gender를 설정하는 게 있었는데
+strawberry의 gender를 proto에 있는 값과 다르게 설정해도 원본의 값이 바뀌지 않는 이유가 이와 비슷하다.
+proto에 있는 gender값이 바뀌는 것이 아니라 strawberry 객체에 gender속성이 따로 추가되어 저장되기 때문!&lt;/p&gt;
+&lt;p&gt;이러한 구조 때문에 객체가 가지는 변수에 접근하려면 일단 객체 자체의 속성부터 찾고, 그 속성이 있으면 참조하고 없으면 자신의 프로토타입에 저장된 속성을 검사한다.
+근데 거기에도 없다? 그러면 undefined를 반환한다.
+자바스크립트에서 모든 객체는 프로토타입이라는 다른 객체를 가리키는 내부 링크를 가지고 있다.
+한 객체의 프로토타입 또한 프로토타입을 가지고 있고, 이것이 반복되다가 null을 프로토타입으로 가지는 객체에서 끝난다.
+이러한 객체들의 연쇄를 프로토타입 체인이라고 부른다!&lt;/p&gt;
+&lt;h3 id=&quot;hasownproperty-함수&quot;&gt;&lt;a href=&quot;#hasownproperty-%ED%95%A8%EC%88%98&quot; aria-label=&quot;hasownproperty 함수 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;hasOwnProperty 함수&lt;/h3&gt;
+&lt;p&gt;알고리즘 문제를 풀 때 자주 쓰던 속성인데, 이게 프로토타입과 연관되어 있다는 생각은 한 번도 해본적이 없었는데!! 역시 속깊자 최고
+객체의 속성에 접근할 때 객체와 프로토타입을 재귀로 검사하는 단계를 거쳐서 속성을 참조한다.
+여튼 hasOwnProperty함수를 사용하면 접근하려는 속성이 현재 객체에 포함되어 있는지 아닌지 구분할 수 있다.
+가장 유용하게 쓸 수 있는 상황은 속성 전체를 탐색하는 for in 구문을 사용할때 이다.&lt;/p&gt;
+&lt;h2 id=&quot;자바스크립트에서의-상속-활용&quot;&gt;&lt;a href=&quot;#%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%97%90%EC%84%9C%EC%9D%98-%EC%83%81%EC%86%8D-%ED%99%9C%EC%9A%A9&quot; aria-label=&quot;자바스크립트에서의 상속 활용 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;자바스크립트에서의 상속 활용&lt;/h2&gt;
+&lt;p&gt;옛날처럼 웹페이지들이 단순한 정보 전달용으로만 썼을 때는 굳이 상속이 필요없었다.
+하지만 웹개발 방법론이 발달하면서 다양한 데이터 처리 동작들을 구현하기 시작했고, 객체지향의 개념과 함께 상속이 활용되는 경우가 늘어났다!&lt;/p&gt;
+&lt;h3 id=&quot;기존의-상속-구현-방법&quot;&gt;&lt;a href=&quot;#%EA%B8%B0%EC%A1%B4%EC%9D%98-%EC%83%81%EC%86%8D-%EA%B5%AC%ED%98%84-%EB%B0%A9%EB%B2%95&quot; aria-label=&quot;기존의 상속 구현 방법 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;기존의 상속 구현 방법&lt;/h3&gt;
+&lt;p&gt;초창기에는 아래의 코드와 같이 this 대신 새로운 obj를 반환하는 방식으로 상속을 구현했다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function Person() {
+  this.name = &amp;quot;anonymous&amp;quot;;
+  this.job = &amp;quot;none&amp;quot;;
+  this.sayHello = function () {
+    console.log(`Hello, my name is ${this.name}`);
+  };
+}
+
+function Doori() {
+  let obj = new Person();
+  obj.name = &amp;quot;Doori&amp;quot;;
+  obj.job = &amp;quot;FE_DEV&amp;quot;;
+  return obj;
+}
+
+let doori = new Doori();
+doori.sayHello();&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;그치만 이렇게 하면 아주 치명적인 단점이 있는데..&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;console.log(doori instanceof Doori); // false
+console.log(doori instanceof Person); // true&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;doori라는 변수가 Doori 말고 Person의 인스턴스로만 인식된다는 거..ㅠㅠ&lt;br /&gt;
+new Doori 키워드를 사용해 객체를 생성했는데, Doori의 인스턴스로 인식못하는 건 아주 치명적인 단점이 될 수 있다.
+그래서 이후 자바스크립트는 function에 기본으로 들어있는 프로토타입 속성을 새롱누 객체로 설정해 상속하는 방법을 채택했다.&lt;/p&gt;
+&lt;p&gt;아래는 객체로 프로토타입을 수정한 자바스크립트의 상속 구현 예시이다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let person = {
+  name : &amp;quot;anonymous&amp;quot;,
+  job : &amp;quot;none&amp;quot;,
+  sayHello : function () {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+}
+
+function Doori() {
+  this.name = &amp;quot;Doori&amp;quot;;
+}
+
+Doori.prototype = person;
+
+let doori = new Doori();
+doori.sayHello();
+person.sayHello();
+console.log(doori instanceof Doori); // true
+console.log(doori instanceof person); // Error!&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이제 doori는 Doori의 인스턴스인것으로 나오는데 문제는 person 변수를 상속했다는 걸 확인 못한다.
+그래서 new로 새로운 객체를 만드는 방식으로 이 문제를 해결해보려고 한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function Person() {
+  this.name = &amp;quot;anonymous&amp;quot;;
+  this.sayHello = function () {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+}
+
+function Doori() {
+  this.name = &amp;quot;Doori&amp;quot;;
+}
+
+Doori.prototype = new Person();
+
+let doori = new Doori();
+doori.sayHello();
+console.log(doori instanceof Doori); // true
+console.log(doori instanceof Person); // true&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 바꿨을땐 겉으로 보면 instanceof문제는 해결된 것 같이 보이지만&lt;/p&gt;</content:encoded></item><item><title><![CDATA[속깊은 JavaScript - 자바스크립트의 변수 ]]></title><description><![CDATA[지난번 1,2장 정리에 이어 속깊은 자바스크립트 3장을 정리해보았다. 자바스크립트에서 가장 기본적이면서도 필수적인 변수에 대한 글.]]></description><link>https://gollumnima.github.io//posts/js_variable</link><guid isPermaLink="false">https://gollumnima.github.io//posts/js_variable</guid><pubDate>Sat, 28 Dec 2019 15:14:39 GMT</pubDate><content:encoded>&lt;p&gt;본 포스팅은 양성익님의 속깊은 Javascript를 읽고 정리해본 글입니다.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/61d15760-289c-11ea-bf43-87ed2aca4d7c/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;변수에 대해선 위코드 1주차때 한번 정리한적이 있는데, 속깊은 자바스크립트(이하 속깊자) 3장 내용이 마침 변수에 대한 거라서 다시한번 정리 고고!&lt;br /&gt;
 지난번 포스팅은 스크롤을 좀만 내리면 링크를 걸어놨다~&lt;/p&gt;
