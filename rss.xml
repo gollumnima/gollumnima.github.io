@@ -1,4 +1,165 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Doo Reply!]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sat, 25 Jan 2020 03:08:24 GMT</lastBuildDate><item><title><![CDATA[허선생님과 함께하는 Vue 기초]]></title><description><![CDATA[유튜브 보면서 to-do list 만드는걸 따라쳐보긴 했는데 그래도 뭔가 부족쓰.. 허선생님의 뷰 강의를 들으면서 다시 개념을 잡아본 포스팅!]]></description><link>https://gollumnima.github.io//posts/vue_basics</link><guid isPermaLink="false">https://gollumnima.github.io//posts/vue_basics</guid><pubDate>Fri, 24 Jan 2020 15:21:49 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/55567510-3850-11ea-919e-d17b328bab88/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Doo Reply!]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 02 Feb 2020 14:02:49 GMT</lastBuildDate><item><title><![CDATA[허선생님과 함께하는 node를 이용해 랜덤 빙고판 만들고 md파일 생성]]></title><description><![CDATA[깃빙고타임을 위해 나에게 주어진 과제, 랜덤한 숫자의 빙고판을 만들어서 그걸 40명의 repo에 md파일로 뿌리기. 처음엔 쉽게만 생각했는데 도저히 아이디어가 떠오르지 않았던 것... 또다시 허선생님의 도움을 받았다 ㅠㅠ]]></description><link>https://gollumnima.github.io//posts/node_fs_advanced</link><guid isPermaLink="false">https://gollumnima.github.io//posts/node_fs_advanced</guid><pubDate>Sat, 01 Feb 2020 22:54:49 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/0b9dc850-45ad-11ea-80bd-fb4dd3073590/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;빙고테이블을 만들어서 사람들의 repo에 README.md파일을 뿌리는게 내 목표였다.&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;처음엔 숫자를 랜덤으로 뿌려서 테이블에 적용시키면 되는거네?하고 그냥 쉽게 생각했는데&lt;br /&gt;
+md파일에 랜덤 만드는 js문법을 쓸 수도 없고 어쩌지?? 하고 발만 동동 구르고 있었는데&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;정답은 node 에 있었다.&lt;/b&gt; &lt;br /&gt;
+허선생님의 도움으로 해결쓰..ㅠㅠ&lt;/p&gt;
+&lt;h2 id=&quot;빙고-table을-만들어보자&quot;&gt;&lt;a href=&quot;#%EB%B9%99%EA%B3%A0-table%EC%9D%84-%EB%A7%8C%EB%93%A4%EC%96%B4%EB%B3%B4%EC%9E%90&quot; aria-label=&quot;빙고 table을 만들어보자 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;빙고 table을 만들어보자.&lt;/h2&gt;
+&lt;p&gt;코드를 간략하게 하기위해 utils에 필요한 함수들을 저장해서 불러왔다.&lt;br /&gt;
+utils는 map과 같은 array method들 뿐만 아니라 랜덤한 값을 뽑아내는 shuffle method를 포함쓰&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//table.js
+const utils = require(&amp;#39;./utils&amp;#39;)
+
+const makeTable = utils.pipe(
+  () =&amp;gt; Array(25),
+  arr =&amp;gt; arr.fill(),
+  utils.map((e, i) =&amp;gt; i + 1),
+  utils.shuffleArray,
+  arr =&amp;gt; utils.pipe(
+      arr =&amp;gt; arr.fill(),
+      utils.map((e, i) =&amp;gt; i),
+      utils.reduce((acc, curr) =&amp;gt; {
+        const index = curr * 5
+        return [
+          ...acc,
+          arr.slice(index, index + 5),
+        ]
+      }, []),
+  )(Array(5)),
+  utils.map(row =&amp;gt; {
+    return [
+      &amp;#39;&amp;lt;tr&amp;gt;&amp;#39;,
+        (row.map(cell =&amp;gt; (
+          `    &amp;lt;td&amp;gt;${cell}&amp;lt;/td&amp;gt;`
+        )).join(&amp;#39;\n&amp;#39;)),
+      &amp;#39;&amp;lt;/tr&amp;gt;&amp;#39;,
+    ].join(&amp;#39;\n&amp;#39;)
+  }),
+  arr =&amp;gt; ([
+    &amp;#39;&amp;lt;table&amp;gt;&amp;#39;,
+    &amp;#39;&amp;lt;tbody&amp;gt;&amp;#39;,
+    ...arr,
+    &amp;#39;&amp;lt;/tbody&amp;gt;&amp;#39;,
+    &amp;#39;&amp;lt;/table&amp;gt;&amp;#39;,
+  ]),
+  arr =&amp;gt; arr.join(&amp;#39;\n&amp;#39;),
+)
+
+module.exports = { makeTable }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;코드를 하나하나 살펴보자.&lt;/p&gt;
+&lt;h4 id=&quot;125까지의-숫자가-들어간-배열-만들기&quot;&gt;&lt;a href=&quot;#125%EA%B9%8C%EC%A7%80%EC%9D%98-%EC%88%AB%EC%9E%90%EA%B0%80-%EB%93%A4%EC%96%B4%EA%B0%84-%EB%B0%B0%EC%97%B4-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;125까지의 숫자가 들어간 배열 만들기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1~25까지의 숫자가 들어간 배열 만들기&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// 파이프라인의 첫 시작
+() =&amp;gt; Array(25),
+  arr =&amp;gt; arr.fill(),
+  utils.map((e, i) =&amp;gt; i + 1),&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Array(25)&lt;/code&gt;를 이용해 빈 배열에 25개의 값이 들어갈 자리를 만들어주고&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;fill()&lt;/code&gt;을 이용해서 빈 공간을 undefined로 채우기&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;map&lt;/code&gt;의 index number를 이용해 배열을 숫자로 채우기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;위의 코드는 파이프라인에 들어가는 거라 쉼표로 길게 쓴 거지만
+만약에 파이프에 들어가지 않고 따로 썼다면 한줄로도 가능쓰!&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Array(25).fill().map((e,i)=&amp;gt;i+1)&lt;/code&gt; 요렇게!&lt;/p&gt;
+&lt;h4 id=&quot;배열-속-25개-숫자들을-섞어주기&quot;&gt;&lt;a href=&quot;#%EB%B0%B0%EC%97%B4-%EC%86%8D-25%EA%B0%9C-%EC%88%AB%EC%9E%90%EB%93%A4%EC%9D%84-%EC%84%9E%EC%96%B4%EC%A3%BC%EA%B8%B0&quot; aria-label=&quot;배열 속 25개 숫자들을 섞어주기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;배열 속 25개 숫자들을 섞어주기&lt;/h4&gt;
+&lt;p&gt;stackoverflow를 찾다보면 괜찮은 랜덤함수들이 많다.&lt;br /&gt;
+내가 짜는건 머리아플 수 있으니 다른 사람이 짜놓은 좋은 로직의 함수를 저장해서 써먹자!
+그리하여 간단하게 &lt;code class=&quot;language-text&quot;&gt;utils.shuffleArray,&lt;/code&gt; 요렇게 끝!&lt;/p&gt;
+&lt;p&gt;여기까진 쉬울수도 있다. 하지만 내가 해야할 것은 테이블에 숫자를 넣는건데&lt;br /&gt;
+&lt;code class=&quot;language-text&quot;&gt;&amp;lt;tr&amp;gt;&amp;lt;/tr&amp;gt;&lt;/code&gt;태그로 감싸야 하기 때문에 숫자 5개를 각각의 tr태그 안에 넣어야 한다.&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;여기서 난 멘붕을 당했고, 허선생님은 간단하게 파이프를 한번 더 썼다…ㅋㅋ ㅠㅠ&lt;/p&gt;
+&lt;h4 id=&quot;위에서-만든-배열-속-숫자를-다섯개씩-끊어주기&quot;&gt;&lt;a href=&quot;#%EC%9C%84%EC%97%90%EC%84%9C-%EB%A7%8C%EB%93%A0-%EB%B0%B0%EC%97%B4-%EC%86%8D-%EC%88%AB%EC%9E%90%EB%A5%BC-%EB%8B%A4%EC%84%AF%EA%B0%9C%EC%94%A9-%EB%81%8A%EC%96%B4%EC%A3%BC%EA%B8%B0&quot; aria-label=&quot;위에서 만든 배열 속 숫자를 다섯개씩 끊어주기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;위에서 만든 배열 속 숫자를 다섯개씩 끊어주기&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt; arr =&amp;gt; utils.pipe(
+      arr =&amp;gt; arr.fill(),
+      utils.map((e, i) =&amp;gt; i),
+      utils.reduce((acc, curr) =&amp;gt; {
+        const index = curr * 5
+        return [
+          ...acc,
+          arr.slice(index, index + 5),
+        ]
+      }, []),&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;파이프를 한번 더 써주는데 아까처럼 &lt;code class=&quot;language-text&quot;&gt;fill&lt;/code&gt;을 이용해 배열의 빈 공간을 확보해놓고&lt;br /&gt;
+&lt;code class=&quot;language-text&quot;&gt;map&lt;/code&gt;의 index number를 이용해서 0부터 4까지의 숫자를 뽑아냈고(배열 5개 필요하니깐)
+&lt;code class=&quot;language-text&quot;&gt;reduce&lt;/code&gt; 부분은 넘 헷갈려서 콘솔을 찍어봤다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/da9a9240-45bd-11ea-9028-7b7f1a1316b1/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;숫자를 5개씩 끊어야해서 &lt;code class=&quot;language-text&quot;&gt;slice&lt;/code&gt;를 써주는데 이를 쉽게하기 위해 index를 선언해주었고&lt;br /&gt;
+acc는 빈배열에서 숫자가 채워지는 형태로, curr은 현재 배열이 속한 index를 가리켰다.&lt;br /&gt;
+다시 보니 reduce 쪽이 잘 이해가 되지 않는다… ㅠㅠ&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;여튼 slice를 이용해서 5개씩 자른 배열을 만든다고 대충 이해 했고..&lt;/p&gt;
+&lt;h4 id=&quot;자른-숫자에-테이블-태그-적용하기&quot;&gt;&lt;a href=&quot;#%EC%9E%90%EB%A5%B8-%EC%88%AB%EC%9E%90%EC%97%90-%ED%85%8C%EC%9D%B4%EB%B8%94-%ED%83%9C%EA%B7%B8-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0&quot; aria-label=&quot;자른 숫자에 테이블 태그 적용하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;자른 숫자에 테이블 태그 적용하기&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let row = [ 4, 9, 14, 22, 16 ];
+[      &amp;quot;&amp;lt;tr&amp;gt;&amp;quot;,row.map(cell=&amp;gt; `    &amp;lt;td&amp;gt;${cell}&amp;lt;/td&amp;gt;`).join(&amp;quot;\n&amp;quot;),      &amp;quot;&amp;lt;/tr&amp;gt;&amp;quot;
+].join(&amp;quot;\n&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;정확한 로직은 제일 위의 코드 참고!&lt;br /&gt;
+나는 일단 이게 잘 적용 되는지 확인하고 싶어서 임의의 배열을 row 변수에 대입했다.&lt;br /&gt;
+사실 안쪽의 join은 안 써도 상관없긴 한데 확실이 indent가 있으니 보기 편하다!&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;결과물은 이렇게…&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/006c9730-45c2-11ea-a464-71d1a081527a/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;이걸 이제 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;table&amp;gt;&lt;/code&gt;태그와 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;tbody&amp;gt;&lt;/code&gt;태그 안에 넣어주는건 완전 쉽다!&lt;br /&gt;
+html 태그를 배열을 이용해서 적용하는건 생각지도 못했는데 정말 신박한 방법이였다ㅠㅠ
+커링 두 번 쓴 것보다 html태그 적용한게 더 신기했다.. 와 ㅠㅠ&lt;/p&gt;
+&lt;p&gt;이제 fs에 적용을 해야하는데..&lt;/p&gt;
+&lt;h2 id=&quot;node-file-system&quot;&gt;&lt;a href=&quot;#node-file-system&quot; aria-label=&quot;node file system permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;node file system&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// fs.js
+const fs = require(&amp;#39;fs&amp;#39;)
+
+const read = path =&amp;gt; new Promise((resolve, reject) =&amp;gt; {
+  fs.readFile(path, &amp;#39;utf8&amp;#39;, (err, data) =&amp;gt; {
+    if (err) return reject(err)
+    return resolve(data)
+  })
+})
+
+const write = (path, data) =&amp;gt; new Promise((resolve, reject) =&amp;gt; {
+  fs.writeFile(path, data, (err) =&amp;gt; {
+    if (err) return reject(err)
+    return resolve(true)
+  })
+})
+
+module.exports = {
+  read,
+  write,
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;여기서 중요한 건 읽기모드와 쓰기모드 둘 다 적용시켜야 한다는 점!&lt;br /&gt;
+일단 fs 형식을 위의 코드와 같이 써주고 우리는 이걸 index.js에서 적용시킬 예정쓰&lt;/p&gt;
+&lt;h2 id=&quot;md파일-생성하기&quot;&gt;&lt;a href=&quot;#md%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot; aria-label=&quot;md파일 생성하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;md파일 생성하기&lt;/h2&gt;
+&lt;p&gt;아! 이 전에 template md 파일을 만들어야 하는데!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;title~~
+
+&amp;lt;&amp;lt;&amp;lt;table&amp;gt;&amp;gt;&amp;gt;
+
+description....&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;빙고판을 중간에 낑겨넣고 싶어서 일단 꺽쇠를 이용해서 영역표시(?)를 해주고…&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const fs = require(&amp;quot;./fs&amp;quot;);
+const path = require(&amp;quot;path&amp;quot;);
+const { makeTable } = require(&amp;quot;./table&amp;quot;);
+
+fs.read(path.join(__dirname, &amp;quot;./README.template.md&amp;quot;))
+  .then(data =&amp;gt; {
+    const newContent = data.replace(&amp;quot;&amp;lt;&amp;lt;&amp;lt;table&amp;gt;&amp;gt;&amp;gt;&amp;quot;, makeTable());
+    return newContent;
+  })
+  .then(content =&amp;gt; {
+    fs.write(path.join(__dirname, &amp;quot;../README.md&amp;quot;), content).then(() =&amp;gt; {
+      console.log(&amp;quot;README 저장됨~~😆&amp;quot;);
+    });
+  });&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;replace를 이용해 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;&amp;lt;&amp;lt;table&amp;gt;&amp;gt;&amp;gt;&lt;/code&gt;이라는 글씨를 우리가 만든 빙고로 대체해준다.&lt;br /&gt;
+그리고 path 설정을 잘 해줘야 하는데..!&lt;br /&gt;
+첫번째 인자에 __dirname이 들어가지 않으면 작동이 안됐던 기억이..&lt;br /&gt;
+두번째 인자는 경로와 파일이름과 형식이 들어가게 된다.&lt;/p&gt;
+&lt;p&gt;처음에는 이렇게 node server를 켤 때마다 파일을 하나씩 생성하는 로직이었는데&lt;br /&gt;
+우리의 능력자 허선생님이 로직을 바꿔서 각폴더에 각 md파일이 들어가게끔 해서&lt;br /&gt;
+서버 한 번 켰을때 39개의 폴더와 md파일들이 한번에 생성되도록 만들어주었다.&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;한 1초? 늦어도 1.5초 걸렸을까..?&lt;/p&gt;
+&lt;p&gt;이래서 노드를 쓰나보다.. 정말 정말 빠르고 편리하다..&lt;br /&gt;
+노드의 매력에 점점 빠지고 있는 요즘이다.&lt;/p&gt;
+&lt;p&gt;아.. 공부 진짜 열심히 하자ㅠㅠ 갈 길이 멀었다!!!&lt;/p&gt;
+&lt;h2 id=&quot;reference&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;허선생님의 손길&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[허선생님과 함께하는 Vue 기초]]></title><description><![CDATA[유튜브 보면서 to-do list 만드는걸 따라쳐보긴 했는데 그래도 뭔가 부족쓰.. 허선생님의 뷰 강의를 들으면서 다시 개념을 잡아본 포스팅!]]></description><link>https://gollumnima.github.io//posts/vue_basics</link><guid isPermaLink="false">https://gollumnima.github.io//posts/vue_basics</guid><pubDate>Fri, 24 Jan 2020 15:21:49 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/55567510-3850-11ea-919e-d17b328bab88/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;뷰의-특징&quot;&gt;&lt;a href=&quot;#%EB%B7%B0%EC%9D%98-%ED%8A%B9%EC%A7%95&quot; aria-label=&quot;뷰의 특징 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;뷰의 특징&lt;/h2&gt;
 &lt;p&gt;다른건 무조건 노드js 웹팩환경에서 바벨 돌려야 하는데 뷰는 개발환경이 굉장히 유연한 편! &lt;br /&gt;
 웹팩을 쓰지 못하는 환경에서도 뷰를 쓸 수 있다.&lt;/p&gt;
@@ -15,7 +176,7 @@
 &lt;p&gt;&lt;b&gt;리액트는 1종 면허&lt;/b&gt;로 모는 스틱차량과 같다!&lt;br&gt;
 분노의 질주처럼 기어 바꿔가면서 빠르게 운전하고 싶을때 수동이 더 좋은데 마감기한이 시급한 프로젝트에는 리액트가 제격이라고 한다.&lt;/p&gt;
 &lt;p&gt;&lt;b&gt;뷰는 2종 면허&lt;/b&gt;로 모는 오토차량과 같다.&lt;br /&gt;
-오토차량은 기어 넣는게 없어서 운전을 처음 시작하는 사람이 몰거나 1종면허를 가지고 있는 사람이 손쉽게 몰 수 있다. 이처럼 초보자가 뷰로 작업을 해도 일정한 수준이 나온다. &lt;/p&gt;
+오토차량은 기어 넣는게 없어서 운전을 처음 시작하는 사람이 몰거나 1종면허를 가지고 있는 사람이 손쉽게 몰 수 있다. 이처럼 초보자가 뷰로 작업을 해도 일정한 수준이 나온다.&lt;/p&gt;
 &lt;h2 id=&quot;설치&quot;&gt;&lt;a href=&quot;#%EC%84%A4%EC%B9%98&quot; aria-label=&quot;설치 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;설치&lt;/h2&gt;
 &lt;p&gt;npx를 지원 안하기 때문에 글로벌로 깔아야한다.&lt;/p&gt;
 &lt;p&gt;&lt;b&gt;설치&lt;/b&gt; : &lt;code class=&quot;language-text&quot;&gt;npm install -g @vue/cli&lt;/code&gt;&lt;br /&gt;
@@ -25,7 +186,7 @@
 &lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/dd9e0a90-3851-11ea-919e-d17b328bab88/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;편의상 캡쳐화면과 같이 설정을 해준다!&lt;/p&gt;
 &lt;h2 id=&quot;서버-켜기&quot;&gt;&lt;a href=&quot;#%EC%84%9C%EB%B2%84-%EC%BC%9C%EA%B8%B0&quot; aria-label=&quot;서버 켜기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;서버 켜기&lt;/h2&gt;
-&lt;p&gt;서버 켜기 : &lt;code class=&quot;language-text&quot;&gt;npm run serve&lt;/code&gt;	를 입력하면 8080으로 서버가 들어온다.&lt;/p&gt;
+&lt;p&gt;서버 켜기 : &lt;code class=&quot;language-text&quot;&gt;npm run serve&lt;/code&gt; 를 입력하면 8080으로 서버가 들어온다.&lt;/p&gt;
 &lt;h2 id=&quot;폴더구조&quot;&gt;&lt;a href=&quot;#%ED%8F%B4%EB%8D%94%EA%B5%AC%EC%A1%B0&quot; aria-label=&quot;폴더구조 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;폴더구조&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/c9e938c0-3852-11ea-a9df-ed9cb935146f/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;views 폴더가 React에서의 pages,
@@ -40,7 +201,7 @@ store가 Redux에서 store 역할을 한다.&lt;/p&gt;
 
 &amp;lt;script&amp;gt;
 export default {
-  
+
 };
 &amp;lt;/script&amp;gt;
 &amp;lt;style scoped lang=&amp;quot;scss&amp;quot;&amp;gt;
@@ -128,7 +289,7 @@ export default {
     },
   },
   watch: {
-    //   useEffect와 같은 것
+    //   useEffect와 같은 것~
     text() {
       this.$emit(&amp;#39;input&amp;#39;, this.text);
     },
@@ -145,7 +306,7 @@ export default {
   &amp;lt;div&amp;gt;
     {{ isTrue ? &amp;quot;참&amp;quot; : &amp;quot;거짓&amp;quot; }}
     &amp;lt;button @click=&amp;quot;toggleTrue&amp;quot;&amp;gt;토글쓰&amp;lt;/button&amp;gt;
-    &amp;lt;CreateTodo @submit=&amp;quot;addTodo&amp;quot; v-model=&amp;quot;textttt&amp;quot;/&amp;gt;
+    &amp;lt;CreateTodo @submit=&amp;quot;addTo~o&amp;quot; v-model=&amp;quot;textttt&amp;quot;/&amp;gt;
     &amp;lt;ul&amp;gt;
       &amp;lt;li v-for=&amp;quot;todo in todos&amp;quot; v-bind:key=&amp;quot;todo.key&amp;quot;
       :style=&amp;quot;{ backgroundColor: todo.done ? &amp;#39;blue&amp;#39; : &amp;#39;yellow&amp;#39;}&amp;quot;
