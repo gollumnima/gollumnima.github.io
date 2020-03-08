@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Doo Reply!]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Fri, 06 Mar 2020 12:08:15 GMT</lastBuildDate><item><title><![CDATA[mobX 공부하기(작성중)]]></title><description><![CDATA[mobx 도전기]]></description><link>https://gollumnima.github.io//posts/mobx_todo</link><guid isPermaLink="false">https://gollumnima.github.io//posts/mobx_todo</guid><pubDate>Tue, 18 Feb 2020 21:46:49 GMT</pubDate><content:encoded>&lt;h2 id=&quot;mobx-설치하기&quot;&gt;&lt;a href=&quot;#mobx-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0&quot; aria-label=&quot;mobx 설치하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;mobx 설치하기&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[둘둘`s dooreplay!]]></title><description><![CDATA[Doo Reply!]]></description><link>https://gollumnima.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 08 Mar 2020 15:33:35 GMT</lastBuildDate><item><title><![CDATA[mobX 공부하기(작성중)]]></title><description><![CDATA[mobx 도전기]]></description><link>https://gollumnima.github.io//posts/mobx_todo</link><guid isPermaLink="false">https://gollumnima.github.io//posts/mobx_todo</guid><pubDate>Tue, 18 Feb 2020 21:46:49 GMT</pubDate><content:encoded>&lt;h2 id=&quot;mobx-설치하기&quot;&gt;&lt;a href=&quot;#mobx-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0&quot; aria-label=&quot;mobx 설치하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;mobx 설치하기&lt;/h2&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;npm i -S mobx mobx-react&lt;/code&gt;로 설치 고고&lt;/p&gt;
 &lt;h2 id=&quot;babel-설정-해주기&quot;&gt;&lt;a href=&quot;#babel-%EC%84%A4%EC%A0%95-%ED%95%B4%EC%A3%BC%EA%B8%B0&quot; aria-label=&quot;babel 설정 해주기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;babel 설정 해주기&lt;/h2&gt;
 &lt;p&gt;처음에 영상에 나온대로 이렇게 설정을 해주었음&lt;/p&gt;
@@ -8951,15 +8951,21 @@ div 잘 묶은줄 알았는데 아니였다. 다시 도전.&lt;/p&gt;
 그리하여 성공한 화면!&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/b596e8c0-c955-11e9-b6af-0332aa63bb4d/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;위코드의 대빵 은우님이시다. 그림 바이 름바님
-그럼 바이 바이~ 다음 포스팅에서 만나용&lt;/p&gt;</content:encoded></item><item><title><![CDATA[wecode 5주차_1일 TIL_프로젝트 시작 전 초기세팅 할 것들]]></title><description><![CDATA[위코드 25일차. 5주차에 들어서면서 2주 프로젝트가 시작 되었다. 프로젝트에 앞서 초기에 세팅해야 할 것들에 대해 정리해보았다!]]></description><link>https://gollumnima.github.io//posts/wecode5_1TIL_project_initialSettings</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode5_1TIL_project_initialSettings</guid><pubDate>Mon, 26 Aug 2019 08:21:04 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/697fc700-c927-11e9-841b-23b4349b6731/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;이번주 월요일부터 본격 2주 프로젝트가 시작됐는데.. &lt;br /&gt;
-초기 세팅 해야할 것들에 대해 적어보았다!&lt;/p&gt;
-&lt;p&gt;Git에 repository 뚫는 과정도 적어보려고 했는데, reset.css 코드 때문에 길어져서 다음 포스팅으로 넘어가야겠다 룰루~ ♬ 그럼 스타트!!&lt;/p&gt;
-&lt;h2 id=&quot;router-깔기&quot;&gt;&lt;a href=&quot;#router-%EA%B9%94%EA%B8%B0&quot; aria-label=&quot;router 깔기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Router 깔기&lt;/h2&gt;
+그럼 바이 바이~ 다음 포스팅에서 만나용&lt;/p&gt;</content:encoded></item><item><title><![CDATA[CRA(리액트)로 만드는 프로젝트 시작 전 초기세팅 할 것들]]></title><description><![CDATA[리액트로 처음 프로젝트를 시작할때 초기세팅 해야할 것들에 대해 적어보았다]]></description><link>https://gollumnima.github.io//posts/wecode5_1TIL_project_initialSettings</link><guid isPermaLink="false">https://gollumnima.github.io//posts/wecode5_1TIL_project_initialSettings</guid><pubDate>Mon, 26 Aug 2019 08:21:04 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/697fc700-c927-11e9-841b-23b4349b6731/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;프로젝트 시작에 앞서 가장 중요한 게 무엇일까? &lt;br /&gt;
+실력? 간식력? 체력? 다 아니다! 바로바로 &lt;b&gt;초기세팅!&lt;/b&gt;이 젤 중요한 것!&lt;br /&gt;
+오늘은 리액트 프로젝트 초기 세팅 때 해야할 것들에 대해 적어보았다!&lt;/p&gt;
+&lt;h2 id=&quot;경로설정-하기&quot;&gt;&lt;a href=&quot;#%EA%B2%BD%EB%A1%9C%EC%84%A4%EC%A0%95-%ED%95%98%EA%B8%B0&quot; aria-label=&quot;경로설정 하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;경로설정 하기&lt;/h2&gt;
+&lt;p&gt;프로젝트 루트 폴더에 &lt;code class=&quot;language-text&quot;&gt;.env&lt;/code&gt;라는 파일을 만들어주고,&lt;br /&gt;
+그 안에 &lt;code class=&quot;language-text&quot;&gt;NODE_PATH=src&lt;/code&gt; 라는 값을 넣어준 후 저장~~&lt;/p&gt;
+&lt;p&gt;이렇게 경로설정을 하지 않았을 경우 쩜쩜쩜 파티가 열리게 되는데!
+&lt;code class=&quot;language-text&quot;&gt;ex) import Home from &amp;quot;../../Components/Home&amp;quot;&lt;/code&gt;
+위와 같이 경로설정을 해줄 경우 모든 경로가 src부터 시작하는게 기본값이라 더이상 쩜쩜을 남발하지 않아도 된다.&lt;/p&gt;
+&lt;h2 id=&quot;router-설치하기&quot;&gt;&lt;a href=&quot;#router-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0&quot; aria-label=&quot;router 설치하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Router 설치하기&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&quot;https://images.velog.io/post-images/dooreplay/0ab676f0-c487-11e9-aac9-df0beb3e284d/image.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Route는 말 그대로 경로를 말한다! 이걸 통해 원하는 페이지로 자유롭게 이동 가능쓰~&lt;/p&gt;
+&lt;p&gt;Route는 말 그대로 경로를 말한다! 이를 통해 원하는 페이지로 자유롭게 이동 가능쓰~&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add react-router-dom&lt;/code&gt; 명령어 입력&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;npm install --save react-router-dom&lt;/code&gt; 명령어 입력&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;index.js&lt;/code&gt;와 같은 디렉토리에 &lt;code class=&quot;language-text&quot;&gt;Routes.js&lt;/code&gt;파일 만들기&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Routes.js&lt;/code&gt;파일 세팅하기&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;index.js&lt;/code&gt;파일 내에 render함수 대상을 &lt;Routes /&gt;로 바꿔주기&lt;/li&gt;
@@ -8967,14 +8973,17 @@ div 잘 묶은줄 알았는데 아니였다. 다시 도전.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// 이거는 Routes.js
 import React from &amp;quot;react&amp;quot;;
 import { BrowserRouter as Router, Route, Switch } from &amp;quot;react-router-dom&amp;quot;;
-import Home from &amp;quot;./Pages/Home/Home&amp;quot;;
+import Home from &amp;quot;./Pages/Home&amp;quot;;
+import Login from &amp;quot;./Pages/Login&amp;quot;;
 
 class Routes extends React.Component {
   render() {
     return (
       &amp;lt;Router&amp;gt;
         &amp;lt;Switch&amp;gt;
-          &amp;lt;Route exact path=&amp;quot;/home&amp;quot; component={Home} /&amp;gt;
+          &amp;lt;Route exact path=&amp;quot;/&amp;quot; component={Home} /&amp;gt;
+          &amp;lt;Route exact path=&amp;quot;/login&amp;quot; component={Login} /&amp;gt;
+
         &amp;lt;/Switch&amp;gt;
       &amp;lt;/Router&amp;gt;
     );
@@ -8982,7 +8991,7 @@ class Routes extends React.Component {
 }
 
 export default Routes;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;일단 예시로 &lt;code class=&quot;language-text&quot;&gt;Home Component&lt;/code&gt;만 넣어봤습니다.
+&lt;p&gt;일단 예시로 &lt;code class=&quot;language-text&quot;&gt;Home Component&lt;/code&gt;만 넣어보았다.
 우리는 라우터를 통해 자유롭게 이동 가능쓰~~&lt;/p&gt;
 &lt;p&gt;url 뒤에 &lt;code class=&quot;language-text&quot;&gt;/&lt;/code&gt; 붙여서 이동할 수 있는 기능도 있지만! 페이지에서 페이지끼리의 이동도 가능쓰&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;import { Link } from &amp;quot;react-router-dom&amp;quot;;&lt;/code&gt;&lt;/p&gt;
@@ -8994,25 +9003,22 @@ export default Routes;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// 이건 index.js 파일
 import React from &amp;quot;react&amp;quot;;
 import ReactDOM from &amp;quot;react-dom&amp;quot;;
-import &amp;quot;../src/styles/index.scss&amp;quot;;
-import &amp;quot;../src/styles/reset.scss&amp;quot;;
+import &amp;quot;.styles/index.scss&amp;quot;;
+import &amp;quot;.styles/reset.scss&amp;quot;;
 import Routes from &amp;quot;./Routes&amp;quot;;
 
 ReactDOM.render(&amp;lt;Routes /&amp;gt;, document.getElementById(&amp;quot;root&amp;quot;));&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h1 id=&quot;css-tool-고르기&quot;&gt;&lt;a href=&quot;#css-tool-%EA%B3%A0%EB%A5%B4%EA%B8%B0&quot; aria-label=&quot;css tool 고르기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;CSS tool 고르기~&lt;/h1&gt;
-&lt;h3 id=&quot;styled-component&quot;&gt;&lt;a href=&quot;#styled-component&quot; aria-label=&quot;styled component permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Styled Component&lt;/h3&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add styled-components&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&quot;sass-설치하기&quot;&gt;&lt;a href=&quot;#sass-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0&quot; aria-label=&quot;sass 설치하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;SASS 설치하기&lt;/h3&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add node-sass&lt;/code&gt; 명령어로 설치 후, css파일형식을 .scss로 바꾸기&lt;/p&gt;
-&lt;p&gt;SASS는 CSS module과 함께 쓸수도 있다는데.. 아직 css module은 써 본적이 없어서 다음 기회에 다뤄볼게유~&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;npm install --save node-sass&lt;/code&gt; 명령어로 설치 후, css파일형식을 .scss로 바꾸기&lt;/p&gt;
 &lt;h2 id=&quot;eslint와-prettier-연동하기&quot;&gt;&lt;a href=&quot;#eslint%EC%99%80-prettier-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0&quot; aria-label=&quot;eslint와 prettier 연동하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;ESLint와 Prettier 연동하기&lt;/h2&gt;
 &lt;p&gt;이건 지난번에 한번 포스팅해서 링크만 남길게용
 &lt;a href=&quot;https://gollumnima.github.io/posts/wecode3_5TIL_eslint&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://gollumnima.github.io/posts/wecode3_5TIL_eslint&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;styles-디렉토리-만들기&quot;&gt;&lt;a href=&quot;#styles-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;styles 디렉토리 만들기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;styles 디렉토리 만들기&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;styles 디렉토리 안에 index.css 옮기고, reset.css와 media.css 추가해주세용
--media.css는 화면을 줄였을 때의 breakpoint를 두 개정도 설정해서 넣어놓고 팀원들과 공유하기!&lt;/li&gt;
-&lt;li&gt;reset css 파일을 추가해주면 기본 css 설정값들을 다 취소시켜서 좀 더 깔끔쓰~ 아래의 코드를 긁어서 복붙하세유~~~&lt;/li&gt;
+&lt;li&gt;styles 디렉토리 안에 reset.scss와 media.scss를 추가해주세용&lt;/li&gt;
+&lt;li&gt;media.scss는 반응형 웹페이지를 만들기 위해서 필요한건데 breakpoint를 두 개정도 설정해서 넣어놓고 팀원들과 공유하기!&lt;/li&gt;
+&lt;li&gt;reset.scss 파일을 추가해주면 웹페이지별로 다르게 설정되어있는 기본 css 설정값들을 다 취소시켜서 좀 더 깔끔쓰~ 아래의 코드를 긁어서 복붙하세유~~~&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;html,
 body,
