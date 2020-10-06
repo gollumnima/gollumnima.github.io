@@ -103,60 +103,60 @@ react 프로젝트 만들땐 -y를 붙였는데 이걸 안 붙이면</li>
 <ol start="2">
 <li>server.js 파일을 만든다.</li>
 </ol>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// server.js
-let foo = 2;
-console.log(foo);</code></pre></div>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// server.js</span>
+<span class="token keyword">let</span> foo <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>foo<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <p>터미널에 <code class="language-text">node server</code>명령어를 입력하면 콘솔에 2가 뜬다.</p>
 <ol start="3">
 <li>app.js 파일도 만들어준다.</li>
 </ol>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">const http = require(&#39;http&#39;);
-const app = require(&#39;./app&#39;);
-// 경로를 안 붙이면 module이라고 생각하고, 경로를 붙이면 파일이라고 생각하면 됨
-// listener를 가지고 있으면 app으로서 작동을 함.
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./app'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 경로를 안 붙이면 module이라고 생각하고, 경로를 붙이면 파일이라고 생각하면 됨</span>
+<span class="token comment">// listener를 가지고 있으면 app으로서 작동을 함.</span>
 
-http.createServer(app).listen(8000, () =&gt; {
-  console.log(&#39;서버 시작할게유~&#39;);
-});
-// inbound 요청을 듣겠다. 리쓴
-// 듣기 시작한 이후에 콘솔찍겠다</code></pre></div>
+http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'서버 시작할게유~'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// inbound 요청을 듣겠다. 리쓴</span>
+<span class="token comment">// 듣기 시작한 이후에 콘솔찍겠다</span></code></pre></div>
 <ol start="4">
 <li>express 설치<br/>
 명령어는 <code class="language-text">yarn add express</code> 입력 궈궈!<br/>
 아직 express.js에 대해 잘은 모르지만 일단 해본다. 나중에 정리할 예정쓰!</li>
 </ol>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">const express = require(&#39;express&#39;);
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-const app = express();
-// express는 class 인데 한번 더 묶어서 클래스처럼 안 보인다.
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// express는 class 인데 한번 더 묶어서 클래스처럼 안 보인다.</span>
 
-console.log(&#39;4&#39;);
-app.get(&#39;/foo&#39;, () =&gt; {
-  console.log(&#39;요청을 받았다 오바!&#39;);
-});
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'4'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'요청을 받았다 오바!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-module.exports = app;</code></pre></div>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> app<span class="token punctuation">;</span></code></pre></div>
 <p>지금 app.js에 콘솔로 4를 찍고 있는데
 그 전에 server.js에도 숫자를 찍어놨다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">console.log(&#39;1&#39;);
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-const http = require(&#39;http&#39;);
-const app = require(&#39;./app&#39;);
+<span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./app'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 경로를 안 붙이면 module이라고 생각하고, 경로를 붙이면 파일이라고 생각하면 됨
-// listener를 가지고 있으면 app으로서 작동을 함.
+<span class="token comment">// 경로를 안 붙이면 module이라고 생각하고, 경로를 붙이면 파일이라고 생각하면 됨</span>
+<span class="token comment">// listener를 가지고 있으면 app으로서 작동을 함.</span>
 
-console.log(&#39;2&#39;);
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-http.createServer(app).listen(8000, () =&gt; {
-  console.log(&#39;3&#39;);
-  console.log(&#39;서버 시작할게유~&#39;);
-  // 비동기 코드라 가장 늦게 실행됨
-});
-// inbound 요청을 듣겠다. 리쓴
-// 듣기 시작한 이후에 콘솔찍겠다
+http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'3'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'서버 시작할게유~'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 비동기 코드라 가장 늦게 실행됨</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// inbound 요청을 듣겠다. 리쓴</span>
+<span class="token comment">// 듣기 시작한 이후에 콘솔찍겠다</span>
 
-console.log(&#39;5&#39;);</code></pre></div>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'5'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <ul>
 <li>server.js에서 서버가 시작되는 거니까 첫줄의 1이 가장 먼저 찍히고,<br/></li>
 <li>server.js에 있는 app require를 실행하기 위해<br />
@@ -182,74 +182,73 @@ localhost:8000으로 접속해보면…</p>
 <li>설치는 <code class="language-text">npm i nodemon</code></li>
 <li>package.json에 start script를 추가해준다.</li>
 </ol>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{
-  &quot;name&quot;: &quot;node-1&quot;,
-  &quot;version&quot;: &quot;1.0.0&quot;,
-  &quot;description&quot;: &quot;&quot;,
-  &quot;main&quot;: &quot;index.js&quot;,
-  &quot;scripts&quot;: {
-    &quot;start&quot;: &quot;npx nodemon ./server&quot;
-  },
-  &quot;author&quot;: &quot;&quot;,
-  &quot;license&quot;: &quot;ISC&quot;,
-  &quot;dependencies&quot;: {
-    &quot;express&quot;: &quot;^4.17.1&quot;,
-    &quot;nodemon&quot;: &quot;^2.0.1&quot;
-  }
-}</code></pre></div>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token punctuation">{</span>
+  <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"node-1"</span><span class="token punctuation">,</span>
+  <span class="token string">"version"</span><span class="token punctuation">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span>
+  <span class="token string">"description"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+  <span class="token string">"main"</span><span class="token punctuation">:</span> <span class="token string">"index.js"</span><span class="token punctuation">,</span>
+  <span class="token string">"scripts"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"start"</span><span class="token punctuation">:</span> <span class="token string">"npx nodemon ./server"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">"author"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+  <span class="token string">"license"</span><span class="token punctuation">:</span> <span class="token string">"ISC"</span><span class="token punctuation">,</span>
+  <span class="token string">"dependencies"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"express"</span><span class="token punctuation">:</span> <span class="token string">"^4.17.1"</span><span class="token punctuation">,</span>
+    <span class="token string">"nodemon"</span><span class="token punctuation">:</span> <span class="token string">"^2.0.1"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
 <p>다시 한번 웹페이지를 확인해주는데…</p>
 <p><img src="https://images.velog.io/post-images/dooreplay/53e86b80-1b17-11ea-b06d-87feba7af501/image.png" alt="image.png"></p>
 <p>흰 화면이 뜨는데 걍 흰색.. 내 요청을 씹은거다 ㅠㅠ</p>
 <h2 id="node에서-string-object-error-넘기기"><a href="#node%EC%97%90%EC%84%9C-string-object-error-%EB%84%98%EA%B8%B0%EA%B8%B0" aria-label="node에서 string object error 넘기기 permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>node에서 string, object, error 넘기기</h2>
 <p>이번엔 명령어를 입력해보자.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// app.js
-app.get(&#39;/foo&#39;, (req, res, next) =&gt; {
-    res.send(&#39;배고파&#39;);
-});</code></pre></div>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// app.js</span>
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">'배고파'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <p>그랬더니 뙇! 임의의 태그가 생겼다!!<br />
 그냥 string으로 써서 일단 이런 임시 태그가 body에 생기는 것이고..</p>
 <p><img src="https://images.velog.io/post-images/dooreplay/6d3bba10-1b17-11ea-84ae-6db8b11a429d/image.png" alt="image.png"></p>
 <p>이번엔 json형태로 써보자.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// app.js
-app.get(&#39;/foo&#39;, (req, res, next) =&gt; {
-    res.json({ 둘둘쓰: &#39;배곱&#39; });
-});</code></pre></div>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// app.js</span>
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> 둘둘쓰<span class="token punctuation">:</span> <span class="token string">'배곱'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <p>짠!! 객체형태의 값이 화면에 나온다. 이렇게</p>
 <p><img src="https://images.velog.io/post-images/dooreplay/a6bc0880-1b17-11ea-b06d-87feba7af501/image.png" alt="image.png"></p>
 <p>나는 chrome json.viewer extension을 쓰고 있어서 예쁘게 나왔는데<br />
 원래대로라면 정말 날 것 그대로 나온다.</p>
 <p>에러도 한 번 내보자! 참고로 4로 시작한건 일부러 내는 에러..ㅋㅋ</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// app.js
-app.get(&#39;/foo&#39;, (req, res, next) =&gt; {
-    res.status(401).json({ 둘둘쓰: &#39;배곱&#39; });
-});</code></pre></div>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// app.js</span>
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">401</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> 둘둘쓰<span class="token punctuation">:</span> <span class="token string">'배곱'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <p><img src="https://images.velog.io/post-images/dooreplay/e0fe9580-1b17-11ea-8cbc-5bb18cbd781d/image.png" alt="image.png"></p>
 <p>에러도 아주 잘 나고 있다. 좋았어!</p>
 <h2 id="router"><a href="#router" aria-label="router permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Router</h2>
 <p>이번엔 라우팅을 위한 코드를 쳐볼거다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">const express = require(&#39;express&#39;);
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-const app = express();
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-app.get(&#39;/foo&#39;, (req, res, next) =&gt; {
-//   res.status(401).json({ 둘둘쓰: &#39;배곱&#39; });
-});
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token comment">//   res.status(401).json({ 둘둘쓰: '배곱' });</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-app.get(&#39;/user&#39;, (req, res, next) =&gt; {
-  res.status(200).json({ name: &#39;유저 목록&#39; });
-});
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/user'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'유저 목록'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/user/:id'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> id <span class="token operator">=</span> req<span class="token punctuation">.</span>params<span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">'허선생님'</span><span class="token punctuation">,</span>
+    id<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 원래는 id: id 인데, 객체 값과 프로퍼티가 동일하면 지워짐. 놀라운 세상!</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-app.get(&#39;/user/:id&#39;, (req, res, next) =&gt; {
-  const id = req.params;
-  console.log(id);
-  res.status(200).json({
-    name: &#39;허선생님&#39;,
-    id
-  }); // 원래는 id: id 인데, 객체 값과 프로퍼티가 동일하면 지워짐. 놀라운 세상!
-});
-
-module.exports = app;</code></pre></div>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> app<span class="token punctuation">;</span></code></pre></div>
 <p>주소창에 <code class="language-text">http://localhost:8000/user?page=222&amp;offset=20</code>를 쳐보면</p>
 <p><img src="https://images.velog.io/post-images/dooreplay/9002a940-1b18-11ea-b06d-87feba7af501/image.png" alt="image.png"></p>
 <p>짠~ 페이지에 json형태로 데이터가 잘 나오고 있고!</p>
@@ -261,10 +260,10 @@ app.get()&#x3C;=== 이게 라우터고
 라우터의 괄호안에 들어가는 게 바로 미들웨어다!</p>
 <p>라우터는 실행할지 말지를 정해주는 역할이고,
 미들웨어는 요청이나 응답이 들어오면 그걸 처리하는 함수다. 알고보니 비선실세는 라우터..</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">app.get()
-app.post()
-app.use()
-app.all()</code></pre></div>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <p>위와 같이 다양한 방식의 명령어가 있는데<br />
 그중에 app.use()는 유일하게 url을 쓰지 않아도 함수를 쓸 수 있다!<br />
 app.all()은 CRUD 네 가지 메소드 중 아무거나 접근을 하겠다는 것.</p>
