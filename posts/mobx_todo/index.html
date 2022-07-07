@@ -58,26 +58,133 @@
 
         gtag('config', 'null', {"send_page_view":false});
       }
-      </script><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link rel="icon" href="/favicon-32x32.png?v=27e801ad00a90947f702aaac3d1c0807" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#F7A046"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=27e801ad00a90947f702aaac3d1c0807"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=27e801ad00a90947f702aaac3d1c0807"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=27e801ad00a90947f702aaac3d1c0807"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=27e801ad00a90947f702aaac3d1c0807"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=27e801ad00a90947f702aaac3d1c0807"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=27e801ad00a90947f702aaac3d1c0807"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=27e801ad00a90947f702aaac3d1c0807"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=27e801ad00a90947f702aaac3d1c0807"/><title data-react-helmet="true">mobX 공부하기(작성중) - 토공로그!</title><meta data-react-helmet="true" name="description" content="mobx 도전기"/><meta data-react-helmet="true" property="og:site_name" content="mobX 공부하기(작성중) - 토공로그!"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:title" content="mobX 공부하기(작성중) - 토공로그!"/><link as="script" rel="preload" href="/webpack-runtime-efe21d3c0a23bc6eb384.js"/><link as="script" rel="preload" href="/framework-3761df4ab6ee9f056936.js"/><link as="script" rel="preload" href="/532a2f07-e07d4f1cb18d088cf2d8.js"/><link as="script" rel="preload" href="/app-36cd3618350e6ed48712.js"/><link as="script" rel="preload" href="/styles-407fe62976dc5310c43e.js"/><link as="script" rel="preload" href="/cd95ea5cbd2c605f26db819f07999610c9ff4310-1486458330e3fee759b3.js"/><link as="script" rel="preload" href="/643651a62fb35a9bb4f20061cb1f214a352d7976-76743a07794875633306.js"/><link as="script" rel="preload" href="/component---src-templates-post-template-js-c7b24046c8304a865e8a.js"/><link as="fetch" rel="preload" href="/page-data/posts/mobx_todo/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/251939775.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/3613830147.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/401334301.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Layout-module--layout--3Pyz6"><div><a class="Post-module--post__home-button--16Kl0" href="/">All Articles</a><div><div class="Content-module--content--3p512"><h1 class="Content-module--content__title--2BDW9">mobX 공부하기(작성중)</h1><div class="Content-module--content__body--2TrQ-"><h2 id="mobx-설치하기" style="position:relative;"><a href="#mobx-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0" aria-label="mobx 설치하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>mobx 설치하기</h2>
-<p><code class="language-text">npm i -S mobx mobx-react</code>로 설치 고고</p>
-<h2 id="babel-설정-해주기" style="position:relative;"><a href="#babel-%EC%84%A4%EC%A0%95-%ED%95%B4%EC%A3%BC%EA%B8%B0" aria-label="babel 설정 해주기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>babel 설정 해주기</h2>
-<p>처음에 영상에 나온대로 이렇게 설정을 해주었음</p>
+      </script><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link rel="icon" href="/favicon-32x32.png?v=27e801ad00a90947f702aaac3d1c0807" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#F7A046"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=27e801ad00a90947f702aaac3d1c0807"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=27e801ad00a90947f702aaac3d1c0807"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=27e801ad00a90947f702aaac3d1c0807"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=27e801ad00a90947f702aaac3d1c0807"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=27e801ad00a90947f702aaac3d1c0807"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=27e801ad00a90947f702aaac3d1c0807"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=27e801ad00a90947f702aaac3d1c0807"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=27e801ad00a90947f702aaac3d1c0807"/><title data-react-helmet="true">typescript 공부하기(작성중) - 토공로그!</title><meta data-react-helmet="true" name="description" content="typescript 도전기"/><meta data-react-helmet="true" property="og:site_name" content="typescript 공부하기(작성중) - 토공로그!"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:title" content="typescript 공부하기(작성중) - 토공로그!"/><link as="script" rel="preload" href="/webpack-runtime-efe21d3c0a23bc6eb384.js"/><link as="script" rel="preload" href="/framework-3761df4ab6ee9f056936.js"/><link as="script" rel="preload" href="/532a2f07-e07d4f1cb18d088cf2d8.js"/><link as="script" rel="preload" href="/app-36cd3618350e6ed48712.js"/><link as="script" rel="preload" href="/styles-407fe62976dc5310c43e.js"/><link as="script" rel="preload" href="/cd95ea5cbd2c605f26db819f07999610c9ff4310-1486458330e3fee759b3.js"/><link as="script" rel="preload" href="/643651a62fb35a9bb4f20061cb1f214a352d7976-76743a07794875633306.js"/><link as="script" rel="preload" href="/component---src-templates-post-template-js-c7b24046c8304a865e8a.js"/><link as="fetch" rel="preload" href="/page-data/posts/mobx_todo/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/251939775.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/3613830147.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/401334301.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Layout-module--layout--3Pyz6"><div><a class="Post-module--post__home-button--16Kl0" href="/">All Articles</a><div><div class="Content-module--content--3p512"><h1 class="Content-module--content__title--2BDW9">typescript 공부하기(작성중)</h1><div class="Content-module--content__body--2TrQ-"><p>오랜만에 다시 정리해본다. 타입스크립트 스타트!</p>
+<h2 id="설치" style="position:relative;"><a href="#%EC%84%A4%EC%B9%98" aria-label="설치 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>설치</h2>
+<p><code class="language-text">npm install -g typescript ts-node</code> 명령어 고고</p>
+<p><code class="language-text">tsc --help</code> 명령어를 입력해보면 TS가 깔렸는지 확인 가능쓰
+난 자꾸 에러가 떠서 뭔가 했더니 이미 설치되었던것ㅋㅋ</p>
+<h2 id="프로젝트-폴더-생성" style="position:relative;"><a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%8F%B4%EB%8D%94-%EC%83%9D%EC%84%B1" aria-label="프로젝트 폴더 생성 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>프로젝트 폴더 생성</h2>
+<p><code class="language-text">mkdir ts-todo</code>
+일단 나는 ts-todo라는 이름의 디렉토리를 생성했음
+그 폴더로 위치를 이동한 후에 package.json을 생성해보자.
+<code class="language-text">npm init -y</code> 명령어를 입력하면</p>
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{
-  "presets": ["react", "es2015"],
-  "plugins": ["transform-decorator-legacy", "transform-class-properties"]
+  "name": "ts-todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" &amp;&amp; exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }</code></pre></div>
-<p>하지만 데코레이터를 쓸 수 없다는 에러 발생..!
-그래서 공식 문서 보고 하나씩 설치하기 시작..!</p>
-<p><code class="language-text">npm install --save-dev babel-preset-mobx</code> 명령어로 바벨 설치하고 <code class="language-text">.babelrc</code> 파일 만들기</p>
-<p>그 담엔 <code class="language-text">npm i --save-dev babel-plugin-transform-decorators-legacy</code> 명령어로 설치하고,</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{
-    "presets": ["es2015", "stage-1"],
-    "plugins": ["transform-decorators-legacy"]
-}</code></pre></div>
-<p>바벨파일을 이렇게 바꿔주기!</p>
-<p>근데 이렇게 했는데도 에러가 나서 VScode settings에서 설정값을 바꿔주었다.
-setting.json 파일 내에 <code class="language-text">"javascript.implicitProjectConfig.experimentalDecorators": true</code> 요거 한 줄 추가</p>
-<h2 id="reference" style="position:relative;"><a href="#reference" aria-label="reference permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=_q50BXqkAfI" target="_blank" rel="nofollow noopener noreferrer">https://www.youtube.com/watch?v=_q50BXqkAfI</a></li>
-</ul></div></div></div><div class="Post-module--post__footer--3WzWU"><div><p class="Meta-module--meta__date--29eD7">Published <!-- -->19 Feb 2020</p></div><div class="Tags-module--tags--1L_ct"><ul class="Tags-module--tags__list--91FqN"><li class="Tags-module--tags__list-item--1M30P"><a class="Tags-module--tags__list-item-link--3SL_8" href="/tag/web/">web</a></li><li class="Tags-module--tags__list-item--1M30P"><a class="Tags-module--tags__list-item-link--3SL_8" href="/tag/frontend/">frontend</a></li><li class="Tags-module--tags__list-item--1M30P"><a class="Tags-module--tags__list-item-link--3SL_8" href="/tag/react/">react</a></li><li class="Tags-module--tags__list-item--1M30P"><a class="Tags-module--tags__list-item-link--3SL_8" href="/tag/mobx/">mobx</a></li></ul></div><div class="Author-module--author--2Yefr"><p>안녕하세요. 저의 임시 블로그입니다~ 블로그가 완선되면 핸드메이드 블로그로 이전할 예정입니다!<a class="Author-module--author__bio-twitter--n-O9n" href="https://www.twitter.com/undefined" rel="noopener noreferrer" target="_blank"><strong>토공</strong> on Twitter</a></p></div></div><div class="Post-module--post__comments--25y6I"><div><div id="disqus_thread"></div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/posts/mobx_todo";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-f8d6bc3f3d1ba44ac510.js"],"app":["/app-36cd3618350e6ed48712.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-2296adb1de2fc003fbd5.js"],"component---src-templates-categories-list-template-js":["/component---src-templates-categories-list-template-js-2181ec47d28e5c35d3e9.js"],"component---src-templates-category-template-js":["/component---src-templates-category-template-js-66005c088ac20b7d18dd.js"],"component---src-templates-index-template-js":["/component---src-templates-index-template-js-a9d3f06da6e991a5ac5f.js"],"component---src-templates-not-found-template-js":["/component---src-templates-not-found-template-js-d2f2ace3dba1af074182.js"],"component---src-templates-page-template-js":["/component---src-templates-page-template-js-6a959e805d749b9c3cae.js"],"component---src-templates-post-template-js":["/component---src-templates-post-template-js-c7b24046c8304a865e8a.js"],"component---src-templates-tag-template-js":["/component---src-templates-tag-template-js-46f37937f24599b8108a.js"],"component---src-templates-tags-list-template-js":["/component---src-templates-tags-list-template-js-2d7007993fc2bf0f9caf.js"]};/*]]>*/</script><script src="/polyfill-f8d6bc3f3d1ba44ac510.js" nomodule=""></script><script src="/component---src-templates-post-template-js-c7b24046c8304a865e8a.js" async=""></script><script src="/643651a62fb35a9bb4f20061cb1f214a352d7976-76743a07794875633306.js" async=""></script><script src="/cd95ea5cbd2c605f26db819f07999610c9ff4310-1486458330e3fee759b3.js" async=""></script><script src="/styles-407fe62976dc5310c43e.js" async=""></script><script src="/app-36cd3618350e6ed48712.js" async=""></script><script src="/532a2f07-e07d4f1cb18d088cf2d8.js" async=""></script><script src="/framework-3761df4ab6ee9f056936.js" async=""></script><script src="/webpack-runtime-efe21d3c0a23bc6eb384.js" async=""></script></body></html>
+<p>짠 이런 형태의 기본 package.json 세팅 완료.
+이제 axios 를 깔아보자.
+<code class="language-text">npm install axios</code>
+프로젝트 폴더에 들어가보면 node.modules 디렉토리에 axios 폴더가 생성된 것이 보임!!
+이제 <code class="language-text">index.ts</code> 파일을 만들어줄거다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">//index.ts
+import axios from 'axios';
+
+const url = 'https://jsonplaceholder.typicode.com/todos/1';
+
+axios.get(url).then(response => {
+  console.log(response.data);
+});</code></pre></div>
+<p>ts파일은 노드 환경에서 컴파일 되지 않기 때문에 ts 전용 명령어를 써줘야 한다.</p>
+<p><code class="language-text">tsc index.ts</code> 명령어 입력 고고</p>
+<p>그럼 index.js 파일이 생기고 그제서야 node 명령어를 쓸 수 있음</p>
+<p><code class="language-text">node index.js</code> 입력해보면 콘솔에
+<code class="language-text">{ userId: 1, id: 1, title: 'delectus aut autem', completed: false }</code> 이렇게 axios로 받아온 값이 뜸!! 오예</p>
+<p>음.. <code class="language-text">ts-node index.ts</code> 쳐도 똑같이 터미널에 나온다는데 왜 안떠??
+module not found 에러가 뜬다. 구글링 고고</p>
+<p>찾아보니 typescript를 global로 깔지 말고 local로 깔라고 해서 다시 깔기 고고
+<code class="language-text">npm install i typescript</code>
+하고 다시 <code class="language-text">ts-node index.ts</code> 쳐봤더니 이제 터미널에 콘솔이 제대로 뜬다!</p>
+<p>콘솔에 들어오는 값을 깔끔하게 보이기 위해 template literal을 사용해줄거다.
+거기에 TS의 interface까지 적용해볼거다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">import axios from 'axios';
+
+const url = 'https://jsonplaceholder.typicode.com/todos/1';
+
+interface Todo {
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
+axios.get(url).then(response => {
+  const todo = response.data as Todo;
+
+  const ID = todo.ID;
+  const title = todo.Title;
+  const finished = todo.finished;
+
+  console.log(`
+    The Todo with ID : ${ID};
+    Has a title of : ${title}
+    Is it finished? ${finished}
+  `);
+});</code></pre></div>
+<p>여기서 interface는 TS에서객체 구조를 정의할때 사용된다.
+이대로 타이핑을 해보면 우리가 axios 안에 선언한 변수에 빨간 줄이 그어진다!
+interface에서 정의해준 data의 type이 일치하지 않기 때문!!</p>
+<p>에러를 바탕으로 수정을 해보면 제대로 콘솔이 찍힌다. 라잌 디스</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">  The Todo with ID : 1;
+  Has a title of : delectus aut autem
+  Is it finished? false</code></pre></div>
+<p>한가지 더 실험을 해보기 위해 logTodo를 만들었음</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">import axios from 'axios';
+
+const url = 'https://jsonplaceholder.typicode.com/todos/1';
+
+// interface는 TS에서객체 구조를 정의할때 사용된다.
+interface Todo {
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
+axios.get(url).then(response => {
+  const todo = response.data as Todo;
+
+  const id = todo.id;
+  const title = todo.title;
+  const completed = todo.completed;
+
+  logTodo(id, completed, title);
+});
+
+const logTodo = (id, title, completed) => {
+  console.log(`
+  The Todo with ID : ${id};
+  Has a title of : ${title}
+  Is it finished? ${completed}
+`);
+};</code></pre></div>
+<p>다시 ts-node를 이용해 터미널에 찍힌 값을 확인해보면..</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">  The Todo with ID : 1;
+  Has a title of : false
+  Is it finished? delectus aut autem</code></pre></div>
+<p>왜 이런 결과가 나왔냐! logTodo의 argument에 type을 정의해주지 않았기 때문에
+아무 값이나 다 받아도 다 되는 상태였..</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">const logTodo = (id: number, title: string, completed: boolean) => {
+  console.log(`
+  The Todo with ID : ${id};
+  Has a title of : ${title}
+  Is it finished? ${completed}
+`);</code></pre></div>
+<p>인자로 들어가는 id, title, completed에 각각 type을 정의해줌
+또 ts-node를 이용해 터미널에 찍힌 값을 확인해보면 에러가 뜸
+왜냐.. boolean으로 받아야할 값에 string이 나왔기 때문!</p>
+<p>axios 내부에서 자리를 조금 바꿔주자
+<code class="language-text">logTodo(id, title, completed);</code> 요렇게 하면 에러 싹 사라짐~~ 굿굿쓰</p>
+<h2 id="type-annotations-vs-inference" style="position:relative;"><a href="#type-annotations-vs-inference" aria-label="type annotations vs inference permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Type annotations vs inference</h2>
+<p>Type annotations란 우리말로 타입 주석을 말한다.
+우리가 TS에게 전달해야 할 값의 타입
+Type ineference는 우리말로 타입 추론!
+TS가 특정 변수가 어떠한 타입을 지닌지 추론하려는 것을 말함</p>
+<p>Type annotations for functions
+=></p></div></div></div><div class="Post-module--post__footer--3WzWU"><div><p class="Meta-module--meta__date--29eD7">Published <!-- -->15 Mar 2020</p></div><div class="Tags-module--tags--1L_ct"><ul class="Tags-module--tags__list--91FqN"><li class="Tags-module--tags__list-item--1M30P"><a class="Tags-module--tags__list-item-link--3SL_8" href="/tag/web/">web</a></li><li class="Tags-module--tags__list-item--1M30P"><a class="Tags-module--tags__list-item-link--3SL_8" href="/tag/frontend/">frontend</a></li><li class="Tags-module--tags__list-item--1M30P"><a class="Tags-module--tags__list-item-link--3SL_8" href="/tag/react/">react</a></li><li class="Tags-module--tags__list-item--1M30P"><a class="Tags-module--tags__list-item-link--3SL_8" href="/tag/typescript/">typescript</a></li></ul></div><div class="Author-module--author--2Yefr"><p>안녕하세요. 저의 임시 블로그입니다~ 블로그가 완선되면 핸드메이드 블로그로 이전할 예정입니다!<a class="Author-module--author__bio-twitter--n-O9n" href="https://www.twitter.com/undefined" rel="noopener noreferrer" target="_blank"><strong>토공</strong> on Twitter</a></p></div></div><div class="Post-module--post__comments--25y6I"><div><div id="disqus_thread"></div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/posts/mobx_todo";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-f8d6bc3f3d1ba44ac510.js"],"app":["/app-36cd3618350e6ed48712.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-2296adb1de2fc003fbd5.js"],"component---src-templates-categories-list-template-js":["/component---src-templates-categories-list-template-js-2181ec47d28e5c35d3e9.js"],"component---src-templates-category-template-js":["/component---src-templates-category-template-js-66005c088ac20b7d18dd.js"],"component---src-templates-index-template-js":["/component---src-templates-index-template-js-a9d3f06da6e991a5ac5f.js"],"component---src-templates-not-found-template-js":["/component---src-templates-not-found-template-js-d2f2ace3dba1af074182.js"],"component---src-templates-page-template-js":["/component---src-templates-page-template-js-6a959e805d749b9c3cae.js"],"component---src-templates-post-template-js":["/component---src-templates-post-template-js-c7b24046c8304a865e8a.js"],"component---src-templates-tag-template-js":["/component---src-templates-tag-template-js-46f37937f24599b8108a.js"],"component---src-templates-tags-list-template-js":["/component---src-templates-tags-list-template-js-2d7007993fc2bf0f9caf.js"]};/*]]>*/</script><script src="/polyfill-f8d6bc3f3d1ba44ac510.js" nomodule=""></script><script src="/component---src-templates-post-template-js-c7b24046c8304a865e8a.js" async=""></script><script src="/643651a62fb35a9bb4f20061cb1f214a352d7976-76743a07794875633306.js" async=""></script><script src="/cd95ea5cbd2c605f26db819f07999610c9ff4310-1486458330e3fee759b3.js" async=""></script><script src="/styles-407fe62976dc5310c43e.js" async=""></script><script src="/app-36cd3618350e6ed48712.js" async=""></script><script src="/532a2f07-e07d4f1cb18d088cf2d8.js" async=""></script><script src="/framework-3761df4ab6ee9f056936.js" async=""></script><script src="/webpack-runtime-efe21d3c0a23bc6eb384.js" async=""></script></body></html>
